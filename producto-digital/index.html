@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu Primer Producto Digital con IA en 7 Días | Guía Exprés</title>
+    <meta name="description" content="Aprende a crear y lanzar tu primer producto digital usando inteligencia artificial en solo una semana. Guía paso a paso para principiantes.">
+    <style>
+        :root {
+            --primary: #7C3AED;
+            --primary-dark: #6D28D9;
+            --secondary: #F59E0B;
+            --dark: #1F2937;
+            --light: #F9FAFB;
+            --success: #10B981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+        }
+        
+        body {
+            background-color: #F3F4F6;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+        }
+        
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #F9FAFB 0%, #E5E7EB 100%);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+        
+        .hero h1 span {
+            color: var(--primary);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #4B5563;
+        }
+        
+        .hero-image {
+            max-width: 600px;
+            margin: 40px auto;
+            border-radius: 12px;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            border: 5px solid white;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+        
+        .price-container {
+            background: white;
+            display: inline-block;
+            padding: 20px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: #6B7280;
+            font-size: 24px;
+        }
+        
+        .current-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        
+        .bonus-alert {
+            background: var(--secondary);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+        
+        .benefit-icon {
+            font-size: 40px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+        
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-day {
+            background: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 24px;
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            flex-grow: 1;
+        }
+        
+        .timeline-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .testimonials {
+            background: var(--dark);
+            color: white;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .testimonial-card {
+            background: #374151;
+            padding: 25px;
+            border-radius: 12px;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+        }
+        
+        .author-role {
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+        
+        .guarantee {
+            text-align: center;
+            background: #ECFDF5;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .guarantee-icon {
+            font-size: 50px;
+            color: var(--success);
+            margin-bottom: 15px;
+        }
+        
+        .guarantee h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .faq-question {
+            padding: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-answer {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 0 18px 18px;
+            max-height: 500px;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .current-price {
+                font-size: 36px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+            }
+            
+            .timeline-day {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">IA<span>Express</span></div>
+            <a href="#oferta" class="cta-button">OBTENER AHORA</a>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Guía Exprés: <span>Crea tu Primer Producto Digital con IA</span> en 7 Días</h1>
+            <p>Descubre el método más rápido para crear y lanzar tu primer producto digital usando inteligencia artificial, incluso si no tienes experiencia previa.</p>
+            
+            <div class="hero-image">
+                <!-- Reemplaza con la imagen de tu producto -->
+                <img src="https://via.placeholder.com/600x400/7C3AED/ffffff?text=Guía+Exprés+IA+7+Días" alt="Guía Exprés: Crea tu Primer Producto Digital con IA en 7 Días">
+            </div>
+            
+            <div class="price-container">
+                <div class="original-price">$25</div>
+                <div class="current-price">$7</div>
+                <div>Precio de lanzamiento exclusivo</div>
+            </div>
+            
+            <div class="bonus-alert">
+                ⏳ Oferta por tiempo limitado: Incluye 2 bonos exclusivos valorados en $100
+            </div>
+            
+            <a href="#oferta" class="cta-button" style="padding: 16px 32px; font-size: 18px;">QUIERO LA GUÍA AHORA</a>
+        </div>
+    </section>
+    
+    <section id="beneficios">
+        <div class="container">
+            <h2 class="section-title">¿Qué lograrás en solo 7 días?</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Producto Creado</h3>
+                    <p>Tendrás tu primer producto digital terminado usando herramientas de IA, sin necesidad de conocimientos técnicos avanzados.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💡</div>
+                    <h3>Ideas Validadas</h3>
+                    <p>Aprenderás a encontrar oportunidades rentables y validar tu idea de producto antes de crearlo.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>Automatización</h3>
+                    <p>Descubrirás cómo usar IA para acelerar el proceso de creación, desde el contenido hasta el diseño.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">📊</div>
+                    <h3>Estrategia de Lanzamiento</h3>
+                    <p>Obtendrás un plan simple pero efectivo para lanzar tu producto y conseguir tus primeras ventas.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Flujo de Ingresos</h3>
+                    <p>Crearás una fuente de ingresos pasivos con potencial para escalar en el futuro.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Confianza Digital</h3>
+                    <p>Ganarás la seguridad para crear más productos y crecer tu negocio online.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="metodo">
+        <div class="container">
+            <h2 class="section-title">Tu Plan de 7 Días</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-day">1</div>
+                    <div class="timeline-content">
+                        <h3>Encuentra tu Idea Ganadora</h3>
+                        <p>Aprenderás métodos con IA para identificar oportunidades de mercado y seleccionar el mejor tipo de producto digital para empezar.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-day">2</div>
+                    <div class="timeline-content">
+                        <h3>Valida tu Producto</h3>
+                        <p>Técnicas rápidas para confirmar que tu producto tendrá demanda antes de invertir tiempo en crearlo.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-day">3</div>
+                    <div class="timeline-content">
+                        <h3>Crea el Contenido con IA</h3>
+                        <p>Usarás herramientas de inteligencia artificial para generar el contenido principal de tu producto en horas.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-day">4</div>
+                    <div class="timeline-content">
+                        <h3>Diseña y Formatea</h3>
+                        <p>Métodos sencillos para darle un aspecto profesional a tu producto usando herramientas gratuitas.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-day">5</div>
+                    <div class="timeline-content">
+                        <h3>Prepara tu Oferta</h3>
+                        <p>Aprenderás a crear una página de ventas simple pero efectiva y configurar los métodos de pago.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-day">6</div>
+                    <div class="timeline-content">
+                        <h3>Estrategia de Lanzamiento</h3>
+                        <p>Plan de acción para promocionar tu producto y conseguir tus primeras ventas rápidamente.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-day">7</div>
+                    <div class="timeline-content">
+                        <h3>Lanza y Aprende</h3>
+                        <p>Día de acción donde pondrás tu producto en el mercado y comenzarás a generar ingresos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Historias de Éxito</h2>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Seguí esta guía y en 9 días ya tenía mi primer ebook creado con IA. ¡Vendí 15 copias en la primera semana!"</p>
+                    <p class="testimonial-author">Lucía Fernández</p>
+                    <p class="author-role">Coach de Bienestar</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"No podía creer lo rápido que pude crear mi curso online usando los métodos de esta guía. La IA hizo el 80% del trabajo."</p>
+                    <p class="testimonial-author">Andrés Ramírez</p>
+                    <p class="author-role">Instructor de Fotografía</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Por solo $7, esta guía me dio el empujón que necesitaba para finalmente crear mi primer producto digital. ¡Totalmente recomendada!"</p>
+                    <p class="testimonial-author">Marina Gómez</p>
+                    <p class="author-role">Emprendedora</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="bonus">
+        <div class="container">
+            <h2 class="section-title">Tus Bonos Exclusivos</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>BONO #1: 50 Prompts Inteligentes para ChatGPT</h3>
+                    <p>Los más usados y efectivos, listos para aplicar según tu tipo de negocio. Ahorra horas de prueba y error con prompts probados que generan resultados.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Bono #2: Directorio de Herramientas IA</h3>
+                    <p>Lista actualizada de las mejores herramientas de IA categorizadas por uso y con análisis de costo-beneficio para creadores de productos digitales.</p>
+                </div>
+            </div>
+            
+            <div class="bonus-alert" style="max-width: 100%; margin-top: 40px;">
+                🚀 Estos bonos son tuyos <strong>solo si compras hoy</strong>. Mañana esta oferta desaparece.
+            </div>
+        </div>
+    </section>
+    
+    <section id="oferta">
+        <div class="container">
+            <h2 class="section-title">Comienza Hoy tu Viaje Digital</h2>
+            
+            <div class="guarantee">
+                <div class="guarantee-icon">✅</div>
+                <h3>Garantía de 7 Días</h3>
+                <p>Si en 7 días no has creado tu primer producto digital siguiendo esta guía, te devolvemos cada centavo. Sin preguntas.</p>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <div class="price-container">
+                    <div class="original-price">$25</div>
+                    <div class="current-price">$7</div>
+                    <div>Precio de lanzamiento exclusivo</div>
+                </div>
+                
+                <a href="#" class="cta-button" style="padding: 16px 32px; font-size: 20px; margin: 30px auto; display: inline-block;">QUIERO LA GUÍA POR $7</a>
+                
+                <p style="max-width: 600px; margin: 0 auto;"><small>Pago seguro procesado por Stripe o PayPal. Recibirás acceso inmediato a la guía en formato PDF y a los bonos.</small></p>
+                
+                <img src="https://via.placeholder.com/300x50?text=Secure+Payment+Logos" alt="Métodos de pago seguros" style="margin-top: 20px; max-width: 100%;">
+            </div>
+        </div>
+    </section>
+    
+    <section id="faq">
+        <div class="container">
+            <h2 class="section-title">Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué tipo de producto digital aprenderé a crear?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>La guía cubre la creación de ebooks, cursos digitales, plantillas y otros productos de información, que son los ideales para empezar. Los principios pueden aplicarse a otros tipos de productos digitales también.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Necesito invertir en herramientas costosas?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>No, la guía se enfoca en herramientas gratuitas o de bajo costo que te permitirán crear tu primer producto sin inversión inicial significativa.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Qué pasa si no completo el proceso en 7 días?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>El plan está diseñado para completarse en 7 días dedicando aproximadamente 1-2 horas diarias. Si necesitas más tiempo, puedes adaptarlo a tu ritmo sin problema.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Cómo recibiré la guía y los bonos?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Inmediatamente después de tu compra recibirás un email con los enlaces para descargar la guía en formato PDF y acceder a los bonos.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>¿Tiene garantía?</span>
+                    <span>+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, tienes 7 días completos para solicitar un reembolso si no estás satisfecho con la guía, sin necesidad de justificación.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="logo" style="color: white; margin-bottom: 20px;">IA<span>Express</span></div>
+            <p>© 2025 Guía Exprés: Crea tu Primer Producto Digital con IA. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="#">Términos de Servicio</a>
+                <a href="#">Política de Privacidad</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para los acordeones de FAQ
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.classList.toggle('active');
+                
+                const icon = question.querySelector('span:last-child');
+                if (answer.classList.contains('active')) {
+                    icon.textContent = '-';
+                } else {
+                    icon.textContent = '+';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

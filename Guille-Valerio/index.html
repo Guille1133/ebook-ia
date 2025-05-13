@@ -1038,3 +1038,189 @@
         <div class="testimonials-container">
             <!-- Testimonio 1 -->
             <div class="testimonial-card fade
+                  <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimonios</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-text">
+                        <p>Gracias a la mentoría con Guille pude identificar patrones de autosabotaje que llevaban años limitándome. En solo 3 meses logré cambios que no había conseguido en años de terapia tradicional.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="María G.">
+                        </div>
+                        <div class="author-info">
+                            <h4>María G.</h4>
+                            <p>Emprendedora, 34 años</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-1">
+                    <div class="testimonial-text">
+                        <p>El trabajo con la energía fue revelador para mí. Aprendí a manejar mis estados emocionales y ahora tengo herramientas para mantener mi centro incluso en situaciones desafiantes.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Juan P.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Juan P.</h4>
+                            <p>Profesional IT, 42 años</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card fade-in delay-2">
+                    <div class="testimonial-text">
+                        <p>Guille tiene una forma única de explicar conceptos complejos de manera simple y aplicable. Su enfoque integral (mente, energía y espíritu) hizo toda la diferencia en mi proceso.</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Ana L.">
+                        </div>
+                        <div class="author-info">
+                            <h4>Ana L.</h4>
+                            <p>Coach, 29 años</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="fade-in">¿Listo para transformar tu vida?</h2>
+            <p class="fade-in delay-1">Agendá una sesión exploratoria gratuita y descubrí cómo puedo ayudarte a alcanzar tus objetivos.</p>
+            <a href="#" class="btn btn-primary fade-in delay-2">Agendar llamada ahora</a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="container">
+            <h3 class="fade-in">Descargá tu Guía Gratuita</h3>
+            <p class="fade-in delay-1">Recibí en tu email el PDF "5 pasos para reprogramar tu mente y dejar de autosabotearte" y comienza tu transformación hoy mismo.</p>
+            
+            <form class="newsletter-form fade-in delay-2">
+                <input type="text" placeholder="Tu nombre">
+                <input type="email" placeholder="Tu email">
+                <button type="submit">Enviarme la guía</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">Guille Valerio</a>
+                    <p>Mentoría en transformación mental y energética para crear una vida en paz y abundancia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-spotify"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#home">Inicio</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#services">Mentoría</a></li>
+                        <li><a href="#testimonials">Testimonios</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-envelope"></i> hola@guillevalerio.com</p>
+                    <p><i class="fas fa-phone-alt"></i> +54 11 1234-5678</p>
+                    <p><i class="fab fa-whatsapp"></i> +54 11 8765-4321</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Guillermo Valerio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const nav = document.getElementById('nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = nav.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Animation on scroll
+        const animateElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        animateElements.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

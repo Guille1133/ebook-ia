@@ -435,6 +435,28 @@
             color: var(--accent);
             transform: translateY(-3px);
         }
+
+        /* Página de Gracias */
+        .thank-you-page {
+            display: none;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .thank-you-icon {
+            font-size: 5rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+        }
+        
+        .thank-you-message {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-cta {
+            margin-top: 40px;
+        }
         
         /* Responsive Adjustments */
         @media (max-width: 768px) {
@@ -466,6 +488,10 @@
             .final-cta {
                 padding: 40px 20px;
             }
+            
+            .thank-you-page {
+                padding: 60px 20px;
+            }
         }
         
         @media (max-width: 600px) {
@@ -496,215 +522,289 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+            
+            .thank-you-icon {
+                font-size: 4rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section Mejorada -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="date-badge">
-                <i class="far fa-calendar-alt"></i> Martes 17 de Junio • 3:00 PM
+    <!-- Contenido Principal (se ocultará al enviar el formulario) -->
+    <div id="main-content">
+        <!-- Hero Section Mejorada -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="date-badge">
+                    <i class="far fa-calendar-alt"></i> Martes 17 de Junio • 3:00 PM
+                </div>
+                <h1>REPROGRAMANDO TU MENTE, RECONECTANDO CON TU PODER</h1>
+                <p class="subtitle">Una experiencia transformadora para liberar bloqueos, resignificar tu historia y activar tu poder interior.</p>
             </div>
-            <h1>REPROGRAMANDO TU MENTE, RECONECTANDO CON TU PODER</h1>
-            <p class="subtitle">Una experiencia transformadora para liberar bloqueos, resignificar tu historia y activar tu poder interior.</p>
+        </section>
+        
+        <!-- Pregunta Emocional -->
+        <div class="container">
+            <div class="emotional-question">
+                <h2>¿Sientes que repites patrones que ya no quieres en tu vida?</h2>
+                <p>Descubre cómo reprogramar tu mente para crear la vida que realmente deseas</p>
+            </div>
+            
+            <!-- Formulario de Registro -->
+            <div class="form-container">
+                <h2>¡Reserva tu cupo ahora!</h2>
+                <p style="text-align: center; margin-bottom: 25px;">Completa el formulario para asegurar tu participación</p>
+                
+                <form id="event-registration">
+                    <div class="form-group">
+                        <label for="name">Nombre completo:</label>
+                        <input type="text" id="name" name="name" required placeholder="Ej: María Pérez">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" id="email" name="email" required placeholder="Ej: tuemail@dominio.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whatsapp">Número de WhatsApp (con código de país):</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required placeholder="Ej: +507 61234567">
+                    </div>
+                    
+                    <button type="submit">
+                        <i class="fas fa-lock"></i> RESERVAR MI CUPO
+                    </button>
+                    <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">* Tus datos están protegidos y no serán compartidos</p>
+                </form>
+            </div>
+            
+            <!-- Contenido del Taller -->
+            <div class="section">
+                <h2>Qué aprenderás en este taller</h2>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Herramientas prácticas basadas en neurociencia y psicología para transformar tu mente y tu vida</p>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-brain"></i>
+                        <h3>Reprogramación Subconsciente</h3>
+                        <p>Aprende cómo funciona tu mente subconsciente y técnicas para reprogramar creencias limitantes.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-comments"></i>
+                        <h3>Lenguaje Transformador</h3>
+                        <p>Domina el poder de tu lenguaje verbal y no verbal para crear cambios permanentes.</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-medal"></i>
+                        <h3>Autoconocimiento</h3>
+                        <p>Identifica tus patrones mentales y emocionales para transformarlos desde la raíz.</p>
+                    </div>
+                </div>
+                
+                <ul>
+                    <li>Cómo funciona tu subconsciente y métodos científicos para reprogramarlo</li>
+                    <li>El poder de tu lenguaje verbal y corporal en la creación de tu realidad</li>
+                    <li>Test de creencias y ejercicio práctico de reprogramación escrita</li>
+                    <li>Visualización guiada y carta de compromiso contigo mismo</li>
+                    <li>Técnicas de meditación activa para integración rápida</li>
+                </ul>
+            </div>
+            
+            <!-- Detalles del Evento -->
+            <div class="section">
+                <h2>Información del Evento</h2>
+                
+                <div class="event-details">
+                    <div class="detail-card">
+                        <i class="far fa-calendar-alt"></i>
+                        <h3>Fecha y Hora</h3>
+                        <p>Martes 17 de Junio</p>
+                        <p><strong>3:00 PM</strong></p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Lugar</h3>
+                        <p>Mercado de Laureles Gastrobar</p>
+                        <p><strong>Medellín, Colombia</strong></p>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <i class="fas fa-tag"></i>
+                        <h3>Inversión</h3>
+                        <p><strong>$60.000 COP</strong></p>
+                        <p>¡Incluye materiales y refrigerio!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Beneficios Incluidos -->
+            <div class="section">
+                <h2>Tu Inversión Incluye</h2>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-book"></i>
+                        <h3>Material de Trabajo</h3>
+                        <p>Guía completa con ejercicios y técnicas</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-hands-helping"></i>
+                        <h3>Sesión Práctica</h3>
+                        <p>Ejercicios guiados para aplicar lo aprendido</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>Meditación Guiada</h3>
+                        <p>Sesión especial para integración profunda</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Refrigerio</h3>
+                        <p>Alimentos saludables para recargar energía</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-gift"></i>
+                        <h3>Sorteo Especial</h3>
+                        <p>2 sesiones de coaching individual</p>
+                    </div>
+                    
+                    <div class="benefit-item">
+                        <i class="fas fa-headset"></i>
+                        <h3>Seguimiento</h3>
+                        <p>Acceso a grupo exclusivo post-taller</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Facilitadores - IMÁGENES EN BLANCO -->
+            <div class="section">
+                <h2>Conoce a los Facilitadores</h2>
+                
+                <div class="facilitators">
+                    <div class="facilitator">
+                        <img src="" alt="Gabriela Jaimes Heredia" style="background-color: #f0f0f0;">
+                        <h3>Gabriela Jaimes Heredia</h3>
+                        <p><strong>Coach Estratégico y de Desarrollo Personal</strong></p>
+                        <p>Especialista en técnicas de reprogramación mental con más de 10 años de experiencia ayudando a personas a transformar sus vidas.</p>
+                    </div>
+                    
+                    <div class="facilitator">
+                        <img src="" alt="Guillermo Valerio" style="background-color: #f0f0f0;">
+                        <h3>Guillermo Valerio</h3>
+                        <p><strong>Coach y Facilitador de Reprogramación Subconsciente</strong></p>
+                        <p>Experto en integración de técnicas de neurociencia y psicología aplicada para el desarrollo personal.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonio -->
+            <div class="testimonial">
+                <p>"Este taller marcó un antes y después en mi vida. Las herramientas que aprendí me han ayudado a romper patrones que llevaba años repitiendo sin darme cuenta. Hoy me siento más empoderada, con claridad y sobre todo, con las herramientas para seguir creando la vida que quiero."</p>
+                <p class="testimonial-author">- Laura M., Participante de la Edición Anterior</p>
+            </div>
+            
+            <!-- CTA Final -->
+            <div class="final-cta">
+                <h2>¿Listo para transformar tu mente y tu vida?</h2>
+                <p>Los cupos son limitados para garantizar una experiencia personalizada</p>
+                
+                <a href="#event-registration" class="btn">
+                    <i class="fas fa-ticket-alt"></i> QUIERO MI CUPO AHORA
+                </a>
+                
+                <div class="whatsapp-contact">
+                    <p>O escríbenos directamente al WhatsApp:</p>
+                    <p><strong><i class="fab fa-whatsapp"></i> +507 62364173</strong></p>
+                </div>
+            </div>
         </div>
-    </section>
+        
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 Taller "Reprogramando tu Mente, Reconectando con tu Poder"</p>
+            <p>Todos los derechos reservados</p>
+            
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </footer>
+    </div>
     
-    <!-- Pregunta Emocional -->
-    <div class="container">
-        <div class="emotional-question">
-            <h2>¿Sientes que repites patrones que ya no quieres en tu vida?</h2>
-            <p>Descubre cómo reprogramar tu mente para crear la vida que realmente deseas</p>
-        </div>
-        
-        <!-- Formulario de Registro -->
-        <div class="form-container">
-            <h2>¡Reserva tu cupo ahora!</h2>
-            <p style="text-align: center; margin-bottom: 25px;">Completa el formulario para asegurar tu participación</p>
-            
-            <form id="event-registration">
-                <div class="form-group">
-                    <label for="name">Nombre completo:</label>
-                    <input type="text" id="name" name="name" required placeholder="Ej: María Pérez">
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Correo electrónico:</label>
-                    <input type="email" id="email" name="email" required placeholder="Ej: tuemail@dominio.com">
-                </div>
-                
-                <div class="form-group">
-                    <label for="whatsapp">Número de WhatsApp (con código de país):</label>
-                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="Ej: +507 61234567">
-                </div>
-                
-                <button type="submit">
-                    <i class="fas fa-lock"></i> RESERVAR MI CUPO
-                </button>
-                <p style="text-align: center; margin-top: 15px; font-size: 0.9rem;">* Tus datos están protegidos y no serán compartidos</p>
-            </form>
-        </div>
-        
-        <!-- Contenido del Taller -->
-        <div class="section">
-            <h2>Qué aprenderás en este taller</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 30px;">Herramientas prácticas basadas en neurociencia y psicología para transformar tu mente y tu vida</p>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <i class="fas fa-brain"></i>
-                    <h3>Reprogramación Subconsciente</h3>
-                    <p>Aprende cómo funciona tu mente subconsciente y técnicas para reprogramar creencias limitantes.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-comments"></i>
-                    <h3>Lenguaje Transformador</h3>
-                    <p>Domina el poder de tu lenguaje verbal y no verbal para crear cambios permanentes.</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-medal"></i>
-                    <h3>Autoconocimiento</h3>
-                    <p>Identifica tus patrones mentales y emocionales para transformarlos desde la raíz.</p>
-                </div>
+    <!-- Página de Gracias (oculta inicialmente) -->
+    <div id="thank-you-page" class="thank-you-page">
+        <div class="container">
+            <div class="thank-you-icon">
+                <i class="fas fa-check-circle"></i>
             </div>
-            
-            <ul>
-                <li>Cómo funciona tu subconsciente y métodos científicos para reprogramarlo</li>
-                <li>El poder de tu lenguaje verbal y corporal en la creación de tu realidad</li>
-                <li>Test de creencias y ejercicio práctico de reprogramación escrita</li>
-                <li>Visualización guiada y carta de compromiso contigo mismo</li>
-                <li>Técnicas de meditación activa para integración rápida</li>
-            </ul>
-        </div>
-        
-        <!-- Detalles del Evento -->
-        <div class="section">
-            <h2>Información del Evento</h2>
-            
-            <div class="event-details">
-                <div class="detail-card">
-                    <i class="far fa-calendar-alt"></i>
-                    <h3>Fecha y Hora</h3>
-                    <p>Martes 17 de Junio</p>
-                    <p><strong>3:00 PM</strong></p>
-                </div>
-                
-                <div class="detail-card">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <h3>Lugar</h3>
-                    <p>Mercado de Laureles Gastrobar</p>
-                    <p><strong>Medellín, Colombia</strong></p>
-                </div>
-                
-                <div class="detail-card">
-                    <i class="fas fa-tag"></i>
-                    <h3>Inversión</h3>
-                    <p><strong>$60.000 COP</strong></p>
-                    <p>¡Incluye materiales y refrigerio!</p>
-                </div>
+            <div class="thank-you-message">
+                <h1>¡Gracias por registrarte!</h1>
+                <p>Hemos recibido tu información correctamente. Pronto recibirás un correo electrónico con los detalles de tu inscripción al taller <strong>"Reprogramando tu Mente, Reconectando con tu Poder"</strong>.</p>
+                <p>Si no encuentras nuestro correo en tu bandeja de entrada, por favor revisa tu carpeta de spam.</p>
+                <p>Para cualquier duda o información adicional, no dudes en contactarnos al WhatsApp: <strong>+507 62364173</strong></p>
             </div>
-        </div>
-        
-        <!-- Beneficios Incluidos -->
-        <div class="section">
-            <h2>Tu Inversión Incluye</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <i class="fas fa-book"></i>
-                    <h3>Material de Trabajo</h3>
-                    <p>Guía completa con ejercicios y técnicas</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-hands-helping"></i>
-                    <h3>Sesión Práctica</h3>
-                    <p>Ejercicios guiados para aplicar lo aprendido</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-heart"></i>
-                    <h3>Meditación Guiada</h3>
-                    <p>Sesión especial para integración profunda</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Refrigerio</h3>
-                    <p>Alimentos saludables para recargar energía</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-gift"></i>
-                    <h3>Sorteo Especial</h3>
-                    <p>2 sesiones de coaching individual</p>
-                </div>
-                
-                <div class="benefit-item">
-                    <i class="fas fa-headset"></i>
-                    <h3>Seguimiento</h3>
-                    <p>Acceso a grupo exclusivo post-taller</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Facilitadores - IMÁGENES EN BLANCO -->
-        <div class="section">
-            <h2>Conoce a los Facilitadores</h2>
-            
-            <div class="facilitators">
-                <div class="facilitator">
-                    <img src="" alt="Gabriela Jaimes Heredia" style="background-color: #f0f0f0;">
-                    <h3>Gabriela Jaimes Heredia</h3>
-                    <p><strong>Coach Estratégico y de Desarrollo Personal</strong></p>
-                    <p>Especialista en técnicas de reprogramación mental con más de 10 años de experiencia ayudando a personas a transformar sus vidas.</p>
-                </div>
-                
-                <div class="facilitator">
-                    <img src="" alt="Guillermo Valerio" style="background-color: #f0f0f0;">
-                    <h3>Guillermo Valerio</h3>
-                    <p><strong>Coach y Facilitador de Reprogramación Subconsciente</strong></p>
-                    <p>Experto en integración de técnicas de neurociencia y psicología aplicada para el desarrollo personal.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Testimonio -->
-        <div class="testimonial">
-            <p>"Este taller marcó un antes y después en mi vida. Las herramientas que aprendí me han ayudado a romper patrones que llevaba años repitiendo sin darme cuenta. Hoy me siento más empoderada, con claridad y sobre todo, con las herramientas para seguir creando la vida que quiero."</p>
-            <p class="testimonial-author">- Laura M., Participante de la Edición Anterior</p>
-        </div>
-        
-        <!-- CTA Final -->
-        <div class="final-cta">
-            <h2>¿Listo para transformar tu mente y tu vida?</h2>
-            <p>Los cupos son limitados para garantizar una experiencia personalizada</p>
-            
-            <a href="#event-registration" class="btn">
-                <i class="fas fa-ticket-alt"></i> QUIERO MI CUPO AHORA
-            </a>
-            
-            <div class="whatsapp-contact">
-                <p>O escríbenos directamente al WhatsApp:</p>
-                <p><strong><i class="fab fa-whatsapp"></i> +507 62364173</strong></p>
+            <div class="thank-you-cta">
+                <a href="#" class="btn" id="back-to-event">
+                    <i class="fas fa-arrow-left"></i> Volver a la información del evento
+                </a>
             </div>
         </div>
     </div>
-    
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Taller "Reprogramando tu Mente, Reconectando con tu Poder"</p>
-        <p>Todos los derechos reservados</p>
-        
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-        </div>
-    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('event-registration');
+            const mainContent = document.getElementById('main-content');
+            const thankYouPage = document.getElementById('thank-you-page');
+            const backButton = document.getElementById('back-to-event');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Aquí normalmente enviarías los datos a tu servidor
+                // Por ahora simulamos el envío con un setTimeout
+                
+                // Mostrar mensaje de carga
+                const submitButton = form.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton.innerHTML;
+                submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+                submitButton.disabled = true;
+                
+                // Simular envío al servidor
+                setTimeout(function() {
+                    // Ocultar contenido principal y mostrar página de gracias
+                    mainContent.style.display = 'none';
+                    thankYouPage.style.display = 'block';
+                    
+                    // Desplazarse al inicio de la página de gracias
+                    window.scrollTo(0, 0);
+                    
+                    // Restaurar botón (por si el usuario vuelve atrás)
+                    submitButton.innerHTML = originalButtonText;
+                    submitButton.disabled = false;
+                    
+                    // Opcional: Limpiar el formulario
+                    form.reset();
+                }, 1500);
+            });
+            
+            // Botón para volver al evento
+            backButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                thankYouPage.style.display = 'none';
+                mainContent.style.display = 'block';
+                window.scrollTo(0, 0);
+            });
+        });
+    </script>
 </body>
 </html>

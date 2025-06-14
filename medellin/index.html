@@ -215,25 +215,27 @@
             margin-bottom: 20px;
         }
         
+        /* LISTA MODIFICADA - SOLO UN PUNTO */
         ul {
-            list-style-position: inside;
+            list-style: none;
             margin: 20px 0;
-            padding-left: 20px;
         }
         
         li {
             margin-bottom: 12px;
             position: relative;
-            padding-left: 25px;
+            padding-left: 30px;
         }
         
         li::before {
-            content: "•";
-            color: var(--primary);
-            font-size: 1.5rem;
+            content: "";
             position: absolute;
             left: 0;
-            top: -3px;
+            top: 10px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--primary);
+            border-radius: 50%;
         }
         
         /* Tarjetas de Beneficios - MODIFICADO PARA MEJOR RESPONSIVE */
@@ -298,7 +300,7 @@
             display: block;
         }
         
-        /* Facilitadores */
+        /* Facilitadores - IMÁGENES EN BLANCO */
         .facilitators {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -330,6 +332,7 @@
             border: 5px solid var(--accent);
             margin-bottom: 20px;
             box-shadow: var(--shadow);
+            background-color: #f0f0f0; /* Fondo gris claro para imágenes en blanco */
         }
         
         /* Testimonio */
@@ -569,11 +572,11 @@
             </div>
             
             <ul>
-                <li><strong>Cómo funciona tu subconsciente</strong> y métodos científicos para reprogramarlo</li>
-                <li>El poder de tu <strong>lenguaje verbal y corporal</strong> en la creación de tu realidad</li>
-                <li><strong>Test de creencias</strong> y ejercicio práctico de reprogramación escrita</li>
-                <li><strong>Visualización guiada</strong> y carta de compromiso contigo mismo</li>
-                <li>Técnicas de <strong>meditación activa</strong> para integración rápida</li>
+                <li>Cómo funciona tu subconsciente y métodos científicos para reprogramarlo</li>
+                <li>El poder de tu lenguaje verbal y corporal en la creación de tu realidad</li>
+                <li>Test de creencias y ejercicio práctico de reprogramación escrita</li>
+                <li>Visualización guiada y carta de compromiso contigo mismo</li>
+                <li>Técnicas de meditación activa para integración rápida</li>
             </ul>
         </div>
         
@@ -648,20 +651,20 @@
             </div>
         </div>
         
-        <!-- Facilitadores -->
+        <!-- Facilitadores - IMÁGENES EN BLANCO -->
         <div class="section">
             <h2>Conoce a los Facilitadores</h2>
             
             <div class="facilitators">
                 <div class="facilitator">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Gabriela Jaimes Heredia">
+                    <img src="" alt="Gabriela Jaimes Heredia" style="background-color: #f0f0f0;">
                     <h3>Gabriela Jaimes Heredia</h3>
                     <p><strong>Coach Estratégico y de Desarrollo Personal</strong></p>
                     <p>Especialista en técnicas de reprogramación mental con más de 10 años de experiencia ayudando a personas a transformar sus vidas.</p>
                 </div>
                 
                 <div class="facilitator">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" alt="Guillermo Valerio">
+                    <img src="" alt="Guillermo Valerio" style="background-color: #f0f0f0;">
                     <h3>Guillermo Valerio</h3>
                     <p><strong>Coach y Facilitador de Reprogramación Subconsciente</strong></p>
                     <p>Experto en integración de técnicas de neurociencia y psicología aplicada para el desarrollo personal.</p>
@@ -693,7 +696,7 @@
     
     <!-- Footer -->
     <footer>
-        <p>© 2023 Taller "Reprogramando tu Mente, Reconectando con tu Poder"</p>
+        <p>© 2025 Taller "Reprogramando tu Mente, Reconectando con tu Poder"</p>
         <p>Todos los derechos reservados</p>
         
         <div class="social-links">

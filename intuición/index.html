@@ -9,17 +9,19 @@
         :root {
             --primary: #6a5acd;
             --secondary: #9370db;
-            --accent: #8e44ad;  /* Cambiado a morado más intenso */
+            --accent: #8e44ad;
             --light: #f8f9fa;
-            --dark: #343a40;
+            --dark: #2C3E50;
             --success: #28a745;
+            --text-light: #FFFFFF;
+            --text-dark: #333333;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
@@ -28,18 +30,20 @@
             line-height: 1.6;
         }
         
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
         }
         
         /* Header con fondo de universo */
         header {
-            background: #0F2027;  /* Fallback */
+            background: #0F2027;
             background: linear-gradient(180deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
             color: white;
-            padding: 30px 0;
+            padding: 50px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -93,37 +97,45 @@
         }
         
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             margin-bottom: 20px;
             position: relative;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             animation: fadeIn 1.5s ease-in-out;
+            line-height: 1.3;
+            font-weight: 600;
         }
         
         h2 {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
             margin-bottom: 25px;
-            font-weight: 300;
+            font-weight: 400;
             position: relative;
             animation: fadeIn 2s ease-in-out;
+            line-height: 1.4;
         }
         
         .section-title {
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             margin-bottom: 30px;
-            color: var(--primary);
+            color: var(--text-light);
             text-align: center;
             position: relative;
             display: inline-block;
+            font-weight: 500;
         }
         
-        .section-title::after {
+        .highlight {
+            position: relative;
+            display: inline;
+        }
+        
+        .highlight::after {
             content: "";
             position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
             height: 3px;
             background: var(--accent);
             border-radius: 3px;
@@ -137,27 +149,37 @@
         /* Botones */
         .btn {
             display: inline-block;
-            background-color: var(--accent);
+            background-color: var(--primary);
             color: white;
-            padding: 15px 30px;
+            padding: 16px 32px;
             border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-weight: 600;
+            font-size: clamp(1rem, 2vw, 1.2rem);
             margin: 15px 0;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             position: relative;
             overflow: hidden;
-            border: none;
+            border: 2px solid rgba(255,255,255,0.5);
             cursor: pointer;
             animation: pulse 2s infinite;
-            border: 2px solid rgba(255,255,255,0.3);
+            letter-spacing: 0.5px;
         }
         
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            background-color: #5D3FD3;
+            border-color: rgba(255,255,255,0.8);
+        }
+        
+        .btn-accent {
+            background-color: var(--accent);
+            border-color: rgba(255,255,255,0.5);
+        }
+        
+        .btn-accent:hover {
             background-color: #7d3c98;
         }
         
@@ -169,7 +191,7 @@
         
         /* Secciones */
         section {
-            padding: 60px 0;
+            padding: 70px 0;
             position: relative;
         }
         
@@ -195,11 +217,16 @@
             overflow: hidden;
         }
         
+        .section-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
         .section-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            padding: 0 20px;
+            padding: 0 15px;
             position: relative;
             z-index: 2;
         }
@@ -209,40 +236,38 @@
             background: white;
             border-radius: 15px;
             padding: 30px;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            margin: 25px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             text-align: left;
         }
         
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
         }
         
         .card-dark {
-            background: rgba(0,0,0,0.2);
+            background: rgba(255,255,255,0.1);
             color: white;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
         }
         
         /* Problema Oculto */
         .problem-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
             margin: 40px 0;
         }
         
         .problem-card {
-            flex: 1;
-            min-width: 250px;
             background: white;
             border-radius: 15px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -258,64 +283,78 @@
         }
         
         .problem-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
         
         .problem-card h3 {
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.3rem;
+            font-weight: 600;
         }
         
         /* Lista de días */
         .days-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
-            margin: 30px 0;
+            margin: 40px 0;
         }
         
         .day-card {
-            background: rgba(255,255,255,0.1);
-            border-radius: 10px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 12px;
             padding: 20px;
-            width: 150px;
             backdrop-filter: blur(5px);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.25);
+            transition: all 0.4s ease;
         }
         
         .day-card:hover {
             transform: scale(1.05);
-            background: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.25);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .day-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: white;
+        }
+        
+        .day-card p {
+            color: rgba(255,255,255,0.9);
+            font-size: 0.9rem;
         }
         
         /* Testimonio */
         .testimonial {
             font-style: italic;
-            font-size: 1.5rem;
-            margin: 40px 0;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            margin: 50px 0;
             position: relative;
             animation: float 6s ease-in-out infinite;
+            color: var(--text-dark);
+            font-weight: 500;
+            line-height: 1.5;
         }
         
         .testimonial::before, .testimonial::after {
             content: '"';
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             color: var(--accent);
-            opacity: 0.5;
+            opacity: 0.3;
             position: absolute;
         }
         
         .testimonial::before {
-            top: -20px;
+            top: -25px;
             left: -30px;
         }
         
         .testimonial::after {
-            bottom: -40px;
+            bottom: -50px;
             right: -30px;
         }
         
@@ -327,54 +366,71 @@
         
         /* Imágenes */
         .img-container {
-            margin: 30px auto;
+            margin: 40px auto;
             max-width: 500px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             position: relative;
+            transition: all 0.4s ease;
+        }
+        
+        .img-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
         
         .img-container img {
             width: 100%;
             display: block;
             transition: all 0.5s ease;
+            height: auto;
         }
         
         .img-container:hover img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
         
         /* Precio */
+        .price-container {
+            background: rgba(255,255,255,0.2);
+            padding: 10px 30px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
         .price {
-            font-size: 3rem;
-            font-weight: bold;
-            color: var(--accent);
-            margin: 20px 0;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            line-height: 1;
         }
         
         .bonus {
             background: rgba(255,255,255,0.2);
-            padding: 15px;
-            border-radius: 10px;
-            margin: 20px 0;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
             border-left: 5px solid var(--accent);
+            backdrop-filter: blur(5px);
         }
         
         /* Popup */
         .popup {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
             z-index: 1000;
             display: none;
             animation: slideIn 0.5s ease-out;
-            border-left: 4px solid var(--accent);
+            border-left: 5px solid var(--accent);
+            max-width: calc(100% - 60px);
         }
         
         .modal {
@@ -392,36 +448,43 @@
         
         .modal-content {
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 600px;
+            padding: 40px;
+            border-radius: 15px;
+            max-width: 700px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
         
         .modal-close {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 1.5rem;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8rem;
             cursor: pointer;
-            color: #666;
+            color: #999;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
         }
         
         @keyframes slideIn {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         
         .popup-close {
             position: absolute;
-            top: 5px;
-            right: 5px;
+            top: 8px;
+            right: 8px;
             background: none;
             border: none;
-            font-size: 1rem;
+            font-size: 1.2rem;
             cursor: pointer;
             color: #999;
         }
@@ -432,9 +495,9 @@
         }
         
         .popup-icon {
-            margin-right: 10px;
+            margin-right: 15px;
             color: var(--success);
-            font-size: 1.5rem;
+            font-size: 2rem;
         }
         
         /* Footer */
@@ -442,19 +505,37 @@
             background-color: var(--dark);
             color: white;
             text-align: center;
-            padding: 30px 0;
-            font-size: 0.9rem;
+            padding: 40px 0;
+            font-size: 1rem;
         }
         
         footer a {
-            color: var(--accent);
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
             cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
         }
         
         footer a:hover {
-            text-decoration: underline;
+            color: var(--accent);
+        }
+        
+        footer a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+        
+        footer a:hover::after {
+            width: 100%;
         }
         
         /* Efectos de aparición */
@@ -482,45 +563,47 @@
         
         /* Responsive */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .container {
+                padding: 0 15px;
             }
             
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .btn {
-                padding: 12px 25px;
-                font-size: 1rem;
-            }
-            
-            section {
+            header {
                 padding: 40px 0;
             }
             
-            .problem-card {
-                min-width: 100%;
+            section {
+                padding: 50px 0;
             }
             
-            .day-card {
-                width: 120px;
-                padding: 15px;
+            .section-content {
+                padding: 0 10px;
             }
             
-            .testimonial {
-                font-size: 1.2rem;
+            .problem-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .days-list {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
             
             .popup {
-                bottom: 10px;
-                right: 10px;
-                left: 10px;
-                width: calc(100% - 20px);
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                width: calc(100% - 40px);
+                padding: 15px;
+            }
+            
+            .testimonial::before {
+                top: -15px;
+                left: -15px;
+            }
+            
+            .testimonial::after {
+                bottom: -30px;
+                right: -15px;
             }
         }
     </style>
@@ -542,7 +625,7 @@
     <section class="section-light">
         <div class="container">
             <div class="section-content">
-                <h2 class="section-title" data-scroll="fadeIn">El problema oculto que nos desconecta</h2>
+                <h2 class="section-title" style="color: var(--primary);" data-scroll="fadeIn">El problema oculto que nos desconecta</h2>
                 
                 <div class="problem-container">
                     <div class="problem-card" data-scroll="fadeIn" data-scroll-delay="100">
@@ -569,17 +652,19 @@
         </div>
     </section>
 
-    <!-- Sección 3: Reframe + Power Shift -->
-    <section class="section-gradient">
+    <!-- Sección 3: Reframe + Power Shift - CON FONDO ESTRELLADO -->
+    <section class="section-universe">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
         <div class="container">
             <div class="section-content">
-                <h2 class="section-title" style="color: white; border-bottom: 3px solid var(--accent);" data-scroll="fadeIn">
-                    <span style="display: block; font-size: 3rem; margin-bottom: 10px;">✨</span>
+                <h2 class="section-title" data-scroll="fadeIn">
+                    <span style="display: block; font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 15px; color: var(--accent);">✨</span>
                     Tu intuición no se perdió.<br>
-                    <span style="font-weight: bold; text-decoration: underline;">Solo estaba silenciada.</span>
+                    <span class="highlight">Solo estaba silenciada</span>
                 </h2>
                 
-                <p data-scroll="fadeIn">Este Ebook es una guía para regresar a tu verdad más profunda.<br>
+                <p data-scroll="fadeIn" style="margin-bottom: 30px;">Este Ebook es una guía para regresar a tu verdad más profunda.<br>
                 7 días. 7 llaves para abrir la puerta interior:</p>
                 
                 <div class="days-list">
@@ -613,7 +698,7 @@
                     </div>
                 </div>
                 
-                <p data-scroll="fadeIn">Cada día incluye enseñanzas espirituales, prácticas concretas y ejercicios de integración.<br>
+                <p data-scroll="fadeIn" style="margin-top: 40px;">Cada día incluye enseñanzas espirituales, prácticas concretas y ejercicios de integración.<br>
                 Para que no solo entiendas… sino sientas.</p>
             </div>
         </div>
@@ -635,7 +720,7 @@
         </div>
     </section>
 
-    <!-- Sección 5: Future Pacing + Transformación - CON FONDO DE UNIVERSO -->
+    <!-- Sección 5: Future Pacing + Transformación -->
     <section class="section-universe">
         <div class="stars"></div>
         <div class="twinkling"></div>
@@ -645,28 +730,28 @@
                 
                 <div class="card card-dark" data-scroll="fadeIn">
                     <ul style="list-style-type: none;">
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Sabés cuándo decir sí y cuándo alejarte</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Sentís paz antes de tomar decisiones</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Reconocés las señales del cuerpo como mensajes sagrados</li>
-                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Actuás con certeza… sin miedo al error</li>
-                        <li style="padding: 10px 0;">✔️ Conectás con tu propósito más profundo</li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Sabés cuándo decir sí y cuándo alejarte</li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Sentís paz antes de tomar decisiones</li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Reconocés las señales del cuerpo como mensajes sagrados</li>
+                        <li style="padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Actuás con certeza… sin miedo al error</li>
+                        <li style="padding: 12px 0;">✔️ Conectás con tu propósito más profundo</li>
                     </ul>
                 </div>
                 
-                <p>Ya no buscás afuera lo que siempre estuvo adentro.<br>
+                <p style="margin-top: 30px;">Ya no buscás afuera lo que siempre estuvo adentro.<br>
                 Solo necesitás recordarlo.</p>
             </div>
         </div>
     </section>
 
-    <!-- Sección 6: CTA Final -->
-    <section id="cta" class="section-gradient">
+    <!-- Sección 6: CTA Final - Modificada -->
+    <section id="cta" class="section-cta">
         <div class="container">
             <div class="section-content" data-scroll="fadeIn">
                 <h2>Descargá ahora tu guía para reconectar con la voz de tu alma.</h2>
                 
                 <!-- Mockup del libro -->
-                <div class="img-container" style="max-width: 300px;" data-scroll="fadeIn">
+                <div class="img-container" style="max-width: 350px;" data-scroll="fadeIn">
                     <img src="moke.webp" alt="Mockup del libro Conecta con tu Intuición">
                 </div>
                 
@@ -675,11 +760,13 @@
                     <p>Guía Visual: Diferencia entre Ego e Intuición (valorado en $7)</p>
                 </div>
                 
-                <div class="price" data-scroll="fadeIn">$11</div>
+                <div class="price-container" data-scroll="fadeIn">
+                    <div class="price">$11</div>
+                </div>
                 
-                <a href="#" class="btn">👉 Sí, quiero reconectar con mi intuición</a>
+                <a href="#" class="btn btn-accent">👉 Sí, quiero reconectar con mi intuición</a>
                 
-                <p style="margin-top: 20px; font-size: 0.9rem;" data-scroll="fadeIn">
+                <p style="margin-top: 20px; font-size: 1rem; opacity: 0.9;" data-scroll="fadeIn">
                     <em>Este ebook no te da respuestas externas.<br>
                     Te enseña a encontrar las tuyas.<br>
                     Y eso… no tiene precio.</em>
@@ -707,10 +794,10 @@
             <span class="modal-close" onclick="closeModal('termsModal')">&times;</span>
             <h2>Términos y Condiciones</h2>
             <p>Al adquirir este producto aceptas los siguientes términos:</p>
-            <ul>
-                <li>Este es un producto digital que se entregará inmediatamente después del pago.</li>
-                <li>No se aceptan reembolsos una vez descargado el material.</li>
-                <li>El contenido es para uso personal y no puede ser redistribuido.</li>
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">Este es un producto digital que se entregará inmediatamente después del pago.</li>
+                <li style="margin-bottom: 10px;">No se aceptan reembolsos una vez descargado el material.</li>
+                <li style="margin-bottom: 10px;">El contenido es para uso personal y no puede ser redistribuido.</li>
                 <li>Nos reservamos el derecho de modificar estos términos cuando sea necesario.</li>
             </ul>
         </div>
@@ -721,10 +808,10 @@
             <span class="modal-close" onclick="closeModal('privacyModal')">&times;</span>
             <h2>Política de Privacidad</h2>
             <p>Respetamos tu privacidad y protegemos tus datos personales:</p>
-            <ul>
-                <li>La información que nos proporcionas solo se usa para procesar tu compra.</li>
-                <li>No compartimos tus datos con terceros sin tu consentimiento.</li>
-                <li>Utilizamos medidas de seguridad para proteger tu información.</li>
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li style="margin-bottom: 10px;">La información que nos proporcionas solo se usa para procesar tu compra.</li>
+                <li style="margin-bottom: 10px;">No compartimos tus datos con terceros sin tu consentimiento.</li>
+                <li style="margin-bottom: 10px;">Utilizamos medidas de seguridad para proteger tu información.</li>
                 <li>Puedes solicitar la eliminación de tus datos en cualquier momento.</li>
             </ul>
         </div>
@@ -732,7 +819,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Guillermo Valerio | Todos los derechos reservados</p>
+            <p style="margin-bottom: 20px;">© 2025 Guillermo Valerio | Todos los derechos reservados</p>
             <p>
                 <a onclick="openModal('termsModal')">Términos y Condiciones</a> | 
                 <a onclick="openModal('privacyModal')">Política de Privacidad</a>
@@ -802,7 +889,7 @@
                 const popup = document.getElementById('buyerPopup');
                 const buyerName = document.getElementById('buyerName');
                 
-                if (Math.random() > 0.7) { // 30% de probabilidad de mostrar
+                if (Math.random() > 0.5) { // 50% de probabilidad de mostrar
                     const randomName = buyerNames[Math.floor(Math.random() * buyerNames.length)];
                     buyerName.textContent = randomName;
                     popup.style.display = 'block';
@@ -812,12 +899,12 @@
                     }, 5000);
                 }
                 
-                // Mostrar cada 15-30 segundos
-                setTimeout(showRandomBuyer, Math.random() * 15000 + 15000);
+                // Mostrar cada 10-20 segundos
+                setTimeout(showRandomBuyer, Math.random() * 10000 + 10000);
             }
             
-            // Iniciar después de 10 segundos
-            setTimeout(showRandomBuyer, 10000);
+            // Iniciar después de 5 segundos
+            setTimeout(showRandomBuyer, 5000);
         });
         
         function closePopup() {

@@ -9,7 +9,7 @@
         :root {
             --primary: #6a5acd;
             --secondary: #9370db;
-            --accent: #ff7e5f;
+            --accent: #8e44ad;  /* Cambiado a morado más intenso */
             --light: #f8f9fa;
             --dark: #343a40;
             --success: #28a745;
@@ -152,11 +152,13 @@
             border: none;
             cursor: pointer;
             animation: pulse 2s infinite;
+            border: 2px solid rgba(255,255,255,0.3);
         }
         
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            background-color: #7d3c98;
         }
         
         @keyframes pulse {
@@ -185,11 +187,21 @@
             color: white;
         }
         
+        .section-universe {
+            background: #0F2027;
+            background: linear-gradient(180deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
         .section-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
             padding: 0 20px;
+            position: relative;
+            z-index: 2;
         }
         
         /* Tarjetas */
@@ -211,6 +223,7 @@
         .card-dark {
             background: rgba(0,0,0,0.2);
             color: white;
+            border: 1px solid rgba(255,255,255,0.1);
         }
         
         /* Problema Oculto */
@@ -622,8 +635,10 @@
         </div>
     </section>
 
-    <!-- Sección 5: Future Pacing + Transformación -->
-    <section class="section-dark">
+    <!-- Sección 5: Future Pacing + Transformación - CON FONDO DE UNIVERSO -->
+    <section class="section-universe">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
         <div class="container">
             <div class="section-content" data-scroll="fadeIn">
                 <h2>Imagina tu vida cuando vivís desde tu intuición…</h2>
@@ -650,8 +665,9 @@
             <div class="section-content" data-scroll="fadeIn">
                 <h2>Descargá ahora tu guía para reconectar con la voz de tu alma.</h2>
                 
+                <!-- Mockup del libro -->
                 <div class="img-container" style="max-width: 300px;" data-scroll="fadeIn">
-                    <img src="portada.webp" alt="Portada del libro Conecta con tu Intuición">
+                    <img src="moke.webp" alt="Mockup del libro Conecta con tu Intuición">
                 </div>
                 
                 <div class="bonus" data-scroll="fadeIn">

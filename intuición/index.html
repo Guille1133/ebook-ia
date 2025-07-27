@@ -1,1 +1,827 @@
-ddd
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conecta con tu Intuición en 7 Días</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a5acd;
+            --secondary: #9370db;
+            --accent: #ff7e5f;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header con fondo de universo */
+        header {
+            background: #0F2027;  /* Fallback */
+            background: linear-gradient(180deg, #0F2027 0%, #203A43 50%, #2C5364 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20px 30px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 40px 70px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 50px 160px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 90px 40px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 130px 80px, #fff, rgba(0,0,0,0)),
+                radial-gradient(2px 2px at 160px 120px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: starsAnimation 50s linear infinite;
+        }
+        
+        @keyframes starsAnimation {
+            from { transform: translateY(0); }
+            to { transform: translateY(-200px); }
+        }
+        
+        .twinkling {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(1px 1px at 25px 5px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 75px 25px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 125px 20px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 50px 75px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 15px 125px, #fff, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 110px 80px, #fff, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 150px 150px;
+            animation: twinklingAnimation 3s ease infinite;
+        }
+        
+        @keyframes twinklingAnimation {
+            0% { opacity: 0.2; }
+            50% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: var(--primary);
+            text-align: center;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Botones */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+            animation: pulse 2s infinite;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Secciones */
+        section {
+            padding: 60px 0;
+            position: relative;
+        }
+        
+        .section-dark {
+            background-color: var(--dark);
+            color: white;
+        }
+        
+        .section-light {
+            background-color: white;
+        }
+        
+        .section-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+        }
+        
+        .section-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        
+        /* Tarjetas */
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+        
+        .card-dark {
+            background: rgba(0,0,0,0.2);
+            color: white;
+        }
+        
+        /* Problema Oculto */
+        .problem-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .problem-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .problem-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--accent);
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .problem-card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        /* Lista de días */
+        .days-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .day-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            width: 150px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .day-card:hover {
+            transform: scale(1.05);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        /* Testimonio */
+        .testimonial {
+            font-style: italic;
+            font-size: 1.5rem;
+            margin: 40px 0;
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .testimonial::before, .testimonial::after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.5;
+            position: absolute;
+        }
+        
+        .testimonial::before {
+            top: -20px;
+            left: -30px;
+        }
+        
+        .testimonial::after {
+            bottom: -40px;
+            right: -30px;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        /* Imágenes */
+        .img-container {
+            margin: 30px auto;
+            max-width: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        
+        .img-container img {
+            width: 100%;
+            display: block;
+            transition: all 0.5s ease;
+        }
+        
+        .img-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Precio */
+        .price {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .bonus {
+            background: rgba(255,255,255,0.2);
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent);
+        }
+        
+        /* Popup */
+        .popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1000;
+            display: none;
+            animation: slideIn 0.5s ease-out;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .popup-content {
+            display: flex;
+            align-items: center;
+        }
+        
+        .popup-icon {
+            margin-right: 10px;
+            color: var(--success);
+            font-size: 1.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Efectos de aparición */
+        [data-scroll] {
+            opacity: 0;
+            transition: opacity 1s, transform 1s;
+        }
+        
+        [data-scroll="fadeIn"] {
+            transform: translateY(30px);
+        }
+        
+        [data-scroll="fadeInLeft"] {
+            transform: translateX(-30px);
+        }
+        
+        [data-scroll="fadeInRight"] {
+            transform: translateX(30px);
+        }
+        
+        [data-scroll].is-visible {
+            opacity: 1;
+            transform: translate(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 40px 0;
+            }
+            
+            .problem-card {
+                min-width: 100%;
+            }
+            
+            .day-card {
+                width: 120px;
+                padding: 15px;
+            }
+            
+            .testimonial {
+                font-size: 1.2rem;
+            }
+            
+            .popup {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sección 1: Hook + Hidden Truth -->
+    <header>
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+        <div class="container" data-scroll="fadeIn">
+            <h1>¿Y si la guía más sabia de tu vida no está afuera… sino dentro de ti?</h1>
+            <h2>Descubre el método espiritual y práctico para reconectar con tu intuición en solo 7 días.</h2>
+            <p>Silencia el ruido, siente la verdad, y deja que tu alma te muestre el camino.</p>
+            <a href="#cta" class="btn">👉 Quiero reconectar con mi intuición</a>
+        </div>
+    </header>
+
+    <!-- Sección 2: Dolor + Programación -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title" data-scroll="fadeIn">El problema oculto que nos desconecta</h2>
+                
+                <div class="problem-container">
+                    <div class="problem-card" data-scroll="fadeIn" data-scroll-delay="100">
+                        <h3>Desconexión desde niños</h3>
+                        <p>Nos enseñaron a ignorar esa voz interior, a dudar de nuestras corazonadas y a buscar respuestas solo en lo externo.</p>
+                    </div>
+                    
+                    <div class="problem-card" data-scroll="fadeIn" data-scroll-delay="200">
+                        <h3>Decisiones vacías</h3>
+                        <p>Tomas decisiones con la mente racional que tu alma no aprueba, generando conflicto interno y desalineación.</p>
+                    </div>
+                    
+                    <div class="problem-card" data-scroll="fadeIn" data-scroll-delay="300">
+                        <h3>Consecuencias</h3>
+                        <p>Esta desconexión se manifiesta en tu cuerpo, tus relaciones y tu camino, creando malestar y falta de propósito.</p>
+                    </div>
+                </div>
+                
+                <div class="card" style="background: #f9f4ff; border-left: 5px solid var(--accent);" data-scroll="fadeIn">
+                    <h3 style="color: var(--primary);">La buena noticia</h3>
+                    <p>No es tu culpa. Fuiste programado para desconectarte, pero <strong>puedes reaprender a escuchar</strong> tu voz interior. La intuición es como un músculo que puede fortalecerse con la práctica correcta.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 3: Reframe + Power Shift -->
+    <section class="section-gradient">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title" style="color: white; border-bottom: 3px solid var(--accent);" data-scroll="fadeIn">
+                    <span style="display: block; font-size: 3rem; margin-bottom: 10px;">✨</span>
+                    Tu intuición no se perdió.<br>
+                    <span style="font-weight: bold; text-decoration: underline;">Solo estaba silenciada.</span>
+                </h2>
+                
+                <p data-scroll="fadeIn">Este Ebook es una guía para regresar a tu verdad más profunda.<br>
+                7 días. 7 llaves para abrir la puerta interior:</p>
+                
+                <div class="days-list">
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="100">
+                        <h3>Día 1</h3>
+                        <p>Silencio</p>
+                    </div>
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="200">
+                        <h3>Día 2</h3>
+                        <p>Cuerpo</p>
+                    </div>
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="300">
+                        <h3>Día 3</h3>
+                        <p>Energía</p>
+                    </div>
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="400">
+                        <h3>Día 4</h3>
+                        <p>Escucha</p>
+                    </div>
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="500">
+                        <h3>Día 5</h3>
+                        <p>Verdad sentida</p>
+                    </div>
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="600">
+                        <h3>Día 6</h3>
+                        <p>Acción alineada</p>
+                    </div>
+                    <div class="day-card" data-scroll="fadeIn" data-scroll-delay="700">
+                        <h3>Día 7</h3>
+                        <p>Canal divino</p>
+                    </div>
+                </div>
+                
+                <p data-scroll="fadeIn">Cada día incluye enseñanzas espirituales, prácticas concretas y ejercicios de integración.<br>
+                Para que no solo entiendas… sino sientas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 4: Micro Trance -->
+    <section class="section-light">
+        <div class="container">
+            <div class="section-content" data-scroll="fadeIn">
+                <div class="testimonial">
+                    En el silencio, escuché más que mil palabras.
+                </div>
+                
+                <!-- Portada del libro -->
+                <div class="img-container" data-scroll="fadeIn">
+                    <img src="portada.webp" alt="Portada del libro Conecta con tu Intuición">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 5: Future Pacing + Transformación -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-content" data-scroll="fadeIn">
+                <h2>Imagina tu vida cuando vivís desde tu intuición…</h2>
+                
+                <div class="card card-dark" data-scroll="fadeIn">
+                    <ul style="list-style-type: none;">
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Sabés cuándo decir sí y cuándo alejarte</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Sentís paz antes de tomar decisiones</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Reconocés las señales del cuerpo como mensajes sagrados</li>
+                        <li style="padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.1);">✔️ Actuás con certeza… sin miedo al error</li>
+                        <li style="padding: 10px 0;">✔️ Conectás con tu propósito más profundo</li>
+                    </ul>
+                </div>
+                
+                <p>Ya no buscás afuera lo que siempre estuvo adentro.<br>
+                Solo necesitás recordarlo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección 6: CTA Final -->
+    <section id="cta" class="section-gradient">
+        <div class="container">
+            <div class="section-content" data-scroll="fadeIn">
+                <h2>Descargá ahora tu guía para reconectar con la voz de tu alma.</h2>
+                
+                <div class="img-container" style="max-width: 300px;" data-scroll="fadeIn">
+                    <img src="portada.webp" alt="Portada del libro Conecta con tu Intuición">
+                </div>
+                
+                <div class="bonus" data-scroll="fadeIn">
+                    <h3>🎁 Bonus Especial:</h3>
+                    <p>Guía Visual: Diferencia entre Ego e Intuición (valorado en $7)</p>
+                </div>
+                
+                <div class="price" data-scroll="fadeIn">$11</div>
+                
+                <a href="#" class="btn">👉 Sí, quiero reconectar con mi intuición</a>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem;" data-scroll="fadeIn">
+                    <em>Este ebook no te da respuestas externas.<br>
+                    Te enseña a encontrar las tuyas.<br>
+                    Y eso… no tiene precio.</em>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popup de compradores -->
+    <div class="popup" id="buyerPopup">
+        <button class="popup-close" onclick="closePopup()">×</button>
+        <div class="popup-content">
+            <div class="popup-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div>
+                <p><strong id="buyerName"></strong> acaba de adquirir la guía</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modales para Términos y Privacidad -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('termsModal')">&times;</span>
+            <h2>Términos y Condiciones</h2>
+            <p>Al adquirir este producto aceptas los siguientes términos:</p>
+            <ul>
+                <li>Este es un producto digital que se entregará inmediatamente después del pago.</li>
+                <li>No se aceptan reembolsos una vez descargado el material.</li>
+                <li>El contenido es para uso personal y no puede ser redistribuido.</li>
+                <li>Nos reservamos el derecho de modificar estos términos cuando sea necesario.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('privacyModal')">&times;</span>
+            <h2>Política de Privacidad</h2>
+            <p>Respetamos tu privacidad y protegemos tus datos personales:</p>
+            <ul>
+                <li>La información que nos proporcionas solo se usa para procesar tu compra.</li>
+                <li>No compartimos tus datos con terceros sin tu consentimiento.</li>
+                <li>Utilizamos medidas de seguridad para proteger tu información.</li>
+                <li>Puedes solicitar la eliminación de tus datos en cualquier momento.</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Guillermo Valerio | Todos los derechos reservados</p>
+            <p>
+                <a onclick="openModal('termsModal')">Términos y Condiciones</a> | 
+                <a onclick="openModal('privacyModal')">Política de Privacidad</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para animaciones al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollElements = document.querySelectorAll('[data-scroll]');
+            
+            const elementInView = (el, dividend = 1) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend
+                );
+            };
+            
+            const elementOutofView = (el) => {
+                const elementTop = el.getBoundingClientRect().top;
+                return (
+                    elementTop > (window.innerHeight || document.documentElement.clientHeight)
+                );
+            };
+            
+            const displayScrollElement = (element) => {
+                element.classList.add('is-visible');
+            };
+            
+            const hideScrollElement = (element) => {
+                element.classList.remove('is-visible');
+            };
+            
+            const handleScrollAnimation = () => {
+                scrollElements.forEach((el) => {
+                    if (elementInView(el, 1.25)) {
+                        displayScrollElement(el);
+                    } else if (elementOutofView(el)) {
+                        hideScrollElement(el);
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', () => {
+                handleScrollAnimation();
+            });
+            
+            // Mostrar elementos que ya están en pantalla al cargar
+            handleScrollAnimation();
+            
+            // Popup de compradores
+            const buyerNames = [
+                "María González",
+                "Carlos Rodríguez",
+                "Ana Martínez",
+                "Luis Fernández",
+                "Sofía López",
+                "Jorge Pérez",
+                "Elena Sánchez",
+                "Pedro Ramírez",
+                "Lucía Torres",
+                "Miguel Díaz"
+            ];
+            
+            function showRandomBuyer() {
+                const popup = document.getElementById('buyerPopup');
+                const buyerName = document.getElementById('buyerName');
+                
+                if (Math.random() > 0.7) { // 30% de probabilidad de mostrar
+                    const randomName = buyerNames[Math.floor(Math.random() * buyerNames.length)];
+                    buyerName.textContent = randomName;
+                    popup.style.display = 'block';
+                    
+                    setTimeout(() => {
+                        popup.style.display = 'none';
+                    }, 5000);
+                }
+                
+                // Mostrar cada 15-30 segundos
+                setTimeout(showRandomBuyer, Math.random() * 15000 + 15000);
+            }
+            
+            // Iniciar después de 10 segundos
+            setTimeout(showRandomBuyer, 10000);
+        });
+        
+        function closePopup() {
+            document.getElementById('buyerPopup').style.display = 'none';
+        }
+        
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'flex';
+        }
+        
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+        
+        // Cerrar modal al hacer clic fuera del contenido
+        window.onclick = function(event) {
+            if (event.target.className === 'modal') {
+                event.target.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

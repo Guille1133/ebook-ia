@@ -72,12 +72,12 @@
             box-shadow: 0 4px 15px rgba(90, 24, 154, 0.3);
             position: relative;
             overflow: hidden;
+            animation: pulse 2s infinite;
         }
         
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(90, 24, 154, 0.6);
-            animation: pulse 1.5s infinite;
         }
         
         .btn:active {
@@ -115,19 +115,34 @@
         
         @keyframes pulse {
             0% {
+                transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(90, 24, 154, 0.4);
             }
-            70% {
+            50% {
+                transform: scale(1.05);
                 box-shadow: 0 0 0 15px rgba(90, 24, 154, 0);
             }
             100% {
+                transform: scale(1);
                 box-shadow: 0 0 0 0 rgba(90, 24, 154, 0);
             }
         }
         
-        @keyframes zoomInOut {
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes pricePulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            50% { transform: scale(1.1); }
             100% { transform: scale(1); }
         }
         
@@ -156,12 +171,11 @@
         }
         
         .hero-image {
-            max-width: 400px;
+            max-width: 500px;
+            width: 90%;
             margin: 40px auto;
             display: block;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            background: transparent;
+            animation: float 4s ease-in-out infinite;
         }
         
         /* Pain Section */
@@ -250,12 +264,17 @@
         
         /* Offer Section */
         .offer {
-            background: radial-gradient(circle, var(--light-purple), white);
+            background: var(--deep-purple);
+            color: white;
             padding-bottom: 60px;
         }
         
         .offer h2 {
-            color: var(--dark-violet);
+            color: var(--soft-gold);
+        }
+        
+        .offer p {
+            color: var(--silver-white);
         }
         
         .price-container {
@@ -263,16 +282,17 @@
         }
         
         .price-text {
-            font-size: 1.2rem;
-            color: var(--dark-violet);
+            font-size: 1.5rem;
+            color: var(--silver-white);
             margin-bottom: 5px;
         }
         
         .price-amount {
-            font-size: 2.2rem;
+            font-size: 3rem;
             font-weight: 700;
-            color: var(--deep-purple);
+            color: var(--soft-gold);
             display: inline-block;
+            animation: pricePulse 2s infinite;
         }
         
         .bonus {
@@ -334,10 +354,15 @@
             text-align: center;
             margin-top: 40px;
             padding: 20px 0;
+            background: black;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
         }
         
         .legal-links a {
-            color: var(--light-purple);
+            color: var(--silver-white);
             text-decoration: none;
             margin: 0 10px;
             font-size: 0.9rem;
@@ -345,7 +370,7 @@
         }
         
         .legal-links a:hover {
-            color: var(--deep-purple);
+            color: var(--soft-gold);
             text-decoration: underline;
         }
         
@@ -467,11 +492,11 @@
             }
             
             .price-text {
-                font-size: 1.1rem;
+                font-size: 1.3rem;
             }
             
             .price-amount {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
             
             .trance p {
@@ -497,6 +522,7 @@
             .legal-links {
                 display: flex;
                 flex-direction: column;
+                max-width: 90%;
             }
             
             .legal-links a {
@@ -505,6 +531,14 @@
             
             .trance p {
                 font-size: 1.1rem;
+            }
+            
+            .price-text {
+                font-size: 1.2rem;
+            }
+            
+            .price-amount {
+                font-size: 2rem;
             }
         }
     </style>

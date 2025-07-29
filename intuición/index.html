@@ -32,6 +32,7 @@
             line-height: 1.6;
             background-color: var(--soft-white);
             overflow-x: hidden;
+            width: 100%;
         }
         
         h1, h2, h3, h4 {
@@ -45,11 +46,14 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         
         section {
             padding: 80px 0;
             position: relative;
+            width: 100%;
+            overflow: hidden;
         }
         
         .btn {
@@ -121,15 +125,15 @@
             }
         }
         
-        @keyframes priceAnimation {
+        @keyframes zoomInOut {
             0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            50% { transform: scale(1.02); }
             100% { transform: scale(1); }
         }
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(30, 27, 46, 0.9), rgba(30, 27, 46, 0.9));
+            background: linear-gradient(rgba(30, 27, 46, 0.9), rgba(30, 27, 46, 0.9)), url('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=1471&auto=format&fit=crop') center/cover no-repeat;
             color: white;
             padding: 120px 0;
             text-align: center;
@@ -157,6 +161,7 @@
             display: block;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            background: transparent;
         }
         
         /* Pain Section */
@@ -236,32 +241,38 @@
         }
         
         .trance p {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             max-width: 700px;
-            margin: 0 auto 20px;
+            margin: 0 auto 25px;
             font-style: italic;
+            animation: zoomInOut 6s infinite;
         }
         
         /* Offer Section */
         .offer {
             background: radial-gradient(circle, var(--light-purple), white);
+            padding-bottom: 60px;
         }
         
         .offer h2 {
             color: var(--dark-violet);
         }
         
-        .price {
-            font-size: 2.5rem;
+        .price-container {
+            margin: 30px 0;
+        }
+        
+        .price-text {
+            font-size: 1.2rem;
+            color: var(--dark-violet);
+            margin-bottom: 5px;
+        }
+        
+        .price-amount {
+            font-size: 2.2rem;
             font-weight: 700;
-            color: white;
-            margin: 20px 0;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(45deg, var(--deep-purple), var(--light-purple));
+            color: var(--deep-purple);
             display: inline-block;
-            padding: 10px 30px;
-            border-radius: 50px;
-            animation: priceAnimation 2s infinite;
         }
         
         .bonus {
@@ -277,6 +288,7 @@
             background: linear-gradient(rgba(30, 27, 46, 0.9), rgba(30, 27, 46, 0.9)), url('https://images.unsplash.com/photo-1534447677768-be436bb09401?q=80&w=1494&auto=format&fit=crop') center/cover no-repeat;
             color: white;
             text-align: center;
+            padding-bottom: 100px;
         }
         
         .closing h2 {
@@ -315,6 +327,59 @@
             padding: 20px 50px;
             font-size: 1.3rem;
             margin-top: 40px;
+        }
+        
+        /* Legal Links */
+        .legal-links {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+        
+        .legal-links a {
+            color: var(--light-purple);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        
+        .legal-links a:hover {
+            color: var(--deep-purple);
+            text-decoration: underline;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 30px;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 10px;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--deep-purple);
         }
         
         /* Popup Styles */
@@ -369,6 +434,10 @@
                 padding: 60px 0;
             }
             
+            .hero {
+                padding: 80px 0;
+            }
+            
             .hero h1 {
                 font-size: 1.8rem;
             }
@@ -379,6 +448,8 @@
             
             .day-card {
                 width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
             }
             
             .highlight {
@@ -394,21 +465,46 @@
                 padding: 15px 30px;
                 font-size: 1.1rem;
             }
+            
+            .price-text {
+                font-size: 1.1rem;
+            }
+            
+            .price-amount {
+                font-size: 1.8rem;
+            }
+            
+            .trance p {
+                font-size: 1.2rem;
+            }
         }
         
         @media (max-width: 480px) {
-            .hero {
-                padding: 80px 0;
-            }
-            
             .hero h1 {
                 font-size: 1.6rem;
+            }
+            
+            .hero-image {
+                max-width: 300px;
             }
             
             .purchase-popup {
                 max-width: 200px;
                 right: 10px;
                 bottom: 10px;
+            }
+            
+            .legal-links {
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .legal-links a {
+                margin: 5px 0;
+            }
+            
+            .trance p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -419,7 +515,7 @@
         <div class="container">
             <h1>¿Y si la voz más sabia… ya estuviera dentro de ti?</h1>
             <p>Conecta con tu intuición en solo 7 días<br>Silencia el ruido. Escucha a tu alma.<br>Siente cómo algo dentro de ti... ya comienza a recordar.</p>
-            <img src="iluminada.webp" alt="Persona meditando con luz interior" class="hero-image">
+            <img src="iluminada.png" alt="Persona meditando con luz interior" class="hero-image">
             <a href="#offer" class="btn">Sí, quiero escuchar mi intuición divina</a>
         </div>
     </section>
@@ -477,12 +573,7 @@
                 </div>
             </div>
             
-            <div class="bonus">
-                <h3>🎁 Bonus Incluido</h3>
-                <p><strong>Guía Visual "Ego vs Intuición"</strong> (valorada en $7)<br>Para que puedas identificar en segundos desde dónde estás decidiendo.</p>
-            </div>
-            
-            <img src="portada.webp" alt="Mockup del ebook" class="ebook-mockup">
+            <img src="portada.webp" alt="Portada del ebook" class="ebook-mockup">
         </div>
     </section>
     
@@ -508,14 +599,15 @@
             <p>En solo 7 días vas a reconectar con tu intuición y empezar a vivir desde adentro.</p>
             
             <div class="bonus">
-                <p><strong>Recibirás de regalo una guía visual exclusiva:</strong><br>"Ego vs Intuición" (valorada en $7)<br>Para que puedas identificar en segundos desde dónde estás eligiendo.</p>
+                <p><strong>Guía Visual "Ego vs Intuición"</strong><br>Para que puedas identificar en segundos desde dónde estás eligiendo.</p>
             </div>
             
-            <div class="price">Todo por solo $11 USD</div>
+            <div class="price-container">
+                <div class="price-text">Todo por solo</div>
+                <div class="price-amount">$11 USD</div>
+            </div>
             
             <a href="#offer" class="btn btn-gold">Sí, quiero acceder a mi guía interior</a>
-            
-            <img src="portada.webp" alt="Dispositivos mostrando el ebook" class="ebook-mockup" style="max-width: 500px;">
         </div>
     </section>
     
@@ -538,10 +630,24 @@
         </div>
     </section>
     
+    <!-- Legal Links -->
+    <div class="legal-links">
+        <a href="#" id="terms-link">Términos y Condiciones</a>
+        <a href="#" id="privacy-link">Política de Privacidad</a>
+    </div>
+    
     <!-- Purchase Popup -->
     <div class="purchase-popup">
         <p><span class="name">María G.</span> acaba de adquirir su guía</p>
         <p class="time">Hace 2 minutos</p>
+    </div>
+    
+    <!-- Modal -->
+    <div id="legal-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-content"></div>
+        </div>
     </div>
     
     <script>
@@ -584,6 +690,79 @@
                     behavior: 'smooth'
                 });
             });
+        });
+        
+        // Modal para términos y condiciones
+        const modal = document.getElementById("legal-modal");
+        const termsLink = document.getElementById("terms-link");
+        const privacyLink = document.getElementById("privacy-link");
+        const closeModal = document.querySelector(".close-modal");
+        const modalContent = document.getElementById("modal-content");
+        
+        // Contenido de los términos y condiciones (simplificado)
+        const termsContent = `
+            <h2>Términos y Condiciones</h2>
+            <p><strong>Última actualización:</strong> ${new Date().toLocaleDateString()}</p>
+            
+            <h3>1. Uso del Producto</h3>
+            <p>El ebook "Conecta con tu Intuición en 7 Días" es un producto digital destinado a tu desarrollo personal. Al adquirirlo, aceptas usarlo de manera responsable.</p>
+            
+            <h3>2. Propiedad Intelectual</h3>
+            <p>Todo el contenido incluido en el ebook está protegido por derechos de autor. No está permitida su reproducción o distribución sin autorización.</p>
+            
+            <h3>3. Garantías</h3>
+            <p>Este producto se ofrece "tal cual". Los resultados pueden variar según el compromiso y aplicación de cada persona.</p>
+            
+            <h3>4. Reembolsos</h3>
+            <p>Ofrecemos reembolso dentro de los primeros 7 días si el producto no cumple con tus expectativas.</p>
+        `;
+        
+        // Contenido de la política de privacidad (simplificado)
+        const privacyContent = `
+            <h2>Política de Privacidad</h2>
+            <p><strong>Última actualización:</strong> ${new Date().toLocaleDateString()}</p>
+            
+            <h3>1. Información que Recopilamos</h3>
+            <p>Recopilamos información básica como nombre y correo electrónico para procesar tu compra y enviar el producto.</p>
+            
+            <h3>2. Uso de la Información</h3>
+            <p>Tu información personal se usa exclusivamente para procesar tu compra y enviarte actualizaciones sobre el producto.</p>
+            
+            <h3>3. Protección de Datos</h3>
+            <p>Implementamos medidas de seguridad para proteger tu información personal contra accesos no autorizados.</p>
+            
+            <h3>4. Cookies</h3>
+            <p>Nuestro sitio utiliza cookies para mejorar la experiencia de usuario. Puedes configurar tu navegador para rechazarlas.</p>
+        `;
+        
+        // Abrir modal para términos
+        termsLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            modalContent.innerHTML = termsContent;
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+        
+        // Abrir modal para política de privacidad
+        privacyLink.addEventListener("click", function(e) {
+            e.preventDefault();
+            modalContent.innerHTML = privacyContent;
+            modal.style.display = "block";
+            document.body.style.overflow = "hidden";
+        });
+        
+        // Cerrar modal
+        closeModal.addEventListener("click", function() {
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        });
+        
+        // Cerrar al hacer clic fuera del modal
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "auto";
+            }
         });
     </script>
 </body>

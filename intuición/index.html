@@ -350,28 +350,46 @@
         }
         
         /* Legal Links */
+        .legal-section {
+            background: #000;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
         .legal-links {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            background: black;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 10px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
         
         .legal-links a {
             color: var(--silver-white);
             text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.9rem;
-            transition: color 0.3s;
+            margin: 0 15px;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+            padding: 5px 0;
         }
         
         .legal-links a:hover {
             color: var(--soft-gold);
-            text-decoration: underline;
+        }
+        
+        .legal-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background: var(--soft-gold);
+            transition: width 0.3s;
+        }
+        
+        .legal-links a:hover:after {
+            width: 100%;
         }
         
         /* Modal */
@@ -388,14 +406,16 @@
         }
         
         .modal-content {
-            background: white;
+            background: #111;
+            color: white;
             margin: 5% auto;
             padding: 30px;
             max-width: 800px;
             width: 90%;
             border-radius: 10px;
-            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 30px rgba(0,0,0,0.5);
             position: relative;
+            border: 1px solid #333;
         }
         
         .close-modal {
@@ -404,7 +424,7 @@
             right: 25px;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--deep-purple);
+            color: var(--soft-gold);
         }
         
         /* Popup Styles */
@@ -510,7 +530,8 @@
             }
             
             .hero-image {
-                max-width: 300px;
+                max-width: 320px; /* Imagen más grande en móvil */
+                width: 95%;
             }
             
             .purchase-popup {
@@ -526,7 +547,8 @@
             }
             
             .legal-links a {
-                margin: 5px 0;
+                margin: 8px 0;
+                font-size: 1rem;
             }
             
             .trance p {
@@ -665,9 +687,11 @@
     </section>
     
     <!-- Legal Links -->
-    <div class="legal-links">
-        <a href="#" id="terms-link">Términos y Condiciones</a>
-        <a href="#" id="privacy-link">Política de Privacidad</a>
+    <div class="legal-section">
+        <div class="legal-links">
+            <a href="#" id="terms-link">Términos y Condiciones</a>
+            <a href="#" id="privacy-link">Política de Privacidad</a>
+        </div>
     </div>
     
     <!-- Purchase Popup -->

@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AION - Proceso de Transformación de Identidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-black: #0B0B0B;
+            --color-dark: #1A1A1A;
+            --color-gray: #2D2D2D;
+            --color-light-gray: #444444;
+            --color-white: #F5F5F5;
+            --color-red: #C1121F;
+            --color-red-dark: #A0101A;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--color-white);
+            background-color: var(--color-black);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            color: #CCCCCC;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-red);
+            margin: var(--spacing-md) auto;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-sm) 0;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-gray);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-white);
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--color-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: var(--spacing-xl);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #AAAAAA;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: var(--spacing-lg) auto;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 450px;
+            background-color: var(--color-dark);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .video-placeholder:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--color-black) 0%, var(--color-gray) 100%);
+            opacity: 0.5;
+        }
+
+        .video-play-btn {
+            width: 80px;
+            height: 80px;
+            background-color: var(--color-red);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-white);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+        }
+
+        .video-play-btn:hover {
+            background-color: var(--color-red-dark);
+            transform: scale(1.05);
+        }
+
+        .video-text {
+            margin-top: var(--spacing-md);
+            font-size: 1.2rem;
+            color: #AAAAAA;
+            z-index: 2;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-red);
+            color: var(--color-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1.2rem 3rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(193, 18, 31, 0.2);
+        }
+
+        .cta-subtext {
+            margin-top: var(--spacing-sm);
+            font-size: 1rem;
+            color: #888888;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Problem Section */
+        .problem {
+            background-color: var(--color-dark);
+        }
+
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* What is AION */
+        .what-is-aion {
+            background-color: var(--color-black);
+        }
+
+        .what-is-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .what-is-item {
+            padding: var(--spacing-md);
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .what-is-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .what-is-item h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .what-is-item h3 i {
+            margin-right: var(--spacing-sm);
+            color: var(--color-red);
+        }
+
+        /* For Whom */
+        .for-whom {
+            background-color: var(--color-dark);
+        }
+
+        .for-whom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .for-whom-column {
+            padding: var(--spacing-md);
+            background-color: var(--color-black);
+            border-radius: var(--border-radius);
+        }
+
+        .for-whom-column.yes {
+            border-top: 4px solid var(--color-red);
+        }
+
+        .for-whom-column.no {
+            border-top: 4px solid var(--color-light-gray);
+        }
+
+        .for-whom-column ul {
+            list-style: none;
+        }
+
+        .for-whom-column li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+
+        .for-whom-column.yes li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-red);
+            font-weight: bold;
+        }
+
+        .for-whom-column.no li:before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--color-light-gray);
+            font-weight: bold;
+        }
+
+        /* Admission Session */
+        .admission {
+            background-color: var(--color-black);
+        }
+
+        .admission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .admission-points {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .admission-point {
+            flex: 1;
+            min-width: 250px;
+            padding: var(--spacing-md);
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .admission-point i {
+            font-size: 2.5rem;
+            color: var(--color-red);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Founders */
+        .founders {
+            background-color: var(--color-dark);
+            text-align: center;
+        }
+
+        .founders-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--spacing-xl) 0;
+            text-align: center;
+            background-color: var(--color-black);
+        }
+
+        /* Footer */
+        footer {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--color-black);
+            border-top: 1px solid var(--color-gray);
+            text-align: center;
+            color: #888888;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.8rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding-top: calc(var(--spacing-xl) + 70px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            section {
+                padding: var(--spacing-lg) 0;
+            }
+            
+            .video-placeholder {
+                height: 300px;
+            }
+            
+            .what-is-grid, .for-whom-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .video-placeholder {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="#" class="logo">A<span>ION</span></a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Salir del estancamiento no requiere más esfuerzo.<br>Requiere coherencia interna.</h1>
+                <h2>AION es un proceso de transformación de identidad para dejar de vivir en preocupación y avanzar sin autosabotaje.</h2>
+                
+                <div class="video-container">
+                    <div class="video-placeholder">
+                        <div class="video-play-btn">
+                            <i class="fas fa-play"></i>
+                        </div>
+                        <div class="video-text">Video de presentación AION</div>
+                    </div>
+                </div>
+                
+                <a href="#admission" class="cta-button">Agendar sesión de admisión</a>
+                <p class="cta-subtext">Si AION no es para ti, te lo diré con total honestidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <h2 class="section-title">Reencuadre del problema</h2>
+                <p>El estancamiento no es consecuencia de falta de capacidad, talento o recursos. Surge cuando vivimos desde una identidad fragmentada, donde nuestras creencias, acciones y valores no están alineados.</p>
+                <p>Incluso personas altamente conscientes y con logros notables pueden seguir estancadas cuando operan desde patrones internos que contradicen lo que dicen desear.</p>
+                <p>La solución no está en hacer más, sino en ser coherente con quien realmente quieres convertirte.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is AION -->
+    <section class="what-is-aion">
+        <div class="container">
+            <h2 class="section-title">¿Qué es AION?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-lg);">AION no es un curso, terapia tradicional ni motivación superficial. Es un proceso de transformación de identidad estructurado en 90 días.</p>
+            
+            <div class="what-is-grid">
+                <div class="what-is-item">
+                    <h3><i class="fas fa-times"></i> No es motivación</h3>
+                    <p>La motivación es temporal. AION trabaja en el nivel de identidad para crear cambios permanentes que perduran más allá del estado emocional del momento.</p>
+                </div>
+                
+                <div class="what-is-item">
+                    <h3><i class="fas fa-times"></i> No es un curso grabado</h3>
+                    <p>No recibirás contenido pasivo para consumir. Es acompañamiento real, personalizado y adaptado a tu situación específica.</p>
+                </div>
+                
+                <div class="what-is-item">
+                    <h3><i class="fas fa-check"></i> Es acompañamiento real</h3>
+                    <p>Trabajo directo y continuo para identificar y transformar los patrones que te mantienen estancado.</p>
+                </div>
+                
+                <div class="what-is-item">
+                    <h3><i class="fas fa-check"></i> Plan personalizado de 90 días</h3>
+                    <p>Una estructura clara y específica diseñada para tu contexto, objetivos y punto de partida único.</p>
+                </div>
+                
+                <div class="what-is-item">
+                    <h3><i class="fas fa-check"></i> Orden interno → identidad → acción</h3>
+                    <p>Primero establecemos coherencia interna, luego integramos una nueva identidad, y finalmente tomamos acciones alineadas con quien estás convirtiéndote.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Whom -->
+    <section class="for-whom">
+        <div class="container">
+            <h2 class="section-title">¿Para quién es AION?</h2>
+            
+            <div class="for-whom-grid">
+                <div class="for-whom-column yes">
+                    <h3>AION es para ti si:</h3>
+                    <ul>
+                        <li>Te sentís estancado/a a pesar de tener capacidad y recursos</li>
+                        <li>Querés vivir con tranquilidad y claridad interna</li>
+                        <li>Estás dispuesto/a a sostener un proceso de transformación real</li>
+                        <li>Buscás coherencia, no atajos temporales</li>
+                        <li>Estás preparado/a para responsabilizarte de tu proceso</li>
+                    </ul>
+                </div>
+                
+                <div class="for-whom-column no">
+                    <h3>AION no es para ti si:</h3>
+                    <ul>
+                        <li>Buscás soluciones rápidas y mágicas</li>
+                        <li>No querés responsabilizarte de tu transformación</li>
+                        <li>Solo querés información sin implementación</li>
+                        <li>Esperás que alguien más resuelva tus desafíos por ti</li>
+                        <li>No estás dispuesto/a a cuestionar patrones establecidos</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Session -->
+    <section class="admission" id="admission">
+        <div class="container">
+            <div class="admission-content">
+                <h2 class="section-title">Sesión de Admisión</h2>
+                <p>Esta conversación es el primer paso para determinar si AION es adecuado para ti. No es una llamada de venta agresiva, sino una evaluación honesta de compatibilidad.</p>
+                
+                <div class="admission-points">
+                    <div class="admission-point">
+                        <i class="fas fa-conversation"></i>
+                        <h3>Conversación honesta</h3>
+                        <p>Exploraremos tu situación actual, objetivos y desafíos específicos.</p>
+                    </div>
+                    
+                    <div class="admission-point">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Evaluación de compatibilidad</h3>
+                        <p>Determinaremos si AION puede generar el impacto que necesitas.</p>
+                    </div>
+                    
+                    <div class="admission-point">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Transparencia total</h3>
+                        <p>Si no encaja, te lo diré con total honestidad. No hay presión para continuar.</p>
+                    </div>
+                </div>
+                
+                <a href="#cta-final" class="cta-button">Agendar sesión de admisión</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders -->
+    <section class="founders">
+        <div class="container">
+            <div class="founders-content">
+                <h2 class="section-title">Miembros Fundadores</h2>
+                <p>Esta es la primera edición de AION como Grupo Fundador. El proceso está diseñado para un acompañamiento profundo y personalizado, por lo que los cupos son limitados.</p>
+                <p>AION no se abrirá siempre de esta forma. Esta edición fundadora establece las bases para futuras iteraciones, con un nivel de atención y personalización que no será replicable a mayor escala.</p>
+                <p>No utilizamos urgencia artificial ni contadores. Simplemente ofrecemos espacios limitados para quienes buscan una transformación real.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section" id="cta-final">
+        <div class="container">
+            <h2 style="margin-bottom: var(--spacing-lg);">El primer paso hacia la coherencia interna</h2>
+            <a href="#" class="cta-button">Agendar sesión de admisión</a>
+            <p class="cta-subtext" style="margin-top: var(--spacing-md);">Si AION no es para ti, te lo diré con total honestidad.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>AION - Proceso de Transformación de Identidad</p>
+            <p>© 2023 AION. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Video play button interaction
+        document.querySelector('.video-play-btn').addEventListener('click', function() {
+            alert("Este sería el reproductor de video VSL en una implementación real.");
+            // En una implementación real, aquí se insertaría el reproductor de video
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

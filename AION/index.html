@@ -17,6 +17,8 @@
             --color-white: #F5F5F5;
             --color-red: #C1121F;
             --color-red-dark: #A0101A;
+            --color-green: #10B981;
+            --color-green-dark: #0D9668;
             --spacing-xs: 0.5rem;
             --spacing-sm: 1rem;
             --spacing-md: 2rem;
@@ -111,6 +113,7 @@
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid var(--color-gray);
+            transition: var(--transition);
         }
 
         .header-content {
@@ -150,8 +153,8 @@
             margin-bottom: var(--spacing-md);
         }
 
-        .hero h2 {
-            font-size: 1.8rem;
+        .hero-subtitle {
+            font-size: 1.5rem;
             font-weight: 400;
             color: #AAAAAA;
             line-height: 1.5;
@@ -291,7 +294,14 @@
 
         .what-is-item h3 i {
             margin-right: var(--spacing-sm);
+        }
+
+        .what-is-item.no i {
             color: var(--color-red);
+        }
+
+        .what-is-item.yes i {
+            color: var(--color-green);
         }
 
         /* For Whom */
@@ -408,28 +418,36 @@
             font-size: 0.9rem;
         }
 
-        /* Responsive */
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
         @media (max-width: 992px) {
             h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             
             h2 {
                 font-size: 2rem;
             }
             
-            .hero {
-                padding-top: calc(var(--spacing-xl) + 70px);
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2rem;
+            .hero-subtitle {
+                font-size: 1.3rem;
             }
             
-            h2 {
-                font-size: 1.6rem;
+            .hero {
+                padding-top: calc(var(--spacing-xl) + 70px);
             }
             
             section {
@@ -437,11 +455,48 @@
             }
             
             .video-placeholder {
-                height: 300px;
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .video-placeholder {
+                height: 320px;
             }
             
             .what-is-grid, .for-whom-grid {
                 grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .admission-points {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .admission-point {
+                width: 100%;
+                max-width: 400px;
             }
         }
 
@@ -450,13 +505,75 @@
                 font-size: 1.8rem;
             }
             
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+            
             .cta-button {
                 padding: 1rem 2rem;
                 font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
             }
             
             .video-placeholder {
                 height: 250px;
+            }
+            
+            .video-play-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .video-text {
+                font-size: 1rem;
+            }
+            
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .what-is-item, .for-whom-column, .admission-point {
+                padding: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .video-placeholder {
+                height: 200px;
+            }
+            
+            .logo {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Mobile menu for very small screens */
+        @media (max-width: 350px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
             }
         }
     </style>
@@ -474,7 +591,7 @@
         <div class="container">
             <div class="hero-content">
                 <h1>Salir del estancamiento no requiere más esfuerzo.<br>Requiere coherencia interna.</h1>
-                <h2>AION es un proceso de transformación de identidad para dejar de vivir en preocupación y avanzar sin autosabotaje.</h2>
+                <div class="hero-subtitle">AION es un proceso de transformación de identidad para dejar de vivir en preocupación y avanzar sin autosabotaje.</div>
                 
                 <div class="video-container">
                     <div class="video-placeholder">
@@ -510,27 +627,27 @@
             <p style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-lg);">AION no es un curso, terapia tradicional ni motivación superficial. Es un proceso de transformación de identidad estructurado en 90 días.</p>
             
             <div class="what-is-grid">
-                <div class="what-is-item">
+                <div class="what-is-item no">
                     <h3><i class="fas fa-times"></i> No es motivación</h3>
                     <p>La motivación es temporal. AION trabaja en el nivel de identidad para crear cambios permanentes que perduran más allá del estado emocional del momento.</p>
                 </div>
                 
-                <div class="what-is-item">
+                <div class="what-is-item no">
                     <h3><i class="fas fa-times"></i> No es un curso grabado</h3>
                     <p>No recibirás contenido pasivo para consumir. Es acompañamiento real, personalizado y adaptado a tu situación específica.</p>
                 </div>
                 
-                <div class="what-is-item">
+                <div class="what-is-item yes">
                     <h3><i class="fas fa-check"></i> Es acompañamiento real</h3>
                     <p>Trabajo directo y continuo para identificar y transformar los patrones que te mantienen estancado.</p>
                 </div>
                 
-                <div class="what-is-item">
+                <div class="what-is-item yes">
                     <h3><i class="fas fa-check"></i> Plan personalizado de 90 días</h3>
                     <p>Una estructura clara y específica diseñada para tu contexto, objetivos y punto de partida único.</p>
                 </div>
                 
-                <div class="what-is-item">
+                <div class="what-is-item yes">
                     <h3><i class="fas fa-check"></i> Orden interno → identidad → acción</h3>
                     <p>Primero establecemos coherencia interna, luego integramos una nueva identidad, y finalmente tomamos acciones alineadas con quien estás convirtiéndote.</p>
                 </div>
@@ -578,7 +695,7 @@
                 
                 <div class="admission-points">
                     <div class="admission-point">
-                        <i class="fas fa-conversation"></i>
+                        <i class="fas fa-comments"></i>
                         <h3>Conversación honesta</h3>
                         <p>Exploraremos tu situación actual, objetivos y desafíos específicos.</p>
                     </div>
@@ -666,6 +783,23 @@
                 header.style.boxShadow = 'none';
             }
         });
+        
+        // Ajustar altura del hero en dispositivos móviles
+        function adjustHeroHeight() {
+            const hero = document.querySelector('.hero');
+            const viewportHeight = window.innerHeight;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            if (window.innerWidth <= 768) {
+                hero.style.minHeight = `${viewportHeight - headerHeight}px`;
+            } else {
+                hero.style.minHeight = '100vh';
+            }
+        }
+        
+        // Ejecutar al cargar y al redimensionar
+        window.addEventListener('load', adjustHeroHeight);
+        window.addEventListener('resize', adjustHeroHeight);
     </script>
 </body>
 </html>

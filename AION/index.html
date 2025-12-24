@@ -122,16 +122,17 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--color-white);
-            text-decoration: none;
-            letter-spacing: 1px;
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 50px;
         }
 
-        .logo span {
-            color: var(--color-red);
+        .logo-img {
+            height: 100%;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
         }
 
         /* Hero Section */
@@ -171,53 +172,21 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
         }
 
-        .video-placeholder {
-            width: 100%;
-            height: 450px;
-            background-color: var(--color-dark);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        .video-wrapper {
             position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: var(--color-dark);
         }
 
-        .video-placeholder:before {
-            content: '';
+        .video-wrapper iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, var(--color-black) 0%, var(--color-gray) 100%);
-            opacity: 0.5;
-        }
-
-        .video-play-btn {
-            width: 80px;
-            height: 80px;
-            background-color: var(--color-red);
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--color-white);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 2;
-        }
-
-        .video-play-btn:hover {
-            background-color: var(--color-red-dark);
-            transform: scale(1.05);
-        }
-
-        .video-text {
-            margin-top: var(--spacing-md);
-            font-size: 1.2rem;
-            color: #AAAAAA;
-            z-index: 2;
+            border: 0;
         }
 
         /* CTA Button */
@@ -454,8 +423,12 @@
                 padding: var(--spacing-lg) 0;
             }
             
-            .video-placeholder {
-                height: 400px;
+            .logo-container {
+                height: 45px;
+            }
+            
+            .logo-img {
+                max-width: 160px;
             }
         }
 
@@ -480,8 +453,12 @@
                 font-size: 1rem;
             }
             
-            .video-placeholder {
-                height: 320px;
+            .logo-container {
+                height: 40px;
+            }
+            
+            .logo-img {
+                max-width: 140px;
             }
             
             .what-is-grid, .for-whom-grid {
@@ -521,22 +498,16 @@
                 max-width: 300px;
             }
             
-            .video-placeholder {
-                height: 250px;
-            }
-            
-            .video-play-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .video-text {
-                font-size: 1rem;
-            }
-            
             .container {
                 padding: 0 var(--spacing-sm);
+            }
+            
+            .logo-container {
+                height: 35px;
+            }
+            
+            .logo-img {
+                max-width: 120px;
             }
             
             .what-is-item, .for-whom-column, .admission-point {
@@ -557,16 +528,15 @@
                 font-size: 1rem;
             }
             
-            .video-placeholder {
-                height: 200px;
+            .logo-container {
+                height: 30px;
             }
             
-            .logo {
-                font-size: 1.5rem;
+            .logo-img {
+                max-width: 100px;
             }
         }
 
-        /* Mobile menu for very small screens */
         @media (max-width: 350px) {
             .hero {
                 min-height: 90vh;
@@ -582,7 +552,10 @@
     <!-- Header -->
     <header>
         <div class="container header-content">
-            <a href="#" class="logo">A<span>ION</span></a>
+            <div class="logo-container">
+                <img src="https://raw.githubusercontent.com/tu-repositorio/logo/main/logo.webp" alt="AION Logo" class="logo-img" onerror="this.onerror=null; this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+                <span id="text-logo" style="display: none; font-size: 1.8rem; font-weight: 700; color: var(--color-white);">A<span style="color: var(--color-red);">ION</span></span>
+            </div>
         </div>
     </header>
 
@@ -594,15 +567,17 @@
                 <div class="hero-subtitle">AION es un proceso de transformación de identidad para dejar de vivir en preocupación y avanzar sin autosabotaje.</div>
                 
                 <div class="video-container">
-                    <div class="video-placeholder">
-                        <div class="video-play-btn">
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <div class="video-text">Video de presentación AION</div>
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/g7ZrgRc1nRE?rel=0&modestbranding=1&autoplay=0" 
+                                title="AION - Video de presentación" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
                 
-                <a href="#admission" class="cta-button">Agendar sesión de admisión</a>
+                <a href="https://calendly.com/gvalerio166/llamada-de-admision" target="_blank" class="cta-button">Agendar sesión de admisión</a>
                 <p class="cta-subtext">Si AION no es para ti, te lo diré con total honestidad.</p>
             </div>
         </div>
@@ -713,7 +688,7 @@
                     </div>
                 </div>
                 
-                <a href="#cta-final" class="cta-button">Agendar sesión de admisión</a>
+                <a href="https://calendly.com/gvalerio166/llamada-de-admision" target="_blank" class="cta-button">Agendar sesión de admisión</a>
             </div>
         </div>
     </section>
@@ -734,7 +709,7 @@
     <section class="cta-section" id="cta-final">
         <div class="container">
             <h2 style="margin-bottom: var(--spacing-lg);">El primer paso hacia la coherencia interna</h2>
-            <a href="#" class="cta-button">Agendar sesión de admisión</a>
+            <a href="https://calendly.com/gvalerio166/llamada-de-admision" target="_blank" class="cta-button">Agendar sesión de admisión</a>
             <p class="cta-subtext" style="margin-top: var(--spacing-md);">Si AION no es para ti, te lo diré con total honestidad.</p>
         </div>
     </section>
@@ -743,7 +718,7 @@
     <footer>
         <div class="container">
             <p>AION - Proceso de Transformación de Identidad</p>
-            <p>© 2023 AION. Todos los derechos reservados.</p>
+            <p>© 2025 AION. Todos los derechos reservados.</p>
         </div>
     </footer>
 
@@ -764,12 +739,6 @@
                     });
                 }
             });
-        });
-        
-        // Video play button interaction
-        document.querySelector('.video-play-btn').addEventListener('click', function() {
-            alert("Este sería el reproductor de video VSL en una implementación real.");
-            // En una implementación real, aquí se insertaría el reproductor de video
         });
         
         // Header background on scroll
@@ -797,8 +766,29 @@
             }
         }
         
+        // Cargar el logo desde el repositorio
+        function loadLogo() {
+            const logoImg = document.querySelector('.logo-img');
+            const textLogo = document.getElementById('text-logo');
+            
+            // Intentar cargar el logo desde el repositorio
+            // La URL en el src ya está configurada, pero si falla se mostrará el texto
+            logoImg.addEventListener('error', function() {
+                logoImg.style.display = 'none';
+                if (textLogo) textLogo.style.display = 'block';
+            });
+            
+            // Si se carga correctamente, asegurarse de que el texto esté oculto
+            logoImg.addEventListener('load', function() {
+                if (textLogo) textLogo.style.display = 'none';
+            });
+        }
+        
         // Ejecutar al cargar y al redimensionar
-        window.addEventListener('load', adjustHeroHeight);
+        window.addEventListener('load', function() {
+            adjustHeroHeight();
+            loadLogo();
+        });
         window.addEventListener('resize', adjustHeroHeight);
     </script>
 </body>

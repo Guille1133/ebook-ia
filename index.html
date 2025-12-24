@@ -3,558 +3,793 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domina la IA y Personalización en 2025 | Guía Definitiva</title>
-    <meta name="description" content="Aprende a automatizar y escalar tu negocio con IA. La guía más completa para 2025 con estrategias probadas de personalización masiva.">
+    <title>AION - Proceso de Transformación de Identidad</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --secondary: #f59e0b;
-            --dark: #1e293b;
-            --light: #f8fafc;
-            --success: #10b981;
+            --color-black: #0B0B0B;
+            --color-dark: #1A1A1A;
+            --color-gray: #2D2D2D;
+            --color-light-gray: #444444;
+            --color-white: #F5F5F5;
+            --color-red: #C1121F;
+            --color-red-dark: #A0101A;
+            --color-green: #10B981;
+            --color-green-dark: #0D9668;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
         }
-        
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: #f1f5f9;
-            color: var(--dark);
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
             line-height: 1.6;
+            color: var(--color-white);
+            background-color: var(--color-black);
+            overflow-x: hidden;
         }
-        
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            color: #CCCCCC;
+        }
+
         .container {
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 var(--spacing-md);
         }
-        
+
+        section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-red);
+            margin: var(--spacing-md) auto;
+        }
+
+        /* Header */
         header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            padding: 15px 0;
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-sm) 0;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-gray);
+            transition: var(--transition);
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 50px;
         }
-        
-        .logo span {
-            color: var(--secondary);
+
+        .logo-img {
+            height: 100%;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
         }
-        
+
+        /* Hero Section */
+        .hero {
+            padding-top: var(--spacing-xl);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #AAAAAA;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: var(--spacing-lg) auto;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: var(--color-dark);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CTA Button */
         .cta-button {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            background-color: var(--color-red);
+            color: var(--color-white);
+            font-size: 1.2rem;
             font-weight: 600;
+            padding: 1.2rem 3rem;
+            border-radius: var(--border-radius);
             text-decoration: none;
-            transition: all 0.3s ease;
-            text-align: center;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
-        
+
         .cta-button:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+            background-color: var(--color-red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(193, 18, 31, 0.2);
         }
-        
-        .hero {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            text-align: center;
+
+        .cta-subtext {
+            margin-top: var(--spacing-sm);
+            font-size: 1rem;
+            color: #888888;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            color: var(--dark);
+
+        /* Problem Section */
+        .problem {
+            background-color: var(--color-dark);
         }
-        
-        .hero h1 span {
-            color: var(--primary);
-        }
-        
-        .hero p {
-            font-size: 20px;
+
+        .problem-content {
             max-width: 800px;
-            margin: 0 auto 40px;
-            color: #475569;
-        }
-        
-        .hero-image {
-            max-width: 600px;
-            margin: 40px auto;
-            border-radius: 12px;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
-            border: 5px solid white;
-        }
-        
-        .hero-image img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-        }
-        
-        .price-container {
-            background: white;
-            display: inline-block;
-            padding: 20px 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .original-price {
-            text-decoration: line-through;
-            color: #64748b;
-            font-size: 24px;
-        }
-        
-        .current-price {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--primary);
-        }
-        
-        .bonus-alert {
-            background: var(--secondary);
-            color: white;
-            padding: 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        
-        section {
-            padding: 80px 0;
-        }
-        
-        .section-title {
+            margin: 0 auto;
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            font-weight: 800;
-            color: var(--dark);
         }
-        
-        .benefits-grid {
+
+        /* What is AION */
+        .what-is-aion {
+            background-color: var(--color-black);
+        }
+
+        .what-is-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
         }
-        
-        .benefit-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+
+        .what-is-item {
+            padding: var(--spacing-md);
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
         }
-        
-        .benefit-card:hover {
+
+        .what-is-item:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
         }
-        
-        .benefit-icon {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
+
+        .what-is-item h3 {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
         }
-        
-        .benefit-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--dark);
+
+        .what-is-item h3 i {
+            margin-right: var(--spacing-sm);
         }
-        
-        .testimonials {
-            background: var(--dark);
-            color: white;
+
+        .what-is-item.no i {
+            color: var(--color-red);
         }
-        
-        .testimonial-grid {
+
+        .what-is-item.yes i {
+            color: var(--color-green);
+        }
+
+        /* For Whom */
+        .for-whom {
+            background-color: var(--color-dark);
+        }
+
+        .for-whom-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
         }
-        
-        .testimonial-card {
-            background: #334155;
-            padding: 30px;
-            border-radius: 12px;
+
+        .for-whom-column {
+            padding: var(--spacing-md);
+            background-color: var(--color-black);
+            border-radius: var(--border-radius);
         }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
+
+        .for-whom-column.yes {
+            border-top: 4px solid var(--color-red);
         }
-        
-        .testimonial-author {
-            font-weight: 700;
+
+        .for-whom-column.no {
+            border-top: 4px solid var(--color-light-gray);
         }
-        
-        .author-role {
-            color: #94a3b8;
-            font-size: 14px;
+
+        .for-whom-column ul {
+            list-style: none;
         }
-        
-        .guarantee {
+
+        .for-whom-column li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+        }
+
+        .for-whom-column.yes li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--color-red);
+            font-weight: bold;
+        }
+
+        .for-whom-column.no li:before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--color-light-gray);
+            font-weight: bold;
+        }
+
+        /* Admission Session */
+        .admission {
+            background-color: var(--color-black);
+        }
+
+        .admission-content {
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
-            background: #ecfdf5;
-            padding: 40px;
-            border-radius: 12px;
+        }
+
+        .admission-points {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .admission-point {
+            flex: 1;
+            min-width: 250px;
+            padding: var(--spacing-md);
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+
+        .admission-point i {
+            font-size: 2.5rem;
+            color: var(--color-red);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Founders */
+        .founders {
+            background-color: var(--color-dark);
+            text-align: center;
+        }
+
+        .founders-content {
             max-width: 800px;
             margin: 0 auto;
         }
-        
-        .guarantee-icon {
-            font-size: 50px;
-            color: var(--success);
-            margin-bottom: 20px;
-        }
-        
-        .guarantee h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        .faq-item {
-            background: white;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        
-        .faq-question {
-            padding: 20px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-answer {
-            padding: 0 20px;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .faq-answer.active {
-            padding: 0 20px 20px;
-            max-height: 500px;
-        }
-        
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 40px 0;
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--spacing-xl) 0;
             text-align: center;
+            background-color: var(--color-black);
         }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
+
+        /* Footer */
+        footer {
+            padding: var(--spacing-lg) 0;
+            background-color: var(--color-black);
+            border-top: 1px solid var(--color-gray);
+            text-align: center;
+            color: #888888;
+            font-size: 0.9rem;
         }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
         }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding-top: calc(var(--spacing-xl) + 70px);
+            }
+            
+            section {
+                padding: var(--spacing-lg) 0;
+            }
+            
+            .logo-container {
+                height: 45px;
+            }
+            
+            .logo-img {
+                max-width: 160px;
+            }
         }
-        
+
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+            h1 {
+                font-size: 2rem;
             }
             
-            .hero p {
-                font-size: 18px;
+            h2 {
+                font-size: 1.8rem;
             }
             
-            .current-price {
-                font-size: 36px;
+            h3 {
+                font-size: 1.5rem;
             }
             
-            .section-title {
-                font-size: 28px;
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .logo-container {
+                height: 40px;
+            }
+            
+            .logo-img {
+                max-width: 140px;
+            }
+            
+            .what-is-grid, .for-whom-grid {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-md);
+            }
+            
+            .admission-points {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .admission-point {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .logo-container {
+                height: 35px;
+            }
+            
+            .logo-img {
+                max-width: 120px;
+            }
+            
+            .what-is-item, .for-whom-column, .admission-point {
+                padding: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo-container {
+                height: 30px;
+            }
+            
+            .logo-img {
+                max-width: 100px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container header-content">
-            <div class="logo">IA<span>Master</span></div>
-            <a href="https://pay.hotmart.com/I99629968M" target="_blank" class="cta-button">OBTENER AHORA</a>
-
+            <div class="logo-container">
+                <img src="logop.webp" alt="AION Logo" class="logo-img" onerror="this.onerror=null; this.style.display='none'; document.getElementById('text-logo').style.display='block';">
+                <span id="text-logo" style="display: none; font-size: 1.8rem; font-weight: 700; color: var(--color-white);">A<span style="color: var(--color-red);">ION</span></span>
+            </div>
         </div>
     </header>
-    
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>Domina la <span>Inteligencia Artificial</span> y la <span>Personalización</span></h1>
-            <p>La guía definitiva para automatizar y escalar tu negocio en 2025 con estrategias probadas de IA y marketing hiper-personalizado.</p>
-            
-            <div class="hero-image">
-                <!-- Imagen de la carátula proporcionada -->
-                <img src="portada.jpg.png" alt="Domina la Inteligencia Artificial y la Personalización - La Guía Definitiva para Automatizar y Escalar en 2025">
+            <div class="hero-content">
+                <h1>Salir del estancamiento no requiere más esfuerzo.<br>Requiere coherencia interna.</h1>
+                <div class="hero-subtitle">AION es un proceso de transformación de identidad para dejar de vivir en preocupación y avanzar sin autosabotaje.</div>
+                
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.youtube.com/embed/g7ZrgRc1nRE?rel=0&modestbranding=1&autoplay=0" 
+                                title="AION - Video de presentación" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <a href="https://calendly.com/gvalerio166/llamada-de-admision" target="_blank" class="cta-button">Agendar sesión de admisión</a>
+                <p class="cta-subtext">Si AION no es para ti, te lo diré con total honestidad.</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="container">
+            <div class="problem-content">
+                <h2 class="section-title">Reencuadre del problema</h2>
+                <p>El estancamiento no es consecuencia de falta de capacidad, talento o recursos. Surge cuando vivimos desde una identidad fragmentada, donde nuestras creencias, acciones y valores no están alineados.</p>
+                <p>Incluso personas altamente conscientes y con logros notables pueden seguir estancadas cuando operan desde patrones internos que contradicen lo que dicen desear.</p>
+                <p>La solución no está en hacer más, sino en ser coherente con quien realmente quieres convertirte.</p>
             </div>
-            
-            <div class="price-container">
-                <div class="original-price">$27</div>
-                <div class="current-price">$12</div>
-                <div>Precio especial por tiempo limitado</div>
-            </div>
-            
-            <div class="bonus-alert">
-                ⏳ Oferta por tiempo limitado: Incluye bonos exclusivos de regalo
-            </div>
-            
-            <a href="https://pay.hotmart.com/I99629968M" target="_blank" class="cta-button" style="padding: 16px 32px; font-size: 18px;">QUIERO EL EBOOK AHORA</a>
+        </div>
+    </section>
 
-        </div>
-    </section>
-    
-    <section id="beneficios">
+    <!-- What is AION -->
+    <section class="what-is-aion">
         <div class="container">
-            <h2 class="section-title">¿Qué aprenderás en esta guía?</h2>
+            <h2 class="section-title">¿Qué es AION?</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto var(--spacing-lg);">AION no es un curso, terapia tradicional ni motivación superficial. Es un proceso de transformación de identidad estructurado en 90 días.</p>
             
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🤖</div>
-                    <h3>Automatización con IA</h3>
-                    <p>Descubre las herramientas más avanzadas de 2025 para automatizar procesos y ahorrar hasta 20 horas semanales en tareas repetitivas.</p>
+            <div class="what-is-grid">
+                <div class="what-is-item no">
+                    <h3><i class="fas fa-times"></i> No es motivación</h3>
+                    <p>La motivación es temporal. AION trabaja en el nivel de identidad para crear cambios permanentes que perduran más allá del estado emocional del momento.</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎯</div>
-                    <h3>Personalización Masiva</h3>
-                    <p>Técnicas probadas para crear experiencias ultra-personalizadas a escala que aumentan la conversión hasta un 300%.</p>
+                <div class="what-is-item no">
+                    <h3><i class="fas fa-times"></i> No es un curso grabado</h3>
+                    <p>No recibirás contenido pasivo para consumir. Es acompañamiento real, personalizado y adaptado a tu situación específica.</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">📈</div>
-                    <h3>Estrategias de Escalado</h3>
-                    <p>Flujos de trabajo optimizados para multiplicar tus resultados sin aumentar proporcionalmente tu esfuerzo o inversión.</p>
+                <div class="what-is-item yes">
+                    <h3><i class="fas fa-check"></i> Es acompañamiento real</h3>
+                    <p>Trabajo directo y continuo para identificar y transformar los patrones que te mantienen estancado.</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">🔮</div>
-                    <h3>Futuro del Marketing</h3>
-                    <p>Tendencias emergentes en IA que dominarán los próximos 5 años y cómo prepararte para capitalizarlas antes que la competencia.</p>
+                <div class="what-is-item yes">
+                    <h3><i class="fas fa-check"></i> Plan personalizado de 90 días</h3>
+                    <p>Una estructura clara y específica diseñada para tu contexto, objetivos y punto de partida único.</p>
                 </div>
                 
-                <div class="benefit-card">
-                    <div class="benefit-icon">🛠️</div>
-                    <h3>Plantillas y Recursos</h3>
-                    <p>Acceso inmediato a frameworks descargables para implementar lo aprendido desde el primer día.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">🚀</div>
-                    <h3>Implementación Rápida</h3>
-                    <p>Métodos paso a paso para aplicar lo aprendido en menos de 24 horas y comenzar a ver resultados.</p>
+                <div class="what-is-item yes">
+                    <h3><i class="fas fa-check"></i> Orden interno → identidad → acción</h3>
+                    <p>Primero establecemos coherencia interna, luego integramos una nueva identidad, y finalmente tomamos acciones alineadas con quien estás convirtiéndote.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title" style="color: white;">Lo que dicen nuestros lectores</h2>
-            
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Este ebook transformó completamente mi forma de hacer marketing. En 3 meses automatizé el 70% de mis procesos y aumenté mis ventas un 150%."</p>
-                    <p class="testimonial-author">María González</p>
-                    <p class="author-role">Emprendedora Digital</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Las estrategias de personalización masiva son un game-changer. Implementé solo el 30% de lo aprendido y ya he recuperado 10 veces la inversión."</p>
-                    <p class="testimonial-author">Carlos Mendoza</p>
-                    <p class="author-role">Consultor de Marketing</p>
-                </div>
-                
-                <div class="testimonial-card">
-                    <p class="testimonial-text">"Finalmente una guía que explica la IA de forma práctica y aplicable. Los frameworks incluidos me ahorraron meses de prueba y error."</p>
-                    <p class="testimonial-author">Ana López</p>
-                    <p class="author-role">Directora de E-commerce</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="bonus">
-        <div class="container">
-            <h2 class="section-title">Tus Bonos Exclusivos</h2>
-            
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎁</div>
-                    <h3>BONO #1: 50 Prompts Inteligentes para ChatGPT</h3>
-                    <p>Los más usados y efectivos, listos para aplicar según tu tipo de negocio. Ahorra horas de prueba y error con prompts probados que generan resultados.</p>
-                </div>
-                
-                <div class="benefit-card">
-                    <div class="benefit-icon">🎁</div>
-                    <h3>Bono #2: Directorio de Herramientas IA</h3>
-                    <p>Lista actualizada de las 150+ mejores herramientas de IA categorizadas por uso y con análisis de costo-beneficio.</p>
-                </div>
-            </div>
-            
-            <div class="bonus-alert" style="max-width: 100%; margin-top: 40px;">
-                🚀 Estos bonos son tuyos <strong>solo si compras hoy</strong>. Mañana esta oferta desaparece.
-            </div>
-        </div>
-    </section>
-    
-    <section id="oferta">
-        <div class="container">
-            <h2 class="section-title">Tu Transformación Comienza Hoy</h2>
-            
-            <div class="guarantee">
-                <div class="guarantee-icon">✅</div>
-                <h3>Garantía de 7 Días</h3>
-                <p>Si en 7 días no has obtenido al menos una idea que transforme tu negocio, te devolvemos cada centavo. Sin preguntas.</p>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <div class="price-container">
-                    <div class="original-price">$27</div>
-                    <div class="current-price">$12</div>
-                    <div>Precio especial por tiempo limitado</div>
-                </div>
-                
-                <a href="https://pay.hotmart.com/I99629968M" target="_blank" class="cta-button" style="padding: 16px 32px; font-size: 20px; margin: 30px auto; display: inline-block;">QUIERO ACCEDER AHORA</a>
 
-                
-                <p style="max-width: 600px; margin: 0 auto;"><small>Pago 100% seguro procesado por Hotmart. Acceso inmediato al ebook y los bonos luego de completar tu compra.</small></p>
-                
-                <img src="https://hotmart.s3.amazonaws.com/payments/logos/logo-hotmart.svg" alt="Pago seguro con Hotmart" style="margin-top: 20px; height: 50px;">
-<p style="margin-top: 10px; color: #475569; font-size: 14px;">Plataforma confiable utilizada por millones de creadores en todo el mundo.</p>
-            </div>
-        </div>
-    </section>
-    
-    <section id="faq">
+    <!-- For Whom -->
+    <section class="for-whom">
         <div class="container">
-            <h2 class="section-title">Preguntas Frecuentes</h2>
+            <h2 class="section-title">¿Para quién es AION?</h2>
             
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Cómo recibiré el ebook y los bonos?</span>
-                    <span>+</span>
+            <div class="for-whom-grid">
+                <div class="for-whom-column yes">
+                    <h3>AION es para ti si:</h3>
+                    <ul>
+                        <li>Te sentís estancado/a a pesar de tener capacidad y recursos</li>
+                        <li>Querés vivir con tranquilidad y claridad interna</li>
+                        <li>Estás dispuesto/a a sostener un proceso de transformación real</li>
+                        <li>Buscás coherencia, no atajos temporales</li>
+                        <li>Estás preparado/a para responsabilizarte de tu proceso</li>
+                    </ul>
                 </div>
-                <div class="faq-answer">
-                    <p>Inmediatamente después de tu compra recibirás un email con los enlaces para descargar el ebook en los formatos PDF, EPUB y MOBI, además de acceso a los bonos en tu área de miembros privada.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Necesito conocimientos técnicos avanzados?</span>
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>No. El libro está diseñado para emprendedores y marketers sin necesidad de conocimientos técnicos. Todas las herramientas y procesos se explican paso a paso.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿El precio es un pago único o recurrente?</span>
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Es un único pago. No hay suscripciones ni cargos recurrentes. Obtienes acceso permanente a todos los materiales.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Qué pasa si no estoy satisfecho?</span>
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Tienes 7 días para solicitar un reembolso completo sin necesidad de justificación. Tu satisfacción está 100% garantizada.</p>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <div class="faq-question">
-                    <span>¿Los prompts de ChatGPT son fáciles de usar?</span>
-                    <span>+</span>
-                </div>
-                <div class="faq-answer">
-                    <p>Sí, los 50 prompts incluidos en el bono están organizados por categorías de negocio y listos para copiar y pegar. Cada uno incluye instrucciones claras para maximizar sus resultados.</p>
+                
+                <div class="for-whom-column no">
+                    <h3>AION no es para ti si:</h3>
+                    <ul>
+                        <li>Buscás soluciones rápidas y mágicas</li>
+                        <li>No querés responsabilizarte de tu transformación</li>
+                        <li>Solo querés información sin implementación</li>
+                        <li>Esperás que alguien más resuelva tus desafíos por ti</li>
+                        <li>No estás dispuesto/a a cuestionar patrones establecidos</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Admission Session -->
+    <section class="admission" id="admission">
+        <div class="container">
+            <div class="admission-content">
+                <h2 class="section-title">Sesión de Admisión</h2>
+                <p>Esta conversación es el primer paso para determinar si AION es adecuado para ti. No es una llamada de venta agresiva, sino una evaluación honesta de compatibilidad.</p>
+                
+                <div class="admission-points">
+                    <div class="admission-point">
+                        <i class="fas fa-comments"></i>
+                        <h3>Conversación honesta</h3>
+                        <p>Exploraremos tu situación actual, objetivos y desafíos específicos.</p>
+                    </div>
+                    
+                    <div class="admission-point">
+                        <i class="fas fa-clipboard-check"></i>
+                        <h3>Evaluación de compatibilidad</h3>
+                        <p>Determinaremos si AION puede generar el impacto que necesitas.</p>
+                    </div>
+                    
+                    <div class="admission-point">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Transparencia total</h3>
+                        <p>Si no encaja, te lo diré con total honestidad. No hay presión para continuar.</p>
+                    </div>
+                </div>
+                
+                <a href="https://calendly.com/gvalerio166/llamada-de-admision" target="_blank" class="cta-button">Agendar sesión de admisión</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders -->
+    <section class="founders">
+        <div class="container">
+            <div class="founders-content">
+                <h2 class="section-title">Miembros Fundadores</h2>
+                <p>Esta es la primera edición de AION como Grupo Fundador. El proceso está diseñado para un acompañamiento profundo y personalizado, por lo que los cupos son limitados.</p>
+                <p>AION no se abrirá siempre de esta forma. Esta edición fundadora establece las bases para futuras iteraciones, con un nivel de atención y personalización que no será replicable a mayor escala.</p>
+                <p>No utilizamos urgencia artificial ni contadores. Simplemente ofrecemos espacios limitados para quienes buscan una transformación real.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="cta-section" id="cta-final">
+        <div class="container">
+            <h2 style="margin-bottom: var(--spacing-lg);">El primer paso hacia la coherencia interna</h2>
+            <a href="https://calendly.com/gvalerio166/llamada-de-admision" target="_blank" class="cta-button">Agendar sesión de admisión</a>
+            <p class="cta-subtext" style="margin-top: var(--spacing-md);">Si AION no es para ti, te lo diré con total honestidad.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="logo" style="color: white; margin-bottom: 20px;">IA<span>Master</span></div>
-            <p>© 2025 Domina la IA y Personalización. Todos los derechos reservados.</p>
-            <div class="footer-links">
-                <a href="#">Términos de Servicio</a>
-                <a href="#">Política de Privacidad</a>
-                <a href="#">Contacto</a>
-            </div>
+            <p>AION - Proceso de Transformación de Identidad</p>
+            <p>© 2025 AION. Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script>
-        // Script para los acordeones de FAQ
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.classList.toggle('active');
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
                 
-                const icon = question.querySelector('span:last-child');
-                if (answer.classList.contains('active')) {
-                    icon.textContent = '-';
-                } else {
-                    icon.textContent = '+';
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Ajustar altura del hero en dispositivos móviles
+        function adjustHeroHeight() {
+            const hero = document.querySelector('.hero');
+            const viewportHeight = window.innerHeight;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            if (window.innerWidth <= 768) {
+                hero.style.minHeight = `${viewportHeight - headerHeight}px`;
+            } else {
+                hero.style.minHeight = '100vh';
+            }
+        }
+        
+        // Cargar el logo desde el repositorio
+        function loadLogo() {
+            const logoImg = document.querySelector('.logo-img');
+            const textLogo = document.getElementById('text-logo');
+            
+            // Intentar cargar el logo desde el repositorio
+            // La URL en el src ya está configurada, pero si falla se mostrará el texto
+            logoImg.addEventListener('error', function() {
+                logoImg.style.display = 'none';
+                if (textLogo) textLogo.style.display = 'block';
+            });
+            
+            // Si se carga correctamente, asegurarse de que el texto esté oculto
+            logoImg.addEventListener('load', function() {
+                if (textLogo) textLogo.style.display = 'none';
+            });
+        }
+        
+        // Ejecutar al cargar y al redimensionar
+        window.addEventListener('load', function() {
+            adjustHeroHeight();
+            loadLogo();
+        });
+        window.addEventListener('resize', adjustHeroHeight);
     </script>
 </body>
 </html>

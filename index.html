@@ -221,6 +221,47 @@
             margin-right: auto;
         }
 
+        /* Highlighter animation style */
+        .highlight-text {
+            position: relative;
+            display: inline-block;
+            color: var(--color-white);
+            z-index: 1;
+        }
+
+        .highlight-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-red);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: highlightAnimation 2s ease-in-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0.7;
+            border-radius: 2px;
+        }
+
+        .highlight-text span {
+            position: relative;
+            z-index: 2;
+            color: var(--color-white);
+            transition: color 0.3s ease;
+        }
+
+        @keyframes highlightAnimation {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
         /* Problem Section */
         .problem {
             background-color: var(--color-dark);
@@ -430,6 +471,10 @@
             .logo-img {
                 max-width: 160px;
             }
+            
+            .highlight-text::before {
+                border-radius: 2px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -475,6 +520,10 @@
                 width: 100%;
                 max-width: 400px;
             }
+            
+            .highlight-text::before {
+                border-radius: 2px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -513,6 +562,10 @@
             .what-is-item, .for-whom-column, .admission-point {
                 padding: var(--spacing-sm);
             }
+            
+            .highlight-text::before {
+                border-radius: 1px;
+            }
         }
 
         @media (max-width: 400px) {
@@ -534,6 +587,10 @@
             
             .logo-img {
                 max-width: 100px;
+            }
+            
+            .highlight-text::before {
+                border-radius: 1px;
             }
         }
 
@@ -563,7 +620,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Salir del estancamiento no requiere más esfuerzo.<br>Requiere coherencia interna.</h1>
+                <h1>Salir del estancamiento no requiere más esfuerzo.<br>Requiere <span class="highlight-text"><span>coherencia interna.</span></span></h1>
                 <div class="hero-subtitle"> Resumen de la clase del 22/12 "El Punto de Quiebre" 👇🏻</div>
                 
                 <div class="video-container">
@@ -784,10 +841,50 @@
             });
         }
         
+        // Reiniciar animación al hacer hover
+        function resetHighlightAnimation() {
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                // Remover la animación
+                highlightElement.style.animation = 'none';
+                
+                // Forzar un reflow para reiniciar la animación
+                void highlightElement.offsetWidth;
+                
+                // Reactivar la animación
+                setTimeout(() => {
+                    highlightElement.style.animation = '';
+                }, 10);
+            }
+        }
+        
+        // Añadir efecto de pulsación continua
+        function setupContinuousHighlight() {
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                // Reiniciar la animación cada 6 segundos
+                setInterval(() => {
+                    resetHighlightAnimation();
+                }, 6000);
+                
+                // También reiniciar al hacer hover
+                highlightElement.addEventListener('mouseenter', resetHighlightAnimation);
+            }
+        }
+        
         // Ejecutar al cargar y al redimensionar
         window.addEventListener('load', function() {
             adjustHeroHeight();
             loadLogo();
+            setupContinuousHighlight();
+            
+            // Iniciar la animación después de un breve retraso
+            setTimeout(() => {
+                const highlightElement = document.querySelector('.highlight-text');
+                if (highlightElement) {
+                    highlightElement.style.animationPlayState = 'running';
+                }
+            }, 100);
         });
         window.addEventListener('resize', adjustHeroHeight);
     </script>

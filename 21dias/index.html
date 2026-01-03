@@ -5,320 +5,606 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cómo No Empezar el 2026 - 21 días para dejar de procrastinar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* RESET Y ESTILOS BASE */
+        /* RESET Y ESTILOS BASE 2026 */
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #3b82f6;
+            --secondary: #10b981;
+            --secondary-dark: #059669;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --gray-light: #e2e8f0;
+            --gradient: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-xl: 40px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
         }
         
         body {
-            color: #333;
-            background-color: #f9f9f9;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
             line-height: 1.6;
+            font-weight: 400;
+            overflow-x: hidden;
         }
         
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
         
         section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
         
-        h1, h2, h3 {
+        h1, h2, h3, h4 {
             font-weight: 700;
             line-height: 1.2;
-            margin-bottom: 20px;
+            margin-bottom: 1.5rem;
         }
         
         h1 {
-            font-size: 2.5rem;
-            color: #1a5276;
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
         }
         
         h2 {
-            font-size: 2rem;
-            color: #2874a6;
+            font-size: 2.5rem;
+            color: var(--dark);
+            letter-spacing: -0.01em;
         }
         
         h3 {
             font-size: 1.5rem;
-            color: #2c3e50;
+            color: var(--dark);
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            color: var(--dark-light);
         }
         
         p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            color: var(--gray);
+            line-height: 1.7;
         }
         
-        ul, ol {
-            padding-left: 20px;
-            margin-bottom: 20px;
+        .lead {
+            font-size: 1.375rem;
+            font-weight: 500;
+            color: var(--dark-light);
         }
         
-        li {
-            margin-bottom: 10px;
+        .text-center {
+            text-align: center;
         }
         
-        /* BOTONES */
+        .mb-1 { margin-bottom: 0.5rem; }
+        .mb-2 { margin-bottom: 1rem; }
+        .mb-3 { margin-bottom: 1.5rem; }
+        .mb-4 { margin-bottom: 2rem; }
+        .mb-5 { margin-bottom: 3rem; }
+        
+        .mt-1 { margin-top: 0.5rem; }
+        .mt-2 { margin-top: 1rem; }
+        .mt-3 { margin-top: 1.5rem; }
+        .mt-4 { margin-top: 2rem; }
+        .mt-5 { margin-top: 3rem; }
+        
+        /* BOTONES PREMIUM 2026 */
         .btn {
-            display: inline-block;
-            background-color: #28a745;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
             color: white;
             padding: 18px 40px;
-            font-size: 1.3rem;
+            font-size: 1.125rem;
             font-weight: 600;
             text-decoration: none;
-            border-radius: 50px;
+            border-radius: var(--radius-xl);
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: var(--transition);
             text-align: center;
-            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            gap: 10px;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            max-width: 400px;
-            margin: 0 auto;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+            z-index: -1;
+            opacity: 0;
+            transition: var(--transition);
+            border-radius: var(--radius-xl);
         }
         
         .btn:hover {
-            background-color: #218838;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.3);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
         }
         
-        .btn-secondary {
-            background-color: #2874a6;
-            box-shadow: 0 4px 15px rgba(40, 116, 166, 0.2);
+        .btn:hover::before {
+            opacity: 1;
         }
         
-        .btn-secondary:hover {
-            background-color: #1c5d87;
-            box-shadow: 0 6px 20px rgba(40, 116, 166, 0.3);
+        .btn-sm {
+            padding: 14px 28px;
+            font-size: 1rem;
         }
         
-        /* HERO SECTION */
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+        
+        .btn-outline::before {
+            background: var(--gradient);
+        }
+        
+        .btn-outline:hover {
+            color: white;
+        }
+        
+        /* HERO SECTION PREMIUM */
         .hero {
-            text-align: center;
-            padding-top: 40px;
-            padding-bottom: 40px;
-            background-color: #e8f4fc;
-            border-radius: 0 0 30px 30px;
+            padding: 100px 0 80px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            position: relative;
+            overflow: hidden;
         }
         
-        .subtitle {
-            font-size: 1.4rem;
-            color: #5d6d7e;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='300' cy='300' r='150'/%3E%3C/g%3E%3C/svg%3E");
+            z-index: 0;
         }
         
-        .price-badge {
-            display: inline-block;
-            background-color: #ffd700;
-            color: #333;
-            font-weight: 700;
-            font-size: 1.8rem;
-            padding: 10px 30px;
-            border-radius: 50px;
-            margin: 30px 0;
-            box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        .microcopy {
-            font-size: 0.9rem;
-            color: #5d6d7e;
-            margin-top: 20px;
-        }
-        
-        /* SECCIONES */
-        .section-alt {
-            background-color: white;
-            border-radius: 20px;
-            margin: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        
-        /* VIDEO */
-        .video-placeholder {
-            background-color: #e8f4fc;
-            border-radius: 15px;
-            padding: 60px 20px;
-            text-align: center;
-            margin: 40px 0;
-            border: 2px dashed #2874a6;
-        }
-        
-        .video-icon {
-            font-size: 3rem;
-            color: #2874a6;
-            margin-bottom: 20px;
-        }
-        
-        .video-note {
-            font-size: 0.9rem;
-            color: #7f8c8d;
-            margin-top: 15px;
-            font-style: italic;
-        }
-        
-        /* LISTA DE ENTREGABLES */
-        .deliverables-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 15px;
-        }
-        
-        .deliverable-item {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 5px solid #28a745;
-        }
-        
-        /* PRECIO Y GARANTÍA */
-        .pricing-box {
-            background: linear-gradient(135deg, #e8f4fc, #f0f8ff);
-            border-radius: 20px;
-            padding: 40px;
-            text-align: center;
-            margin: 40px 0;
-        }
-        
-        .price {
-            font-size: 3.5rem;
-            font-weight: 800;
-            color: #1a5276;
-            margin: 20px 0;
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--dark-light);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
         }
         
         .price-tag {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #1a5276;
-            margin: 20px 0;
+            display: inline-flex;
+            align-items: center;
+            background: var(--light);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.375rem;
+            padding: 14px 28px;
+            border-radius: var(--radius-xl);
+            margin: 2rem 0;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-light);
         }
         
-        .guarantee-box {
-            background-color: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            margin-top: 40px;
-            border: 2px solid #e9ecef;
+        .price-tag .currency {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-right: 4px;
         }
         
-        /* FAQ */
+        .price-tag .amount {
+            font-size: 1.875rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 8px;
+        }
+        
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .feature-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(37, 99, 235, 0.08);
+            color: var(--primary);
+            padding: 10px 20px;
+            border-radius: var(--radius-xl);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* VIDEO SECTION */
+        .video-section {
+            padding: 60px 0;
+        }
+        
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+        
+        .video-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .video-note {
+            font-size: 0.875rem;
+            color: var(--gray);
+            font-style: italic;
+            margin-top: 1rem;
+        }
+        
+        /* SECCIONES PREMIUM */
+        .section-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 60px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title .accent {
+            color: var(--primary);
+        }
+        
+        /* LISTA DE ENTREGABLES MODERNA */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 3rem;
+        }
+        
+        .deliverable-card {
+            background: var(--light);
+            padding: 28px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .deliverable-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-light);
+        }
+        
+        .deliverable-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient);
+        }
+        
+        .deliverable-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        /* PRICING SECTION PREMIUM */
+        .pricing-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: var(--radius-lg);
+            padding: 60px;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 1px solid var(--gray-light);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: var(--gradient);
+        }
+        
+        .price-display {
+            margin: 2.5rem 0;
+        }
+        
+        .price-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .price-label {
+            font-size: 1.125rem;
+            color: var(--gray);
+            font-weight: 500;
+        }
+        
+        .guarantee-card {
+            background: rgba(16, 185, 129, 0.08);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            margin-top: 3rem;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            text-align: left;
+        }
+        
+        .guarantee-icon {
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        /* FAQ MODERNO */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
         .faq-item {
-            border-bottom: 1px solid #e9ecef;
-            padding: 25px 0;
+            background: white;
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-light);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .faq-item:hover {
+            border-color: var(--primary-light);
+            box-shadow: var(--shadow-md);
         }
         
         .faq-question {
-            font-weight: 600;
-            font-size: 1.2rem;
-            color: #2c3e50;
-            cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 1.125rem;
         }
         
         .faq-answer {
-            padding-top: 15px;
+            padding-top: 1rem;
             display: none;
+            color: var(--gray);
+            line-height: 1.7;
         }
         
         .faq-answer.active {
             display: block;
+            animation: fadeIn 0.3s ease;
         }
         
-        /* FOOTER */
+        .faq-toggle {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        
+        /* FOOTER PREMIUM */
         footer {
-            background-color: #2c3e50;
+            background: var(--dark);
             color: white;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 60px;
+            padding: 60px 0 40px;
+            margin-top: 80px;
         }
         
-        /* RESPONSIVE */
-        @media (min-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-tagline {
+            color: #94a3b8;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        /* ANIMACIONES */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* RESPONSIVE DESIGN 2026 */
+        @media (max-width: 1024px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.25rem; }
+            .deliverables-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.375rem; }
+            .lead { font-size: 1.25rem; }
             
-            h2 {
-                font-size: 2.5rem;
-            }
+            section { padding: 60px 0; }
             
-            .deliverables-grid {
-                grid-template-columns: 1fr 1fr;
-            }
+            .section-card,
+            .pricing-card { padding: 40px 24px; }
             
-            .btn {
-                width: auto;
-                padding: 18px 50px;
-            }
+            .hero { padding: 80px 0 60px; }
             
-            .section-alt {
-                margin: 20px 0;
-            }
+            .hero::before { width: 100%; opacity: 0.1; }
+            
+            .price-number { font-size: 3.5rem; }
+            
+            .container { padding: 0 20px; }
         }
         
         @media (max-width: 480px) {
-            h1 {
-                font-size: 2rem;
-            }
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.875rem; }
             
-            h2 {
-                font-size: 1.7rem;
-            }
+            .btn { padding: 16px 32px; width: 100%; }
             
-            section {
-                padding: 40px 0;
-            }
+            .hero-features { flex-direction: column; align-items: center; }
             
-            .price {
-                font-size: 2.8rem;
-            }
+            .deliverables-grid { grid-template-columns: 1fr; }
+            
+            .price-tag { font-size: 1.25rem; padding: 12px 24px; }
+            .price-tag .amount { font-size: 1.625rem; }
+        }
+        
+        /* UTILITIES */
+        .highlight {
+            background: linear-gradient(120deg, rgba(37, 99, 235, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .emoji {
+            font-size: 1.5rem;
+            margin-right: 8px;
         }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION: Headline + CTA + Video -->
+    <!-- HERO SECTION PREMIUM -->
     <section class="hero">
         <div class="container">
-            <h1>CÓMO NO EMPEZAR EL 2026</h1>
-            <p class="subtitle">21 días para dejar de procrastinar y empezar a avanzar sin quemarte este nuevo año</p>
-            
-            <div class="price-badge">USD 25 · acceso completo</div>
-            
-            <a href="#compra" class="btn">EMPEZAR AHORA</a>
-            
-            <div class="microcopy">
-                <p>Acceso inmediato · Garantía de 7 días</p>
+            <div class="hero-content text-center">
+                <h1>CÓMO NO EMPEZAR EL 2026</h1>
+                <p class="hero-subtitle">21 días para dejar de procrastinar y empezar a avanzar sin quemarte este nuevo año</p>
+                
+                <div class="price-tag floating">
+                    <span class="currency">USD</span>
+                    <span class="amount">25</span>
+                    <span class="text">· acceso completo</span>
+                </div>
+                
+                <a href="#compra" class="btn mb-3">
+                    <span>EMPEZAR AHORA</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                
+                <div class="hero-features">
+                    <div class="feature-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Acceso inmediato</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Garantía de 7 días</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>21 días guiados</span>
+                    </div>
+                </div>
             </div>
-            
-            <div class="video-placeholder">
+        </div>
+    </section>
+    
+    <!-- VIDEO SECTION -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
                 <div class="video-icon">
                     <i class="fas fa-play-circle"></i>
                 </div>
                 <h3>Un mensaje corto antes de empezar</h3>
-                <p>Mira este breve video donde explico cómo funciona esta experiencia de 21 días</p>
-                <p class="video-note">(El video es opcional y no bloquea la compra, puedes continuar directamente si prefieres)</p>
+                <p class="lead">Mira este breve video donde explico cómo funciona esta experiencia de 21 días</p>
+                <div class="video-placeholder mt-4">
+                    <div style="background: linear-gradient(135deg, #2563eb20 0%, #10b98120 100%); border-radius: var(--radius-md); padding: 60px 20px; margin: 20px 0;">
+                        <i class="fas fa-play" style="font-size: 2rem; color: var(--primary);"></i>
+                    </div>
+                </div>
+                <p class="video-note">El video es opcional y no bloquea la compra, puedes continuar directamente si prefieres</p>
             </div>
         </div>
     </section>
@@ -326,16 +612,36 @@
     <!-- IDENTIFICACIÓN (dolor real) -->
     <section id="identificacion">
         <div class="container">
-            <div class="section-alt">
+            <div class="section-card">
                 <h2 class="section-title">¿Te sientes así cuando piensas en empezar algo nuevo?</h2>
-                <ul>
-                    <li><strong>Empiezas con toda la energía</strong> pero a los pocos días pierdes el impulso.</li>
-                    <li><strong>Te prometes "esta vez será diferente"</strong> y terminas en el mismo ciclo.</li>
-                    <li><strong>Pasas más tiempo planificando</strong> que realmente haciendo.</li>
-                    <li><strong>Te sientes abrumado</strong> incluso antes de comenzar.</li>
-                    <li><strong>Ves a otros avanzar</strong> mientras tú sigues en el mismo lugar.</li>
-                </ul>
-                <p style="text-align: center; margin-top: 30px; font-style: italic;">No estás solo. La procrastinación no es falta de voluntad, es falta de un sistema adecuado para personas como tú.</p>
+                
+                <div class="mt-4">
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-battery-quarter"></i>
+                        </div>
+                        <h4>Empiezas con energía... y se acaba rápido</h4>
+                        <p>Comienzas con toda la motivación pero a los pocos días pierdes el impulso y vuelves a la rutina.</p>
+                    </div>
+                    
+                    <div class="deliverable-card mt-3">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-history"></i>
+                        </div>
+                        <h4>La promesa de "esta vez será diferente"</h4>
+                        <p>Te juras a ti mismo que ahora sí, pero terminas en el mismo ciclo de inicio-abandono de siempre.</p>
+                    </div>
+                    
+                    <div class="deliverable-card mt-3">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <h4>Más tiempo planificando que haciendo</h4>
+                        <p>Pasas horas organizando, creando listas y sistemas... pero la acción real nunca llega.</p>
+                    </div>
+                </div>
+                
+                <p class="text-center mt-5 lead" style="font-style: italic;">No estás solo. La procrastinación no es falta de voluntad, es falta de un sistema adecuado para personas reales.</p>
             </div>
         </div>
     </section>
@@ -343,12 +649,18 @@
     <!-- REENCUADRE (quitar culpa) -->
     <section id="reencuadre">
         <div class="container">
-            <div class="section-alt">
-                <h2 class="section-title">Deja de culparte. No es tu fault.</h2>
-                <p>Durante años te han vendido la idea de que para lograr cosas necesitas "más disciplina", "más fuerza de voluntad" o "más motivación".</p>
-                <p><strong>La verdad es diferente:</strong> la procrastinación crónica es una respuesta natural cuando enfrentas algo que parece abrumador, incierto o demasiado grande.</p>
-                <p>No necesitas "más" de nada. Necesitas un <strong>enfoque diferente</strong>, diseñado específicamente para personas que han intentado muchas veces y sienten que nada funciona para ellas.</p>
-                <p>Este programa no te pedirá que te esfuerces más. Te dará un <strong>sistema simple</strong> para avanzar sin quemarte.</p>
+            <div class="section-card">
+                <h2 class="section-title">Deja de culparte. <span class="accent">No es tu fault.</span></h2>
+                
+                <p class="lead">Durante años te han vendido la idea de que para lograr cosas necesitas "más disciplina", "más fuerza de voluntad" o "más motivación".</p>
+                
+                <div class="mt-4">
+                    <p><span class="highlight">La verdad es diferente:</span> la procrastinación crónica es una respuesta natural cuando enfrentas algo que parece abrumador, incierto o demasiado grande.</p>
+                    
+                    <p>No necesitas "más" de nada. Necesitas un <span class="highlight">enfoque diferente</span>, diseñado específicamente para personas que han intentado muchas veces y sienten que nada funciona para ellas.</p>
+                    
+                    <p>Este programa <span class="highlight">no te pedirá que te esfuerces más</span>. Te dará un sistema simple para avanzar sin quemarte.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -356,12 +668,33 @@
     <!-- QUÉ ES -->
     <section id="que-es">
         <div class="container">
-            <div class="section-alt">
-                <h2 class="section-title">¿Qué es "Cómo No Empezar el 2026"?</h2>
-                <p>Es una <strong>experiencia guiada de 21 días</strong> diseñada específicamente para personas que han probado de todo para dejar de procrastinar y siguen estancadas.</p>
-                <p>No es un curso teórico. No es un challenge imposible. No es un programa espiritual.</p>
-                <p>Es un <strong>camino práctico y consciente</strong> para que dejes de posponer y empieces a avanzar en lo que realmente importa para ti, sin la presión de tener que "transformarte" de la noche a la mañana.</p>
-                <p>Aquí no encontrarás fórmulas mágicas, sino <strong>herramientas reales</strong> que puedes aplicar desde el primer día, incluso si hoy te sientes sin energía o desmotivado.</p>
+            <div class="section-card">
+                <h2 class="section-title">¿Qué es <span class="accent">"Cómo No Empezar el 2026"</span>?</h2>
+                
+                <div class="mt-4">
+                    <p>Es una <span class="highlight">experiencia guiada de 21 días</span> diseñada específicamente para personas que han probado de todo para dejar de procrastinar y siguen estancadas.</p>
+                    
+                    <div class="mt-4">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <i class="fas fa-times" style="color: #ef4444;"></i>
+                            <p style="margin-bottom: 0;">No es un curso teórico aburrido</p>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <i class="fas fa-times" style="color: #ef4444;"></i>
+                            <p style="margin-bottom: 0;">No es un challenge imposible</p>
+                        </div>
+                        
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                            <i class="fas fa-times" style="color: #ef4444;"></i>
+                            <p style="margin-bottom: 0;">No es un programa espiritual extremo</p>
+                        </div>
+                    </div>
+                    
+                    <p class="mt-4">Es un <span class="highlight">camino práctico y consciente</span> para que dejes de posponer y empieces a avanzar en lo que realmente importa para ti, sin la presión de tener que "transformarte" de la noche a la mañana.</p>
+                    
+                    <p>Aquí no encontrarás fórmulas mágicas, sino <span class="highlight">herramientas reales</span> que puedes aplicar desde el primer día, incluso si hoy te sientes sin energía o desmotivado.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -369,63 +702,96 @@
     <!-- QUÉ INCLUYE -->
     <section id="que-incluye">
         <div class="container">
-            <div class="section-alt">
-                <h2 class="section-title">¿Qué incluye esta experiencia?</h2>
-                <p>Todo lo que necesitas para dar el primer paso real hacia un 2026 diferente:</p>
+            <div class="section-card">
+                <h2 class="section-title">¿Qué incluye <span class="accent">esta experiencia</span>?</h2>
+                <p class="lead text-center">Todo lo que necesitas para dar el primer paso real hacia un 2026 diferente:</p>
                 
                 <div class="deliverables-grid">
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-users"></i> 4 Masterclass Grupales en Vivo</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>4 Masterclass Grupales en Vivo</h4>
                         <p>Sesiones prácticas donde resolveremos los obstáculos reales que enfrentas.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-calendar-alt"></i> Experiencia guiada de 21 días</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h4>Experiencia guiada de 21 días</h4>
                         <p>Un camino paso a paso, día a día, sin sobrecarga de información.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-play-circle"></i> Video de activación inmediata</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-play-circle"></i>
+                        </div>
+                        <h4>Video de activación inmediata</h4>
                         <p>Acceso inmediato para que empieces a notar cambios desde hoy.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-map-signs"></i> Guía de Inicio clara y simple</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-map-signs"></i>
+                        </div>
+                        <h4>Guía de Inicio clara y simple</h4>
                         <p>Instrucciones directas para comenzar sin confusiones ni rodeos.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fab fa-whatsapp"></i> Grupo privado de WhatsApp</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h4>Grupo privado de WhatsApp</h4>
                         <p>Con acompañamiento real, no solo un grupo abandonado.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-check-circle"></i> Ritual diario para dejar de procrastinar</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h4>Ritual diario para dejar de procrastinar</h4>
                         <p>Una práctica simple de menos de 10 minutos para cambiar tu día.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-headphones"></i> Audios de apoyo para foco y reinicio</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-headphones"></i>
+                        </div>
+                        <h4>Audios de apoyo para foco y reinicio</h4>
                         <p>Para esos momentos donde la mente se dispersa o te sientes bloqueado.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-tools"></i> Herramientas prácticas y accionables</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h4>Herramientas prácticas y accionables</h4>
                         <p>Técnicas específicas para situaciones específicas de procrastinación.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-fire-extinguisher"></i> Sistema simple para accionar sin quemarte</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-fire-extinguisher"></i>
+                        </div>
+                        <h4>Sistema simple para accionar sin quemarte</h4>
                         <p>El corazón del programa: cómo avanzar sin agotamiento.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-money-bill-wave"></i> Crédito / Cashback de USD 25</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <h4>Crédito / Cashback de USD 25</h4>
                         <p>Aplicable a futuros programas. Tu inversión de hoy queda asegurada.</p>
                     </div>
                     
-                    <div class="deliverable-item">
-                        <h3><i class="fas fa-trophy"></i> Cierre grupal + premios finales</h3>
+                    <div class="deliverable-card">
+                        <div class="deliverable-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h4>Cierre grupal + premios finales</h4>
                         <p>Celebramos juntos tus avances y te preparamos para seguir adelante.</p>
                     </div>
                 </div>
@@ -436,25 +802,40 @@
     <!-- PRECIO + GARANTÍA + CTA FINAL -->
     <section id="compra">
         <div class="container">
-            <div class="pricing-box">
+            <div class="pricing-card">
                 <h2 class="section-title">Invertí en no empezar el 2026 igual que siempre</h2>
-                <p>Por menos de lo que gastas en una salida a comer</p>
+                <p class="lead">Por menos de lo que gastas en una salida a comer</p>
                 
-                <div class="price">USD 25</div>
-                <div class="price-tag">acceso completo · una sola vez</div>
-                
-                <p><strong>Sin suscripciones ocultas. Sin pagos recurrentes.</strong></p>
-                
-                <a href="#compra" class="btn btn-secondary">EMPEZAR AHORA</a>
-                
-                <div class="microcopy">
-                    <p>Acceso inmediato · Garantía de 7 días</p>
+                <div class="price-display">
+                    <div class="price-number">USD 25</div>
+                    <div class="price-label">acceso completo · una sola vez</div>
                 </div>
                 
-                <div class="guarantee-box">
-                    <h3><i class="fas fa-shield-alt"></i> Garantía consciente de 7 días</h3>
+                <p><strong>Sin suscripciones ocultas. Sin pagos recurrentes. Sin riesgos.</strong></p>
+                
+                <a href="#compra" class="btn btn-lg mt-4">
+                    <span>EMPEZAR AHORA</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                
+                <div class="hero-features mt-4">
+                    <div class="feature-badge">
+                        <i class="fas fa-bolt"></i>
+                        <span>Acceso inmediato</span>
+                    </div>
+                    <div class="feature-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Garantía de 7 días</span>
+                    </div>
+                </div>
+                
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Garantía consciente de 7 días</h4>
                     <p>Entendemos que cada proceso es personal. Si dentro de los primeros 7 días sientes que esta experiencia no es para ti, te devolvemos el 100% de tu inversión, sin preguntas incómodas.</p>
-                    <p><em>No prometemos resultados mágicos, sino un espacio real para que pruebes si este enfoque resuena contigo.</em></p>
+                    <p class="mt-3"><em>No prometemos resultados mágicos, sino un espacio real para que pruebes si este enfoque resuena contigo.</em></p>
                 </div>
             </div>
         </div>
@@ -463,61 +844,66 @@
     <!-- FAQ -->
     <section id="faq">
         <div class="container">
-            <div class="section-alt">
-                <h2 class="section-title">Preguntas frecuentes</h2>
+            <div class="section-card">
+                <h2 class="section-title">Preguntas <span class="accent">frecuentes</span></h2>
                 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Cuándo empieza la experiencia?</span>
-                        <i class="fas fa-chevron-down"></i>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cuándo empieza la experiencia?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Comienza inmediatamente después de tu inscripción. Recibirás acceso al video de activación y la guía de inicio al instante. Las masterclasses en vivo se coordinarán según la disponibilidad del grupo.</p>
+                        </div>
                     </div>
-                    <div class="faq-answer">
-                        <p>Comienza inmediatamente después de tu inscripción. Recibirás acceso al video de activación y la guía de inicio al instante. Las masterclasses en vivo se coordinarán según la disponibilidad del grupo.</p>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Necesito mucho tiempo diario?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No. El ritual diario está diseñado para tomar menos de 10 minutos. Las herramientas y audios están pensados para integrarse naturalmente en tu día, sin agregar carga adicional.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Qué pasa si me atraso o falto algún día?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>La experiencia está diseñada con flexibilidad. Si te atrasas, simplemente retomas donde quedaste. No hay "expulsión" por no cumplir. El grupo de WhatsApp estará ahí para apoyarte cuando vuelvas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Es solo teoría o realmente es práctico?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Es 90% práctico. Cada día tendrás una acción concreta y simple para aplicar. Las masterclasses están enfocadas en resolver obstáculos reales, no en teoría sobre productividad.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Cómo uso el crédito de USD 25 para futuros programas?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Al finalizar la experiencia, recibirás un código de descuento por USD 25 que podrás aplicar a cualquier programa futuro. Es nuestra forma de reconocer tu compromiso con tu crecimiento.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Necesito mucho tiempo diario?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>No. El ritual diario está diseñado para tomar menos de 10 minutos. Las herramientas y audios están pensados para integrarse naturalmente en tu día, sin agregar carga adicional.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Qué pasa si me atraso o falto algún día?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>La experiencia está diseñada con flexibilidad. Si te atrasas, simplemente retomas donde quedaste. No hay "expulsión" por no cumplir. El grupo de WhatsApp estará ahí para apoyarte cuando vuelvas.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Es solo teoría o realmente es práctico?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Es 90% práctico. Cada día tendrás una acción concreta y simple para aplicar. Las masterclasses están enfocadas en resolver obstáculos reales, no en teoría sobre productividad.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>¿Cómo uso el crédito de USD 25 para futuros programas?</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Al finalizar la experiencia, recibirás un código de descuento por USD 25 que podrás aplicar a cualquier programa futuro. Es nuestra forma de reconocer tu compromiso con tu crecimiento.</p>
-                    </div>
-                </div>
-                
-                <div style="text-align: center; margin-top: 40px;">
-                    <a href="#compra" class="btn">EMPEZAR AHORA</a>
+                <div class="text-center mt-5">
+                    <a href="#compra" class="btn">
+                        <span>EMPEZAR AHORA POR USD 25</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -526,9 +912,11 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p><strong>Cómo No Empezar el 2026</strong></p>
-            <p>21 días para dejar de procrastinar y empezar a avanzar sin quemarte</p>
-            <p style="margin-top: 20px; font-size: 0.9rem;">© 2025 - Una experiencia consciente para personas reales</p>
+            <div class="footer-content">
+                <div class="footer-logo">Cómo No Empezar el 2026</div>
+                <p class="footer-tagline">21 días para dejar de procrastinar y empezar a avanzar sin quemarte</p>
+                <p style="color: #94a3b8; margin-top: 2rem; font-size: 0.875rem;">© 2025 - Una experiencia consciente para personas reales</p>
+            </div>
         </div>
     </footer>
     
@@ -537,16 +925,32 @@
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
+                const toggleIcon = question.querySelector('.faq-toggle');
+                
+                // Toggle current answer
                 answer.classList.toggle('active');
                 
-                const icon = question.querySelector('i');
+                // Rotate icon
                 if (answer.classList.contains('active')) {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
+                    toggleIcon.classList.remove('fa-chevron-down');
+                    toggleIcon.classList.add('fa-chevron-up');
                 } else {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
+                    toggleIcon.classList.remove('fa-chevron-up');
+                    toggleIcon.classList.add('fa-chevron-down');
                 }
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== question.parentElement) {
+                        const otherAnswer = item.querySelector('.faq-answer');
+                        const otherIcon = item.querySelector('.faq-toggle');
+                        if (otherAnswer.classList.contains('active')) {
+                            otherAnswer.classList.remove('active');
+                            otherIcon.classList.remove('fa-chevron-up');
+                            otherIcon.classList.add('fa-chevron-down');
+                        }
+                    }
+                });
             });
         });
         
@@ -561,10 +965,25 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 20,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+        
+        // Add floating animation to some elements
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add hover effects to deliverable cards
+            const cards = document.querySelectorAll('.deliverable-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-6px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
             });
         });
     </script>

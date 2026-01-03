@@ -1,1 +1,332 @@
-ff
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido/a - Tu proceso ya empezó</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* RESET Y ESTILOS BASE - MISMA PALETA QUE LA LANDING */
+        :root {
+            /* PALETA BASE - CONFIANZA */
+            --navy: #0B2A3C;           /* Títulos y texto principal */
+            --light-blue: #EAF4FF;     /* Fondos */
+            --action: #16A6A3;         /* CTA - ÚNICO COLOR DE BOTONES */
+            --action-dark: #128886;    /* Hover de botones */
+            
+            /* DISRUPCIÓN SEMÁNTICA - USO MUY LIMITADO */
+            --red: #C1121F;            /* SOLO en la palabra "NO" del título */
+            
+            /* TEXTO SECUNDARIO */
+            --gray-dark: #1F2937;      /* Texto secundario */
+            --gray-medium: #6B7280;    /* Texto terciario */
+            
+            /* NEUTROS */
+            --white: #ffffff;
+            --light-gray: #F9FAFB;
+            
+            /* UTILITARIOS */
+            --shadow-sm: 0 2px 8px rgba(11, 42, 60, 0.05);
+            --shadow-md: 0 4px 20px rgba(11, 42, 60, 0.08);
+            --shadow-lg: 0 10px 40px rgba(11, 42, 60, 0.12);
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-xl: 40px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--navy);
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
+            line-height: 1.6;
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        /* TÍTULO */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        h1 .welcome {
+            display: block;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gray-dark);
+        }
+        
+        /* TEXTO GENERAL */
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+            color: var(--gray-dark);
+            line-height: 1.7;
+        }
+        
+        .lead {
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+        }
+        
+        .emphasis {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .small-text {
+            font-size: 0.875rem;
+            color: var(--gray-medium);
+            margin-top: 2rem;
+        }
+        
+        /* VIDEO SECTION */
+        .video-container {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+            margin: 2.5rem 0;
+            text-align: center;
+            border: 1px solid rgba(11, 42, 60, 0.08);
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, rgba(22, 166, 163, 0.1) 0%, rgba(11, 42, 60, 0.05) 100%);
+            border-radius: var(--radius-md);
+            padding: 60px 20px;
+            margin: 20px 0 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        
+        .video-icon {
+            font-size: 3.5rem;
+            color: var(--action);
+            margin-bottom: 1.5rem;
+        }
+        
+        .video-note {
+            font-size: 1rem;
+            color: var(--gray-medium);
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+        
+        /* BOTÓN - ÚNICO CTA */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--action);
+            color: var(--white);
+            padding: 20px 40px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: var(--radius-xl);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            margin: 2.5rem 0;
+            width: 100%;
+            max-width: 400px;
+            gap: 12px;
+        }
+        
+        .btn:hover {
+            background-color: var(--action-dark);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .whatsapp-icon {
+            font-size: 1.5rem;
+        }
+        
+        /* INSTRUCCIONES */
+        .instructions {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(22, 166, 163, 0.05);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--action);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h1 .welcome {
+                font-size: 1.75rem;
+            }
+            
+            .lead {
+                font-size: 1.125rem;
+            }
+            
+            .video-container {
+                padding: 30px 20px;
+            }
+            
+            .video-placeholder {
+                min-height: 250px;
+                padding: 40px 20px;
+            }
+            
+            .btn {
+                padding: 18px 32px;
+                font-size: 1.125rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.75rem;
+            }
+            
+            h1 .welcome {
+                font-size: 1.5rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .video-container {
+                padding: 25px 15px;
+            }
+            
+            .video-placeholder {
+                min-height: 200px;
+                padding: 30px 15px;
+            }
+        }
+        
+        /* ANIMACIONES SUAVES */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .container {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .video-container {
+            animation: fadeIn 0.8s ease-out 0.2s both;
+        }
+        
+        .btn-container {
+            animation: fadeIn 0.8s ease-out 0.4s both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- TÍTULO -->
+        <h1>
+            <span class="welcome">Bienvenido / Bienvenida.</span>
+            Tu proceso ya empezó.
+        </h1>
+        
+        <p class="lead">Antes de seguir, mirá este mensaje corto.</p>
+        
+        <!-- VIDEO PROTAGONISTA -->
+        <div class="video-container">
+            <div class="video-icon">
+                <i class="fas fa-play-circle"></i>
+            </div>
+            
+            <div class="video-placeholder">
+                <h3 style="color: var(--navy); margin-bottom: 1rem;">Video de bienvenida</h3>
+                <p style="color: var(--gray-medium);">Aquí se reproducirá tu video de bienvenida</p>
+                <div style="margin-top: 2rem;">
+                    <i class="fas fa-play" style="font-size: 3rem; color: var(--action);"></i>
+                </div>
+            </div>
+            
+            <p class="video-note">Este video es importante. Miralo completo antes de seguir.</p>
+        </div>
+        
+        <!-- INSTRUCCIONES PARA EL BOTÓN -->
+        <div class="instructions">
+            <p style="margin-bottom: 0;">Cuando termines el video, entrá al grupo privado de WhatsApp.</p>
+        </div>
+        
+        <!-- ÚNICO BOTÓN - ÚNICA ACCIÓN -->
+        <div class="btn-container">
+            <a href="https://wa.me/TU_NUMERO_DE_WHATSAPP_GRUPO" class="btn" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i>
+                <span>ENTRAR AL GRUPO DE WHATSAPP</span>
+            </a>
+        </div>
+        
+        <!-- TEXTO FINAL MÍNIMO -->
+        <p class="small-text">Todo sigue dentro del grupo.</p>
+    </div>
+
+    <script>
+        // Pequeña animación para enfatizar el botón principal
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.querySelector('.btn');
+            
+            // Efecto sutil de atención al botón
+            setTimeout(() => {
+                btn.style.transform = 'scale(1.02)';
+                btn.style.boxShadow = '0 8px 25px rgba(22, 166, 163, 0.3)';
+                
+                setTimeout(() => {
+                    btn.style.transform = 'scale(1)';
+                    btn.style.boxShadow = 'var(--shadow-md)';
+                }, 300);
+            }, 1500);
+            
+            // Scroll suave si la página es muy alta
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

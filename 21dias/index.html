@@ -9,22 +9,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* RESET Y ESTILOS BASE 2026 */
+        /* RESET Y ESTILOS BASE CON NUEVA PALETA */
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --primary-light: #3b82f6;
-            --secondary: #10b981;
-            --secondary-dark: #059669;
-            --dark: #0f172a;
-            --dark-light: #1e293b;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --gray-light: #e2e8f0;
-            --gradient: linear-gradient(135deg, #2563eb 0%, #10b981 100%);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            /* PALETA BASE - CONFIANZA */
+            --navy: #0B2A3C;           /* Títulos y texto principal */
+            --light-blue: #EAF4FF;     /* Fondos */
+            --action: #16A6A3;         /* CTA - ÚNICO COLOR DE BOTONES */
+            --action-dark: #128886;    /* Hover de botones */
+            
+            /* DISRUPCIÓN SEMÁNTICA - USO MUY LIMITADO */
+            --red: #C1121F;            /* SOLO en la palabra "NO" del título */
+            
+            /* ACENTOS MÍNIMOS */
+            --amber: #F4B740;          /* Detalles pequeños (íconos, badges) */
+            
+            /* TEXTO SECUNDARIO */
+            --gray-dark: #1F2937;      /* Texto secundario */
+            --gray-medium: #6B7280;    /* Texto terciario */
+            
+            /* NEUTROS */
+            --white: #ffffff;
+            --light-gray: #F9FAFB;
+            
+            /* UTILITARIOS */
+            --shadow-sm: 0 2px 8px rgba(11, 42, 60, 0.05);
+            --shadow-md: 0 4px 20px rgba(11, 42, 60, 0.08);
+            --shadow-lg: 0 10px 40px rgba(11, 42, 60, 0.12);
             --radius-sm: 12px;
             --radius-md: 20px;
             --radius-lg: 28px;
@@ -44,8 +54,8 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
+            color: var(--navy);
+            background-color: var(--light-blue);
             line-height: 1.6;
             font-weight: 400;
             overflow-x: hidden;
@@ -66,45 +76,44 @@
             font-weight: 700;
             line-height: 1.2;
             margin-bottom: 1.5rem;
+            color: var(--navy);
         }
         
         h1 {
             font-size: 3.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, var(--dark) 0%, var(--primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
             letter-spacing: -0.02em;
+        }
+        
+        h1 .no-word {
+            color: var(--red);
         }
         
         h2 {
             font-size: 2.5rem;
-            color: var(--dark);
             letter-spacing: -0.01em;
         }
         
         h3 {
             font-size: 1.5rem;
-            color: var(--dark);
         }
         
         h4 {
             font-size: 1.25rem;
-            color: var(--dark-light);
+            color: var(--gray-dark);
         }
         
         p {
             margin-bottom: 1.5rem;
             font-size: 1.125rem;
-            color: var(--gray);
+            color: var(--gray-dark);
             line-height: 1.7;
         }
         
         .lead {
             font-size: 1.375rem;
             font-weight: 500;
-            color: var(--dark-light);
+            color: var(--navy);
         }
         
         .text-center {
@@ -123,13 +132,13 @@
         .mt-4 { margin-top: 2rem; }
         .mt-5 { margin-top: 3rem; }
         
-        /* BOTONES PREMIUM 2026 */
+        /* BOTONES - SOLO COLOR TEAL */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: var(--gradient);
-            color: white;
+            background-color: var(--action);
+            color: var(--white);
             padding: 18px 40px;
             font-size: 1.125rem;
             font-weight: 600;
@@ -146,27 +155,10 @@
             gap: 10px;
         }
         
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
-            z-index: -1;
-            opacity: 0;
-            transition: var(--transition);
-            border-radius: var(--radius-xl);
-        }
-        
         .btn:hover {
+            background-color: var(--action-dark);
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
-        }
-        
-        .btn:hover::before {
-            opacity: 1;
         }
         
         .btn-sm {
@@ -174,25 +166,10 @@
             font-size: 1rem;
         }
         
-        .btn-outline {
-            background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            box-shadow: none;
-        }
-        
-        .btn-outline::before {
-            background: var(--gradient);
-        }
-        
-        .btn-outline:hover {
-            color: white;
-        }
-        
-        /* HERO SECTION PREMIUM */
+        /* HERO SECTION CON NUEVA PALETA */
         .hero {
             padding: 100px 0 80px;
-            background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+            background: linear-gradient(180deg, var(--white) 0%, var(--light-blue) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -204,7 +181,7 @@
             right: 0;
             width: 60%;
             height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='300' cy='300' r='150'/%3E%3C/g%3E%3C/svg%3E");
+            background: url("data:image/svg+xml,%3Csvg width='600' height='600' viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230B2A3C' fill-opacity='0.03' fill-rule='evenodd'%3E%3Ccircle cx='300' cy='300' r='150'/%3E%3C/g%3E%3C/svg%3E");
             z-index: 0;
         }
         
@@ -217,7 +194,7 @@
         
         .hero-subtitle {
             font-size: 1.5rem;
-            color: var(--dark-light);
+            color: var(--gray-dark);
             margin-bottom: 2.5rem;
             font-weight: 500;
         }
@@ -225,28 +202,32 @@
         .price-tag {
             display: inline-flex;
             align-items: center;
-            background: var(--light);
-            color: var(--primary);
+            background: var(--white);
+            color: var(--navy);
             font-weight: 700;
             font-size: 1.375rem;
             padding: 14px 28px;
             border-radius: var(--radius-xl);
             margin: 2rem 0;
             box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-light);
+            border: 1px solid rgba(11, 42, 60, 0.1);
         }
         
         .price-tag .currency {
             font-size: 1rem;
-            color: var(--gray);
+            color: var(--gray-medium);
             margin-right: 4px;
         }
         
         .price-tag .amount {
             font-size: 1.875rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--navy);
             margin: 0 8px;
+        }
+        
+        .price-tag .text {
+            color: var(--gray-medium);
         }
         
         .hero-features {
@@ -261,8 +242,8 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            background: rgba(37, 99, 235, 0.08);
-            color: var(--primary);
+            background: rgba(22, 166, 163, 0.08);
+            color: var(--action);
             padding: 10px 20px;
             border-radius: var(--radius-xl);
             font-size: 0.875rem;
@@ -277,7 +258,7 @@
         .video-container {
             max-width: 800px;
             margin: 0 auto;
-            background: white;
+            background: var(--white);
             border-radius: var(--radius-lg);
             padding: 40px;
             box-shadow: var(--shadow-md);
@@ -286,20 +267,20 @@
         
         .video-icon {
             font-size: 3.5rem;
-            color: var(--primary);
+            color: var(--action);
             margin-bottom: 1.5rem;
         }
         
         .video-note {
             font-size: 0.875rem;
-            color: var(--gray);
+            color: var(--gray-medium);
             font-style: italic;
             margin-top: 1rem;
         }
         
-        /* SECCIONES PREMIUM */
+        /* SECCIONES */
         .section-card {
-            background: white;
+            background: var(--white);
             border-radius: var(--radius-lg);
             padding: 60px;
             box-shadow: var(--shadow-md);
@@ -312,10 +293,10 @@
         }
         
         .section-title .accent {
-            color: var(--primary);
+            color: var(--action);
         }
         
-        /* LISTA DE ENTREGABLES MODERNA */
+        /* LISTA DE ENTREGABLES */
         .deliverables-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -324,10 +305,10 @@
         }
         
         .deliverable-card {
-            background: var(--light);
+            background: var(--light-gray);
             padding: 28px;
             border-radius: var(--radius-md);
-            border: 1px solid var(--gray-light);
+            border: 1px solid rgba(11, 42, 60, 0.08);
             transition: var(--transition);
             position: relative;
             overflow: hidden;
@@ -336,7 +317,7 @@
         .deliverable-card:hover {
             transform: translateY(-6px);
             box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
+            border-color: rgba(22, 166, 163, 0.3);
         }
         
         .deliverable-card::before {
@@ -346,23 +327,23 @@
             left: 0;
             width: 4px;
             height: 100%;
-            background: var(--gradient);
+            background: var(--action);
         }
         
         .deliverable-icon {
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--action);
             margin-bottom: 1rem;
         }
         
-        /* PRICING SECTION PREMIUM */
+        /* PRICING SECTION */
         .pricing-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            background: var(--white);
             border-radius: var(--radius-lg);
             padding: 60px;
             box-shadow: var(--shadow-lg);
             text-align: center;
-            border: 1px solid var(--gray-light);
+            border: 1px solid rgba(11, 42, 60, 0.1);
             position: relative;
             overflow: hidden;
         }
@@ -374,7 +355,7 @@
             left: 0;
             width: 100%;
             height: 6px;
-            background: var(--gradient);
+            background: var(--action);
         }
         
         .price-display {
@@ -384,51 +365,51 @@
         .price-number {
             font-size: 4rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--navy);
             line-height: 1;
             margin-bottom: 0.5rem;
         }
         
         .price-label {
             font-size: 1.125rem;
-            color: var(--gray);
+            color: var(--gray-medium);
             font-weight: 500;
         }
         
         .guarantee-card {
-            background: rgba(16, 185, 129, 0.08);
+            background: rgba(22, 166, 163, 0.08);
             border-radius: var(--radius-md);
             padding: 32px;
             margin-top: 3rem;
-            border: 1px solid rgba(16, 185, 129, 0.2);
+            border: 1px solid rgba(22, 166, 163, 0.2);
             text-align: left;
         }
         
         .guarantee-icon {
             font-size: 2rem;
-            color: var(--secondary);
+            color: var(--action);
             margin-bottom: 1rem;
         }
         
-        /* FAQ MODERNO */
+        /* FAQ */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
         
         .faq-item {
-            background: white;
+            background: var(--white);
             border-radius: var(--radius-md);
             padding: 24px;
             margin-bottom: 16px;
             box-shadow: var(--shadow-sm);
-            border: 1px solid var(--gray-light);
+            border: 1px solid rgba(11, 42, 60, 0.08);
             transition: var(--transition);
             cursor: pointer;
         }
         
         .faq-item:hover {
-            border-color: var(--primary-light);
+            border-color: rgba(22, 166, 163, 0.3);
             box-shadow: var(--shadow-md);
         }
         
@@ -437,14 +418,14 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
-            color: var(--dark);
+            color: var(--navy);
             font-size: 1.125rem;
         }
         
         .faq-answer {
             padding-top: 1rem;
             display: none;
-            color: var(--gray);
+            color: var(--gray-dark);
             line-height: 1.7;
         }
         
@@ -454,14 +435,14 @@
         }
         
         .faq-toggle {
-            color: var(--primary);
+            color: var(--action);
             transition: var(--transition);
         }
         
-        /* FOOTER PREMIUM */
+        /* FOOTER */
         footer {
-            background: var(--dark);
-            color: white;
+            background: var(--navy);
+            color: var(--white);
             padding: 60px 0 40px;
             margin-top: 80px;
         }
@@ -473,12 +454,12 @@
         .footer-logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: white;
+            color: var(--white);
             margin-bottom: 1rem;
         }
         
         .footer-tagline {
-            color: #94a3b8;
+            color: rgba(255, 255, 255, 0.7);
             max-width: 500px;
             margin: 0 auto 2rem;
         }
@@ -498,7 +479,19 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        /* RESPONSIVE DESIGN 2026 */
+        /* UTILIDADES CON NUEVA PALETA */
+        .highlight {
+            background: rgba(22, 166, 163, 0.1);
+            padding: 2px 8px;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+        
+        .amber-accent {
+            color: var(--amber);
+        }
+        
+        /* RESPONSIVE DESIGN */
         @media (max-width: 1024px) {
             h1 { font-size: 3rem; }
             h2 { font-size: 2.25rem; }
@@ -538,27 +531,14 @@
             .price-tag { font-size: 1.25rem; padding: 12px 24px; }
             .price-tag .amount { font-size: 1.625rem; }
         }
-        
-        /* UTILITIES */
-        .highlight {
-            background: linear-gradient(120deg, rgba(37, 99, 235, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%);
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-weight: 600;
-        }
-        
-        .emoji {
-            font-size: 1.5rem;
-            margin-right: 8px;
-        }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION PREMIUM -->
+    <!-- HERO SECTION -->
     <section class="hero">
         <div class="container">
             <div class="hero-content text-center">
-                <h1>CÓMO NO EMPEZAR EL 2026</h1>
+                <h1>CÓMO <span class="no-word">NO</span> EMPEZAR EL 2026</h1>
                 <p class="hero-subtitle">21 días para dejar de procrastinar y empezar a avanzar sin quemarte este nuevo año</p>
                 
                 <div class="price-tag floating">
@@ -600,8 +580,8 @@
                 <h3>Un mensaje corto antes de empezar</h3>
                 <p class="lead">Mira este breve video donde explico cómo funciona esta experiencia de 21 días</p>
                 <div class="video-placeholder mt-4">
-                    <div style="background: linear-gradient(135deg, #2563eb20 0%, #10b98120 100%); border-radius: var(--radius-md); padding: 60px 20px; margin: 20px 0;">
-                        <i class="fas fa-play" style="font-size: 2rem; color: var(--primary);"></i>
+                    <div style="background: linear-gradient(135deg, rgba(22, 166, 163, 0.1) 0%, rgba(11, 42, 60, 0.1) 100%); border-radius: var(--radius-md); padding: 60px 20px; margin: 20px 0;">
+                        <i class="fas fa-play" style="font-size: 2rem; color: var(--action);"></i>
                     </div>
                 </div>
                 <p class="video-note">El video es opcional y no bloquea la compra, puedes continuar directamente si prefieres</p>
@@ -676,17 +656,17 @@
                     
                     <div class="mt-4">
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-times" style="color: #ef4444;"></i>
+                            <i class="fas fa-times" style="color: var(--gray-medium);"></i>
                             <p style="margin-bottom: 0;">No es un curso teórico aburrido</p>
                         </div>
                         
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-times" style="color: #ef4444;"></i>
+                            <i class="fas fa-times" style="color: var(--gray-medium);"></i>
                             <p style="margin-bottom: 0;">No es un challenge imposible</p>
                         </div>
                         
                         <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                            <i class="fas fa-times" style="color: #ef4444;"></i>
+                            <i class="fas fa-times" style="color: var(--gray-medium);"></i>
                             <p style="margin-bottom: 0;">No es un programa espiritual extremo</p>
                         </div>
                     </div>
@@ -915,7 +895,7 @@
             <div class="footer-content">
                 <div class="footer-logo">Cómo No Empezar el 2026</div>
                 <p class="footer-tagline">21 días para dejar de procrastinar y empezar a avanzar sin quemarte</p>
-                <p style="color: #94a3b8; margin-top: 2rem; font-size: 0.875rem;">© 2025 - Una experiencia consciente para personas reales</p>
+                <p style="color: rgba(255, 255, 255, 0.5); margin-top: 2rem; font-size: 0.875rem;">© 2025 - Una experiencia consciente para personas reales</p>
             </div>
         </div>
     </footer>
@@ -972,9 +952,8 @@
             });
         });
         
-        // Add floating animation to some elements
+        // Add hover effects to deliverable cards
         document.addEventListener('DOMContentLoaded', () => {
-            // Add hover effects to deliverable cards
             const cards = document.querySelectorAll('.deliverable-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', () => {

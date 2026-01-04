@@ -14,6 +14,7 @@
             /* PALETA EMOCIONAL */
             --accent: #A61B34;           /* Granate - Acción y decisión */
             --accent-dark: #8A152C;      /* Granate oscuro - Hover */
+            --accent-light: rgba(166, 27, 52, 0.1);
             --white: #FFFFFF;            /* Pureza y claridad */
             --black: #1E1E1E;            /* Autoridad y profundidad */
             --gray: #333333;             /* Texto secundario */
@@ -136,7 +137,7 @@
             text-align: center;
         }
         
-        /* BOLAS FLOTANTES DE FONDO - DISTRIBUIDAS POR TODA LA PÁGINA */
+        /* BOLAS FLOTANTES DE FONDO - MUY VISIBLES Y BIEN DISTRIBUIDAS */
         .floating-balls {
             position: fixed;
             top: 0;
@@ -151,158 +152,219 @@
         .floating-ball {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            filter: blur(40px);
-            opacity: 0.03;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            filter: blur(25px);
+            opacity: 0.12;
             z-index: 0;
         }
         
-        /* Tamaños variados de bolas */
+        /* Tamaños variados de bolas - MÁS VISIBLES */
         .ball-small {
-            width: 150px;
-            height: 150px;
+            width: 200px;
+            height: 200px;
         }
         
         .ball-medium {
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 300px;
         }
         
         .ball-large {
-            width: 350px;
-            height: 350px;
+            width: 400px;
+            height: 400px;
         }
         
-        /* Posiciones y animaciones para cada bola */
+        /* Posiciones y animaciones para cada bola - BIEN DISTRIBUIDAS */
         #ball-1 {
-            top: 10%;
-            left: 5%;
+            top: 15%;
+            left: 8%;
             animation: float-ball-1 25s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.15;
         }
         
         #ball-2 {
-            top: 20%;
-            right: 10%;
+            top: 25%;
+            right: 12%;
             animation: float-ball-2 30s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
+            opacity: 0.13;
         }
         
         #ball-3 {
-            top: 40%;
-            left: 15%;
+            top: 45%;
+            left: 18%;
             animation: float-ball-3 20s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            opacity: 0.14;
         }
         
         #ball-4 {
-            top: 60%;
-            right: 5%;
+            top: 65%;
+            right: 8%;
             animation: float-ball-4 35s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.16;
         }
         
         #ball-5 {
-            top: 80%;
-            left: 10%;
+            top: 85%;
+            left: 12%;
             animation: float-ball-5 28s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
+            opacity: 0.12;
         }
         
         #ball-6 {
-            top: 30%;
-            right: 20%;
+            top: 35%;
+            right: 25%;
             animation: float-ball-6 32s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            opacity: 0.13;
         }
         
         #ball-7 {
-            top: 70%;
-            left: 25%;
+            top: 75%;
+            left: 30%;
             animation: float-ball-7 24s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.15;
         }
         
         #ball-8 {
-            top: 50%;
-            right: 15%;
+            top: 55%;
+            right: 18%;
             animation: float-ball-8 40s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
+            opacity: 0.14;
         }
         
         #ball-9 {
-            top: 90%;
-            right: 25%;
+            top: 95%;
+            right: 30%;
             animation: float-ball-9 26s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            opacity: 0.13;
         }
         
         #ball-10 {
-            top: 15%;
-            left: 30%;
+            top: 20%;
+            left: 35%;
             animation: float-ball-10 22s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.16;
+        }
+        
+        /* Más bolas para cubrir mejor el espacio */
+        #ball-11 {
+            top: 60%;
+            left: 5%;
+            animation: float-ball-1 27s ease-in-out infinite reverse;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
+            opacity: 0.12;
+        }
+        
+        #ball-12 {
+            top: 40%;
+            right: 5%;
+            animation: float-ball-2 33s ease-in-out infinite reverse;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            opacity: 0.14;
+        }
+        
+        #ball-13 {
+            top: 80%;
+            left: 40%;
+            animation: float-ball-3 21s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.15;
+        }
+        
+        #ball-14 {
+            top: 30%;
+            left: 60%;
+            animation: float-ball-4 38s ease-in-out infinite reverse;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
+            opacity: 0.13;
+        }
+        
+        #ball-15 {
+            top: 70%;
+            right: 35%;
+            animation: float-ball-5 29s ease-in-out infinite;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            opacity: 0.14;
         }
         
         /* Animaciones de flotación suave */
         @keyframes float-ball-1 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            25% { transform: translate(50px, -30px) scale(1.05); opacity: 0.04; }
-            50% { transform: translate(30px, 40px) scale(0.95); opacity: 0.02; }
-            75% { transform: translate(-20px, -20px) scale(1.02); opacity: 0.035; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(60px, -40px) scale(1.08); }
+            50% { transform: translate(40px, 50px) scale(0.92); }
+            75% { transform: translate(-30px, -30px) scale(1.05); }
         }
         
         @keyframes float-ball-2 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            33% { transform: translate(-40px, 30px) scale(1.03); opacity: 0.04; }
-            66% { transform: translate(20px, -40px) scale(0.97); opacity: 0.025; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(-50px, 40px) scale(1.06); }
+            66% { transform: translate(30px, -50px) scale(0.94); }
         }
         
         @keyframes float-ball-3 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            20% { transform: translate(30px, 20px) scale(1.04); opacity: 0.035; }
-            40% { transform: translate(-20px, 40px) scale(0.96); opacity: 0.025; }
-            60% { transform: translate(40px, -20px) scale(1.02); opacity: 0.04; }
-            80% { transform: translate(-30px, -30px) scale(0.98); opacity: 0.03; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            20% { transform: translate(40px, 30px) scale(1.07); }
+            40% { transform: translate(-30px, 50px) scale(0.93); }
+            60% { transform: translate(50px, -30px) scale(1.04); }
+            80% { transform: translate(-40px, -40px) scale(0.96); }
         }
         
         @keyframes float-ball-4 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            25% { transform: translate(-50px, 20px) scale(1.06); opacity: 0.045; }
-            50% { transform: translate(30px, -30px) scale(0.94); opacity: 0.02; }
-            75% { transform: translate(-20px, 40px) scale(1.03); opacity: 0.035; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(-60px, 30px) scale(1.09); }
+            50% { transform: translate(40px, -40px) scale(0.91); }
+            75% { transform: translate(-30px, 50px) scale(1.06); }
         }
         
         @keyframes float-ball-5 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            33% { transform: translate(40px, -20px) scale(1.02); opacity: 0.038; }
-            66% { transform: translate(-30px, 30px) scale(0.98); opacity: 0.025; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(50px, -30px) scale(1.05); }
+            66% { transform: translate(-40px, 40px) scale(0.95); }
         }
         
         @keyframes float-ball-6 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            20% { transform: translate(-25px, 15px) scale(1.03); opacity: 0.04; }
-            40% { transform: translate(35px, -25px) scale(0.96); opacity: 0.022; }
-            60% { transform: translate(-15px, 35px) scale(1.01); opacity: 0.032; }
-            80% { transform: translate(25px, -15px) scale(0.99); opacity: 0.028; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            20% { transform: translate(-35px, 25px) scale(1.06); }
+            40% { transform: translate(45px, -35px) scale(0.94); }
+            60% { transform: translate(-25px, 45px) scale(1.03); }
+            80% { transform: translate(35px, -25px) scale(0.97); }
         }
         
         @keyframes float-ball-7 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            25% { transform: translate(45px, 10px) scale(1.05); opacity: 0.042; }
-            50% { transform: translate(-35px, -25px) scale(0.95); opacity: 0.021; }
-            75% { transform: translate(15px, 45px) scale(1.02); opacity: 0.036; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(55px, 20px) scale(1.08); }
+            50% { transform: translate(-45px, -35px) scale(0.93); }
+            75% { transform: translate(25px, 55px) scale(1.05); }
         }
         
         @keyframes float-ball-8 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            20% { transform: translate(-30px, -15px) scale(1.04); opacity: 0.038; }
-            40% { transform: translate(20px, 35px) scale(0.97); opacity: 0.024; }
-            60% { transform: translate(40px, -20px) scale(1.01); opacity: 0.031; }
-            80% { transform: translate(-25px, 25px) scale(0.98); opacity: 0.026; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            20% { transform: translate(-40px, -25px) scale(1.07); }
+            40% { transform: translate(30px, 45px) scale(0.95); }
+            60% { transform: translate(50px, -30px) scale(1.03); }
+            80% { transform: translate(-35px, 35px) scale(0.96); }
         }
         
         @keyframes float-ball-9 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            33% { transform: translate(30px, 20px) scale(1.03); opacity: 0.04; }
-            66% { transform: translate(-40px, 10px) scale(0.96); opacity: 0.022; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, 30px) scale(1.06); }
+            66% { transform: translate(-50px, 20px) scale(0.94); }
         }
         
         @keyframes float-ball-10 {
-            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
-            25% { transform: translate(20px, -30px) scale(1.05); opacity: 0.041; }
-            50% { transform: translate(-25px, 25px) scale(0.94); opacity: 0.02; }
-            75% { transform: translate(30px, 15px) scale(1.02); opacity: 0.035; }
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -40px) scale(1.08); }
+            50% { transform: translate(-35px, 35px) scale(0.92); }
+            75% { transform: translate(40px, 25px) scale(1.05); }
         }
         
         /* HERO SECTION - IMPACTO EMOCIONAL INMEDIATO */
@@ -316,6 +378,18 @@
             min-height: 90vh;
             display: flex;
             align-items: center;
+        }
+        
+        /* Efecto de superposición para que el contenido sea legible */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.85);
+            z-index: 1;
         }
         
         .hero-content {
@@ -471,6 +545,15 @@
         .section-card:hover {
             box-shadow: var(--shadow-md);
             border-color: rgba(166, 27, 52, 0.1);
+        }
+        
+        /* Fondo blanco para las secciones para contraste */
+        section:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+        
+        section:nth-child(odd) {
+            background-color: rgba(248, 248, 248, 0.7);
         }
         
         /* DOLOR - IDENTIFICACIÓN EMOCIONAL */
@@ -803,30 +886,30 @@
                 padding: var(--space-xl) 0;
             }
             
-            /* Reducir número de bolas en móviles para mejor rendimiento */
-            #ball-3, #ball-5, #ball-7, #ball-9, #ball-10 {
-                display: none;
-            }
-            
-            /* Reducir tamaño de bolas en móviles */
+            /* Ajustar bolas para móviles - MÁS VISIBLES */
             .floating-ball {
-                filter: blur(20px);
-                opacity: 0.02;
+                filter: blur(15px);
+                opacity: 0.15;
             }
             
             .ball-small {
-                width: 100px;
-                height: 100px;
+                width: 120px;
+                height: 120px;
             }
             
             .ball-medium {
-                width: 150px;
-                height: 150px;
+                width: 180px;
+                height: 180px;
             }
             
             .ball-large {
-                width: 200px;
-                height: 200px;
+                width: 240px;
+                height: 240px;
+            }
+            
+            /* Reducir número de bolas en móviles pero mantener visibilidad */
+            #ball-3, #ball-5, #ball-7, #ball-9, #ball-10, #ball-12, #ball-14, #ball-15 {
+                opacity: 0.18; /* Más visibles en móviles */
             }
             
             .cta-primary {
@@ -884,9 +967,9 @@
                 padding: 6px 12px;
             }
             
-            /* Ocultar más bolas en pantallas muy pequeñas */
-            #ball-2, #ball-4, #ball-6, #ball-8 {
-                display: none;
+            /* Bolas aún más visibles en móviles pequeños */
+            .floating-ball {
+                opacity: 0.2;
             }
         }
         
@@ -907,7 +990,7 @@
     </style>
 </head>
 <body>
-    <!-- BOLAS FLOTANTES DE FONDO - DISTRIBUIDAS POR TODA LA PÁGINA -->
+    <!-- BOLAS FLOTANTES DE FONDO - MUY VISIBLES Y BIEN DISTRIBUIDAS -->
     <div class="floating-balls">
         <div class="floating-ball ball-large" id="ball-1"></div>
         <div class="floating-ball ball-medium" id="ball-2"></div>
@@ -919,6 +1002,11 @@
         <div class="floating-ball ball-large" id="ball-8"></div>
         <div class="floating-ball ball-small" id="ball-9"></div>
         <div class="floating-ball ball-medium" id="ball-10"></div>
+        <div class="floating-ball ball-small" id="ball-11"></div>
+        <div class="floating-ball ball-medium" id="ball-12"></div>
+        <div class="floating-ball ball-large" id="ball-13"></div>
+        <div class="floating-ball ball-small" id="ball-14"></div>
+        <div class="floating-ball ball-medium" id="ball-15"></div>
     </div>
     
     <!-- HERO SECTION - IMPACTO EMOCIONAL -->
@@ -1211,12 +1299,12 @@
                     
                     <div class="testimonial-card">
                         <div class="testimonial-text">
-                            Dejé de postergar una decisión profesional que cargaba hace meses. La claridad mental fue real.
+                            Empecé a cumplir objetivos gracias a la claridad que me diste y mi palabra volvió a valer.
                         </div>
                         <div style="display: flex; align-items: center; gap: var(--space-sm);">
-                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gray-light); display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 600;">C</div>
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gray-light); display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 600;">R</div>
                             <div>
-                                <h4 style="margin-bottom: 0;">Carlos</h4>
+                                <h4 style="margin-bottom: 0;">Roque</h4>
                                 <p style="color: var(--gray); font-size: 0.875rem;">Argentina</p>
                             </div>
                         </div>
@@ -1253,7 +1341,7 @@
                             </div>
                             <div>
                                 <h4>Mentor en claridad mental y gestión emocional</h4>
-                                <p>Acompaño procesos de transformación personal desde hace más de 7 años.</p>
+                                <p>Acompaño procesos de transformación personal. Con una comunidad de + 40mil personas.</p>
                             </div>
                         </div>
                         
@@ -1262,7 +1350,7 @@
                                 <i class="fas fa-users"></i>
                             </div>
                             <div>
-                                <h4>Más de 500 personas acompañadas</h4>
+                                <h4>Más de 150 personas acompañadas</h4>
                                 <p>Experiencia real con personas que han transitado procesos similares al tuyo.</p>
                             </div>
                         </div>
@@ -1523,9 +1611,9 @@
                 const mouseY = e.clientY / window.innerHeight;
                 
                 balls.forEach((ball, index) => {
-                    const speed = 0.5 + (index * 0.1);
-                    const x = (mouseX - 0.5) * 20 * speed;
-                    const y = (mouseY - 0.5) * 20 * speed;
+                    const speed = 0.3 + (index * 0.05);
+                    const x = (mouseX - 0.5) * 30 * speed;
+                    const y = (mouseY - 0.5) * 30 * speed;
                     
                     ball.style.transform = `translate(${x}px, ${y}px)`;
                 });

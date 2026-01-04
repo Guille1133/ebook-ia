@@ -69,6 +69,7 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
+            position: relative;
         }
         
         .container {
@@ -76,10 +77,13 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 var(--space-lg);
+            position: relative;
+            z-index: 1;
         }
         
         section {
             padding: var(--space-xxl) 0;
+            position: relative;
         }
         
         /* JERARQUÍA TIPOGRÁFICA - SANS SERIF MODERNA */
@@ -132,6 +136,175 @@
             text-align: center;
         }
         
+        /* BOLAS FLOTANTES DE FONDO - DISTRIBUIDAS POR TODA LA PÁGINA */
+        .floating-balls {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .floating-ball {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            filter: blur(40px);
+            opacity: 0.03;
+            z-index: 0;
+        }
+        
+        /* Tamaños variados de bolas */
+        .ball-small {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .ball-medium {
+            width: 250px;
+            height: 250px;
+        }
+        
+        .ball-large {
+            width: 350px;
+            height: 350px;
+        }
+        
+        /* Posiciones y animaciones para cada bola */
+        #ball-1 {
+            top: 10%;
+            left: 5%;
+            animation: float-ball-1 25s ease-in-out infinite;
+        }
+        
+        #ball-2 {
+            top: 20%;
+            right: 10%;
+            animation: float-ball-2 30s ease-in-out infinite;
+        }
+        
+        #ball-3 {
+            top: 40%;
+            left: 15%;
+            animation: float-ball-3 20s ease-in-out infinite;
+        }
+        
+        #ball-4 {
+            top: 60%;
+            right: 5%;
+            animation: float-ball-4 35s ease-in-out infinite;
+        }
+        
+        #ball-5 {
+            top: 80%;
+            left: 10%;
+            animation: float-ball-5 28s ease-in-out infinite;
+        }
+        
+        #ball-6 {
+            top: 30%;
+            right: 20%;
+            animation: float-ball-6 32s ease-in-out infinite;
+        }
+        
+        #ball-7 {
+            top: 70%;
+            left: 25%;
+            animation: float-ball-7 24s ease-in-out infinite;
+        }
+        
+        #ball-8 {
+            top: 50%;
+            right: 15%;
+            animation: float-ball-8 40s ease-in-out infinite;
+        }
+        
+        #ball-9 {
+            top: 90%;
+            right: 25%;
+            animation: float-ball-9 26s ease-in-out infinite;
+        }
+        
+        #ball-10 {
+            top: 15%;
+            left: 30%;
+            animation: float-ball-10 22s ease-in-out infinite;
+        }
+        
+        /* Animaciones de flotación suave */
+        @keyframes float-ball-1 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            25% { transform: translate(50px, -30px) scale(1.05); opacity: 0.04; }
+            50% { transform: translate(30px, 40px) scale(0.95); opacity: 0.02; }
+            75% { transform: translate(-20px, -20px) scale(1.02); opacity: 0.035; }
+        }
+        
+        @keyframes float-ball-2 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            33% { transform: translate(-40px, 30px) scale(1.03); opacity: 0.04; }
+            66% { transform: translate(20px, -40px) scale(0.97); opacity: 0.025; }
+        }
+        
+        @keyframes float-ball-3 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            20% { transform: translate(30px, 20px) scale(1.04); opacity: 0.035; }
+            40% { transform: translate(-20px, 40px) scale(0.96); opacity: 0.025; }
+            60% { transform: translate(40px, -20px) scale(1.02); opacity: 0.04; }
+            80% { transform: translate(-30px, -30px) scale(0.98); opacity: 0.03; }
+        }
+        
+        @keyframes float-ball-4 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            25% { transform: translate(-50px, 20px) scale(1.06); opacity: 0.045; }
+            50% { transform: translate(30px, -30px) scale(0.94); opacity: 0.02; }
+            75% { transform: translate(-20px, 40px) scale(1.03); opacity: 0.035; }
+        }
+        
+        @keyframes float-ball-5 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            33% { transform: translate(40px, -20px) scale(1.02); opacity: 0.038; }
+            66% { transform: translate(-30px, 30px) scale(0.98); opacity: 0.025; }
+        }
+        
+        @keyframes float-ball-6 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            20% { transform: translate(-25px, 15px) scale(1.03); opacity: 0.04; }
+            40% { transform: translate(35px, -25px) scale(0.96); opacity: 0.022; }
+            60% { transform: translate(-15px, 35px) scale(1.01); opacity: 0.032; }
+            80% { transform: translate(25px, -15px) scale(0.99); opacity: 0.028; }
+        }
+        
+        @keyframes float-ball-7 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            25% { transform: translate(45px, 10px) scale(1.05); opacity: 0.042; }
+            50% { transform: translate(-35px, -25px) scale(0.95); opacity: 0.021; }
+            75% { transform: translate(15px, 45px) scale(1.02); opacity: 0.036; }
+        }
+        
+        @keyframes float-ball-8 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            20% { transform: translate(-30px, -15px) scale(1.04); opacity: 0.038; }
+            40% { transform: translate(20px, 35px) scale(0.97); opacity: 0.024; }
+            60% { transform: translate(40px, -20px) scale(1.01); opacity: 0.031; }
+            80% { transform: translate(-25px, 25px) scale(0.98); opacity: 0.026; }
+        }
+        
+        @keyframes float-ball-9 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            33% { transform: translate(30px, 20px) scale(1.03); opacity: 0.04; }
+            66% { transform: translate(-40px, 10px) scale(0.96); opacity: 0.022; }
+        }
+        
+        @keyframes float-ball-10 {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.03; }
+            25% { transform: translate(20px, -30px) scale(1.05); opacity: 0.041; }
+            50% { transform: translate(-25px, 25px) scale(0.94); opacity: 0.02; }
+            75% { transform: translate(30px, 15px) scale(1.02); opacity: 0.035; }
+        }
+        
         /* HERO SECTION - IMPACTO EMOCIONAL INMEDIATO */
         .hero {
             padding: var(--space-xxl) 0;
@@ -143,120 +316,6 @@
             min-height: 90vh;
             display: flex;
             align-items: center;
-        }
-        
-        /* CÍRCULOS DIFUSOS DE FONDO - CON EFECTO DE RESPIRACIÓN */
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            opacity: 0.03;
-            pointer-events: none;
-        }
-        
-        /* Círculo grande difuso 1 */
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 1200px;
-            height: 1200px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            top: -500px;
-            right: -400px;
-            z-index: 0;
-            filter: blur(120px);
-            opacity: 0.05;
-            animation: breathe-1 8s ease-in-out infinite alternate;
-        }
-        
-        /* Círculo grande difuso 2 */
-        .hero-background-circles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .circle-1 {
-            position: absolute;
-            width: 900px;
-            height: 900px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            top: -300px;
-            left: -300px;
-            filter: blur(100px);
-            opacity: 0.04;
-            animation: breathe-2 10s ease-in-out infinite alternate;
-        }
-        
-        .circle-2 {
-            position: absolute;
-            width: 800px;
-            height: 800px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            bottom: -400px;
-            right: -200px;
-            filter: blur(90px);
-            opacity: 0.03;
-            animation: breathe-3 12s ease-in-out infinite alternate;
-        }
-        
-        .circle-3 {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
-            top: 50%;
-            left: 10%;
-            filter: blur(80px);
-            opacity: 0.02;
-            animation: breathe-1 9s ease-in-out infinite alternate-reverse;
-        }
-        
-        /* Animaciones de respiración para los círculos */
-        @keyframes breathe-1 {
-            0% {
-                transform: scale(1) translate(0, 0);
-                opacity: 0.04;
-            }
-            100% {
-                transform: scale(1.1) translate(30px, -20px);
-                opacity: 0.06;
-            }
-        }
-        
-        @keyframes breathe-2 {
-            0% {
-                transform: scale(1) translate(0, 0);
-                opacity: 0.03;
-            }
-            100% {
-                transform: scale(1.08) translate(-20px, 15px);
-                opacity: 0.05;
-            }
-        }
-        
-        @keyframes breathe-3 {
-            0% {
-                transform: scale(1) translate(0, 0);
-                opacity: 0.02;
-            }
-            100% {
-                transform: scale(1.05) translate(15px, 10px);
-                opacity: 0.04;
-            }
         }
         
         .hero-content {
@@ -405,6 +464,8 @@
             border: 1px solid var(--gray-border);
             box-shadow: var(--shadow-sm);
             transition: var(--transition-smooth);
+            position: relative;
+            z-index: 1;
         }
         
         .section-card:hover {
@@ -594,6 +655,7 @@
             max-width: 700px;
             margin: 0 auto;
             overflow: hidden;
+            z-index: 1;
         }
         
         .investment-card::before {
@@ -697,6 +759,8 @@
             color: var(--white);
             padding: var(--space-xxl) 0;
             margin-top: var(--space-xxl);
+            position: relative;
+            z-index: 1;
         }
         
         .footer-content {
@@ -739,17 +803,30 @@
                 padding: var(--space-xl) 0;
             }
             
-            /* Ajuste de círculos para móviles */
-            .hero::after {
-                width: 800px;
-                height: 800px;
-                top: -300px;
-                right: -300px;
-                filter: blur(80px);
+            /* Reducir número de bolas en móviles para mejor rendimiento */
+            #ball-3, #ball-5, #ball-7, #ball-9, #ball-10 {
+                display: none;
             }
             
-            .circle-1, .circle-2, .circle-3 {
-                display: none; /* Simplificamos para móviles */
+            /* Reducir tamaño de bolas en móviles */
+            .floating-ball {
+                filter: blur(20px);
+                opacity: 0.02;
+            }
+            
+            .ball-small {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .ball-medium {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .ball-large {
+                width: 200px;
+                height: 200px;
             }
             
             .cta-primary {
@@ -806,6 +883,11 @@
                 font-size: 0.7rem;
                 padding: 6px 12px;
             }
+            
+            /* Ocultar más bolas en pantallas muy pequeñas */
+            #ball-2, #ball-4, #ball-6, #ball-8 {
+                display: none;
+            }
         }
         
         /* UTILITIES */
@@ -825,15 +907,22 @@
     </style>
 </head>
 <body>
+    <!-- BOLAS FLOTANTES DE FONDO - DISTRIBUIDAS POR TODA LA PÁGINA -->
+    <div class="floating-balls">
+        <div class="floating-ball ball-large" id="ball-1"></div>
+        <div class="floating-ball ball-medium" id="ball-2"></div>
+        <div class="floating-ball ball-small" id="ball-3"></div>
+        <div class="floating-ball ball-large" id="ball-4"></div>
+        <div class="floating-ball ball-medium" id="ball-5"></div>
+        <div class="floating-ball ball-small" id="ball-6"></div>
+        <div class="floating-ball ball-medium" id="ball-7"></div>
+        <div class="floating-ball ball-large" id="ball-8"></div>
+        <div class="floating-ball ball-small" id="ball-9"></div>
+        <div class="floating-ball ball-medium" id="ball-10"></div>
+    </div>
+    
     <!-- HERO SECTION - IMPACTO EMOCIONAL -->
     <section class="hero">
-        <!-- Círculos de fondo difusos -->
-        <div class="hero-background-circles">
-            <div class="circle-1"></div>
-            <div class="circle-2"></div>
-            <div class="circle-3"></div>
-        </div>
-        
         <div class="container">
             <div class="hero-content text-center">
                 <!-- Etiqueta contextual - ALTO IMPACTO -->
@@ -1426,6 +1515,21 @@
                     cta.style.transform = 'scale(1)';
                 }, 200);
             }, 1000);
+            
+            // Efecto interactivo con las bolas flotantes
+            const balls = document.querySelectorAll('.floating-ball');
+            document.addEventListener('mousemove', (e) => {
+                const mouseX = e.clientX / window.innerWidth;
+                const mouseY = e.clientY / window.innerHeight;
+                
+                balls.forEach((ball, index) => {
+                    const speed = 0.5 + (index * 0.1);
+                    const x = (mouseX - 0.5) * 20 * speed;
+                    const y = (mouseY - 0.5) * 20 * speed;
+                    
+                    ball.style.transform = `translate(${x}px, ${y}px)`;
+                });
+            });
         });
     </script>
 </body>

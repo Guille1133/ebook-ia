@@ -137,7 +137,7 @@
             text-align: center;
         }
         
-        /* BOLAS FLOTANTES DE FONDO - MUY VISIBLES Y BIEN DISTRIBUIDAS */
+        /* BOLAS FLOTANTES DE FONDO - MÁS OSCURAS Y VISIBLES */
         .floating-balls {
             position: fixed;
             top: 0;
@@ -152,9 +152,9 @@
         .floating-ball {
             position: absolute;
             border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
             filter: blur(25px);
-            opacity: 0.12;
+            opacity: 0.25; /* AUMENTADA la opacidad */
             z-index: 0;
         }
         
@@ -174,126 +174,126 @@
             height: 400px;
         }
         
-        /* Posiciones y animaciones para cada bola - BIEN DISTRIBUIDAS */
+        /* Posiciones y animaciones para cada bola - MÁS OSCURAS */
         #ball-1 {
             top: 15%;
             left: 8%;
             animation: float-ball-1 25s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.15;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
+            opacity: 0.28; /* AUMENTADA */
         }
         
         #ball-2 {
             top: 25%;
             right: 12%;
             animation: float-ball-2 30s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
-            opacity: 0.13;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
+            opacity: 0.26; /* AUMENTADA */
         }
         
         #ball-3 {
             top: 45%;
             left: 18%;
             animation: float-ball-3 20s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
-            opacity: 0.14;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.27; /* AUMENTADA */
         }
         
         #ball-4 {
             top: 65%;
             right: 8%;
             animation: float-ball-4 35s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.16;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
+            opacity: 0.29; /* AUMENTADA */
         }
         
         #ball-5 {
             top: 85%;
             left: 12%;
             animation: float-ball-5 28s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
-            opacity: 0.12;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
+            opacity: 0.25; /* AUMENTADA */
         }
         
         #ball-6 {
             top: 35%;
             right: 25%;
             animation: float-ball-6 32s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
-            opacity: 0.13;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.26; /* AUMENTADA */
         }
         
         #ball-7 {
             top: 75%;
             left: 30%;
             animation: float-ball-7 24s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.15;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
+            opacity: 0.28; /* AUMENTADA */
         }
         
         #ball-8 {
             top: 55%;
             right: 18%;
             animation: float-ball-8 40s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
-            opacity: 0.14;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
+            opacity: 0.27; /* AUMENTADA */
         }
         
         #ball-9 {
             top: 95%;
             right: 30%;
             animation: float-ball-9 26s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
-            opacity: 0.13;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.26; /* AUMENTADA */
         }
         
         #ball-10 {
             top: 20%;
             left: 35%;
             animation: float-ball-10 22s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.16;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
+            opacity: 0.29; /* AUMENTADA */
         }
         
-        /* Más bolas para cubrir mejor el espacio */
+        /* Más bolas para cubrir mejor el espacio - MÁS OSCURAS */
         #ball-11 {
             top: 60%;
             left: 5%;
             animation: float-ball-1 27s ease-in-out infinite reverse;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
-            opacity: 0.12;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
+            opacity: 0.25; /* AUMENTADA */
         }
         
         #ball-12 {
             top: 40%;
             right: 5%;
             animation: float-ball-2 33s ease-in-out infinite reverse;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
-            opacity: 0.14;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.27; /* AUMENTADA */
         }
         
         #ball-13 {
             top: 80%;
             left: 40%;
             animation: float-ball-3 21s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.15;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
+            opacity: 0.28; /* AUMENTADA */
         }
         
         #ball-14 {
             top: 30%;
             left: 60%;
             animation: float-ball-4 38s ease-in-out infinite reverse;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.35) 50%, transparent 70%);
-            opacity: 0.13;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
+            opacity: 0.26; /* AUMENTADA */
         }
         
         #ball-15 {
             top: 70%;
             right: 35%;
             animation: float-ball-5 29s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.3) 50%, transparent 70%);
-            opacity: 0.14;
+            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
+            opacity: 0.27; /* AUMENTADA */
         }
         
         /* Animaciones de flotación suave */
@@ -697,10 +697,10 @@
             flex-shrink: 0;
         }
         
-        /* TESTIMONIOS - CARRUSEL OPTIMIZADO PARA MÓVIL */
+        /* TESTIMONIOS - CARRUSEL OPTIMIZADO PARA MÓVIL - CORREGIDO */
         .testimonials-container {
             position: relative;
-            overflow: hidden;
+            overflow: visible; /* CAMBIADO de hidden a visible para que no corte */
             margin-top: var(--space-xl);
             padding: var(--space-lg) 0;
         }
@@ -710,6 +710,7 @@
             transition: transform 0.5s ease;
             gap: var(--space-md);
             padding: 0 var(--space-sm);
+            will-change: transform; /* Mejora rendimiento */
         }
         
         .testimonial-card {
@@ -718,11 +719,13 @@
             border-radius: var(--radius-md);
             border: 1px solid var(--gray-border);
             position: relative;
-            min-width: calc(100% - 32px);
+            min-width: calc(100% - 40px); /* CORREGIDO: más espacio en móvil */
             flex-shrink: 0;
             transition: var(--transition-smooth);
             box-shadow: var(--shadow-sm);
             margin: 0 var(--space-xs);
+            word-wrap: break-word; /* Asegura que el texto no se salga */
+            overflow-wrap: break-word;
         }
         
         .testimonial-card:hover {
@@ -740,6 +743,8 @@
             font-weight: 500;
             position: relative;
             padding-left: var(--space-md);
+            hyphens: auto; /* Permite separación de palabras */
+            word-break: break-word; /* Asegura que el texto se ajuste */
         }
         
         .testimonial-text::before {
@@ -1013,7 +1018,7 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        /* MOBILE FIRST OPTIMIZATIONS */
+        /* MOBILE FIRST OPTIMIZATIONS - MEJORADO PARA TESTIMONIOS */
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-md);
@@ -1031,7 +1036,7 @@
             /* Ajustar bolas para móviles - MÁS VISIBLES */
             .floating-ball {
                 filter: blur(15px);
-                opacity: 0.15;
+                opacity: 0.3; /* AUMENTADA para móviles */
             }
             
             .ball-small {
@@ -1051,25 +1056,34 @@
             
             /* Reducir número de bolas en móviles pero mantener visibilidad */
             #ball-3, #ball-5, #ball-7, #ball-9, #ball-10, #ball-12, #ball-14, #ball-15 {
-                opacity: 0.18;
+                opacity: 0.32; /* AUMENTADA */
             }
             
-            /* MEJORAS ESPECÍFICAS PARA EL CARRUSEL EN MÓVIL */
+            /* MEJORAS ESPECÍFICAS PARA EL CARRUSEL EN MÓVIL - CORREGIDO */
+            .testimonials-container {
+                overflow: visible; /* IMPORTANTE: No ocultar contenido */
+                padding: var(--space-sm) 0;
+            }
+            
             .testimonials-track {
                 gap: var(--space-sm);
-                padding: 0 4px;
+                padding: 0 15px; /* Más padding para que no toque bordes */
             }
             
             .testimonial-card {
-                min-width: calc(100vw - 60px);
+                min-width: calc(100vw - 80px); /* Más ancho para móvil */
                 padding: var(--space-md);
-                margin: 0 4px;
+                margin: 0 8px; /* Más margen */
+                box-sizing: border-box;
             }
             
             .testimonial-text {
                 font-size: 1rem;
                 line-height: 1.5;
                 padding-left: var(--space-sm);
+                margin-bottom: var(--space-md);
+                word-break: normal; /* Mejor control del texto */
+                overflow: visible; /* No ocultar texto */
             }
             
             .testimonial-text::before {
@@ -1079,6 +1093,7 @@
             
             .carousel-controls {
                 margin-top: var(--space-lg);
+                flex-wrap: wrap;
             }
             
             .carousel-btn {
@@ -1117,17 +1132,18 @@
         
         @media (min-width: 768px) {
             .testimonial-card {
-                min-width: calc(50% - 32px);
+                min-width: calc(50% - 40px); /* Más espacio entre tarjetas */
             }
             
             .testimonials-track {
                 gap: var(--space-lg);
+                padding: 0 20px;
             }
         }
         
         @media (min-width: 1024px) {
             .testimonial-card {
-                min-width: calc(33.333% - 32px);
+                min-width: calc(33.333% - 40px); /* Más espacio entre tarjetas */
             }
         }
         
@@ -1154,9 +1170,24 @@
                 padding: var(--space-md);
             }
             
+            /* TESTIMONIOS EN MÓVILES PEQUEÑOS - MEJORADO */
             .testimonial-card {
-                min-width: calc(100vw - 40px);
-                margin: 0 2px;
+                min-width: calc(100vw - 60px); /* Más espacio */
+                margin: 0 10px;
+                padding: var(--space-md);
+            }
+            
+            .testimonial-text {
+                font-size: 0.9375rem;
+                line-height: 1.5;
+                margin-bottom: var(--space-md);
+                padding-left: var(--space-sm);
+                overflow: visible; /* No ocultar texto */
+            }
+            
+            .testimonial-text::before {
+                font-size: 2rem;
+                top: -5px;
             }
             
             .label {
@@ -1166,15 +1197,10 @@
             
             /* Bolas aún más visibles en móviles pequeños */
             .floating-ball {
-                opacity: 0.2;
+                opacity: 0.35; /* AUMENTADA */
             }
             
             /* Ajustes adicionales para móviles muy pequeños */
-            .testimonial-text {
-                font-size: 0.9375rem;
-                margin-bottom: var(--space-md);
-            }
-            
             .testimonial-avatar {
                 width: 40px;
                 height: 40px;
@@ -1189,19 +1215,44 @@
         
         @media (max-width: 360px) {
             .testimonial-card {
-                min-width: calc(100vw - 32px);
+                min-width: calc(100vw - 50px); /* Ajuste final para pantallas muy pequeñas */
                 padding: var(--space-sm);
+                margin: 0 5px;
             }
             
             .testimonial-text {
                 font-size: 0.875rem;
                 line-height: 1.4;
+                padding-left: 0.75rem;
+            }
+            
+            .testimonial-text::before {
+                font-size: 1.75rem;
+                top: -3px;
             }
             
             .carousel-controls {
                 flex-wrap: wrap;
                 gap: var(--space-sm);
             }
+            
+            /* Asegurar que el texto siempre sea legible */
+            .testimonial-author {
+                flex-wrap: wrap;
+            }
+        }
+        
+        /* ESTILOS ESPECÍFICOS PARA ASEGURAR QUE LOS TESTIMONIOS SE VEAN COMPLETOS */
+        .testimonial-card {
+            display: flex;
+            flex-direction: column;
+            height: auto; /* Altura automática */
+            min-height: 220px; /* Altura mínima para consistencia */
+        }
+        
+        .testimonial-text {
+            flex: 1; /* Ocupa el espacio disponible */
+            overflow: visible; /* No ocultar el texto */
         }
         
         /* UTILITIES */
@@ -1221,7 +1272,7 @@
     </style>
 </head>
 <body>
-    <!-- BOLAS FLOTANTES DE FONDO - MUY VISIBLES Y BIEN DISTRIBUIDAS -->
+    <!-- BOLAS FLOTANTES DE FONDO - MÁS OSCURAS Y VISIBLES -->
     <div class="floating-balls">
         <div class="floating-ball ball-large" id="ball-1"></div>
         <div class="floating-ball ball-medium" id="ball-2"></div>
@@ -2013,7 +2064,7 @@
                 });
             });
             
-            // CARRUSEL DE TESTIMONIOS - CORREGIDO PARA MÓVIL
+            // CARRUSEL DE TESTIMONIOS - MEJORADO PARA MÓVIL
             const track = document.getElementById('testimonials-track');
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
@@ -2023,6 +2074,7 @@
             const totalTestimonials = testimonials.length;
             let currentIndex = 0;
             let autoSlideInterval;
+            let isAnimating = false;
             
             // Calcular cuántos testimonios caben en pantalla (responsive)
             function getVisibleCount() {
@@ -2063,6 +2115,9 @@
             
             // Mover carrusel a posición específica
             function goToSlide(index) {
+                if (isAnimating) return;
+                isAnimating = true;
+                
                 const visibleCount = getVisibleCount();
                 const maxIndex = Math.max(0, totalTestimonials - visibleCount);
                 
@@ -2075,9 +2130,15 @@
                 const testimonialWidth = testimonial.offsetWidth + gap;
                 const translateX = -currentIndex * testimonialWidth;
                 
+                track.style.transition = 'transform 0.5s ease';
                 track.style.transform = `translateX(${translateX}px)`;
                 updateDots();
                 resetAutoSlide();
+                
+                // Permitir nueva animación después de 500ms
+                setTimeout(() => {
+                    isAnimating = false;
+                }, 500);
             }
             
             // Siguiente slide
@@ -2131,13 +2192,21 @@
             // Redimensionar ventana - recalcular
             window.addEventListener('resize', () => {
                 createDots();
-                goToSlide(currentIndex);
+                // Pequeño delay para asegurar que los elementos tengan su tamaño calculado
+                setTimeout(() => {
+                    goToSlide(currentIndex);
+                }, 100);
             });
             
             // Asegurar que el carrusel se vea bien en móvil al cargar
             setTimeout(() => {
                 goToSlide(0);
-            }, 100);
+            }, 300);
+            
+            // Mejorar rendimiento en móvil
+            if (window.innerWidth < 768) {
+                track.style.willChange = 'transform';
+            }
         });
     </script>
 </body>

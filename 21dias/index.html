@@ -145,24 +145,144 @@
             align-items: center;
         }
         
+        /* CÍRCULOS DIFUSOS DE FONDO - CON EFECTO DE RESPIRACIÓN */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
+            width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, 
-                rgba(166, 27, 52, 0.03) 0%, 
-                transparent 100%);
+            top: 0;
+            left: 0;
             z-index: 0;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+        
+        /* Círculo grande difuso 1 */
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: -500px;
+            right: -400px;
+            z-index: 0;
+            filter: blur(120px);
+            opacity: 0.05;
+            animation: breathe-1 8s ease-in-out infinite alternate;
+        }
+        
+        /* Círculo grande difuso 2 */
+        .hero-background-circles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .circle-1 {
+            position: absolute;
+            width: 900px;
+            height: 900px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: -300px;
+            left: -300px;
+            filter: blur(100px);
+            opacity: 0.04;
+            animation: breathe-2 10s ease-in-out infinite alternate;
+        }
+        
+        .circle-2 {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            bottom: -400px;
+            right: -200px;
+            filter: blur(90px);
+            opacity: 0.03;
+            animation: breathe-3 12s ease-in-out infinite alternate;
+        }
+        
+        .circle-3 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+            top: 50%;
+            left: 10%;
+            filter: blur(80px);
+            opacity: 0.02;
+            animation: breathe-1 9s ease-in-out infinite alternate-reverse;
+        }
+        
+        /* Animaciones de respiración para los círculos */
+        @keyframes breathe-1 {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.04;
+            }
+            100% {
+                transform: scale(1.1) translate(30px, -20px);
+                opacity: 0.06;
+            }
+        }
+        
+        @keyframes breathe-2 {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.03;
+            }
+            100% {
+                transform: scale(1.08) translate(-20px, 15px);
+                opacity: 0.05;
+            }
+        }
+        
+        @keyframes breathe-3 {
+            0% {
+                transform: scale(1) translate(0, 0);
+                opacity: 0.02;
+            }
+            100% {
+                transform: scale(1.05) translate(15px, 10px);
+                opacity: 0.04;
+            }
         }
         
         .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+        }
+        
+        /* ESTILO ESPECIAL PARA EL "NO" EN ROJO */
+        .highlight-no {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight-no::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: rgba(166, 27, 52, 0.15);
+            z-index: -1;
+            border-radius: 4px;
         }
         
         /* ETIQUETA CONTEXTUAL - ALTO IMPACTO */
@@ -178,6 +298,8 @@
             border: 1.5px solid rgba(166, 27, 52, 0.2);
             border-radius: 20px;
             background: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
         }
         
         /* SUBHEADLINE HUMANO */
@@ -189,6 +311,8 @@
             font-weight: 500;
             max-width: 700px;
             font-family: var(--font-body);
+            position: relative;
+            z-index: 1;
         }
         
         /* CTA - ACCIÓN CLARA Y DECIDIDA */
@@ -211,6 +335,7 @@
             font-family: var(--font-heading);
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            z-index: 1;
         }
         
         .cta-primary:hover {
@@ -233,6 +358,8 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+            z-index: 1;
         }
         
         .date-info p {
@@ -254,6 +381,8 @@
             margin-top: var(--space-xl);
             color: var(--gray);
             font-size: 0.875rem;
+            position: relative;
+            z-index: 1;
         }
         
         .confidence-item {
@@ -610,6 +739,19 @@
                 padding: var(--space-xl) 0;
             }
             
+            /* Ajuste de círculos para móviles */
+            .hero::after {
+                width: 800px;
+                height: 800px;
+                top: -300px;
+                right: -300px;
+                filter: blur(80px);
+            }
+            
+            .circle-1, .circle-2, .circle-3 {
+                display: none; /* Simplificamos para móviles */
+            }
+            
             .cta-primary {
                 width: 100%;
                 min-width: auto;
@@ -685,13 +827,20 @@
 <body>
     <!-- HERO SECTION - IMPACTO EMOCIONAL -->
     <section class="hero">
+        <!-- Círculos de fondo difusos -->
+        <div class="hero-background-circles">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+            <div class="circle-3"></div>
+        </div>
+        
         <div class="container">
             <div class="hero-content text-center">
                 <!-- Etiqueta contextual - ALTO IMPACTO -->
                 <div class="label">EDICIÓN ENERO 2026 · 21 DÍAS GUIADOS</div>
                 
-                <!-- H1 Principal - SANS SERIF BOLD -->
-                <h1>CÓMO NO EMPEZAR EL 2026</h1>
+                <!-- H1 Principal con el "NO" en rojo -->
+                <h1>CÓMO <span class="highlight-no">NO</span> EMPEZAR EL 2026</h1>
                 
                 <!-- Subheadline humano -->
                 <p class="subheadline">

@@ -3,48 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>21 días para dejar de procrastinar y empezar a avanzar sin quemarte</title>
+    <title>Cómo No Empezar el 2026 - 21 días para dejar de procrastinar</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* RESET Y VARIABLES */
+        /* RESET Y SISTEMA DE DISEÑO */
         :root {
-            /* PALETA DE COLORES */
-            --white: #FAFAFA;
-            --dark: #1E1E1E;
-            --gray: #6F6F6F;
-            --accent: #A61B34;
-            --accent-dark: #8A152C;
-            --light-gray: #F5F5F5;
-            --border: #EAEAEA;
+            /* PALETA EMOCIONAL */
+            --accent: #A61B34;           /* Granate - Acción y decisión */
+            --accent-dark: #8A152C;      /* Granate oscuro - Hover */
+            --white: #FFFFFF;            /* Pureza y claridad */
+            --black: #1E1E1E;            /* Autoridad y profundidad */
+            --gray: #333333;             /* Texto secundario */
+            --gray-light: #F8F8F8;       /* Fondos sutiles */
+            --gray-border: rgba(30, 30, 30, 0.08); /* Bordes sutiles */
             
-            /* TIPOGRAFÍA */
-            --font-heading: 'Cormorant', serif;
-            --font-body: 'Inter', sans-serif;
+            /* TIPOGRAFÍA - ALTO IMPACTO */
+            --font-heading: 'Montserrat', sans-serif;  /* Impacto moderno */
+            --font-body: 'Inter', sans-serif;          /* Claridad y legibilidad */
             
-            /* ESPACIADO */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 2rem;
-            --space-lg: 3rem;
-            --space-xl: 4rem;
+            /* ESPACIADO SISTEMÁTICO */
+            --space-xxs: 0.25rem;    /* 4px */
+            --space-xs: 0.5rem;      /* 8px */
+            --space-sm: 1rem;        /* 16px */
+            --space-md: 1.5rem;      /* 24px */
+            --space-lg: 2rem;        /* 32px */
+            --space-xl: 3rem;        /* 48px */
+            --space-xxl: 4rem;       /* 64px */
             
             /* RADIOS */
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 20px;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
             
-            /* SOMBRAS */
-            --shadow-sm: 0 2px 8px rgba(30, 30, 30, 0.05);
+            /* SOMBRAS SUTILES */
+            --shadow-sm: 0 2px 8px rgba(30, 30, 30, 0.04);
             --shadow-md: 0 4px 20px rgba(30, 30, 30, 0.08);
             --shadow-lg: 0 10px 40px rgba(30, 30, 30, 0.12);
             
             /* TRANSICIONES */
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-fast: all 0.2s ease;
         }
         
+        /* RESET Y ESTILOS BASE */
         * {
             margin: 0;
             padding: 0;
@@ -53,14 +57,17 @@
         
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
         
         body {
             font-family: var(--font-body);
-            color: var(--dark);
+            color: var(--gray);
             background-color: var(--white);
             line-height: 1.6;
             font-weight: 400;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
         
@@ -68,243 +75,290 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 var(--space-lg);
         }
         
         section {
-            padding: var(--space-xl) 0;
+            padding: var(--space-xxl) 0;
         }
         
-        /* TIPOGRAFÍA */
-        h1, h2, h3, h4 {
+        /* JERARQUÍA TIPOGRÁFICA - SANS SERIF MODERNA */
+        h1, h2, h3, h4, h5, h6 {
             font-family: var(--font-heading);
-            font-weight: 600;
-            line-height: 1.2;
+            font-weight: 700; /* Bold para impacto */
+            line-height: 1.15;
+            color: var(--black);
             margin-bottom: var(--space-md);
-            color: var(--dark);
-        }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
             letter-spacing: -0.01em;
         }
         
+        h1 {
+            font-size: clamp(2.75rem, 6vw, 4.5rem); /* Responsive fluid */
+            font-weight: 800; /* Extra bold para H1 */
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+        
         h2 {
-            font-size: 2.5rem;
-            text-align: center;
+            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+            font-weight: 700;
         }
         
         h3 {
-            font-size: 1.75rem;
-            margin-bottom: var(--space-sm);
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 600;
         }
         
         h4 {
-            font-size: 1.25rem;
-            font-family: var(--font-body);
+            font-size: 1.5rem;
             font-weight: 600;
         }
         
         p {
             margin-bottom: var(--space-md);
             font-size: 1.125rem;
-            color: var(--gray);
             line-height: 1.7;
+            color: var(--gray);
         }
         
         .lead {
             font-size: 1.375rem;
+            line-height: 1.6;
+            color: var(--black);
             font-weight: 400;
-            color: var(--dark);
         }
         
         .text-center {
             text-align: center;
         }
         
-        /* BOTONES */
-        .btn {
-            display: inline-flex;
+        /* HERO SECTION - IMPACTO EMOCIONAL INMEDIATO */
+        .hero {
+            padding: var(--space-xxl) 0;
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.98) 0%, 
+                rgba(248, 248, 248, 0.98) 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
             align-items: center;
-            justify-content: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(166, 27, 52, 0.03) 0%, 
+                transparent 100%);
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* ETIQUETA CONTEXTUAL - ALTO IMPACTO */
+        .label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+            padding: var(--space-xs) var(--space-sm);
+            border: 1.5px solid rgba(166, 27, 52, 0.2);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* SUBHEADLINE HUMANO */
+        .subheadline {
+            font-size: clamp(1.25rem, 2.5vw, 1.625rem);
+            line-height: 1.5;
+            color: var(--black);
+            margin: var(--space-xl) 0;
+            font-weight: 500;
+            max-width: 700px;
+            font-family: var(--font-body);
+        }
+        
+        /* CTA - ACCIÓN CLARA Y DECIDIDA */
+        .cta-primary {
+            display: inline-block;
             background-color: var(--accent);
             color: var(--white);
-            padding: 20px 48px;
+            padding: 1.375rem 3.5rem;
             font-size: 1.25rem;
-            font-weight: 600;
+            font-weight: 700;
             text-decoration: none;
             border-radius: var(--radius-md);
             border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            text-align: center;
-            box-shadow: var(--shadow-md);
+            transition: var(--transition-smooth);
             position: relative;
             overflow: hidden;
-            gap: 12px;
-        }
-        
-        .btn:hover {
-            background-color: var(--accent-dark);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .btn-sm {
-            padding: 16px 32px;
-            font-size: 1.125rem;
-        }
-        
-        /* HERO SECTION */
-        .hero {
-            padding: var(--space-xl) 0;
-            background: linear-gradient(180deg, var(--white) 0%, var(--light-gray) 100%);
-        }
-        
-        .badge {
-            display: inline-block;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--accent);
-            background: rgba(166, 27, 52, 0.08);
-            padding: 8px 20px;
-            border-radius: var(--radius-lg);
-            margin-bottom: var(--space-md);
+            text-align: center;
+            min-width: 280px;
+            box-shadow: var(--shadow-md);
+            font-family: var(--font-heading);
+            text-transform: uppercase;
             letter-spacing: 0.05em;
         }
         
-        .hero-benefits {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-sm);
-            margin: var(--space-lg) 0;
-            max-width: 600px;
+        .cta-primary:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
         }
         
-        .benefit-item {
+        .cta-primary:active {
+            transform: translateY(0);
+        }
+        
+        /* FECHA - CLARA PERO CALMA */
+        .date-info {
+            margin-top: var(--space-lg);
+            padding: var(--space-md);
+            background: rgba(166, 27, 52, 0.03);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--accent);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .date-info p {
+            margin-bottom: 0;
+            font-size: 1rem;
+            color: var(--gray);
             display: flex;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
             gap: var(--space-sm);
         }
         
-        .benefit-icon {
-            color: var(--accent);
-            font-size: 1.25rem;
-            margin-top: 2px;
-        }
-        
-        .microcopy {
+        /* MICROCONFIANZA */
+        .micro-confidence {
             display: flex;
             flex-wrap: wrap;
             gap: var(--space-md);
             justify-content: center;
-            margin-top: var(--space-md);
+            margin-top: var(--space-xl);
             color: var(--gray);
             font-size: 0.875rem;
         }
         
-        .microcopy span {
+        .confidence-item {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: var(--space-xs);
         }
         
-        /* SECCIONES GENERALES */
+        .confidence-icon {
+            color: var(--accent);
+            font-size: 0.875rem;
+        }
+        
+        /* SECCIONES ESTRUCTURADAS */
         .section-card {
             background: var(--white);
             border-radius: var(--radius-lg);
             padding: var(--space-xl);
+            margin-bottom: var(--space-xl);
+            border: 1px solid var(--gray-border);
             box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            margin-bottom: var(--space-lg);
+            transition: var(--transition-smooth);
         }
         
-        /* DOLOR SECTION */
-        .pain-list {
-            max-width: 600px;
-            margin: var(--space-lg) auto;
+        .section-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(166, 27, 52, 0.1);
         }
         
-        .pain-item {
+        /* DOLOR - IDENTIFICACIÓN EMOCIONAL */
+        .pain-points {
+            max-width: 700px;
+            margin: var(--space-xl) auto;
+        }
+        
+        .pain-point {
             display: flex;
             align-items: flex-start;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-md);
-            padding-bottom: var(--space-md);
-            border-bottom: 1px solid var(--border);
+            gap: var(--space-md);
+            margin-bottom: var(--space-lg);
+            padding-bottom: var(--space-lg);
+            border-bottom: 1px solid var(--gray-border);
         }
         
         .pain-number {
             color: var(--accent);
-            font-weight: 600;
-            font-size: 1.125rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            font-family: var(--font-heading);
+            min-width: 36px;
+            background: rgba(166, 27, 52, 0.08);
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
-        /* PROCESO SECTION */
+        /* PROCESO - TIMELINE CON IMPACTO */
         .process-timeline {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--space-lg);
+            gap: var(--space-xl);
             margin-top: var(--space-xl);
         }
         
         @media (min-width: 768px) {
             .process-timeline {
                 grid-template-columns: repeat(3, 1fr);
-                gap: var(--space-md);
+                gap: var(--space-lg);
             }
         }
         
         .week-card {
             background: var(--white);
-            padding: var(--space-lg);
+            padding: var(--space-xl);
             border-radius: var(--radius-md);
-            border: 1px solid var(--border);
+            border: 1px solid var(--gray-border);
             position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        .week-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
         }
         
         .week-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: rgba(166, 27, 52, 0.1);
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(166, 27, 52, 0.05);
             position: absolute;
-            top: -10px;
+            top: -20px;
             right: 20px;
             font-family: var(--font-heading);
+            transition: var(--transition-smooth);
         }
         
-        /* INCLUYE SECTION */
-        .includes-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
+        .week-card:hover .week-number {
+            color: rgba(166, 27, 52, 0.1);
         }
         
-        @media (min-width: 768px) {
-            .includes-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .include-item {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-sm);
-            padding: var(--space-md);
-            background: var(--light-gray);
-            border-radius: var(--radius-md);
-            border-left: 4px solid var(--accent);
-        }
-        
-        .include-icon {
-            color: var(--accent);
-            font-size: 1.5rem;
-        }
-        
-        /* TESTIMONIOS */
-        .testimonials-grid {
+        /* BENEFICIOS - GRID CLARO */
+        .benefits-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: var(--space-lg);
@@ -312,117 +366,173 @@
         }
         
         @media (min-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .benefit-card {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-lg);
+            background: var(--gray-light);
+            border-radius: var(--radius-md);
+            border-left: 4px solid var(--accent);
+            transition: var(--transition-smooth);
+        }
+        
+        .benefit-card:hover {
+            background: var(--white);
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+        
+        .benefit-icon {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        
+        /* TESTIMONIOS - AUTENTICIDAD */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xl);
+            margin-top: var(--space-xl);
+        }
+        
+        @media (min-width: 768px) {
             .testimonials-grid {
                 grid-template-columns: repeat(3, 1fr);
+                gap: var(--space-lg);
             }
         }
         
         .testimonial-card {
             background: var(--white);
-            padding: var(--space-lg);
+            padding: var(--space-xl);
             border-radius: var(--radius-md);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-border);
+            position: relative;
         }
         
         .testimonial-text {
             font-style: italic;
-            color: var(--dark);
             font-size: 1.125rem;
-            margin-bottom: var(--space-md);
+            line-height: 1.6;
+            color: var(--black);
+            margin-bottom: var(--space-lg);
+            font-weight: 500;
         }
         
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-        }
-        
-        .author-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--light-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-weight: 600;
-        }
-        
-        /* AUTORIDAD */
+        /* AUTORIDAD - SOBRIEDAD CON IMPACTO */
         .authority-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
+            gap: var(--space-lg);
+            margin-top: var(--space-xl);
         }
         
-        .authority-item {
+        @media (min-width: 768px) {
+            .authority-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .authority-point {
             display: flex;
             align-items: flex-start;
-            gap: var(--space-sm);
+            gap: var(--space-md);
         }
         
-        /* PRECIO */
-        .pricing-card {
+        .authority-icon {
+            color: var(--accent);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+        
+        /* INVERSIÓN - VALOR PERCIBIDO CON IMPACTO */
+        .investment-card {
             background: var(--white);
             border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            box-shadow: var(--shadow-lg);
+            padding: var(--space-xxl);
             text-align: center;
-            border: 1px solid var(--border);
+            border: 2px solid var(--gray-border);
             position: relative;
-            max-width: 600px;
+            max-width: 700px;
             margin: 0 auto;
+            overflow: hidden;
+        }
+        
+        .investment-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
         }
         
         .price-badge {
             display: inline-block;
-            background: rgba(166, 27, 52, 0.08);
+            background: rgba(166, 27, 52, 0.1);
             color: var(--accent);
-            padding: var(--space-sm) var(--space-md);
+            padding: var(--space-sm) var(--space-lg);
             border-radius: var(--radius-md);
-            font-weight: 600;
-            margin-bottom: var(--space-md);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-lg);
+            font-family: var(--font-heading);
         }
         
         .price-display {
-            margin: var(--space-lg) 0;
+            margin: var(--space-xl) 0;
         }
         
         .original-price {
             text-decoration: line-through;
             color: var(--gray);
             font-size: 1.25rem;
+            opacity: 0.7;
+            font-weight: 500;
         }
         
         .current-price {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--dark);
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            color: var(--black);
             margin: var(--space-sm) 0;
             font-family: var(--font-heading);
         }
         
-        /* GARANTÍA */
+        /* GARANTÍA - CONFIANZA */
         .guarantee-card {
             background: rgba(166, 27, 52, 0.03);
             border-radius: var(--radius-md);
-            padding: var(--space-lg);
+            padding: var(--space-xl);
             border: 1px solid rgba(166, 27, 52, 0.1);
-            margin-top: var(--space-lg);
+            margin-top: var(--space-xl);
+            text-align: center;
         }
         
-        /* FAQ */
+        /* FAQ - CLARIDAD */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
         
         .faq-item {
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--gray-border);
             padding: var(--space-lg) 0;
+            transition: var(--transition-fast);
+        }
+        
+        .faq-item:hover {
+            border-color: rgba(166, 27, 52, 0.2);
         }
         
         .faq-question {
@@ -431,32 +541,33 @@
             align-items: center;
             cursor: pointer;
             font-weight: 600;
-            color: var(--dark);
+            color: var(--black);
             font-size: 1.125rem;
+            font-family: var(--font-heading);
         }
         
         .faq-answer {
             padding-top: var(--space-md);
             display: none;
             color: var(--gray);
+            animation: fadeIn 0.3s ease;
         }
         
         .faq-answer.active {
             display: block;
-            animation: fadeIn 0.3s ease;
         }
         
-        .faq-icon {
+        .faq-toggle {
             color: var(--accent);
-            transition: var(--transition);
+            transition: var(--transition-fast);
         }
         
-        /* FOOTER */
+        /* FOOTER - SIMPLICIDAD */
         footer {
-            background: var(--dark);
+            background: var(--black);
             color: var(--white);
-            padding: var(--space-xl) 0;
-            margin-top: var(--space-xl);
+            padding: var(--space-xxl) 0;
+            margin-top: var(--space-xxl);
         }
         
         .footer-content {
@@ -469,97 +580,166 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* RESPONSIVE */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .floating {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* MOBILE FIRST OPTIMIZATIONS */
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            h3 { font-size: 1.5rem; }
+            .container {
+                padding: 0 var(--space-md);
+            }
             
-            section { padding: var(--space-lg) 0; }
+            section {
+                padding: var(--space-xl) 0;
+            }
             
-            .section-card,
-            .pricing-card { padding: var(--space-lg) var(--space-md); }
+            .hero {
+                min-height: auto;
+                padding: var(--space-xl) 0;
+            }
             
-            .current-price { font-size: 2.5rem; }
+            .cta-primary {
+                width: 100%;
+                min-width: auto;
+                padding: 1.25rem 2rem;
+            }
+            
+            .micro-confidence {
+                flex-direction: column;
+                align-items: center;
+                gap: var(--space-sm);
+            }
+            
+            .section-card {
+                padding: var(--space-lg);
+            }
+            
+            .investment-card {
+                padding: var(--space-xl) var(--space-lg);
+            }
+            
+            .date-info p {
+                flex-direction: column;
+                gap: var(--space-xs);
+                text-align: center;
+            }
         }
         
         @media (max-width: 480px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.75rem; }
+            :root {
+                font-size: 14px;
+            }
             
-            .btn { width: 100%; padding: 18px 24px; }
+            h1 {
+                font-size: 2.5rem;
+            }
             
-            .microcopy { flex-direction: column; align-items: center; gap: var(--space-sm); }
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero {
+                padding: var(--space-lg) 0;
+            }
+            
+            .week-card,
+            .testimonial-card,
+            .benefit-card {
+                padding: var(--space-md);
+            }
+            
+            .label {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+            }
         }
+        
+        /* UTILITIES */
+        .mt-1 { margin-top: var(--space-xxs); }
+        .mt-2 { margin-top: var(--space-xs); }
+        .mt-3 { margin-top: var(--space-sm); }
+        .mt-4 { margin-top: var(--space-md); }
+        .mt-5 { margin-top: var(--space-lg); }
+        .mt-6 { margin-top: var(--space-xl); }
+        
+        .mb-1 { margin-bottom: var(--space-xxs); }
+        .mb-2 { margin-bottom: var(--space-xs); }
+        .mb-3 { margin-bottom: var(--space-sm); }
+        .mb-4 { margin-bottom: var(--space-md); }
+        .mb-5 { margin-bottom: var(--space-lg); }
+        .mb-6 { margin-bottom: var(--space-xl); }
     </style>
 </head>
 <body>
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION - IMPACTO EMOCIONAL -->
     <section class="hero">
         <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <div class="badge">Edición Enero 2026 · 21 días guiados</div>
+            <div class="hero-content text-center">
+                <!-- Etiqueta contextual - ALTO IMPACTO -->
+                <div class="label">EDICIÓN ENERO 2026 · 21 DÍAS GUIADOS</div>
                 
-                <h1>Deja de postergar y cumple lo que dices que vas a hacer en 21 días</h1>
+                <!-- H1 Principal - SANS SERIF BOLD -->
+                <h1>CÓMO NO EMPEZAR EL 2026</h1>
                 
-                <p class="lead">Pasa de la parálisis por análisis a mínimo 20 minutos diarios de foco real, sin agotarte ni llenarte de culpa.</p>
+                <!-- Subheadline humano -->
+                <p class="subheadline">
+                    Si sigues postergando "para cuando tengas claridad", vas a repetir el mismo año.<br>
+                    En 21 días instalas foco real sin quemarte.
+                </p>
                 
-                <div class="hero-benefits">
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <div>
-                            <h4>Define 1–2 prioridades claras para tu 2026</h4>
-                            <p>Enfoca tu energía en lo que realmente importa este año.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <div>
-                            <h4>Libérate del ruido mental que te frena</h4>
-                            <p>Silencia la sobrecarga y recupera claridad mental.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-item">
-                        <div class="benefit-icon">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <div>
-                            <h4>Instala un ritual diario de menos de 10 minutos</h4>
-                            <p>Mantén el foco sin forzarte, con consistencia amable.</p>
-                        </div>
-                    </div>
+                <!-- CTA Principal - ACCIÓN CLARA -->
+                <a href="#inversion" class="cta-primary floating">
+                    Empezar ahora
+                </a>
+                
+                <!-- FECHA - CLARA PERO CALMA -->
+                <div class="date-info">
+                    <p>
+                        <i class="fas fa-calendar-alt" style="color: var(--accent);"></i>
+                        <span><strong>Primera clase en vivo:</strong> Lunes 12 de enero</span>
+                        <span style="color: var(--gray); font-size: 0.9rem;">Si no puedes asistir, queda grabada.</span>
+                    </p>
                 </div>
                 
-                <div class="text-center">
-                    <a href="#inversion" class="btn">
-                        <span>Quiero empezar ahora</span>
-                        <i class="fas fa-arrow-right"></i>
-                    </a>
-                    
-                    <div class="microcopy">
-                        <span><i class="fas fa-bolt"></i> Acceso inmediato</span>
-                        <span><i class="fas fa-calendar-check"></i> Empiezas hoy mismo</span>
-                        <span><i class="fas fa-shield-alt"></i> Garantía de 7 días</span>
+                <!-- Microconfianza -->
+                <div class="micro-confidence">
+                    <div class="confidence-item">
+                        <i class="fas fa-bolt confidence-icon"></i>
+                        <span>Acceso inmediato</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="fas fa-calendar-check confidence-icon"></i>
+                        <span>Empiezas hoy</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="fas fa-shield-alt confidence-icon"></i>
+                        <span>Garantía 7 días</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- DOLOR SECTION -->
+    <!-- DOLOR - IDENTIFICACIÓN EMOCIONAL -->
     <section id="dolor">
         <div class="container">
             <div class="section-card">
                 <h2 class="text-center">¿Te pasa esto cuando intentas empezar un nuevo año?</h2>
                 
-                <div class="pain-list">
-                    <div class="pain-item">
+                <div class="pain-points">
+                    <div class="pain-point">
                         <div class="pain-number">1</div>
                         <div>
                             <h4>Arrancas con energía… pero se te apaga rápido</h4>
@@ -567,7 +747,7 @@
                         </div>
                     </div>
                     
-                    <div class="pain-item">
+                    <div class="pain-point">
                         <div class="pain-number">2</div>
                         <div>
                             <h4>Planeas más de lo que ejecutas</h4>
@@ -575,7 +755,7 @@
                         </div>
                     </div>
                     
-                    <div class="pain-item">
+                    <div class="pain-point">
                         <div class="pain-number">3</div>
                         <div>
                             <h4>Te exiges mucho y avanzas poco</h4>
@@ -583,7 +763,7 @@
                         </div>
                     </div>
                     
-                    <div class="pain-item">
+                    <div class="pain-point">
                         <div class="pain-number">4</div>
                         <div>
                             <h4>Te prometes que "esta vez sí"… pero vuelves a frenarte</h4>
@@ -591,7 +771,7 @@
                         </div>
                     </div>
                     
-                    <div class="pain-item" style="border-bottom: none; padding-bottom: 0;">
+                    <div class="pain-point" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
                         <div class="pain-number">5</div>
                         <div>
                             <h4>Y terminas sintiendo culpa por no sostener nada</h4>
@@ -600,26 +780,31 @@
                     </div>
                 </div>
                 
-                <div style="text-align: center; margin-top: var(--space-xl); padding-top: var(--space-lg); border-top: 1px solid var(--border);">
-                    <h3 style="color: var(--accent);">No es falta de disciplina.</h3>
-                    <p class="lead">Es tu sistema nervioso tratando de protegerte.</p>
+                <div class="text-center mt-6" style="padding-top: var(--space-xl); border-top: 1px solid var(--gray-border);">
+                    <h3 style="color: var(--accent); font-size: 1.5rem; font-weight: 700;">No es falta de disciplina.</h3>
+                    <p class="lead" style="font-size: 1.25rem; font-weight: 500;">Es tu sistema nervioso tratando de protegerte.</p>
                 </div>
             </div>
         </div>
     </section>
     
-    <!-- REENCUADRE SECTION -->
+    <!-- REENCUADRE - NO ES TU CULPA -->
     <section id="reencuadre">
         <div class="container">
-            <div class="section-card" style="text-align: center;">
-                <h2 class="text-center">No es tu culpa</h2>
+            <div class="section-card text-center">
+                <h2>No es tu culpa</h2>
                 
                 <div style="max-width: 700px; margin: 0 auto;">
                     <p class="lead">La procrastinación crónica es una respuesta natural de tu mente cuando se siente agotada, sobreexigida o desbordada.</p>
                     
-                    <p style="font-size: 1.25rem; margin: var(--space-lg) 0;">Por eso <strong>no necesitas "más fuerza de voluntad"</strong>.</p>
+                    <p style="font-size: 1.375rem; margin: var(--space-xl) 0; color: var(--black); font-weight: 600;">
+                        Por eso <span style="color: var(--accent);">no necesitas "más fuerza de voluntad"</span>.
+                    </p>
                     
-                    <p class="lead">Necesitas un enfoque diferente:<br>avanzar desde calma, claridad y respeto por tu energía.</p>
+                    <p class="lead" style="font-weight: 500;">
+                        Necesitas un enfoque diferente:<br>
+                        avanzar desde calma, claridad y respeto por tu energía.
+                    </p>
                 </div>
             </div>
         </div>
@@ -632,14 +817,14 @@
                 <h2 class="text-center">21 días para dejar de procrastinar y empezar a avanzar sin quemarte</h2>
                 
                 <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                    <p class="lead">Este no es un reto de disciplina.<br>Es una experiencia guiada de 21 días para que recuperes claridad mental, orden interno y dirección — sin presión ni autoexigencia.</p>
+                    <p class="lead" style="font-weight: 500;">Este no es un reto de disciplina.<br>Es una experiencia guiada de 21 días para que recuperes claridad mental, orden interno y dirección — sin presión ni autoexigencia.</p>
                 </div>
                 
                 <!-- MAPA VISUAL DEL PROCESO -->
-                <div style="margin-top: var(--space-xl);">
+                <div class="mt-6">
                     <h3 class="text-center">MAPA VISUAL DEL PROCESO</h3>
                     
-                    <div class="process-timeline">
+                    <div class="process-timeline mt-5">
                         <div class="week-card">
                             <div class="week-number">01</div>
                             <h3>Semana 1 – Romper el loop del estancamiento</h3>
@@ -681,9 +866,9 @@
             <div class="section-card">
                 <h2 class="text-center">Qué incluye esta experiencia</h2>
                 
-                <div class="includes-grid">
-                    <div class="include-item">
-                        <div class="include-icon">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-users"></i>
                         </div>
                         <div>
@@ -692,8 +877,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-headphones"></i>
                         </div>
                         <div>
@@ -702,8 +887,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-history"></i>
                         </div>
                         <div>
@@ -712,8 +897,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fab fa-whatsapp"></i>
                         </div>
                         <div>
@@ -722,8 +907,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-book"></i>
                         </div>
                         <div>
@@ -732,8 +917,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-hands-helping"></i>
                         </div>
                         <div>
@@ -742,8 +927,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-play-circle"></i>
                         </div>
                         <div>
@@ -752,8 +937,8 @@
                         </div>
                     </div>
                     
-                    <div class="include-item">
-                        <div class="include-icon">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-gift"></i>
                         </div>
                         <div>
@@ -775,12 +960,12 @@
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <div class="testimonial-text">
-                            "Por primera vez avancé sin sentir culpa ni esa presión interna que siempre me paraliza."
+                            Por primera vez avancé sin sentir culpa ni esa presión interna que siempre me paraliza.
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">M</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gray-light); display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 600;">M</div>
                             <div>
-                                <h4>María</h4>
+                                <h4 style="margin-bottom: 0;">María</h4>
                                 <p style="color: var(--gray); font-size: 0.875rem;">México</p>
                             </div>
                         </div>
@@ -788,12 +973,12 @@
                     
                     <div class="testimonial-card">
                         <div class="testimonial-text">
-                            "Dejé de postergar una decisión profesional que cargaba hace meses. La claridad mental fue real."
+                            Dejé de postergar una decisión profesional que cargaba hace meses. La claridad mental fue real.
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">C</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gray-light); display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 600;">C</div>
                             <div>
-                                <h4>Carlos</h4>
+                                <h4 style="margin-bottom: 0;">Carlos</h4>
                                 <p style="color: var(--gray); font-size: 0.875rem;">Argentina</p>
                             </div>
                         </div>
@@ -801,12 +986,12 @@
                     
                     <div class="testimonial-card">
                         <div class="testimonial-text">
-                            "El enfoque amable pero firme me ayudó a instalar hábitos que realmente sostengo."
+                            El enfoque amable pero firme me ayudó a instalar hábitos que realmente sostengo.
                         </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">A</div>
+                        <div style="display: flex; align-items: center; gap: var(--space-sm);">
+                            <div style="width: 48px; height: 48px; border-radius: 50%; background: var(--gray-light); display: flex; align-items: center; justify-content: center; color: var(--accent); font-weight: 600;">A</div>
                             <div>
-                                <h4>Ana</h4>
+                                <h4 style="margin-bottom: 0;">Ana</h4>
                                 <p style="color: var(--gray); font-size: 0.875rem;">España</p>
                             </div>
                         </div>
@@ -819,13 +1004,13 @@
     <!-- AUTORIDAD -->
     <section id="autoridad">
         <div class="container">
-            <div class="section-card" style="text-align: center;">
-                <h2 class="text-center">¿Quién te acompaña?</h2>
+            <div class="section-card text-center">
+                <h2>¿Quién te acompaña?</h2>
                 
                 <div style="max-width: 700px; margin: 0 auto;">
                     <div class="authority-grid">
-                        <div class="authority-item">
-                            <div style="color: var(--accent); font-size: 1.25rem;">
+                        <div class="authority-point">
+                            <div class="authority-icon">
                                 <i class="fas fa-user-tie"></i>
                             </div>
                             <div>
@@ -834,8 +1019,8 @@
                             </div>
                         </div>
                         
-                        <div class="authority-item">
-                            <div style="color: var(--accent); font-size: 1.25rem;">
+                        <div class="authority-point">
+                            <div class="authority-icon">
                                 <i class="fas fa-users"></i>
                             </div>
                             <div>
@@ -844,8 +1029,8 @@
                             </div>
                         </div>
                         
-                        <div class="authority-item">
-                            <div style="color: var(--accent); font-size: 1.25rem;">
+                        <div class="authority-point">
+                            <div class="authority-icon">
                                 <i class="fas fa-brain"></i>
                             </div>
                             <div>
@@ -854,8 +1039,8 @@
                             </div>
                         </div>
                         
-                        <div class="authority-item">
-                            <div style="color: var(--accent); font-size: 1.25rem;">
+                        <div class="authority-point">
+                            <div class="authority-icon">
                                 <i class="fas fa-heart"></i>
                             </div>
                             <div>
@@ -872,7 +1057,7 @@
     <!-- INVERSIÓN -->
     <section id="inversion">
         <div class="container">
-            <div class="pricing-card">
+            <div class="investment-card">
                 <h2 class="text-center">Tu inversión para no repetir otro año igual</h2>
                 
                 <div class="price-badge">Valor real del programa: USD 180+</div>
@@ -880,24 +1065,31 @@
                 <div class="price-display">
                     <div class="original-price">USD 180</div>
                     <div class="current-price">USD 25</div>
-                    <p style="color: var(--gray);">Una sola vez.<br>Sin suscripciones.<br>Sin letras chicas.</p>
+                    <p style="color: var(--gray); font-size: 1.125rem;">
+                        Una sola vez.<br>Sin suscripciones.<br>Sin letras chicas.
+                    </p>
                 </div>
                 
-                <a href="#inversion" class="btn btn-sm">
+                <a href="#inversion" class="cta-primary">
                     <span>Quiero empezar ahora</span>
-                    <i class="fas fa-arrow-right"></i>
                 </a>
                 
                 <!-- GARANTÍA -->
                 <div class="guarantee-card">
-                    <h3 style="color: var(--accent); text-align: center;">Garantía consciente de 7 días</h3>
-                    <p class="text-center">Si en la primera semana sientes que esto no es para ti, escribes y te devolvemos tu inversión.<br>Sin explicaciones incómodas.<br><strong>Personas reales. Procesos reales.</strong></p>
+                    <h3 style="color: var(--accent);">Garantía consciente de 7 días</h3>
+                    <p class="text-center" style="font-size: 1.125rem;">
+                        Si en la primera semana sientes que esto no es para ti, escribes y te devolvemos tu inversión.<br>
+                        Sin explicaciones incómodas.<br>
+                        <strong>Personas reales. Procesos reales.</strong>
+                    </p>
                 </div>
                 
                 <!-- URGENCIA SANA -->
-                <div style="margin-top: var(--space-lg); padding: var(--space-md); background: rgba(166, 27, 52, 0.05); border-radius: var(--radius-md);">
-                    <p class="text-center" style="margin-bottom: 0; font-weight: 500; color: var(--dark);">
-                        <i class="fas fa-users" style="color: var(--accent);"></i> Las masterclass en vivo tienen cupo limitado para que todos puedan participar.<br>Cuando se complete, cerramos esta edición.
+                <div style="margin-top: var(--space-xl); padding: var(--space-lg); background: rgba(166, 27, 52, 0.03); border-radius: var(--radius-md); border: 1px solid rgba(166, 27, 52, 0.1);">
+                    <p class="text-center" style="margin-bottom: 0; font-weight: 600; color: var(--black);">
+                        <i class="fas fa-users" style="color: var(--accent); margin-right: var(--space-xs);"></i>
+                        Las masterclass en vivo tienen cupo limitado para que todos puedan participar.<br>
+                        Cuando se complete, cerramos esta edición.
                     </p>
                 </div>
             </div>
@@ -914,7 +1106,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>¿Cuánto tiempo necesito por día?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
                         <div class="faq-answer">
                             <p>El ritual diario está diseñado para menos de 10 minutos. Las masterclass en vivo duran aproximadamente 60 minutos cada una (4 en total durante los 21 días). La idea es integrar el proceso en tu vida, no sumar carga.</p>
@@ -924,7 +1116,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>¿Y si nunca termino nada?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Precisamente para eso está diseñado este proceso. No se trata de "terminar" algo, sino de aprender a avanzar de manera sostenible. Si te cuesta sostener acciones, este enfoque te ayudará a entender por qué y cómo cambiar ese patrón.</p>
@@ -934,7 +1126,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>¿Sirve si ya estoy en terapia?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Absolutamente. Este es un programa práctico de hábitos y claridad mental, no un proceso terapéutico. Complementa muy bien trabajos terapéuticos, ya que te da herramientas concretas para la acción diaria y la gestión del foco.</p>
@@ -944,7 +1136,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>¿Tengo acceso a las grabaciones?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Sí, todas las masterclass quedan grabadas y disponibles para siempre. Puedes verlas cuando mejor se adapte a tu ritmo y revisarlas las veces que necesites.</p>
@@ -954,7 +1146,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>¿Qué pasa si no puedo seguir el ritmo?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
                         <div class="faq-answer">
                             <p>No hay "expulsión" por no seguir el ritmo. El proceso está diseñado con flexibilidad. Si te atrasas, simplemente retomas donde quedaste. La comunidad de WhatsApp está para apoyarte sin juicio.</p>
@@ -964,7 +1156,7 @@
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>¿Cómo funciona el grupo privado?</span>
-                            <i class="fas fa-chevron-down faq-icon"></i>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
                         </div>
                         <div class="faq-answer">
                             <p>Es un grupo de WhatsApp exclusivo para participantes de esta edición. Allí compartimos dudas, avances, y recibes apoyo directo. No es un grupo abandonado; hay acompañamiento real durante los 21 días.</p>
@@ -978,20 +1170,30 @@
     <!-- CTA FINAL -->
     <section id="cta-final">
         <div class="container">
-            <div style="text-align: center; padding: var(--space-xl) 0;">
+            <div style="text-align: center;">
                 <h2 class="text-center">Estoy listo para empezar los 21 días</h2>
                 
-                <p class="lead" style="margin-bottom: var(--space-lg);">Toma la decisión que tu yo futuro te va a agradecer.</p>
+                <p class="lead" style="margin-bottom: var(--space-xl); font-weight: 500;">
+                    Toma la decisión que tu yo futuro te va a agradecer.
+                </p>
                 
-                <a href="#inversion" class="btn btn-sm">
+                <a href="#inversion" class="cta-primary">
                     <span>Quiero empezar ahora por USD 25</span>
-                    <i class="fas fa-arrow-right"></i>
                 </a>
                 
-                <div class="microcopy" style="margin-top: var(--space-md);">
-                    <span><i class="fas fa-lock"></i> Pago seguro</span>
-                    <span><i class="fas fa-shield-alt"></i> Garantía de 7 días</span>
-                    <span><i class="fas fa-calendar-check"></i> Empiezas hoy mismo</span>
+                <div class="micro-confidence" style="margin-top: var(--space-lg);">
+                    <div class="confidence-item">
+                        <i class="fas fa-lock confidence-icon"></i>
+                        <span>Pago seguro</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="fas fa-shield-alt confidence-icon"></i>
+                        <span>Garantía de 7 días</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="fas fa-calendar-check confidence-icon"></i>
+                        <span>Empiezas hoy mismo</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1001,8 +1203,10 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h3 style="color: var(--white); margin-bottom: var(--space-sm);">21 días para dejar de procrastinar</h3>
-                <p style="color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto var(--space-lg);">
+                <h3 style="color: var(--white); margin-bottom: var(--space-md); font-family: var(--font-heading);">
+                    21 días para dejar de procrastinar
+                </h3>
+                <p style="color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto var(--space-xl); font-size: 1.125rem;">
                     Una experiencia consciente para personas que quieren avanzar sin quemarse. Sin marketing agresivo, sin promesas vacías, sin presión innecesaria.
                 </p>
                 <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.875rem;">
@@ -1013,11 +1217,11 @@
     </footer>
 
     <script>
-        // FAQ functionality
+        // FAQ Functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const answer = question.nextElementSibling;
-                const icon = question.querySelector('.faq-icon');
+                const icon = question.querySelector('.faq-toggle');
                 
                 // Toggle current answer
                 answer.classList.toggle('active');
@@ -1035,7 +1239,7 @@
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== question.parentElement) {
                         const otherAnswer = item.querySelector('.faq-answer');
-                        const otherIcon = item.querySelector('.faq-icon');
+                        const otherIcon = item.querySelector('.faq-toggle');
                         if (otherAnswer.classList.contains('active')) {
                             otherAnswer.classList.remove('active');
                             otherIcon.classList.remove('fa-chevron-up');
@@ -1046,22 +1250,33 @@
             });
         });
         
-        // Smooth scroll for anchor links
+        // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
+                if (targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if(targetElement) {
+                if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 100,
+                        top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
                 }
             });
+        });
+        
+        // Hero CTA Animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const cta = document.querySelector('.cta-primary');
+            setTimeout(() => {
+                cta.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    cta.style.transform = 'scale(1)';
+                }, 200);
+            }, 1000);
         });
     </script>
 </body>

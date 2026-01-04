@@ -697,20 +697,25 @@
             flex-shrink: 0;
         }
         
-        /* TESTIMONIOS - CARRUSEL OPTIMIZADO PARA MÓVIL - CORREGIDO */
+        /* TESTIMONIOS - CARRUSEL COMPLETAMENTE REHECHO PARA MÓVIL */
         .testimonials-container {
             position: relative;
-            overflow: visible; /* CAMBIADO de hidden a visible para que no corte */
             margin-top: var(--space-xl);
             padding: var(--space-lg) 0;
+            width: 100%;
+        }
+        
+        .testimonials-wrapper {
+            position: relative;
+            width: 100%;
+            overflow: hidden; /* Solo ocultamos lo que se sale del wrapper */
         }
         
         .testimonials-track {
             display: flex;
             transition: transform 0.5s ease;
-            gap: var(--space-md);
-            padding: 0 var(--space-sm);
             will-change: transform; /* Mejora rendimiento */
+            padding: 5px 0; /* Pequeño padding para sombras */
         }
         
         .testimonial-card {
@@ -719,13 +724,16 @@
             border-radius: var(--radius-md);
             border: 1px solid var(--gray-border);
             position: relative;
-            min-width: calc(100% - 40px); /* CORREGIDO: más espacio en móvil */
-            flex-shrink: 0;
+            flex: 0 0 auto; /* No crece, no se encoge */
             transition: var(--transition-smooth);
             box-shadow: var(--shadow-sm);
-            margin: 0 var(--space-xs);
-            word-wrap: break-word; /* Asegura que el texto no se salga */
-            overflow-wrap: break-word;
+            display: flex;
+            flex-direction: column;
+            height: auto; /* Altura automática */
+            margin: 0 10px; /* Espacio entre tarjetas */
+            width: calc(100% - 20px); /* Ancho completo menos márgenes */
+            max-width: 100%; /* Nunca más ancho que el contenedor */
+            box-sizing: border-box; /* Incluye padding en el ancho */
         }
         
         .testimonial-card:hover {
@@ -743,8 +751,10 @@
             font-weight: 500;
             position: relative;
             padding-left: var(--space-md);
-            hyphens: auto; /* Permite separación de palabras */
-            word-break: break-word; /* Asegura que el texto se ajuste */
+            flex: 1; /* Ocupa el espacio disponible */
+            word-break: break-word; /* Permite separación de palabras */
+            overflow-wrap: break-word; /* Asegura que el texto no se salga */
+            hyphens: auto; /* Separación automática de palabras */
         }
         
         .testimonial-text::before {
@@ -762,6 +772,7 @@
             display: flex;
             align-items: center;
             gap: var(--space-sm);
+            margin-top: auto; /* Empuja hacia abajo */
         }
         
         .testimonial-avatar {
@@ -1018,7 +1029,7 @@
             animation: float 3s ease-in-out infinite;
         }
         
-        /* MOBILE FIRST OPTIMIZATIONS - MEJORADO PARA TESTIMONIOS */
+        /* MOBILE FIRST OPTIMIZATIONS - CORREGIDO COMPLETAMENTE */
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-md);
@@ -1059,22 +1070,24 @@
                 opacity: 0.32; /* AUMENTADA */
             }
             
-            /* MEJORAS ESPECÍFICAS PARA EL CARRUSEL EN MÓVIL - CORREGIDO */
+            /* TESTIMONIOS EN MÓVIL - COMPLETAMENTE CORREGIDO */
             .testimonials-container {
-                overflow: visible; /* IMPORTANTE: No ocultar contenido */
-                padding: var(--space-sm) 0;
+                padding: var(--space-md) 0;
             }
             
-            .testimonials-track {
-                gap: var(--space-sm);
-                padding: 0 15px; /* Más padding para que no toque bordes */
+            .testimonials-wrapper {
+                width: 100%;
+                margin: 0 auto;
+                padding: 0 5px; /* Pequeño padding para que no toquen bordes */
             }
             
             .testimonial-card {
-                min-width: calc(100vw - 80px); /* Más ancho para móvil */
+                width: calc(100vw - 40px); /* Ancho exacto para móvil */
+                max-width: 400px; /* Ancho máximo */
+                margin: 0 10px;
                 padding: var(--space-md);
-                margin: 0 8px; /* Más margen */
-                box-sizing: border-box;
+                flex-shrink: 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
             }
             
             .testimonial-text {
@@ -1082,24 +1095,42 @@
                 line-height: 1.5;
                 padding-left: var(--space-sm);
                 margin-bottom: var(--space-md);
-                word-break: normal; /* Mejor control del texto */
-                overflow: visible; /* No ocultar texto */
+                word-break: normal;
+                overflow-wrap: break-word;
             }
             
             .testimonial-text::before {
-                font-size: 2.5rem;
-                top: -8px;
+                font-size: 2rem;
+                top: -5px;
+            }
+            
+            .testimonial-author {
+                margin-top: var(--space-sm);
+            }
+            
+            .testimonial-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
             }
             
             .carousel-controls {
                 margin-top: var(--space-lg);
+                padding: 0 var(--space-sm);
                 flex-wrap: wrap;
+                gap: var(--space-sm);
             }
             
             .carousel-btn {
                 width: 44px;
                 height: 44px;
                 font-size: 1rem;
+            }
+            
+            .carousel-dots {
+                order: 3;
+                width: 100%;
+                margin-top: var(--space-sm);
             }
             
             .cta-primary, .cta-secondary {
@@ -1132,18 +1163,14 @@
         
         @media (min-width: 768px) {
             .testimonial-card {
-                min-width: calc(50% - 40px); /* Más espacio entre tarjetas */
-            }
-            
-            .testimonials-track {
-                gap: var(--space-lg);
-                padding: 0 20px;
+                width: calc(50% - 30px); /* 2 columnas en tablet */
+                max-width: none;
             }
         }
         
         @media (min-width: 1024px) {
             .testimonial-card {
-                min-width: calc(33.333% - 40px); /* Más espacio entre tarjetas */
+                width: calc(33.333% - 30px); /* 3 columnas en desktop */
             }
         }
         
@@ -1170,24 +1197,40 @@
                 padding: var(--space-md);
             }
             
-            /* TESTIMONIOS EN MÓVILES PEQUEÑOS - MEJORADO */
+            /* TESTIMONIOS EN MÓVILES PEQUEÑOS - OPTIMIZADO */
             .testimonial-card {
-                min-width: calc(100vw - 60px); /* Más espacio */
-                margin: 0 10px;
+                width: calc(100vw - 30px); /* Un poco más pequeño para móviles pequeños */
                 padding: var(--space-md);
+                margin: 0 8px;
             }
             
             .testimonial-text {
-                font-size: 0.9375rem;
+                font-size: 0.95rem;
                 line-height: 1.5;
-                margin-bottom: var(--space-md);
-                padding-left: var(--space-sm);
-                overflow: visible; /* No ocultar texto */
+                padding-left: 0.75rem;
             }
             
             .testimonial-text::before {
-                font-size: 2rem;
-                top: -5px;
+                font-size: 1.75rem;
+                top: -3px;
+            }
+            
+            .testimonial-author {
+                flex-wrap: nowrap;
+            }
+            
+            .testimonial-avatar {
+                width: 36px;
+                height: 36px;
+                font-size: 0.85rem;
+            }
+            
+            .testimonial-name {
+                font-size: 0.95rem;
+            }
+            
+            .testimonial-location {
+                font-size: 0.8rem;
             }
             
             .label {
@@ -1200,13 +1243,6 @@
                 opacity: 0.35; /* AUMENTADA */
             }
             
-            /* Ajustes adicionales para móviles muy pequeños */
-            .testimonial-avatar {
-                width: 40px;
-                height: 40px;
-                font-size: 0.875rem;
-            }
-            
             .carousel-btn {
                 width: 40px;
                 height: 40px;
@@ -1215,44 +1251,41 @@
         
         @media (max-width: 360px) {
             .testimonial-card {
-                min-width: calc(100vw - 50px); /* Ajuste final para pantallas muy pequeñas */
-                padding: var(--space-sm);
+                width: calc(100vw - 20px); /* Ajuste para pantallas muy pequeñas */
                 margin: 0 5px;
+                padding: var(--space-sm);
             }
             
             .testimonial-text {
-                font-size: 0.875rem;
+                font-size: 0.9rem;
                 line-height: 1.4;
-                padding-left: 0.75rem;
+                padding-left: 0.5rem;
+                margin-bottom: var(--space-sm);
             }
             
             .testimonial-text::before {
-                font-size: 1.75rem;
-                top: -3px;
+                font-size: 1.5rem;
+                top: -2px;
             }
             
-            .carousel-controls {
-                flex-wrap: wrap;
-                gap: var(--space-sm);
-            }
-            
-            /* Asegurar que el texto siempre sea legible */
             .testimonial-author {
                 flex-wrap: wrap;
             }
-        }
-        
-        /* ESTILOS ESPECÍFICOS PARA ASEGURAR QUE LOS TESTIMONIOS SE VEAN COMPLETOS */
-        .testimonial-card {
-            display: flex;
-            flex-direction: column;
-            height: auto; /* Altura automática */
-            min-height: 220px; /* Altura mínima para consistencia */
-        }
-        
-        .testimonial-text {
-            flex: 1; /* Ocupa el espacio disponible */
-            overflow: visible; /* No ocultar el texto */
+            
+            .carousel-controls {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+            
+            .carousel-dots {
+                order: 2;
+                margin-top: 0;
+            }
+            
+            /* Asegurar que el texto siempre sea legible */
+            .testimonial-info {
+                min-width: 0; /* Permite que se encojan */
+            }
         }
         
         /* UTILITIES */
@@ -1581,173 +1614,175 @@
                     Descubre cómo otras personas transformaron su relación con la procrastinación
                 </p>
                 
-                <!-- Contenedor del carrusel -->
+                <!-- Contenedor del carrusel - ESTRUCTURA CORREGIDA -->
                 <div class="testimonials-container">
-                    <div class="testimonials-track" id="testimonials-track">
-                        <!-- Testimonio 1 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Por primera vez avancé sin sentir culpa ni esa presión interna que siempre me paraliza. El enfoque amable cambió todo para mí.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">M</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">María</div>
-                                    <div class="testimonial-location">México</div>
+                    <div class="testimonials-wrapper">
+                        <div class="testimonials-track" id="testimonials-track">
+                            <!-- Testimonio 1 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Por primera vez avancé sin sentir culpa ni esa presión interna que siempre me paraliza. El enfoque amable cambió todo para mí.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">M</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">María</div>
+                                        <div class="testimonial-location">México</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 2 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Empecé a cumplir objetivos gracias a la claridad que me diste y mi palabra volvió a valer. Ahora avanzo sin agotarme.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">R</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Roque</div>
-                                    <div class="testimonial-location">Argentina</div>
+                            
+                            <!-- Testimonio 2 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Empecé a cumplir objetivos gracias a la claridad que me diste y mi palabra volvió a valer. Ahora avanzo sin agotarme.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">R</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Roque</div>
+                                        <div class="testimonial-location">Argentina</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 3 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                El enfoque amable pero firme me ayudó a instalar hábitos que realmente sostengo. Dejé de postergar decisiones importantes.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">A</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Ana</div>
-                                    <div class="testimonial-location">España</div>
+                            
+                            <!-- Testimonio 3 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    El enfoque amable pero firme me ayudó a instalar hábitos que realmente sostengo. Dejé de postergar decisiones importantes.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">A</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Ana</div>
+                                        <div class="testimonial-location">España</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 4 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Después de años de intentar métodos de productividad, este fue el único que realmente funcionó. Simple y efectivo.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">C</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Carlos</div>
-                                    <div class="testimonial-location">Chile</div>
+                            
+                            <!-- Testimonio 4 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Después de años de intentar métodos de productividad, este fue el único que realmente funcionó. Simple y efectivo.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">C</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Carlos</div>
+                                        <div class="testimonial-location">Chile</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 5 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                La comunidad de WhatsApp hizo toda la diferencia. No me sentí solo en el proceso y eso me ayudó a sostenerlo.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">L</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Laura</div>
-                                    <div class="testimonial-location">Colombia</div>
+                            
+                            <!-- Testimonio 5 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    La comunidad de WhatsApp hizo toda la diferencia. No me sentí solo en el proceso y eso me ayudó a sostenerlo.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">L</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Laura</div>
+                                        <div class="testimonial-location">Colombia</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 6 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Los 10 minutos diarios cambiaron mi vida. Pensé que era poco tiempo, pero la consistencia hizo la magia.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">J</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Juan</div>
-                                    <div class="testimonial-location">Perú</div>
+                            
+                            <!-- Testimonio 6 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Los 10 minutos diarios cambiaron mi vida. Pensé que era poco tiempo, pero la consistencia hizo la magia.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">J</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Juan</div>
+                                        <div class="testimonial-location">Perú</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 7 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Finalmente entendí que no era floja, solo tenía un sistema que no funcionaba para mí. Ahora avanzo con calma.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">S</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Sofía</div>
-                                    <div class="testimonial-location">Uruguay</div>
+                            
+                            <!-- Testimonio 7 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Finalmente entendí que no era floja, solo tenía un sistema que no funcionaba para mí. Ahora avanzo con calma.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">S</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Sofía</div>
+                                        <div class="testimonial-location">Uruguay</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 8 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Las masterclass en vivo fueron reveladoras. Pude hacer preguntas específicas y aclarar dudas en tiempo real.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">P</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Pedro</div>
-                                    <div class="testimonial-location">Ecuador</div>
+                            
+                            <!-- Testimonio 8 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Las masterclass en vivo fueron reveladoras. Pude hacer preguntas específicas y aclarar dudas en tiempo real.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">P</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Pedro</div>
+                                        <div class="testimonial-location">Ecuador</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 9 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                El crédito de USD 25 para el siguiente programa fue un gesto increíble. Me sentí valorada como cliente.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">V</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Valeria</div>
-                                    <div class="testimonial-location">México</div>
+                            
+                            <!-- Testimonio 9 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    El crédito de USD 25 para el siguiente programa fue un gesto increíble. Me sentí valorada como cliente.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">V</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Valeria</div>
+                                        <div class="testimonial-location">México</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 10 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Después del programa, pude terminar un proyecto que tenía 2 años postergado. La sensación es increíble.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">D</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Diego</div>
-                                    <div class="testimonial-location">Argentina</div>
+                            
+                            <!-- Testimonio 10 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Después del programa, pude terminar un proyecto que tenía 2 años postergado. La sensación es increíble.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">D</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Diego</div>
+                                        <div class="testimonial-location">Argentina</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 11 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                La garantía de 7 días me dio la confianza para probar. Al final no la usé porque desde el primer día vi resultados.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">G</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Gabriela</div>
-                                    <div class="testimonial-location">España</div>
+                            
+                            <!-- Testimonio 11 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    La garantía de 7 días me dio la confianza para probar. Al final no la usé porque desde el primer día vi resultados.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">G</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Gabriela</div>
+                                        <div class="testimonial-location">España</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                        <!-- Testimonio 12 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-text">
-                                Por USD 25 recibí más valor que en cursos de USD 500. El enfoque práctico y humano es lo que marca la diferencia.
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="testimonial-avatar">M</div>
-                                <div class="testimonial-info">
-                                    <div class="testimonial-name">Miguel</div>
-                                    <div class="testimonial-location">Chile</div>
+                            
+                            <!-- Testimonio 12 -->
+                            <div class="testimonial-card">
+                                <div class="testimonial-text">
+                                    Por USD 25 recibí más valor que en cursos de USD 500. El enfoque práctico y humano es lo que marca la diferencia.
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="testimonial-avatar">M</div>
+                                    <div class="testimonial-info">
+                                        <div class="testimonial-name">Miguel</div>
+                                        <div class="testimonial-location">Chile</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2064,7 +2099,7 @@
                 });
             });
             
-            // CARRUSEL DE TESTIMONIOS - MEJORADO PARA MÓVIL
+            // CARRUSEL DE TESTIMONIOS - SIMPLIFICADO Y CORREGIDO
             const track = document.getElementById('testimonials-track');
             const prevBtn = document.getElementById('prev-btn');
             const nextBtn = document.getElementById('next-btn');
@@ -2113,6 +2148,19 @@
                 });
             }
             
+            // Calcular el ancho de una tarjeta incluyendo márgenes
+            function getCardWidth() {
+                const card = testimonials[0];
+                if (!card) return 0;
+                
+                const style = window.getComputedStyle(card);
+                const width = card.offsetWidth;
+                const marginLeft = parseFloat(style.marginLeft) || 0;
+                const marginRight = parseFloat(style.marginRight) || 0;
+                
+                return width + marginLeft + marginRight;
+            }
+            
             // Mover carrusel a posición específica
             function goToSlide(index) {
                 if (isAnimating) return;
@@ -2125,10 +2173,8 @@
                 currentIndex = Math.max(0, Math.min(index, maxIndex));
                 
                 // Calcular el desplazamiento
-                const testimonial = testimonials[0];
-                const gap = window.innerWidth < 768 ? 8 : 24; // gap en px
-                const testimonialWidth = testimonial.offsetWidth + gap;
-                const translateX = -currentIndex * testimonialWidth;
+                const cardWidth = getCardWidth();
+                const translateX = -currentIndex * cardWidth;
                 
                 track.style.transition = 'transform 0.5s ease';
                 track.style.transform = `translateX(${translateX}px)`;
@@ -2203,10 +2249,14 @@
                 goToSlide(0);
             }, 300);
             
-            // Mejorar rendimiento en móvil
-            if (window.innerWidth < 768) {
-                track.style.willChange = 'transform';
-            }
+            // Desactivar auto slide al tocar el carrusel
+            track.addEventListener('touchstart', () => {
+                clearInterval(autoSlideInterval);
+            });
+            
+            track.addEventListener('touchend', () => {
+                setTimeout(startAutoSlide, 3000);
+            });
         });
     </script>
 </body>

@@ -697,7 +697,7 @@
             flex-shrink: 0;
         }
         
-        /* TESTIMONIOS - CARRUSEL COMPLETAMENTE REHECHO PARA MÓVIL */
+        /* TESTIMONIOS - CARRUSEL COMPLETAMENTE REHECHO PARA MÓVIL - CORREGIDO */
         .testimonials-container {
             position: relative;
             margin-top: var(--space-xl);
@@ -730,9 +730,9 @@
             display: flex;
             flex-direction: column;
             height: auto; /* Altura automática */
-            margin: 0 10px; /* Espacio entre tarjetas */
-            width: calc(100% - 20px); /* Ancho completo menos márgenes */
-            max-width: 100%; /* Nunca más ancho que el contenedor */
+            margin: 0 8px; /* Espacio reducido entre tarjetas */
+            width: calc(100% - 16px); /* Ancho completo menos márgenes */
+            max-width: 360px; /* ANCHO MÁXIMO REDUCIDO PARA TARJETAS MÁS ANGOSTAS */
             box-sizing: border-box; /* Incluye padding en el ancho */
         }
         
@@ -791,6 +791,7 @@
         .testimonial-info {
             display: flex;
             flex-direction: column;
+            min-width: 0; /* Permite que el texto se ajuste */
         }
         
         .testimonial-name {
@@ -798,11 +799,17 @@
             color: var(--black);
             margin-bottom: 0.25rem;
             font-size: 1rem;
+            white-space: nowrap; /* Evita que el nombre se parta */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         .testimonial-location {
             color: var(--gray);
             font-size: 0.875rem;
+            white-space: nowrap; /* Evita que la ubicación se parta */
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         
         /* CONTROLES DEL CARRUSEL */
@@ -1082,9 +1089,9 @@
             }
             
             .testimonial-card {
-                width: calc(100vw - 40px); /* Ancho exacto para móvil */
-                max-width: 400px; /* Ancho máximo */
-                margin: 0 10px;
+                width: calc(90vw - 16px); /* ANCHO REDUCIDO: 90% del viewport */
+                max-width: 320px; /* ANCHO MÁXIMO REDUCIDO AÚN MÁS */
+                margin: 0 8px;
                 padding: var(--space-md);
                 flex-shrink: 0;
                 box-shadow: 0 2px 10px rgba(0,0,0,0.08);
@@ -1097,6 +1104,7 @@
                 margin-bottom: var(--space-md);
                 word-break: normal;
                 overflow-wrap: break-word;
+                hyphens: auto;
             }
             
             .testimonial-text::before {
@@ -1106,12 +1114,25 @@
             
             .testimonial-author {
                 margin-top: var(--space-sm);
+                flex-wrap: nowrap;
             }
             
             .testimonial-avatar {
                 width: 40px;
                 height: 40px;
                 font-size: 0.9rem;
+            }
+            
+            .testimonial-info {
+                min-width: 0; /* Permite que se ajuste */
+                overflow: hidden;
+            }
+            
+            .testimonial-name,
+            .testimonial-location {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             
             .carousel-controls {
@@ -1163,14 +1184,15 @@
         
         @media (min-width: 768px) {
             .testimonial-card {
-                width: calc(50% - 30px); /* 2 columnas en tablet */
-                max-width: none;
+                width: calc(50% - 20px); /* 2 columnas en tablet - ANCHO REDUCIDO */
+                max-width: 320px; /* MÁXIMO REDUCIDO */
             }
         }
         
         @media (min-width: 1024px) {
             .testimonial-card {
-                width: calc(33.333% - 30px); /* 3 columnas en desktop */
+                width: calc(33.333% - 20px); /* 3 columnas en desktop - ANCHO REDUCIDO */
+                max-width: 340px; /* MÁXIMO CONSISTENTE */
             }
         }
         
@@ -1197,17 +1219,19 @@
                 padding: var(--space-md);
             }
             
-            /* TESTIMONIOS EN MÓVILES PEQUEÑOS - OPTIMIZADO */
+            /* TESTIMONIOS EN MÓVILES PEQUEÑOS - OPTIMIZADO Y MÁS ANGOSTO */
             .testimonial-card {
-                width: calc(100vw - 30px); /* Un poco más pequeño para móviles pequeños */
+                width: calc(95vw - 20px); /* 95% del viewport para móviles pequeños */
+                max-width: 300px; /* ANCHO MÁXIMO AÚN MÁS REDUCIDO */
                 padding: var(--space-md);
-                margin: 0 8px;
+                margin: 0 6px;
             }
             
             .testimonial-text {
                 font-size: 0.95rem;
                 line-height: 1.5;
                 padding-left: 0.75rem;
+                margin-bottom: var(--space-sm);
             }
             
             .testimonial-text::before {
@@ -1251,8 +1275,9 @@
         
         @media (max-width: 360px) {
             .testimonial-card {
-                width: calc(100vw - 20px); /* Ajuste para pantallas muy pequeñas */
-                margin: 0 5px;
+                width: calc(98vw - 20px); /* CASI todo el ancho para pantallas muy pequeñas */
+                max-width: 280px; /* ANCHO MÁXIMO MÍNIMO PARA LEGIBILIDAD */
+                margin: 0 4px;
                 padding: var(--space-sm);
             }
             
@@ -1269,7 +1294,7 @@
             }
             
             .testimonial-author {
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
             }
             
             .carousel-controls {
@@ -1285,6 +1310,13 @@
             /* Asegurar que el texto siempre sea legible */
             .testimonial-info {
                 min-width: 0; /* Permite que se encojan */
+            }
+            
+            /* Ajuste específico para el texto de testimonios */
+            .testimonial-text {
+                word-break: break-word;
+                overflow-wrap: break-word;
+                hyphens: auto;
             }
         }
         
@@ -1605,7 +1637,7 @@
         </div>
     </section>
     
-    <!-- TESTIMONIOS - CARRUSEL OPTIMIZADO -->
+    <!-- TESTIMONIOS - CARRUSEL OPTIMIZADO Y CORREGIDO -->
     <section id="testimonios">
         <div class="container">
             <div class="section-card">
@@ -1618,7 +1650,7 @@
                 <div class="testimonials-container">
                     <div class="testimonials-wrapper">
                         <div class="testimonials-track" id="testimonials-track">
-                            <!-- Testimonio 1 -->
+                            <!-- Testimonio 1 - TEXTO COMPLETO -->
                             <div class="testimonial-card">
                                 <div class="testimonial-text">
                                     Por primera vez avancé sin sentir culpa ni esa presión interna que siempre me paraliza. El enfoque amable cambió todo para mí.
@@ -1632,7 +1664,7 @@
                                 </div>
                             </div>
                             
-                            <!-- Testimonio 2 -->
+                            <!-- Testimonio 2 - TEXTO COMPLETO -->
                             <div class="testimonial-card">
                                 <div class="testimonial-text">
                                     Empecé a cumplir objetivos gracias a la claridad que me diste y mi palabra volvió a valer. Ahora avanzo sin agotarme.

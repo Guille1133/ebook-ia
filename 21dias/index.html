@@ -399,6 +399,75 @@
             margin: 0 auto;
         }
         
+        /* ENCABEZADO PRINCIPAL - REESTRUCTURADO */
+        .hero-header {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .hero-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: var(--space-md);
+            padding: var(--space-xs) var(--space-sm);
+            border: 1.5px solid rgba(166, 27, 52, 0.2);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            position: relative;
+            z-index: 1;
+            align-self: flex-start;
+        }
+        
+        .hero-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            color: var(--black);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            margin-bottom: var(--space-md);
+        }
+        
+        .hero-main-heading {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            font-weight: 700;
+            color: var(--black);
+            line-height: 1.2;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
+            line-height: 1.5;
+            color: var(--gray);
+            margin-bottom: var(--space-lg);
+            font-weight: 500;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-promise {
+            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+            line-height: 1.5;
+            color: var(--black);
+            margin-bottom: var(--space-xl);
+            font-weight: 600;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: var(--space-md);
+            background: rgba(166, 27, 52, 0.03);
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--accent);
+        }
+        
         /* ESTILO ESPECIAL PARA EL "NO" EN ROJO */
         .highlight-no {
             color: var(--accent);
@@ -418,34 +487,16 @@
             border-radius: 4px;
         }
         
-        /* ETIQUETA CONTEXTUAL - ALTO IMPACTO */
-        .label {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: var(--space-md);
-            padding: var(--space-xs) var(--space-sm);
-            border: 1.5px solid rgba(166, 27, 52, 0.2);
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            position: relative;
-            z-index: 1;
-        }
-        
-        /* SUBHEADLINE HUMANO */
-        .subheadline {
-            font-size: clamp(1.25rem, 2.5vw, 1.625rem);
-            line-height: 1.5;
-            color: var(--black);
-            margin: var(--space-xl) 0;
-            font-weight: 500;
-            max-width: 700px;
-            font-family: var(--font-body);
-            position: relative;
-            z-index: 1;
+        /* MICRO-TEXTO - NUEVO ESTILO */
+        .micro-text {
+            font-size: 0.875rem;
+            color: var(--gray);
+            text-align: center;
+            margin-top: var(--space-md);
+            margin-bottom: var(--space-xl);
+            font-style: italic;
+            opacity: 0.8;
+            letter-spacing: 0.01em;
         }
         
         /* CTA - ACCIÓN CLARA Y DECIDIDA */
@@ -1077,6 +1128,45 @@
                 opacity: 0.32; /* AUMENTADA */
             }
             
+            /* HERO SECTION - AJUSTES PARA MÓVIL */
+            .hero-header {
+                gap: var(--space-xs);
+                margin-bottom: var(--space-lg);
+            }
+            
+            .hero-label {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+                align-self: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+                margin-bottom: var(--space-sm);
+            }
+            
+            .hero-main-heading {
+                font-size: 1.75rem;
+                margin-bottom: var(--space-sm);
+            }
+            
+            .hero-subtitle {
+                font-size: 1.25rem;
+                margin-bottom: var(--space-md);
+            }
+            
+            .hero-promise {
+                font-size: 1.125rem;
+                margin-bottom: var(--space-lg);
+                padding: var(--space-sm);
+            }
+            
+            .micro-text {
+                font-size: 0.8rem;
+                margin-top: var(--space-sm);
+                margin-bottom: var(--space-lg);
+            }
+            
             /* TESTIMONIOS EN MÓVIL - COMPLETAMENTE CORREGIDO */
             .testimonials-container {
                 padding: var(--space-md) 0;
@@ -1201,12 +1291,20 @@
                 font-size: 14px;
             }
             
-            h1 {
-                font-size: 2.5rem;
+            .hero-title {
+                font-size: 2.25rem;
             }
             
-            h2 {
-                font-size: 2rem;
+            .hero-main-heading {
+                font-size: 1.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+            
+            .hero-promise {
+                font-size: 1rem;
             }
             
             .hero {
@@ -1271,6 +1369,10 @@
                 width: 40px;
                 height: 40px;
             }
+            
+            .micro-text {
+                font-size: 0.75rem;
+            }
         }
         
         @media (max-width: 360px) {
@@ -1318,6 +1420,18 @@
                 overflow-wrap: break-word;
                 hyphens: auto;
             }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-main-heading {
+                font-size: 1.25rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
         }
         
         /* UTILITIES */
@@ -1356,21 +1470,32 @@
         <div class="floating-ball ball-medium" id="ball-15"></div>
     </div>
     
-    <!-- HERO SECTION - IMPACTO EMOCIONAL -->
+    <!-- HERO SECTION - IMPACTO EMOCIONAL REESTRUCTURADO -->
     <section class="hero">
         <div class="container">
             <div class="hero-content text-center">
-                <!-- Etiqueta contextual - ALTO IMPACTO -->
-                <div class="label">EDICIÓN ENERO 2026 · 21 DÍAS GUIADOS</div>
-                
-                <!-- H1 Principal con el "NO" en rojo -->
-                <h1>CÓMO <span class="highlight-no">NO</span> EMPEZAR EL 2026</h1>
-                
-                <!-- Subheadline humano -->
-                <p class="subheadline">
-                    Si sigues postergando "para cuando tengas claridad", vas a repetir el mismo año.<br>
-                    En 21 días instalas foco real sin quemarte.
-                </p>
+                <!-- Encabezado -->
+                <div class="hero-header">
+                    <div class="hero-label">EDICIÓN ENERO 2026 · 21 DÍAS GUIADOS</div>
+                    
+                    <!-- Título Principal -->
+                    <h1 class="hero-title">CÓMO <span class="highlight-no">NO</span> EMPEZAR EL 2026</h1>
+                    
+                    <!-- Título Principal -->
+                    <h2 class="hero-main-heading">No necesitas más motivación.<br>Necesitas orden mental.</h2>
+                    
+                    <!-- Subtítulo (1 solo bloque) -->
+                    <p class="hero-subtitle">
+                        Si tu mente no para y terminas postergando todo…<br>
+                        no es falta de disciplina — es falta de claridad.
+                    </p>
+                    
+                    <!-- Promesa breve -->
+                    <div class="hero-promise">
+                        En 21 días entrenamos tu mente para recuperar foco real<br>
+                        sin agotarte.
+                    </div>
+                </div>
                 
                 <!-- CTA Principal - ACCIÓN CLARA -->
                 <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary floating">
@@ -1488,6 +1613,11 @@
         <div class="container">
             <div class="section-card">
                 <h2 class="text-center">21 días para dejar de procrastinar y empezar a avanzar sin quemarte</h2>
+                
+                <!-- MICRO-TEXTO AGREGADO AQUÍ -->
+                <div class="micro-text">
+                    Sin gurús. Sin teoría infinita. Solo avance real.
+                </div>
                 
                 <div style="max-width: 700px; margin: 0 auto; text-align: center;">
                     <p class="lead" style="font-weight: 500;">Este no es un reto de disciplina.<br>Es una experiencia guiada de 21 días para que recuperes claridad mental, orden interno y dirección — sin presión ni autoexigencia.</p>
@@ -1723,7 +1853,7 @@
                             <!-- Testimonio 6 -->
                             <div class="testimonial-card">
                                 <div class="testimonial-text">
-                                    Nunca pensé que dedicar unos minutos por día podía hacer tanta diferencia. Lo simple y constante terminó ordenándome por dentro.
+                                    Los 10 minutos diarios cambiaron mi vida. Pensé que era poco tiempo, pero la consistencia hizo la magia.
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="testimonial-avatar">J</div>
@@ -1765,7 +1895,7 @@
                             <!-- Testimonio 9 -->
                             <div class="testimonial-card">
                                 <div class="testimonial-text">
-                                    Sentí que realmente me estaban acompañando en mi proceso. No es solo información… hay un cuidado humano detrás, y eso se nota.
+                                    El crédito de USD 25 para el siguiente programa fue un gesto increíble. Me sentí valorada como cliente.
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="testimonial-avatar">V</div>
@@ -1807,7 +1937,7 @@
                             <!-- Testimonio 12 -->
                             <div class="testimonial-card">
                                 <div class="testimonial-text">
-                                    He comprado muchos programas antes, pero acá encontré claridad real. Es práctico, aplicable y al mismo tiempo muy humano.
+                                    Por USD 25 recibí más valor que en cursos de USD 500. El enfoque práctico y humano es lo que marca la diferencia.
                                 </div>
                                 <div class="testimonial-author">
                                     <div class="testimonial-avatar">M</div>

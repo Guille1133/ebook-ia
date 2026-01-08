@@ -137,45 +137,45 @@
             text-align: center;
         }
         
-        /* CONTADOR ESTILOS */
+        /* CONTADOR ESTILOS - MODIFICADO PARA MÓVIL */
         .countdown-container {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: var(--radius-lg);
-            padding: var(--space-lg);
-            margin: var(--space-xl) auto;
-            max-width: 600px;
-            border: 2px solid var(--accent-light);
-            box-shadow: var(--shadow-md);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            margin: var(--space-xl) auto 0;
+            max-width: 500px;
+            border: 1px solid var(--accent-light);
+            box-shadow: var(--shadow-sm);
             position: relative;
             z-index: 2;
         }
         
         .countdown-title {
             color: var(--accent);
-            font-weight: 700;
-            font-size: 1.25rem;
-            margin-bottom: var(--space-md);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: var(--space-sm);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: var(--space-sm);
+            gap: var(--space-xs);
         }
         
         .countdown-grid {
             display: flex;
             justify-content: center;
-            gap: var(--space-lg);
-            margin-bottom: var(--space-md);
+            gap: var(--space-md);
+            margin-bottom: var(--space-sm);
         }
         
         .countdown-item {
             text-align: center;
-            min-width: 80px;
+            min-width: 60px;
         }
         
         .countdown-number {
-            font-size: 2.5rem;
-            font-weight: 800;
+            font-size: 1.75rem;
+            font-weight: 700;
             color: var(--accent);
             font-family: var(--font-heading);
             line-height: 1;
@@ -183,7 +183,7 @@
         }
         
         .countdown-label {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             color: var(--gray);
             font-weight: 500;
             text-transform: uppercase;
@@ -191,7 +191,7 @@
         }
         
         .countdown-closing {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             color: var(--accent);
             font-weight: 600;
             text-align: center;
@@ -200,9 +200,9 @@
         }
         
         .cta-countdown {
-            font-size: 1rem;
-            color: var(--accent);
-            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--gray);
+            font-weight: 500;
             margin-top: var(--space-xs);
             display: block;
             font-style: italic;
@@ -662,7 +662,7 @@
             flex-wrap: wrap;
             gap: var(--space-md);
             justify-content: center;
-            margin-top: var(--space-xl);
+            margin-top: var(--space-lg);
             color: var(--gray);
             font-size: 0.875rem;
             position: relative;
@@ -1173,22 +1173,35 @@
                 padding: var(--space-xl) 0;
             }
             
-            /* CONTADOR EN MÓVIL */
+            /* CONTADOR EN MÓVIL - MÁS PEQUEÑO Y MEJOR UBICADO */
             .countdown-container {
-                padding: var(--space-md);
-                margin: var(--space-lg) auto;
+                padding: var(--space-sm);
+                margin: var(--space-lg) auto 0;
+                max-width: 400px;
             }
             
             .countdown-grid {
-                gap: var(--space-md);
+                gap: var(--space-sm);
             }
             
             .countdown-item {
-                min-width: 60px;
+                min-width: 50px;
             }
             
             .countdown-number {
-                font-size: 2rem;
+                font-size: 1.5rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+            
+            .countdown-title {
+                font-size: 0.875rem;
+            }
+            
+            .countdown-closing {
+                font-size: 0.7rem;
             }
             
             /* Ajustar bolas para móviles - MÁS VISIBLES */
@@ -1344,6 +1357,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: var(--space-sm);
+                margin-top: var(--space-lg);
             }
             
             .section-card {
@@ -1401,20 +1415,25 @@
             }
             
             /* CONTADOR EN MÓVILES PEQUEÑOS */
+            .countdown-container {
+                padding: 0.75rem;
+                max-width: 350px;
+            }
+            
             .countdown-grid {
-                gap: var(--space-sm);
+                gap: 0.5rem;
             }
             
             .countdown-item {
-                min-width: 50px;
+                min-width: 45px;
             }
             
             .countdown-number {
-                font-size: 1.75rem;
+                font-size: 1.25rem;
             }
             
             .countdown-label {
-                font-size: 0.75rem;
+                font-size: 0.65rem;
             }
             
             .week-card,
@@ -1516,20 +1535,25 @@
             }
             
             /* CONTADOR EN PANTALLAS MUY PEQUEÑAS */
+            .countdown-container {
+                max-width: 320px;
+                padding: 0.5rem;
+            }
+            
             .countdown-grid {
-                gap: 8px;
+                gap: 0.25rem;
             }
             
             .countdown-item {
-                min-width: 45px;
+                min-width: 40px;
             }
             
             .countdown-number {
-                font-size: 1.5rem;
+                font-size: 1.125rem;
             }
             
             .countdown-label {
-                font-size: 0.7rem;
+                font-size: 0.6rem;
             }
             
             /* Asegurar que el texto siempre sea legible */
@@ -1611,17 +1635,41 @@
                     <p class="hero-subtitle">
                         21 días guiados para dejar de postergar, ordenar tu mente y recuperar el enfoque — sin presión ni autoexigencia.
                     </p>
+                    
+                    <!-- Promesa breve -->
+                    <div class="hero-promise">
+                        ⏳ Comenzamos el 14 de enero<br>
+                        Las inscripciones cierran cuando el contador llegue a cero
+                    </div>
                 </div>
                 
-                <!-- CONTADOR AGREGADO -->
+                <!-- CTA Principal - MODIFICADO -->
+                <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary floating">
+                    SÍ, QUIERO MIS 21 DÍAS DE ENFOQUE Y CLARIDAD
+                </a>
+                
+                <!-- MICROCONFIANZA - MODIFICADA -->
+                <div class="micro-confidence">
+                    <div class="confidence-item">
+                        <i class="fas fa-bolt confidence-icon"></i>
+                        <span>Acceso inmediato</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="fas fa-shield-alt confidence-icon"></i>
+                        <span>Garantía real de 7 días</span>
+                    </div>
+                    <div class="confidence-item">
+                        <i class="fas fa-lock confidence-icon"></i>
+                        <span>Pago seguro</span>
+                    </div>
+                </div>
+                
+                <!-- CONTADOR AGREGADO (AHORA DESPUÉS DE LA MICROCONFIANZA) -->
                 <div class="countdown-container">
                     <div class="countdown-title">
                         <i class="fas fa-clock"></i>
-                        ⏳ Comenzamos el 14 de enero
+                        ⏳ Las inscripciones cierran en:
                     </div>
-                    <p style="text-align: center; margin-bottom: var(--space-md); font-weight: 600;">
-                        Las inscripciones cierran en:
-                    </p>
                     
                     <div class="countdown-grid" id="countdown-timer">
                         <div class="countdown-item">
@@ -1644,28 +1692,6 @@
                     
                     <div class="countdown-closing">
                         Las inscripciones cierran el 13 de enero a las 23:59
-                    </div>
-                </div>
-                
-                <!-- CTA Principal - MODIFICADO -->
-                <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary floating">
-                    <span>Sí, quiero mis 21 días de enfoque y claridad</span>
-                    <div class="cta-countdown" id="hero-cta-countdown">Quedan <span id="hero-days">00</span> días para sumarte a esta edición</div>
-                </a>
-                
-                <!-- MICROCONFIANZA - MODIFICADA -->
-                <div class="micro-confidence">
-                    <div class="confidence-item">
-                        <i class="fas fa-bolt confidence-icon"></i>
-                        <span>Acceso inmediato</span>
-                    </div>
-                    <div class="confidence-item">
-                        <i class="fas fa-shield-alt confidence-icon"></i>
-                        <span>Garantía real de 7 días</span>
-                    </div>
-                    <div class="confidence-item">
-                        <i class="fas fa-calendar-check confidence-icon"></i>
-                        <span>Empiezas hoy mismo</span>
                     </div>
                 </div>
                 
@@ -1856,43 +1882,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- OBJECIONES INVISIBLES - AGREGADO -->
-                <div class="mt-6" style="padding-top: var(--space-xl); border-top: 1px solid var(--gray-border);">
-                    <h3 class="text-center">¿Todavía tienes dudas?</h3>
-                    
-                    <div style="max-width: 800px; margin: var(--space-xl) auto;">
-                        <div class="benefit-card" style="background: rgba(166, 27, 52, 0.03);">
-                            <div class="benefit-icon">
-                                <i class="fas fa-question-circle"></i>
-                            </div>
-                            <div>
-                                <h4>"¿Y si no soy constante?"</h4>
-                                <p>Este programa está diseñado para personas que suelen abandonar procesos. Trabajamos en micro-acciones diarias y en estabilizar la mente, no en disciplina forzada.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit-card" style="background: rgba(166, 27, 52, 0.03);">
-                            <div class="benefit-icon">
-                                <i class="fas fa-question-circle"></i>
-                            </div>
-                            <div>
-                                <h4>"¿Y si ya probé mil cosas y no funcionaron?"</h4>
-                                <p>Si ya probaste de todo y no funcionó, probablemente fue porque intentabas cambiar la acción, sin cambiar el estado mental interno. Aquí empezamos desde ahí.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="benefit-card" style="background: rgba(166, 27, 52, 0.03);">
-                            <div class="benefit-icon">
-                                <i class="fas fa-question-circle"></i>
-                            </div>
-                            <div>
-                                <h4>"¿Y si esto es muy teórico?"</h4>
-                                <p>Todo es práctico y aplicable. Nada de teoría vacía. Cada día tienes una acción clara y sencilla para avanzar.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -1991,12 +1980,9 @@
                 <div class="text-center mt-6">
                     <h3 style="color: var(--accent); margin-bottom: var(--space-lg);">
                         ¿Listo para dejar de procrastinar y empezar a avanzar?
-                        <div class="cta-countdown" style="font-size: 1rem; margin-top: var(--space-sm);">
-                            Quedan <span id="middle-days">00</span> días para sumarte a esta edición
-                        </div>
                     </h3>
                     <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-secondary">
-                        <span>Quiero dejar de postergar y empezar hoy por USD 25</span>
+                        QUIERO UNIRME POR USD 25 ANTES DEL CIERRE
                     </a>
                     <p style="color: var(--gray); margin-top: var(--space-md); font-size: 0.875rem;">
                         Únete a más de 150 personas que ya transformaron su relación con la procrastinación.
@@ -2282,13 +2268,10 @@
                     <p style="text-align: center; font-weight: 600; color: var(--accent);">
                         <i class="fas fa-clock"></i> Última oportunidad para sumarte a esta edición
                     </p>
-                    <p style="text-align: center; margin-top: var(--space-xs); font-size: 0.9rem;">
-                        Quedan <span id="price-days">00</span> días para unirte al grupo
-                    </p>
                 </div>
                 
                 <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary">
-                    <span>Sí, quiero mis 21 días de enfoque y claridad</span>
+                    QUIERO UNIRME POR USD 25 ANTES DEL CIERRE
                 </a>
                 
                 <!-- GARANTÍA - MODIFICADA -->
@@ -2315,7 +2298,7 @@
         </div>
     </section>
     
-    <!-- FAQ -->
+    <!-- FAQ - CON LAS NUEVAS PREGUNTAS AGREGADAS -->
     <section id="faq">
         <div class="container">
             <div class="section-card">
@@ -2381,6 +2364,37 @@
                             <p>Es un grupo de WhatsApp exclusivo para participantes de esta edición. Allí compartimos dudas, avances, y recibes apoyo directo. No es un grupo abandonado; hay acompañamiento real durante los 21 días.</p>
                         </div>
                     </div>
+                    
+                    <!-- NUEVAS PREGUNTAS AGREGADAS (REEMPLAZANDO LA SECCIÓN ELIMINADA) -->
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Y si no soy constante?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Este programa está diseñado para personas que suelen abandonar procesos. Trabajamos en micro-acciones diarias y en estabilizar la mente, no en disciplina forzada. El enfoque amable te ayuda a crear consistencia sin presión.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Y si ya probé mil cosas y no funcionaron?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Si ya probaste de todo y no funcionó, probablemente fue porque intentabas cambiar la acción, sin cambiar el estado mental interno. Aquí empezamos desde ahí, trabajando primero en tu claridad mental y luego en las acciones concretas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>¿Y si esto es muy teórico?</span>
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Todo es práctico y aplicable. Nada de teoría vacía. Cada día tienes una acción clara y sencilla para avanzar. Las herramientas son concretas y diseñadas para implementarse inmediatamente en tu vida diaria.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2396,16 +2410,8 @@
                     Toma la decisión que tu yo futuro te va a agradecer.
                 </p>
                 
-                <!-- CONTADOR FINAL -->
-                <div style="margin-bottom: var(--space-lg);">
-                    <div class="countdown-closing" style="font-size: 1rem; max-width: 500px; margin: 0 auto;">
-                        <i class="fas fa-exclamation-circle"></i>
-                        Última oportunidad: Quedan <span id="final-days">00</span> días para unirte a esta edición
-                    </div>
-                </div>
-                
                 <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary">
-                    <span>Quiero dejar de postergar y empezar hoy por USD 25</span>
+                    QUIERO DEJAR DE POSTERGAR Y EMPEZAR HOY
                 </a>
                 
                 <div class="micro-confidence" style="margin-top: var(--space-lg);">
@@ -2458,19 +2464,10 @@
                 document.getElementById('minutes').innerText = '00';
                 document.getElementById('seconds').innerText = '00';
                 
-                // Actualizar todos los contadores de días
-                document.querySelectorAll('#hero-days, #middle-days, #price-days, #final-days').forEach(el => {
-                    el.innerText = '00';
-                });
-                
                 // Cambiar mensajes
-                document.querySelectorAll('.cta-countdown, .countdown-closing').forEach(el => {
-                    if (el.textContent.includes('Quedan')) {
-                        el.textContent = '¡Las inscripciones han cerrado!';
-                        el.style.color = 'var(--accent)';
-                        el.style.fontWeight = '600';
-                    }
-                });
+                document.querySelector('.countdown-closing').textContent = '¡Las inscripciones han cerrado!';
+                document.querySelector('.countdown-closing').style.color = 'var(--accent)';
+                document.querySelector('.countdown-closing').style.fontWeight = '600';
                 
                 return;
             }
@@ -2486,11 +2483,6 @@
             document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
             document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
             document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
-            
-            // Actualizar todos los contadores de días en diferentes secciones
-            document.querySelectorAll('#hero-days, #middle-days, #price-days, #final-days').forEach(el => {
-                el.innerText = days.toString().padStart(2, '0');
-            });
             
             // Efecto visual cuando quedan pocos días
             if (days <= 3) {

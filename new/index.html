@@ -1071,14 +1071,15 @@
         }
         
         /* GARANTÍA - CONFIANZA */
-        .guarantee-card {
-            background: rgba(166, 27, 52, 0.03);
-            border-radius: var(--radius-md);
-            padding: var(--space-xl);
-            border: 1px solid rgba(166, 27, 52, 0.1);
-            margin-top: var(--space-xl);
-            text-align: center;
-        }
+      .guarantee-card {
+    background: rgba(166, 27, 52, 0.03);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);      /* antes: var(--space-xl) */
+    border: 1px solid rgba(166, 27, 52, 0.1);
+    margin-top: var(--space-lg);   /* antes: var(--space-xl) */
+    text-align: center;
+}
+
         
         /* FAQ - CLARIDAD */
         .faq-container {
@@ -1172,6 +1173,18 @@
                 min-height: auto;
                 padding: var(--space-xl) 0;
             }
+                /* REDUCIR ESPACIOS EN BLOQUE DE URGENCIA → CTA → GARANTÍA */
+    .guarantee-card {
+        padding: var(--space-md);
+        margin-top: var(--space-md);
+    }
+
+    .alert,
+    .alert-urgency {
+        padding: var(--space-sm);
+        margin: var(--space-sm) 0 var(--space-md);
+    }
+
             
             /* CONTADOR EN MÓVIL - MÁS PEQUEÑO Y MEJOR UBICADO */
             .countdown-container {
@@ -2251,7 +2264,7 @@
                 </div>
                 
                 <!-- CONTADOR DE DEADLINE EN PRECIO -->
-                <div style="margin: var(--space-lg) 0; padding: var(--space-md); background: rgba(166, 27, 52, 0.05); border-radius: var(--radius-md);">
+                <div style="margin: var(--space-sm) 0 var(--space-md); padding: var(--space-sm); background: rgba(166, 27, 52, 0.05); border-radius: var(--radius-md);">
                     <p style="text-align: center; font-weight: 600; color: var(--accent);">
                         <i class="fas fa-clock"></i> Última oportunidad para sumarte a esta edición
                     </p>

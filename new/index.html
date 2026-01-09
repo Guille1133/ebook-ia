@@ -1448,6 +1448,34 @@
         .mb-4 { margin-bottom: var(--space-md); }
         .mb-5 { margin-bottom: var(--space-lg); }
         .mb-6 { margin-bottom: var(--space-xl); }
+   /* FOTO DEL MENTOR - AUTORIDAD HUMANA */
+.mentor-photo-wrapper {
+    margin: var(--space-lg) auto var(--space-xl);
+    max-width: 320px;        /* tamaño ideal mobile */
+    text-align: center;
+}
+
+.mentor-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;     /* estética moderna */
+    box-shadow: var(--shadow-md);
+}
+
+.mentor-caption {
+    margin-top: var(--space-sm);
+    font-size: 0.95rem;
+    color: var(--gray);
+    font-style: italic;
+}
+
+/* Ajuste en desktop */
+@media (min-width: 768px) {
+    .mentor-photo-wrapper {
+        max-width: 360px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -2012,7 +2040,14 @@
         <div class="container">
             <div class="section-card text-center">
                 <h2>¿Quién te acompaña?</h2>
-                
+                <!-- FOTO DEL MENTOR -->
+<div class="mentor-photo-wrapper">
+    <img src="yo.webp" alt="Mentor del Reto 21 Días" class="mentor-photo">
+    <p class="mentor-caption">
+        Te acompaño paso a paso, sin presión ni exigencia extrema.
+    </p>
+</div>
+
                 <div style="max-width: 700px; margin: 0 auto;">
                     <div class="authority-grid">
                         <div class="authority-point">

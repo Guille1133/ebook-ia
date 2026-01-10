@@ -3,2304 +3,854 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cómo No Empezar el 2026 - 21 días para dejar de procrastinar</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>No es motivación: es psicología aplicada a la acción</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* RESET Y SISTEMA DE DISEÑO */
         :root {
-            /* PALETA EMOCIONAL */
-            --accent: #A61B34;           /* Granate - Acción y decisión */
-            --accent-dark: #8A152C;      /* Granate oscuro - Hover */
-            --accent-light: rgba(166, 27, 52, 0.1);
-            --white: #FFFFFF;            /* Pureza y claridad */
-            --black: #1E1E1E;            /* Autoridad y profundidad */
-            --gray: #333333;             /* Texto secundario */
-            --gray-light: #F8F8F8;       /* Fondos sutiles */
-            --gray-border: rgba(30, 30, 30, 0.08); /* Bordes sutiles */
-            
-            /* TIPOGRAFÍA - ALTO IMPACTO */
-            --font-heading: 'Montserrat', sans-serif;  /* Impacto moderno */
-            --font-body: 'Inter', sans-serif;          /* Claridad y legibilidad */
-            
-            /* ESPACIADO SISTEMÁTICO */
-            --space-xxs: 0.25rem;    /* 4px */
-            --space-xs: 0.5rem;      /* 8px */
-            --space-sm: 1rem;        /* 16px */
-            --space-md: 1.5rem;      /* 24px */
-            --space-lg: 2rem;        /* 32px */
-            --space-xl: 3rem;        /* 48px */
-            --space-xxl: 4rem;       /* 64px */
-            
-            /* RADIOS */
-            --radius-sm: 6px;
-            --radius-md: 10px;
-            --radius-lg: 16px;
-            
-            /* SOMBRAS SUTILES */
-            --shadow-sm: 0 2px 8px rgba(30, 30, 30, 0.04);
-            --shadow-md: 0 4px 20px rgba(30, 30, 30, 0.08);
-            --shadow-lg: 0 10px 40px rgba(30, 30, 30, 0.12);
-            
-            /* TRANSICIONES */
-            --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-fast: all 0.2s ease;
+            --color-black: #0B0B0B;
+            --color-dark: #1A1A1A;
+            --color-gray: #2D2D2D;
+            --color-light-gray: #444444;
+            --color-white: #F5F5F5;
+            --color-red: #C1121F;
+            --color-red-dark: #A0101A;
+            --color-green: #10B981;
+            --color-green-dark: #0D9668;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
         }
-        
-        /* RESET Y ESTILOS BASE */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
-        
+
         body {
-            font-family: var(--font-body);
-            color: var(--gray);
-            background-color: var(--white);
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
             font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            color: var(--color-white);
+            background-color: var(--color-black);
             overflow-x: hidden;
-            position: relative;
         }
-        
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            color: #CCCCCC;
+        }
+
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-lg);
+            padding: 0 var(--spacing-md);
+        }
+
+        section {
+            padding: var(--spacing-xl) 0;
             position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-red);
+            margin: var(--spacing-md) auto;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-sm) 0;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-gray);
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+
+        .logo-img {
+            height: 100%;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: var(--spacing-xl);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #AAAAAA;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: var(--spacing-lg) auto;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: var(--color-dark);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-red);
+            color: var(--color-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1.2rem 3rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: var(--spacing-md);
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(193, 18, 31, 0.2);
+        }
+
+        .logo-below-button {
+            display: block;
+            margin: var(--spacing-lg) auto 0;
+            max-width: 180px;
+            height: auto;
+        }
+
+        /* Highlighter animation style */
+        .highlight-text {
+            position: relative;
+            display: inline-block;
+            color: var(--color-white);
             z-index: 1;
         }
-        
-        section {
-            padding: var(--space-xxl) 0;
+
+        .highlight-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-red);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: highlightAnimation 2s ease-in-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0.7;
+            border-radius: 2px;
+        }
+
+        .highlight-text span {
             position: relative;
+            z-index: 2;
+            color: var(--color-white);
+            transition: color 0.3s ease;
         }
-        
-        /* JERARQUÍA TIPOGRÁFICA - SANS SERIF MODERNA */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--font-heading);
-            font-weight: 700; /* Bold para impacto */
-            line-height: 1.15;
-            color: var(--black);
-            margin-bottom: var(--space-md);
-            letter-spacing: -0.01em;
+
+        @keyframes highlightAnimation {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
         }
-        
-        h1 {
-            font-size: clamp(2.75rem, 6vw, 4.5rem); /* Responsive fluid */
-            font-weight: 800; /* Extra bold para H1 */
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        h2 {
-            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-            font-weight: 700;
-        }
-        
-        h3 {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 600;
-        }
-        
-        h4 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        p {
-            margin-bottom: var(--space-md);
-            font-size: 1.125rem;
-            line-height: 1.7;
-            color: var(--gray);
-        }
-        
-        .lead {
-            font-size: 1.375rem;
-            line-height: 1.6;
-            color: var(--black);
-            font-weight: 400;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* BOLAS FLOTANTES DE FONDO - MÁS OSCURAS Y VISIBLES */
-        .floating-balls {
+
+        /* POP-UP STYLES */
+        .popup-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-        
-        .floating-ball {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            filter: blur(25px);
-            opacity: 0.25; /* AUMENTADA la opacidad */
-            z-index: 0;
-        }
-        
-        /* Tamaños variados de bolas - MÁS VISIBLES */
-        .ball-small {
-            width: 200px;
-            height: 200px;
-        }
-        
-        .ball-medium {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .ball-large {
-            width: 400px;
-            height: 400px;
-        }
-        
-        /* Posiciones y animaciones para cada bola - MÁS OSCURAS */
-        #ball-1 {
-            top: 15%;
-            left: 8%;
-            animation: float-ball-1 25s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
-            opacity: 0.28; /* AUMENTADA */
-        }
-        
-        #ball-2 {
-            top: 25%;
-            right: 12%;
-            animation: float-ball-2 30s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
-            opacity: 0.26; /* AUMENTADA */
-        }
-        
-        #ball-3 {
-            top: 45%;
-            left: 18%;
-            animation: float-ball-3 20s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.27; /* AUMENTADA */
-        }
-        
-        #ball-4 {
-            top: 65%;
-            right: 8%;
-            animation: float-ball-4 35s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
-            opacity: 0.29; /* AUMENTADA */
-        }
-        
-        #ball-5 {
-            top: 85%;
-            left: 12%;
-            animation: float-ball-5 28s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
-            opacity: 0.25; /* AUMENTADA */
-        }
-        
-        #ball-6 {
-            top: 35%;
-            right: 25%;
-            animation: float-ball-6 32s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.26; /* AUMENTADA */
-        }
-        
-        #ball-7 {
-            top: 75%;
-            left: 30%;
-            animation: float-ball-7 24s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
-            opacity: 0.28; /* AUMENTADA */
-        }
-        
-        #ball-8 {
-            top: 55%;
-            right: 18%;
-            animation: float-ball-8 40s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
-            opacity: 0.27; /* AUMENTADA */
-        }
-        
-        #ball-9 {
-            top: 95%;
-            right: 30%;
-            animation: float-ball-9 26s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.26; /* AUMENTADA */
-        }
-        
-        #ball-10 {
-            top: 20%;
-            left: 35%;
-            animation: float-ball-10 22s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
-            opacity: 0.29; /* AUMENTADA */
-        }
-        
-        /* Más bolas para cubrir mejor el espacio - MÁS OSCURAS */
-        #ball-11 {
-            top: 60%;
-            left: 5%;
-            animation: float-ball-1 27s ease-in-out infinite reverse;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
-            opacity: 0.25; /* AUMENTADA */
-        }
-        
-        #ball-12 {
-            top: 40%;
-            right: 5%;
-            animation: float-ball-2 33s ease-in-out infinite reverse;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.27; /* AUMENTADA */
-        }
-        
-        #ball-13 {
-            top: 80%;
-            left: 40%;
-            animation: float-ball-3 21s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.5) 50%, transparent 70%);
-            opacity: 0.28; /* AUMENTADA */
-        }
-        
-        #ball-14 {
-            top: 30%;
-            left: 60%;
-            animation: float-ball-4 38s ease-in-out infinite reverse;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.45) 50%, transparent 70%);
-            opacity: 0.26; /* AUMENTADA */
-        }
-        
-        #ball-15 {
-            top: 70%;
-            right: 35%;
-            animation: float-ball-5 29s ease-in-out infinite;
-            background: radial-gradient(circle, var(--accent) 0%, rgba(166, 27, 52, 0.4) 50%, transparent 70%);
-            opacity: 0.27; /* AUMENTADA */
-        }
-        
-        /* Animaciones de flotación suave */
-        @keyframes float-ball-1 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(60px, -40px) scale(1.08); }
-            50% { transform: translate(40px, 50px) scale(0.92); }
-            75% { transform: translate(-30px, -30px) scale(1.05); }
-        }
-        
-        @keyframes float-ball-2 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(-50px, 40px) scale(1.06); }
-            66% { transform: translate(30px, -50px) scale(0.94); }
-        }
-        
-        @keyframes float-ball-3 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            20% { transform: translate(40px, 30px) scale(1.07); }
-            40% { transform: translate(-30px, 50px) scale(0.93); }
-            60% { transform: translate(50px, -30px) scale(1.04); }
-            80% { transform: translate(-40px, -40px) scale(0.96); }
-        }
-        
-        @keyframes float-ball-4 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(-60px, 30px) scale(1.09); }
-            50% { transform: translate(40px, -40px) scale(0.91); }
-            75% { transform: translate(-30px, 50px) scale(1.06); }
-        }
-        
-        @keyframes float-ball-5 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(50px, -30px) scale(1.05); }
-            66% { transform: translate(-40px, 40px) scale(0.95); }
-        }
-        
-        @keyframes float-ball-6 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            20% { transform: translate(-35px, 25px) scale(1.06); }
-            40% { transform: translate(45px, -35px) scale(0.94); }
-            60% { transform: translate(-25px, 45px) scale(1.03); }
-            80% { transform: translate(35px, -25px) scale(0.97); }
-        }
-        
-        @keyframes float-ball-7 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(55px, 20px) scale(1.08); }
-            50% { transform: translate(-45px, -35px) scale(0.93); }
-            75% { transform: translate(25px, 55px) scale(1.05); }
-        }
-        
-        @keyframes float-ball-8 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            20% { transform: translate(-40px, -25px) scale(1.07); }
-            40% { transform: translate(30px, 45px) scale(0.95); }
-            60% { transform: translate(50px, -30px) scale(1.03); }
-            80% { transform: translate(-35px, 35px) scale(0.96); }
-        }
-        
-        @keyframes float-ball-9 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(40px, 30px) scale(1.06); }
-            66% { transform: translate(-50px, 20px) scale(0.94); }
-        }
-        
-        @keyframes float-ball-10 {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            25% { transform: translate(30px, -40px) scale(1.08); }
-            50% { transform: translate(-35px, 35px) scale(0.92); }
-            75% { transform: translate(40px, 25px) scale(1.05); }
-        }
-        
-        /* HERO SECTION - IMPACTO EMOCIONAL INMEDIATO */
-        .hero {
-            padding: var(--space-xxl) 0;
-            background: linear-gradient(135deg, 
-                rgba(255, 255, 255, 0.98) 0%, 
-                rgba(248, 248, 248, 0.98) 100%);
-            position: relative;
-            overflow: hidden;
-            min-height: 90vh;
-            display: flex;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
             align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            padding: var(--spacing-sm);
         }
-        
-        /* Efecto de superposición para que el contenido sea legible */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        /* ENCABEZADO PRINCIPAL - REESTRUCTURADO */
-        .hero-header {
+
+        .popup-overlay.active {
             display: flex;
-            flex-direction: column;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-xl);
+            opacity: 1;
+            animation: fadeIn 0.3s ease forwards;
         }
-        
-        .hero-label {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            margin-bottom: var(--space-md);
-            padding: var(--space-xs) var(--space-sm);
-            border: 1.5px solid rgba(166, 27, 52, 0.2);
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            position: relative;
-            z-index: 1;
-            align-self: flex-start;
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        
-        .hero-title {
-            font-family: var(--font-heading);
-            font-weight: 800;
-            color: var(--black);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            font-size: clamp(2.75rem, 6vw, 4.5rem);
-            margin-bottom: var(--space-md);
-        }
-        
-        .hero-main-heading {
-            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-            font-weight: 700;
-            color: var(--black);
-            line-height: 1.2;
-            margin-bottom: var(--space-sm);
-        }
-        
-        .hero-subtitle {
-            font-size: clamp(1.375rem, 2.5vw, 1.75rem);
-            line-height: 1.5;
-            color: var(--gray);
-            margin-bottom: var(--space-lg);
-            font-weight: 500;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hero-promise {
-            font-size: clamp(1.25rem, 2.5vw, 1.5rem);
-            line-height: 1.5;
-            color: var(--black);
-            margin-bottom: var(--space-xl);
-            font-weight: 600;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: var(--space-md);
-            background: rgba(166, 27, 52, 0.03);
-            border-radius: var(--radius-md);
-            border-left: 3px solid var(--accent);
-        }
-        
-        /* ESTILO ESPECIAL PARA EL "NO" EN ROJO */
-        .highlight-no {
-            color: var(--accent);
-            position: relative;
-            display: inline-block;
-        }
-        
-        .highlight-no::after {
-            content: '';
-            position: absolute;
-            bottom: 5px;
-            left: 0;
+
+        .popup-container {
+            background-color: var(--color-dark);
+            border-radius: 12px;
+            max-width: 500px;
             width: 100%;
-            height: 8px;
-            background: rgba(166, 27, 52, 0.15);
-            z-index: -1;
-            border-radius: 4px;
-        }
-        
-        /* MICRO-TEXTO - NUEVO ESTILO */
-        .micro-text {
-            font-size: 0.875rem;
-            color: var(--gray);
-            text-align: center;
-            margin-top: var(--space-md);
-            margin-bottom: var(--space-xl);
-            font-style: italic;
-            opacity: 0.8;
-            letter-spacing: 0.01em;
-        }
-        
-        /* CTA - ACCIÓN CLARA Y DECIDIDA */
-        .cta-primary {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--white);
-            padding: 1.375rem 3.5rem;
-            font-size: 1.25rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            border: none;
-            transition: var(--transition-smooth);
-            position: relative;
             overflow: hidden;
-            text-align: center;
-            min-width: 280px;
-            box-shadow: var(--shadow-md);
-            font-family: var(--font-heading);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            z-index: 1;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--color-gray);
+            transform: translateY(30px);
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-        
-        .cta-primary:hover {
-            background-color: var(--accent-dark);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-        
-        .cta-primary:active {
+
+        .popup-overlay.active .popup-container {
             transform: translateY(0);
         }
-        
-        /* BOTÓN SECUNDARIO - ANTES DE TESTIMONIOS */
-        .cta-secondary {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--accent);
-            padding: 1.25rem 3rem;
-            font-size: 1.125rem;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: var(--radius-md);
-            border: 2px solid var(--accent);
-            transition: var(--transition-smooth);
-            position: relative;
-            overflow: hidden;
+
+        .popup-header {
+            background: linear-gradient(135deg, var(--color-red), var(--color-red-dark));
+            padding: var(--spacing-md);
             text-align: center;
-            min-width: 250px;
-            font-family: var(--font-heading);
-            letter-spacing: 0.03em;
-            z-index: 1;
-            margin: var(--space-xl) auto;
-        }
-        
-        .cta-secondary:hover {
-            background-color: var(--accent);
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-md);
-        }
-        
-        /* FECHA - CLARA PERO CALMA */
-        .date-info {
-            margin-top: var(--space-lg);
-            padding: var(--space-md);
-            background: rgba(166, 27, 52, 0.03);
-            border-radius: var(--radius-md);
-            border-left: 3px solid var(--accent);
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
             position: relative;
-            z-index: 1;
         }
-        
-        .date-info p {
+
+        .popup-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border: none;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .popup-close:hover {
+            background: rgba(0, 0, 0, 0.4);
+            transform: rotate(90deg);
+        }
+
+        .popup-title {
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .popup-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .popup-content {
+            padding: var(--spacing-md);
+        }
+
+        .popup-features {
+            margin: var(--spacing-md) 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-sm);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
             margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .feature-icon {
+            color: var(--color-green);
+            font-size: 1.2rem;
+            margin-right: var(--spacing-sm);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            color: #CCCCCC;
             font-size: 1rem;
-            color: var(--gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: var(--space-sm);
+            line-height: 1.5;
         }
-        
-        /* MICROCONFIANZA */
-        .micro-confidence {
-            display: flex;
-            flex-wrap: wrap;
-            gap: var(--space-md);
-            justify-content: center;
-            margin-top: var(--space-xl);
-            color: var(--gray);
-            font-size: 0.875rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .confidence-item {
-            display: flex;
-            align-items: center;
-            gap: var(--space-xs);
-        }
-        
-        .confidence-icon {
-            color: var(--accent);
-            font-size: 0.875rem;
-        }
-        
-        /* SECCIONES ESTRUCTURADAS */
-        .section-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xl);
-            margin-bottom: var(--space-xl);
-            border: 1px solid var(--gray-border);
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition-smooth);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .section-card:hover {
-            box-shadow: var(--shadow-md);
-            border-color: rgba(166, 27, 52, 0.1);
-        }
-        
-        /* Fondo blanco para las secciones para contraste */
-        section:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.7);
-        }
-        
-        section:nth-child(odd) {
-            background-color: rgba(248, 248, 248, 0.7);
-        }
-        
-        /* DOLOR - IDENTIFICACIÓN EMOCIONAL */
-        .pain-points {
-            max-width: 700px;
-            margin: var(--space-xl) auto;
-        }
-        
-        .pain-point {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-md);
-            margin-bottom: var(--space-lg);
-            padding-bottom: var(--space-lg);
-            border-bottom: 1px solid var(--gray-border);
-        }
-        
-        .pain-number {
-            color: var(--accent);
-            font-weight: 700;
-            font-size: 1.25rem;
-            font-family: var(--font-heading);
-            min-width: 36px;
-            background: rgba(166, 27, 52, 0.08);
-            height: 36px;
-            width: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* PROCESO - TIMELINE CON IMPACTO */
-        .process-timeline {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-xl);
-            margin-top: var(--space-xl);
-        }
-        
-        @media (min-width: 768px) {
-            .process-timeline {
-                grid-template-columns: repeat(3, 1fr);
-                gap: var(--space-lg);
-            }
-        }
-        
-        .week-card {
-            background: var(--white);
-            padding: var(--space-xl);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--gray-border);
-            position: relative;
-            transition: var(--transition-smooth);
-        }
-        
-        .week-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-4px);
-        }
-        
-        .week-number {
-            font-size: 4rem;
-            font-weight: 800;
-            color: rgba(166, 27, 52, 0.05);
-            position: absolute;
-            top: -20px;
-            right: 20px;
-            font-family: var(--font-heading);
-            transition: var(--transition-smooth);
-        }
-        
-        .week-card:hover .week-number {
-            color: rgba(166, 27, 52, 0.1);
-        }
-        
-        /* BENEFICIOS - GRID CLARO */
-        .benefits-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
-        }
-        
-        @media (min-width: 768px) {
-            .benefits-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .benefit-card {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-md);
-            padding: var(--space-lg);
-            background: var(--gray-light);
-            border-radius: var(--radius-md);
-            border-left: 4px solid var(--accent);
-            transition: var(--transition-smooth);
-        }
-        
-        .benefit-card:hover {
-            background: var(--white);
-            box-shadow: var(--shadow-md);
-            transform: translateX(4px);
-        }
-        
-        .benefit-icon {
-            color: var(--accent);
-            font-size: 1.5rem;
-            margin-top: 4px;
-            flex-shrink: 0;
-        }
-        
-        /* TESTIMONIOS - CARRUSEL COMPLETAMENTE REHECHO PARA MÓVIL - CORREGIDO */
-        .testimonials-container {
-            position: relative;
-            margin-top: var(--space-xl);
-            padding: var(--space-lg) 0;
-            width: 100%;
-        }
-        
-        .testimonials-wrapper {
-            position: relative;
-            width: 100%;
-            overflow: hidden; /* Solo ocultamos lo que se sale del wrapper */
-        }
-        
-        .testimonials-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            will-change: transform; /* Mejora rendimiento */
-            padding: 5px 0; /* Pequeño padding para sombras */
-        }
-        
-        .testimonial-card {
-            background: var(--white);
-            padding: var(--space-lg);
-            border-radius: var(--radius-md);
-            border: 1px solid var(--gray-border);
-            position: relative;
-            flex: 0 0 auto; /* No crece, no se encoge */
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-sm);
-            display: flex;
-            flex-direction: column;
-            height: auto; /* Altura automática */
-            margin: 0 8px; /* Espacio reducido entre tarjetas */
-            width: calc(100% - 16px); /* Ancho completo menos márgenes */
-            max-width: 360px; /* ANCHO MÁXIMO REDUCIDO PARA TARJETAS MÁS ANGOSTAS */
-            box-sizing: border-box; /* Incluye padding en el ancho */
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-            border-color: var(--accent-light);
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            font-size: 1.125rem;
-            line-height: 1.6;
-            color: var(--black);
-            margin-bottom: var(--space-lg);
-            font-weight: 500;
-            position: relative;
-            padding-left: var(--space-md);
-            flex: 1; /* Ocupa el espacio disponible */
-            word-break: break-word; /* Permite separación de palabras */
-            overflow-wrap: break-word; /* Asegura que el texto no se salga */
-            hyphens: auto; /* Separación automática de palabras */
-        }
-        
-        .testimonial-text::before {
-            content: '"';
-            position: absolute;
-            left: 0;
-            top: -10px;
-            font-size: 3rem;
-            color: var(--accent-light);
-            font-family: serif;
-            line-height: 1;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            margin-top: auto; /* Empuja hacia abajo */
-        }
-        
-        .testimonial-avatar {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--gray-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
+
+        .highlight-text-popup {
+            background-color: rgba(16, 185, 129, 0.1);
+            padding: 3px 6px;
+            border-radius: 3px;
             font-weight: 600;
-            flex-shrink: 0;
         }
-        
-        .testimonial-info {
-            display: flex;
-            flex-direction: column;
-            min-width: 0; /* Permite que el texto se ajuste */
-        }
-        
-        .testimonial-name {
-            font-weight: 600;
-            color: var(--black);
-            margin-bottom: 0.25rem;
-            font-size: 1rem;
-            white-space: nowrap; /* Evita que el nombre se parta */
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        .testimonial-location {
-            color: var(--gray);
-            font-size: 0.875rem;
-            white-space: nowrap; /* Evita que la ubicación se parta */
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        
-        /* CONTROLES DEL CARRUSEL */
-        .carousel-controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: var(--space-md);
-            margin-top: var(--space-xl);
-        }
-        
-        .carousel-btn {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--white);
-            border: 2px solid var(--accent-light);
-            color: var(--accent);
-            font-size: 1.125rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: var(--transition-smooth);
-            flex-shrink: 0;
-        }
-        
-        .carousel-btn:hover {
-            background: var(--accent);
-            color: var(--white);
-            border-color: var(--accent);
-        }
-        
-        .carousel-dots {
-            display: flex;
-            gap: var(--space-sm);
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .carousel-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background: var(--gray-light);
-            cursor: pointer;
-            transition: var(--transition-smooth);
-            flex-shrink: 0;
-        }
-        
-        .carousel-dot.active {
-            background: var(--accent);
-            transform: scale(1.2);
-        }
-        
-        /* AUTORIDAD - SOBRIEDAD CON IMPACTO */
-        .authority-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--space-lg);
-            margin-top: var(--space-xl);
-        }
-        
-        @media (min-width: 768px) {
-            .authority-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .authority-point {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-md);
-        }
-        
-        .authority-icon {
-            color: var(--accent);
-            font-size: 1.5rem;
-            flex-shrink: 0;
-            margin-top: 4px;
-        }
-        
-        /* INVERSIÓN - VALOR PERCIBIDO CON IMPACTO */
-        .investment-card {
-            background: var(--white);
-            border-radius: var(--radius-lg);
-            padding: var(--space-xxl);
+
+        .price-container {
+            background-color: rgba(16, 185, 129, 0.1);
+            border-radius: 8px;
+            padding: var(--spacing-md);
             text-align: center;
-            border: 2px solid var(--gray-border);
+            margin: var(--spacing-lg) 0;
+            border: 1px solid rgba(16, 185, 129, 0.3);
             position: relative;
-            max-width: 700px;
-            margin: 0 auto;
             overflow: hidden;
-            z-index: 1;
         }
-        
-        .investment-card::before {
+
+        .price-container::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
+            right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-dark) 100%);
+            background: linear-gradient(90deg, var(--color-green), var(--color-green-dark));
         }
-        
-        .price-badge {
-            display: inline-block;
-            background: rgba(166, 27, 52, 0.1);
-            color: var(--accent);
-            padding: var(--space-sm) var(--space-lg);
-            border-radius: var(--radius-md);
+
+        .price-main {
+            font-size: 2.5rem;
             font-weight: 700;
-            letter-spacing: 0.05em;
-            margin-bottom: var(--space-lg);
-            font-family: var(--font-heading);
+            color: var(--color-green);
+            line-height: 1;
+            margin-bottom: var(--spacing-xs);
         }
-        
-        .price-display {
-            margin: var(--space-xl) 0;
+
+        .price-label {
+            font-size: 0.9rem;
+            color: #AAAAAA;
+            margin-bottom: var(--spacing-xs);
         }
-        
-        .original-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            font-size: 1.25rem;
-            opacity: 0.7;
-            font-weight: 500;
-        }
-        
-        .current-price {
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 800;
-            color: var(--black);
-            margin: var(--space-sm) 0;
-            font-family: var(--font-heading);
-        }
-        
-        /* GARANTÍA - CONFIANZA */
-        .guarantee-card {
-            background: rgba(166, 27, 52, 0.03);
-            border-radius: var(--radius-md);
-            padding: var(--space-xl);
-            border: 1px solid rgba(166, 27, 52, 0.1);
-            margin-top: var(--space-xl);
-            text-align: center;
-        }
-        
-        /* FAQ - CLARIDAD */
-        .faq-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .faq-item {
-            border-bottom: 1px solid var(--gray-border);
-            padding: var(--space-lg) 0;
-            transition: var(--transition-fast);
-        }
-        
-        .faq-item:hover {
-            border-color: rgba(166, 27, 52, 0.2);
-        }
-        
-        .faq-question {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
+
+        .price-note {
+            font-size: 0.9rem;
+            color: var(--color-green);
             font-weight: 600;
-            color: var(--black);
-            font-size: 1.125rem;
-            font-family: var(--font-heading);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
         }
-        
-        .faq-answer {
-            padding-top: var(--space-md);
-            display: none;
-            color: var(--gray);
-            animation: fadeIn 0.3s ease;
-        }
-        
-        .faq-answer.active {
-            display: block;
-        }
-        
-        .faq-toggle {
-            color: var(--accent);
-            transition: var(--transition-fast);
-        }
-        
-        /* FOOTER - SIMPLICIDAD */
-        footer {
-            background: var(--black);
-            color: var(--white);
-            padding: var(--space-xxl) 0;
-            margin-top: var(--space-xxl);
-            position: relative;
-            z-index: 1;
-        }
-        
-        .footer-content {
+
+        .urgency-banner {
+            background: linear-gradient(90deg, #C1121F, #A0101A);
+            color: white;
+            padding: var(--spacing-sm);
             text-align: center;
+            border-radius: 6px;
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            animation: pulse 2s infinite;
         }
-        
-        /* ANIMACIONES */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
+
         @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+            0% { box-shadow: 0 0 0 0 rgba(193, 18, 31, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(193, 18, 31, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(193, 18, 31, 0); }
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+
+        .urgency-icon {
+            font-size: 1.1rem;
         }
-        
-        .floating {
-            animation: float 3s ease-in-out infinite;
+
+        .popup-cta {
+            background-color: var(--color-green);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 1.2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            width: 100%;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: var(--spacing-sm);
+            position: relative;
+            overflow: hidden;
         }
-        
-        /* MOBILE FIRST OPTIMIZATIONS - CORREGIDO COMPLETAMENTE */
-        @media (max-width: 768px) {
+
+        .popup-cta:hover {
+            background-color: var(--color-green-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+        }
+
+        .popup-cta:active {
+            transform: translateY(-1px);
+        }
+
+        .payment-note {
+            text-align: center;
+            color: #AAAAAA;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: var(--spacing-sm);
+        }
+
+        .payment-note i {
+            color: var(--color-green);
+        }
+
+        .social-proof {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .avatars {
+            display: flex;
+            margin-right: var(--spacing-sm);
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            border: 2px solid var(--color-dark);
+            margin-right: -10px;
+            background-color: var(--color-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 0.8rem;
+        }
+
+        .social-text {
+            color: #AAAAAA;
+            font-size: 0.9rem;
+        }
+
+        .social-text strong {
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
             .container {
-                padding: 0 var(--space-md);
+                max-width: 1000px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding-top: calc(var(--spacing-xl) + 70px);
             }
             
             section {
-                padding: var(--space-xl) 0;
+                padding: var(--spacing-lg) 0;
             }
             
-            .hero {
-                min-height: auto;
-                padding: var(--space-xl) 0;
+            .logo-container {
+                height: 45px;
             }
             
-            /* Ajustar bolas para móviles - MÁS VISIBLES */
-            .floating-ball {
-                filter: blur(15px);
-                opacity: 0.3; /* AUMENTADA para móviles */
+            .logo-img {
+                max-width: 160px;
             }
             
-            .ball-small {
-                width: 120px;
-                height: 120px;
+            .highlight-text::before {
+                border-radius: 2px;
             }
-            
-            .ball-medium {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .ball-large {
-                width: 240px;
-                height: 240px;
-            }
-            
-            /* Reducir número de bolas en móviles pero mantener visibilidad */
-            #ball-3, #ball-5, #ball-7, #ball-9, #ball-10, #ball-12, #ball-14, #ball-15 {
-                opacity: 0.32; /* AUMENTADA */
-            }
-            
-            /* HERO SECTION - AJUSTES PARA MÓVIL */
-            .hero-header {
-                gap: var(--space-xs);
-                margin-bottom: var(--space-lg);
-            }
-            
-            .hero-label {
-                font-size: 0.7rem;
-                padding: 6px 12px;
-                align-self: center;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-                margin-bottom: var(--space-sm);
-            }
-            
-            .hero-main-heading {
-                font-size: 1.75rem;
-                margin-bottom: var(--space-sm);
-            }
-            
-            .hero-subtitle {
-                font-size: 1.25rem;
-                margin-bottom: var(--space-md);
-            }
-            
-            .hero-promise {
-                font-size: 1.125rem;
-                margin-bottom: var(--space-lg);
-                padding: var(--space-sm);
-            }
-            
-            .micro-text {
-                font-size: 0.8rem;
-                margin-top: var(--space-sm);
-                margin-bottom: var(--space-lg);
-            }
-            
-            /* TESTIMONIOS EN MÓVIL - COMPLETAMENTE CORREGIDO */
-            .testimonials-container {
-                padding: var(--space-md) 0;
-            }
-            
-            .testimonials-wrapper {
-                width: 100%;
-                margin: 0 auto;
-                padding: 0 5px; /* Pequeño padding para que no toquen bordes */
-            }
-            
-            .testimonial-card {
-                width: calc(90vw - 16px); /* ANCHO REDUCIDO: 90% del viewport */
-                max-width: 320px; /* ANCHO MÁXIMO REDUCIDO AÚN MÁS */
-                margin: 0 8px;
-                padding: var(--space-md);
-                flex-shrink: 0;
-                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-            }
-            
-            .testimonial-text {
-                font-size: 1rem;
-                line-height: 1.5;
-                padding-left: var(--space-sm);
-                margin-bottom: var(--space-md);
-                word-break: normal;
-                overflow-wrap: break-word;
-                hyphens: auto;
-            }
-            
-            .testimonial-text::before {
+        }
+
+        @media (max-width: 768px) {
+            h1 {
                 font-size: 2rem;
-                top: -5px;
             }
             
-            .testimonial-author {
-                margin-top: var(--space-sm);
-                flex-wrap: nowrap;
+            h2 {
+                font-size: 1.8rem;
             }
             
-            .testimonial-avatar {
-                width: 40px;
-                height: 40px;
-                font-size: 0.9rem;
-            }
-            
-            .testimonial-info {
-                min-width: 0; /* Permite que se ajuste */
-                overflow: hidden;
-            }
-            
-            .testimonial-name,
-            .testimonial-location {
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-            
-            .carousel-controls {
-                margin-top: var(--space-lg);
-                padding: 0 var(--space-sm);
-                flex-wrap: wrap;
-                gap: var(--space-sm);
-            }
-            
-            .carousel-btn {
-                width: 44px;
-                height: 44px;
-                font-size: 1rem;
-            }
-            
-            .carousel-dots {
-                order: 3;
-                width: 100%;
-                margin-top: var(--space-sm);
-            }
-            
-            .cta-primary, .cta-secondary {
-                width: 100%;
-                min-width: auto;
-                padding: 1.25rem 2rem;
-                font-size: 1.125rem;
-            }
-            
-            .micro-confidence {
-                flex-direction: column;
-                align-items: center;
-                gap: var(--space-sm);
-            }
-            
-            .section-card {
-                padding: var(--space-lg);
-            }
-            
-            .investment-card {
-                padding: var(--space-xl) var(--space-lg);
-            }
-            
-            .date-info p {
-                flex-direction: column;
-                gap: var(--space-xs);
-                text-align: center;
-            }
-        }
-        
-        @media (min-width: 768px) {
-            .testimonial-card {
-                width: calc(50% - 20px); /* 2 columnas en tablet - ANCHO REDUCIDO */
-                max-width: 320px; /* MÁXIMO REDUCIDO */
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .testimonial-card {
-                width: calc(33.333% - 20px); /* 3 columnas en desktop - ANCHO REDUCIDO */
-                max-width: 340px; /* MÁXIMO CONSISTENTE */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            :root {
-                font-size: 14px;
-            }
-            
-            .hero-title {
-                font-size: 2.25rem;
-            }
-            
-            .hero-main-heading {
+            h3 {
                 font-size: 1.5rem;
             }
             
             .hero-subtitle {
-                font-size: 1.125rem;
+                font-size: 1.2rem;
             }
             
-            .hero-promise {
+            p {
                 font-size: 1rem;
             }
             
-            .hero {
-                padding: var(--space-lg) 0;
-            }
-            
-            .week-card,
-            .testimonial-card,
-            .benefit-card {
-                padding: var(--space-md);
-            }
-            
-            /* TESTIMONIOS EN MÓVILES PEQUEÑOS - OPTIMIZADO Y MÁS ANGOSTO */
-            .testimonial-card {
-                width: calc(95vw - 20px); /* 95% del viewport para móviles pequeños */
-                max-width: 300px; /* ANCHO MÁXIMO AÚN MÁS REDUCIDO */
-                padding: var(--space-md);
-                margin: 0 6px;
-            }
-            
-            .testimonial-text {
-                font-size: 0.95rem;
-                line-height: 1.5;
-                padding-left: 0.75rem;
-                margin-bottom: var(--space-sm);
-            }
-            
-            .testimonial-text::before {
-                font-size: 1.75rem;
-                top: -3px;
-            }
-            
-            .testimonial-author {
-                flex-wrap: nowrap;
-            }
-            
-            .testimonial-avatar {
-                width: 36px;
-                height: 36px;
-                font-size: 0.85rem;
-            }
-            
-            .testimonial-name {
-                font-size: 0.95rem;
-            }
-            
-            .testimonial-location {
-                font-size: 0.8rem;
-            }
-            
-            .label {
-                font-size: 0.7rem;
-                padding: 6px 12px;
-            }
-            
-            /* Bolas aún más visibles en móviles pequeños */
-            .floating-ball {
-                opacity: 0.35; /* AUMENTADA */
-            }
-            
-            .carousel-btn {
-                width: 40px;
+            .logo-container {
                 height: 40px;
             }
             
-            .micro-text {
-                font-size: 0.75rem;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .testimonial-card {
-                width: calc(98vw - 20px); /* CASI todo el ancho para pantallas muy pequeñas */
-                max-width: 280px; /* ANCHO MÁXIMO MÍNIMO PARA LEGIBILIDAD */
-                margin: 0 4px;
-                padding: var(--space-sm);
+            .logo-img {
+                max-width: 140px;
             }
             
-            .testimonial-text {
-                font-size: 0.9rem;
+            .logo-below-button {
+                max-width: 150px;
+            }
+            
+            .popup-container {
+                max-width: 95%;
+            }
+            
+            .popup-title {
+                font-size: 1.5rem;
+            }
+            
+            .popup-subtitle {
+                font-size: 1rem;
+            }
+            
+            .price-main {
+                font-size: 2rem;
+            }
+            
+            .popup-cta {
+                padding: 1rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
                 line-height: 1.4;
-                padding-left: 0.5rem;
-                margin-bottom: var(--space-sm);
             }
             
-            .testimonial-text::before {
-                font-size: 1.5rem;
-                top: -2px;
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
             }
             
-            .testimonial-author {
-                flex-wrap: nowrap;
+            .container {
+                padding: 0 var(--spacing-sm);
             }
             
-            .carousel-controls {
-                flex-direction: column;
-                gap: var(--space-sm);
+            .logo-container {
+                height: 35px;
             }
             
-            .carousel-dots {
-                order: 2;
-                margin-top: 0;
+            .logo-below-button {
+                max-width: 130px;
             }
             
-            /* Asegurar que el texto siempre sea legible */
-            .testimonial-info {
-                min-width: 0; /* Permite que se encojan */
+            .popup-header {
+                padding: var(--spacing-sm);
             }
             
-            /* Ajuste específico para el texto de testimonios */
-            .testimonial-text {
-                word-break: break-word;
-                overflow-wrap: break-word;
-                hyphens: auto;
+            .popup-content {
+                padding: var(--spacing-sm);
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
             }
             
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-main-heading {
-                font-size: 1.25rem;
+            h2 {
+                font-size: 1.4rem;
             }
             
             .hero-subtitle {
                 font-size: 1rem;
             }
+            
+            .logo-container {
+                height: 30px;
+            }
+            
+            .logo-below-button {
+                max-width: 110px;
+            }
+            
+            .popup-title {
+                font-size: 1.3rem;
+            }
+            
+            .urgency-banner {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
         }
-        
-        /* UTILITIES */
-        .mt-1 { margin-top: var(--space-xxs); }
-        .mt-2 { margin-top: var(--space-xs); }
-        .mt-3 { margin-top: var(--space-sm); }
-        .mt-4 { margin-top: var(--space-md); }
-        .mt-5 { margin-top: var(--space-lg); }
-        .mt-6 { margin-top: var(--space-xl); }
-        
-        .mb-1 { margin-bottom: var(--space-xxs); }
-        .mb-2 { margin-bottom: var(--space-xs); }
-        .mb-3 { margin-bottom: var(--space-sm); }
-        .mb-4 { margin-bottom: var(--space-md); }
-        .mb-5 { margin-bottom: var(--space-lg); }
-        .mb-6 { margin-bottom: var(--space-xl); }
-   /* FOTO DEL MENTOR - AUTORIDAD HUMANA */
-.mentor-photo-wrapper {
-    margin: var(--space-lg) auto var(--space-xl);
-    max-width: 320px;        /* tamaño ideal mobile */
-    text-align: center;
-}
 
-.mentor-photo {
-    width: 100%;
-    height: auto;
-    border-radius: 18px;     /* estética moderna */
-    box-shadow: var(--shadow-md);
-}
-
-.mentor-caption {
-    margin-top: var(--space-sm);
-    font-size: 0.95rem;
-    color: var(--gray);
-    font-style: italic;
-}
-
-/* Ajuste en desktop */
-@media (min-width: 768px) {
-    .mentor-photo-wrapper {
-        max-width: 360px;
-    }
-}
-
+        @media (max-width: 350px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+            }
+            
+            .social-proof {
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+            
+            .avatars {
+                margin-right: 0;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- BOLAS FLOTANTES DE FONDO - MÁS OSCURAS Y VISIBLES -->
-    <div class="floating-balls">
-        <div class="floating-ball ball-large" id="ball-1"></div>
-        <div class="floating-ball ball-medium" id="ball-2"></div>
-        <div class="floating-ball ball-small" id="ball-3"></div>
-        <div class="floating-ball ball-large" id="ball-4"></div>
-        <div class="floating-ball ball-medium" id="ball-5"></div>
-        <div class="floating-ball ball-small" id="ball-6"></div>
-        <div class="floating-ball ball-medium" id="ball-7"></div>
-        <div class="floating-ball ball-large" id="ball-8"></div>
-        <div class="floating-ball ball-small" id="ball-9"></div>
-        <div class="floating-ball ball-medium" id="ball-10"></div>
-        <div class="floating-ball ball-small" id="ball-11"></div>
-        <div class="floating-ball ball-medium" id="ball-12"></div>
-        <div class="floating-ball ball-large" id="ball-13"></div>
-        <div class="floating-ball ball-small" id="ball-14"></div>
-        <div class="floating-ball ball-medium" id="ball-15"></div>
-    </div>
-    
-    <!-- HERO SECTION - IMPACTO EMOCIONAL REESTRUCTURADO -->
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <!-- Header sin logo -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content text-center">
-                <!-- Encabezado -->
-                <div class="hero-header">
-                    <div class="hero-label">EDICIÓN ENERO 2026 · 21 DÍAS GUIADOS</div>
-                    
-                    <!-- Título Principal -->
-                    <h1 class="hero-title">CÓMO <span class="highlight-no">NO</span> EMPEZAR EL 2026</h1>
-                    
-                    <!-- Título Principal -->
-                    <h2 class="hero-main-heading">No necesitas más motivación.<br>Necesitas orden mental.</h2>
-                    
-                    <!-- Subtítulo (1 solo bloque) -->
-                    <p class="hero-subtitle">
-                        Si tu mente no para y terminas postergando todo, no es falta de disciplina, es falta de claridad.<br> 
-                    </p>
-                    
-                    <!-- Promesa breve -->
-                    <div class="hero-promise">
-                        21 días para ordenar tu mente, reducir la procrastinación y recuperar el enfoque.<br>
-                    
+            <div class="hero-content">
+                <h1>No es motivación: <span class="highlight-text"><span>es psicología aplicada a la acción</span></span></h1>
+                
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <!-- URL CORREGIDA para tu video específico -->
+                        <iframe 
+                            src="https://www.youtube.com/embed/FZX-uSkPGe8?si=FIbqoQnjkD8TzR-f&rel=0&modestbranding=1&autoplay=0" 
+                            title="Video del Reto" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>
                 
-                <!-- CTA Principal - ACCIÓN CLARA -->
-                <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary floating">
-                    Empezar ahora
-                </a>
+                <!-- Botón con nuevo texto -->
+                <button id="openPopupBtn" class="cta-button">Entrar al Reto</button>
                 
-                <!-- FECHA - CLARA PERO CALMA -->
-                <div class="date-info">
-                    <p>
-                        <i class="fas fa-calendar-alt" style="color: var(--accent);"></i>
-                        <span><strong>Primera clase en vivo:</strong> Miércoles 14 de enero</span>
-                        <span style="color: var(--gray); font-size: 0.9rem;">Si no puedes asistir, queda grabada.</span>
-                    </p>
-                </div>
-                
-                <!-- Microconfianza -->
-                <div class="micro-confidence">
-                    <div class="confidence-item">
-                        <i class="fas fa-bolt confidence-icon"></i>
-                        <span>Acceso inmediato</span>
-                    </div>
-                    <div class="confidence-item">
-                        <i class="fas fa-calendar-check confidence-icon"></i>
-                        <span>Empiezas hoy</span>
-                    </div>
-                    <div class="confidence-item">
-                        <i class="fas fa-shield-alt confidence-icon"></i>
-                        <span>Garantía 7 días</span>
-                    </div>
-                </div>
+                <!-- Logo debajo del botón -->
+                <img src="logo.webp" alt="Logo" class="logo-below-button">
             </div>
         </div>
     </section>
-    
-    <!-- DOLOR - IDENTIFICACIÓN EMOCIONAL -->
-    <section id="dolor">
-        <div class="container">
-            <div class="section-card">
-                <h2 class="text-center">¿Te pasa esto cuando intentas empezar un nuevo año?</h2>
-                <!-- NUEVO TEXTO AGREGADO -->
-            <p class="text-center" style="margin-bottom: var(--space-xl); font-size: 1.125rem; color: var(--accent); font-weight: 500;">
-                Si te identificas con al menos uno… este programa es para ti.
-            </p>
-                <div class="pain-points">
-                    <div class="pain-point">
-                        <div class="pain-number">1</div>
-                        <div>
-                            <h4>Empiezas con energía… pero se apaga rápido</h4>
-                            <p>La motivación dura poco y vuelves al estancamiento.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="pain-point">
-                        <div class="pain-number">2</div>
-                        <div>
-                            <h4>Planeas más de lo que ejecutas</h4>
-                            <p>Listas, calendarios, sistemas… pero la acción queda pendiente.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="pain-point">
-                        <div class="pain-number">3</div>
-                        <div>
-                            <h4>Te exiges mucho y avanzas poco</h4>
-                            <p>Altas expectativas que terminan en frustración y autoculpa.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="pain-point">
-                        <div class="pain-number">4</div>
-                        <div>
-                            <h4>Te prometes que "esta vez sí"… pero vuelves a frenarte</h4>
-                            <p>El ciclo se repite y tu confianza se desgasta.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="pain-point" style="border-bottom: none; padding-bottom: 0; margin-bottom: 0;">
-                        <div class="pain-number">5</div>
-                        <div>
-                            <h4>Y terminas sintiendo culpa por no sostener nada</h4>
-                            <p>La sensación de no estar cumpliendo tu verdadero potencial.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center mt-6" style="padding-top: var(--space-xl); border-top: 1px solid var(--gray-border);">
-                    <h3 style="color: var(--accent); font-size: 1.5rem; font-weight: 700;">No es falta de disciplina.</h3>
-                    <p class="lead" style="font-size: 1.25rem; font-weight: 500;">Es tu sistema nervioso tratando de protegerte.</p>
-                </div>
+
+    <!-- POP-UP -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-container">
+            <div class="popup-header">
+                <button class="popup-close" id="closePopupBtn">&times;</button>
+                <h3 class="popup-title">Orden mental en 21 días (sin agotarte)</h3>
+                <p class="popup-subtitle">Un proceso guiado para reducir la procrastinación y recuperar el enfoque, con un método simple y humano.</p>
             </div>
-        </div>
-    </section>
-    
-    <!-- REENCUADRE - NO ES TU CULPA -->
-    <section id="reencuadre">
-        <div class="container">
-            <div class="section-card text-center">
-                <h2>No es tu culpa</h2>
-                
-                <div style="max-width: 700px; margin: 0 auto;">
-                    <p class="lead">La procrastinación crónica es una respuesta natural de tu mente cuando se siente agotada, sobreexigida o desbordada.</p>
-                    
-                    <p style="font-size: 1.375rem; margin: var(--space-xl) 0; color: var(--black); font-weight: 600;">
-                        Por eso <span style="color: var(--accent);">no necesitas "más fuerza de voluntad"</span>.
-                    </p>
-                    
-                    <p class="lead" style="font-weight: 500;">
-                        Lo que necesitas un enfoque diferente:<br>
-                        avanzar desde calma, claridad y respeto por tu energía.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- PRESENTACIÓN DEL PROGRAMA -->
-    <section id="programa">
-        <div class="container">
-            <div class="section-card">
-                <h2 class="text-center">21 días para dejar de procrastinar y empezar a avanzar sin agotarte</h2>
-                
-                <!-- MICRO-TEXTO AGREGADO AQUÍ -->
-                <div class="micro-text">
-                    Sin gurús. Sin teoría infinita. Solo avance real.
+            
+            <div class="popup-content">
+                <div class="popup-features">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="feature-text">Ritual diario de <span class="highlight-text-popup">10 min</span> (para sostener enfoque)</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="feature-text"><span class="highlight-text-popup">4 masterclass grupales en vivo</span> + grabaciones</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="feature-text">Comunidad privada en <span class="highlight-text-popup">WhatsApp</span> (acompañamiento real)</div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+                        <div class="feature-text">Audios + guía práctica para <span class="highlight-text-popup">cortar ruido mental</span></div>
+                    </div>
                 </div>
                 
-                <div style="max-width: 700px; margin: 0 auto; text-align: center;">
-                    <p class="lead" style="font-weight: 500;">Es una experiencia guiada de 21 días para que recuperes claridad mental, orden interno y dirección — sin presión ni autoexigencia.</p>
+                <div class="price-container">
+                    <div class="price-label">Hoy, precio especial:</div>
+                    <div class="price-main">USD 25</div>
+                    <div class="price-note">
+                        <i class="fas fa-shield-alt"></i> Único pago · Garantía de 7 días
+                    </div>
                 </div>
                 
-                <!-- MAPA VISUAL DEL PROCESO -->
-<div class="mt-6">
-    <h3 class="text-center">MAPA VISUAL DEL PROCESO</h3>
-    
-    <div class="process-timeline mt-5">
-
-        <!-- Semana 1 -->
-        <div class="week-card">
-            <div class="week-number">01</div>
-            <h3>Semana 1 — SALIR DEL ESTANCAMIENTO</h3>
-
-            <p style="color: var(--gray); margin-top: var(--space-sm);">
-                <strong>Tu enfoque:</strong> Entender qué te frena… sin culparte.
-            </p>
-
-            <ul style="color: var(--gray); padding-left: var(--space-md); margin-top: var(--space-sm);">
-                <li style="margin-bottom: var(--space-sm);">Identificar tus patrones actuales</li>
-                <li style="margin-bottom: var(--space-sm);">Bajar la autoexigencia</li>
-                <li style="margin-bottom: var(--space-sm);">Detener el autoataque mental</li>
-                <li>Crear espacio interno para volver a respirar</li>
-            </ul>
-
-            <p style="font-style: italic; margin-top: var(--space-sm);">
-                “Ahora entiendo qué me pasaba… y empiezo a sentir alivio.”
-            </p>
-        </div>
-
-        <!-- Semana 2 -->
-        <div class="week-card">
-            <div class="week-number">02</div>
-            <h3>Semana 2 — VOLVER A MOVERTE (SIN ESFUERZO)</h3>
-
-            <p style="color: var(--gray); margin-top: var(--space-sm);">
-                <strong>Tu enfoque:</strong> Avanzar con claridad, sin presión.
-            </p>
-
-            <ul style="color: var(--gray); padding-left: var(--space-md); margin-top: var(--space-sm);">
-                <li style="margin-bottom: var(--space-sm);">Prácticas cortas y simples</li>
-                <li style="margin-bottom: var(--space-sm);">Acciones reales sin fricción</li>
-                <li style="margin-bottom: var(--space-sm);">Recuperar sensación de capacidad</li>
-                <li>Consistencia amable</li>
-            </ul>
-
-            <p style="font-style: italic; margin-top: var(--space-sm);">
-                “No me estoy forzando… y aun así avanzo.”
-            </p>
-        </div>
-
-        <!-- Semana 3 -->
-        <div class="week-card">
-            <div class="week-number">03</div>
-            <h3>Semana 3 — SOSTENER TU NUEVO RITMO</h3>
-
-            <p style="color: var(--gray); margin-top: var(--space-sm);">
-                <strong>Tu enfoque:</strong> Claridad, dirección y calma para el 2026.
-            </p>
-
-            <ul style="color: var(--gray); padding-left: var(--space-md); margin-top: var(--space-sm);">
-                <li style="margin-bottom: var(--space-sm);">Decisiones claras</li>
-                <li style="margin-bottom: var(--space-sm);">Prioridades ordenadas</li>
-                <li style="margin-bottom: var(--space-sm);">Metas sostenibles</li>
-                <li>Un ritmo que sí puedes sostener</li>
-            </ul>
-
-            <p style="font-style: italic; margin-top: var(--space-sm);">
-                “Este año no empieza igual.”
-            </p>
-                        </div>
+                <div class="urgency-banner">
+                    <i class="fas fa-clock urgency-icon"></i>
+                    <span id="urgencyTimer">Cierra el 13 de enero (23:59) · Inicia 14 de enero</span>
+                </div>
+                
+                <button class="popup-cta" id="checkoutBtn">
+                    Entrar ahora por USD 25
+                </button>
+                
+                <div class="payment-note">
+                    <i class="fas fa-lock"></i> Pago seguro · Acceso inmediato
+                </div>
+                
+                <div class="social-proof">
+                    <div class="avatars">
+                        <div class="avatar" style="background-color: #C1121F;">M</div>
+                        <div class="avatar" style="background-color: #10B981;">A</div>
+                        <div class="avatar" style="background-color: #3B82F6;">J</div>
+                        <div class="avatar" style="background-color: #8B5CF6;">L</div>
+                    </div>
+                    <div class="social-text">
+                        <strong>+247 personas</strong> ya accedieron esta semana
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- QUÉ INCLUYE -->
-    <section id="incluye">
-        <div class="container">
-            <div class="section-card">
-                <h2 class="text-center">Qué incluye esta experiencia</h2>
-                   <p style="text-align:center; color: var(--gray); margin-top:8px;">
-                Todo lo que necesitas para volver a avanzar con claridad y calma.
-            </p>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div>
-                            <h4>4 masterclass grupales en vivo</h4>
-                            <p>Sesiones prácticas con acompañamiento directo.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-headphones"></i>
-                        </div>
-                        <div>
-                            <h4>Audios de apoyo para cortar el ruido mental</h4>
-                            <p>Guías auditivas para momentos de bloqueo.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-history"></i>
-                        </div>
-                        <div>
-                            <h4>Ritual diario simple y sostenible</h4>
-                            <p>Menos de 10 minutos al día para mantener el enfoque.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <div>
-                            <h4>Comunidad privada en WhatsApp</h4>
-                            <p>Acompañamiento real, no es un grupo abandonado.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <div>
-                            <h4>Guía práctica para ordenar tu mente</h4>
-                            <p>Herramientas claras y accionables desde el primer día.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-hands-helping"></i>
-                        </div>
-                        <div>
-                            <h4>Acompañamiento durante los 21 días</h4>
-                            <p>No estás solo/a en el proceso.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <div>
-                            <h4>Acceso a grabaciones</h4>
-                            <p>Disponibles siempre para que avances a tu ritmo.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-gift"></i>
-                        </div>
-                        <div>
-                            <h4>Crédito de USD 25 para tu próximo programa</h4>
-                            <p>Tu inversión de hoy queda asegurada para seguir creciendo.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- BOTÓN DE ACCIÓN ANTES DE TESTIMONIOS -->
-                <div class="text-center mt-6">
-                    <h3 style="color: var(--accent); margin-bottom: var(--space-lg);">
-                        ¿Listo para dejar de procrastinar y empezar a avanzar?
-                    </h3>
-                    <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-secondary">
-                        <span>Quiero empezar ahora por USD 25</span>
-                    </a>
-                    <p style="color: var(--gray); margin-top: var(--space-md); font-size: 0.875rem;">
-                        Únete a más de 150 personas que ya transformaron su relación con la procrastinación.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- TESTIMONIOS - CARRUSEL OPTIMIZADO Y CORREGIDO -->
-    <section id="testimonios">
-        <div class="container">
-            <div class="section-card">
-                <h2 class="text-center">Lo que dicen quienes ya  por el proceso</h2>
-                <p class="lead text-center" style="margin-bottom: var(--space-xl);">
-                    Conoce cómo otras personas transformaron su relación con la procrastinación
-                </p>
-                
-                <!-- Contenedor del carrusel - ESTRUCTURA CORREGIDA -->
-                <div class="testimonials-container">
-                    <div class="testimonials-wrapper">
-                        <div class="testimonials-track" id="testimonials-track">
-                            <!-- Testimonio 1 - TEXTO COMPLETO -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Por primera vez avancé sin sentir culpa ni esa presión interna que siempre me paraliza. El enfoque amable cambió todo para mí.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">M</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">María</div>
-                                        <div class="testimonial-location">México</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 2 - TEXTO COMPLETO -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Empecé a cumplir objetivos gracias a la claridad que me diste y mi palabra volvió a valer. Ahora avanzo sin agotarme.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">R</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Roque</div>
-                                        <div class="testimonial-location">Argentina</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 3 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    El enfoque amable pero firme me ayudó a instalar hábitos que realmente sostengo. Dejé de postergar decisiones importantes.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">A</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Ana</div>
-                                        <div class="testimonial-location">España</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 4 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Después de años de intentar métodos de productividad, este fue el único que realmente funcionó. Simple y efectivo.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">C</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Carlos</div>
-                                        <div class="testimonial-location">Chile</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 5 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    La comunidad de WhatsApp hizo toda la diferencia. No me sentí solo en el proceso y eso me ayudó a sostenerlo.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">L</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Laura</div>
-                                        <div class="testimonial-location">Colombia</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 6 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Los 10 minutos diarios cambiaron mi vida. Pensé que era poco tiempo, pero la consistencia hizo la magia.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">J</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Juan</div>
-                                        <div class="testimonial-location">Perú</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 7 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Finalmente entendí que no era floja, solo tenía un sistema que no funcionaba para mí. Ahora avanzo con calma.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">S</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Sofía</div>
-                                        <div class="testimonial-location">Uruguay</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 8 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Las masterclass en vivo fueron reveladoras. Pude hacer preguntas específicas y aclarar dudas en tiempo real.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">P</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Pedro</div>
-                                        <div class="testimonial-location">Ecuador</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 9 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    El crédito de USD 25 para el siguiente programa fue un gesto increíble. Me sentí valorada como cliente.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">V</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Valeria</div>
-                                        <div class="testimonial-location">México</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 10 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Después del programa, pude terminar un proyecto que tenía 2 años postergado. La sensación es increíble.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">D</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Diego</div>
-                                        <div class="testimonial-location">Argentina</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 11 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    La garantía de 7 días me dio la confianza para probar. Al final no la usé porque desde el primer día vi resultados.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">G</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Gabriela</div>
-                                        <div class="testimonial-location">España</div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!-- Testimonio 12 -->
-                            <div class="testimonial-card">
-                                <div class="testimonial-text">
-                                    Por USD 25 recibí más valor que en cursos de USD 500. El enfoque práctico y humano es lo que marca la diferencia.
-                                </div>
-                                <div class="testimonial-author">
-                                    <div class="testimonial-avatar">M</div>
-                                    <div class="testimonial-info">
-                                        <div class="testimonial-name">Miguel</div>
-                                        <div class="testimonial-location">Chile</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Controles del carrusel -->
-                <div class="carousel-controls">
-                    <button class="carousel-btn" id="prev-btn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    
-                    <div class="carousel-dots" id="carousel-dots">
-                        <!-- Los puntos se generan con JavaScript -->
-                    </div>
-                    
-                    <button class="carousel-btn" id="next-btn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- AUTORIDAD -->
-    <section id="autoridad">
-        <div class="container">
-            <div class="section-card text-center">
-                <h2>¿Quién te acompaña?</h2>
-                <!-- FOTO DEL MENTOR -->
-<div class="mentor-photo-wrapper">
-    <img src="yo.webp" alt="Mentor del Reto 21 Días" class="mentor-photo">
-    <p class="mentor-caption">
-        Te acompaño paso a paso, sin presión ni exigencia extrema.
-    </p>
-</div>
-
-                <div style="max-width: 700px; margin: 0 auto;">
-                    <div class="authority-grid">
-                        <div class="authority-point">
-                            <div class="authority-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <div>
-                                <h4>Mentor en claridad mental y gestión emocional</h4>
-                                <p>Acompaño procesos de transformación personal, con una comunidad de más de 40.000 personas.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="authority-point">
-                            <div class="authority-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div>
-                                <h4>Más de 150 personas acompañadas</h4>
-                                <p>Experiencia real guiando a personas que atravesaron procesos similares al tuyo.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="authority-point">
-                            <div class="authority-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <div>
-                                <h4>Enfoque basado en consciencia + neurociencia práctica</h4>
-                                <p>Sin espiritualidad vacía. Herramientas simples que funcionan en la vida real.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="authority-point">
-                            <div class="authority-icon">
-                                <i class="fas fa-heart"></i>
-                            </div>
-                            <div>
-                                <h4>Procesos simples y humanos</h4>
-                                <p>Sin complicaciones innecesarias. Sin exageración. Sin promesas vacías.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- INVERSIÓN -->
-    <section id="inversion">
-        <div class="container">
-            <div class="investment-card">
-                <h2 class="text-center">Tu inversión para empezar a vivir este año de otra manera</h2>
-                
-                <div class="price-badge">Valor real del programa: USD 180+</div>
-                
-                <div class="price-display">
-                    <div class="original-price">USD 180</div>
-                    <div class="current-price">USD 25</div>
-                    <p style="color: var(--gray); font-size: 1.125rem;">
-                        Una sola vez.<br>Sin suscripciones.<br>Sin letras chicas.
-                    </p>
-                </div>
-                
-                <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary">
-                    <span>Quiero empezar ahora</span>
-                </a>
-                
-                <!-- GARANTÍA -->
-                <div class="guarantee-card">
-                    <h3 style="color: var(--accent);">Garantía consciente de 7 días</h3>
-                    <p class="text-center" style="font-size: 1.125rem;">
-                        Si durante la primera semana sientes que esto no es para ti, me escribes y te devuelvo tu inversión.<br>
-                        Sin explicaciones incómodas.<br>
-                        <strong>Personas reales. Procesos reales.</strong>
-                    </p>
-                </div>
-                
-                <!-- URGENCIA SANA -->
-                <div style="margin-top: var(--space-xl); padding: var(--space-lg); background: rgba(166, 27, 52, 0.03); border-radius: var(--radius-md); border: 1px solid rgba(166, 27, 52, 0.1);">
-                    <p class="text-center" style="margin-bottom: 0; font-weight: 600; color: var(--black);">
-                        <i class="fas fa-users" style="color: var(--accent); margin-right: var(--space-xs);"></i>
-                        Los encuentros en vivo tienen cupo limitado para que todos puedan participar.<br>
-                        Cuando se complete, cerramos esta edición.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FAQ -->
-    <section id="faq">
-        <div class="container">
-            <div class="section-card">
-                <h2 class="text-center">Preguntas frecuentes</h2>
-                
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>¿Cuánto tiempo necesito por día?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>El ritual diario está diseñado para menos de 10 minutos. Las masterclass en vivo duran aproximadamente 60 minutos cada una (4 en total durante los 21 días). La idea es integrar el proceso en tu vida, no sumar carga.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>¿Y si nunca termino nada?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Precisamente para eso está diseñado este proceso. No se trata de "terminar" algo, sino de aprender a avanzar de manera sostenible. Si te cuesta sostener acciones, este enfoque te ayudará a entender por qué y cómo cambiar ese patrón.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>¿Sirve si ya estoy en terapia?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Absolutamente. Este es un programa práctico de hábitos y claridad mental, no un proceso terapéutico. Complementa muy bien trabajos terapéuticos, ya que te da herramientas concretas para la acción diaria y la gestión del foco.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>¿Tengo acceso a las grabaciones?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Sí, todas las masterclass quedan grabadas y disponibles para siempre. Puedes verlas cuando mejor se adapte a tu ritmo y revisarlas las veces que necesites.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>¿Qué pasa si no puedo seguir el ritmo?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>No hay "expulsión" por no seguir el ritmo. El proceso está diseñado con flexibilidad. Si te atrasas, simplemente retomas donde quedaste. La comunidad de WhatsApp está para apoyarte sin juicio.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>¿Cómo funciona el grupo privado?</span>
-                            <i class="fas fa-chevron-down faq-toggle"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Es un grupo de WhatsApp exclusivo para participantes de esta edición. Allí compartimos dudas, avances, y recibes apoyo directo. No es un grupo abandonado; hay acompañamiento real durante los 21 días.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA FINAL -->
-    <section id="cta-final">
-        <div class="container">
-            <div style="text-align: center;">
-                <h2 class="text-center">¿Listo/a para empezar los 21 días?</h2>
-                
-                <p class="lead" style="margin-bottom: var(--space-xl); font-weight: 500;">
-                    Toma la decisión que tu yo futuro te va a agradecer.
-                </p>
-                
-                <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="cta-primary">
-                    <span>Quiero empezar ahora por USD 25</span>
-                </a>
-                
-                <div class="micro-confidence" style="margin-top: var(--space-lg);">
-                    <div class="confidence-item">
-                        <i class="fas fa-lock confidence-icon"></i>
-                        <span>Pago seguro</span>
-                    </div>
-                    <div class="confidence-item">
-                        <i class="fas fa-shield-alt confidence-icon"></i>
-                        <span>Garantía de 7 días</span>
-                    </div>
-                    <div class="confidence-item">
-                        <i class="fas fa-calendar-check confidence-icon"></i>
-                        <span>Empiezas hoy mismo</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <h3 style="color: var(--white); margin-bottom: var(--space-md); font-family: var(--font-heading);">
-                    21 días para dejar de procrastinar
-                </h3>
-                <p style="color: rgba(255, 255, 255, 0.7); max-width: 600px; margin: 0 auto var(--space-xl); font-size: 1.125rem;">
-                    Una experiencia consciente para personas que quieren avanzar sin quemarse. Sin marketing agresivo, sin promesas vacías, sin presión innecesaria.
-                </p>
-                <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.875rem;">
-                    © 2026 · Edición Enero · Todos los derechos reservados
-                </p>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script>
-        // FAQ Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('.faq-toggle');
-                
-                // Toggle current answer
-                answer.classList.toggle('active');
-                
-                // Rotate icon
-                if (answer.classList.contains('active')) {
-                    icon.classList.remove('fa-chevron-down');
-                    icon.classList.add('fa-chevron-up');
-                } else {
-                    icon.classList.remove('fa-chevron-up');
-                    icon.classList.add('fa-chevron-down');
-                }
-                
-                // Close other open FAQs
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    if (item !== question.parentElement) {
-                        const otherAnswer = item.querySelector('.faq-answer');
-                        const otherIcon = item.querySelector('.faq-toggle');
-                        if (otherAnswer.classList.contains('active')) {
-                            otherAnswer.classList.remove('active');
-                            otherIcon.classList.remove('fa-chevron-up');
-                            otherIcon.classList.add('fa-chevron-down');
-                        }
-                    }
-                });
-            });
-        });
-        
-        // Smooth Scroll
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
+                if(targetId === '#') return;
                 
                 const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+                if(targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
@@ -2309,190 +859,191 @@
             });
         });
         
-        // Hero CTA Animation
-        document.addEventListener('DOMContentLoaded', () => {
-            const cta = document.querySelector('.cta-primary');
-            setTimeout(() => {
-                cta.style.transform = 'scale(1.05)';
-                setTimeout(() => {
-                    cta.style.transform = 'scale(1)';
-                }, 200);
-            }, 1000);
-            
-            // Efecto interactivo con las bolas flotantes
-            const balls = document.querySelectorAll('.floating-ball');
-            document.addEventListener('mousemove', (e) => {
-                const mouseX = e.clientX / window.innerWidth;
-                const mouseY = e.clientY / window.innerHeight;
-                
-                balls.forEach((ball, index) => {
-                    const speed = 0.3 + (index * 0.05);
-                    const x = (mouseX - 0.5) * 30 * speed;
-                    const y = (mouseY - 0.5) * 30 * speed;
-                    
-                    ball.style.transform = `translate(${x}px, ${y}px)`;
-                });
-            });
-            
-            // CARRUSEL DE TESTIMONIOS - SIMPLIFICADO Y CORREGIDO
-            const track = document.getElementById('testimonials-track');
-            const prevBtn = document.getElementById('prev-btn');
-            const nextBtn = document.getElementById('next-btn');
-            const dotsContainer = document.getElementById('carousel-dots');
-            
-            const testimonials = document.querySelectorAll('.testimonial-card');
-            const totalTestimonials = testimonials.length;
-            let currentIndex = 0;
-            let autoSlideInterval;
-            let isAnimating = false;
-            
-            // Calcular cuántos testimonios caben en pantalla (responsive)
-            function getVisibleCount() {
-                if (window.innerWidth < 768) return 1;
-                if (window.innerWidth < 1024) return 2;
-                return 3;
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
+                header.style.boxShadow = 'none';
             }
-            
-            // Crear puntos de navegación
-            function createDots() {
-                dotsContainer.innerHTML = '';
-                const visibleCount = getVisibleCount();
-                const dotCount = Math.ceil(totalTestimonials / visibleCount);
-                
-                for (let i = 0; i < dotCount; i++) {
-                    const dot = document.createElement('div');
-                    dot.classList.add('carousel-dot');
-                    if (i === 0) dot.classList.add('active');
-                    
-                    dot.addEventListener('click', () => {
-                        goToSlide(i * visibleCount);
-                    });
-                    
-                    dotsContainer.appendChild(dot);
-                }
-            }
-            
-            // Actualizar puntos activos
-            function updateDots() {
-                const dots = document.querySelectorAll('.carousel-dot');
-                const visibleCount = getVisibleCount();
-                const activeDotIndex = Math.floor(currentIndex / visibleCount);
-                
-                dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === activeDotIndex);
-                });
-            }
-            
-            // Calcular el ancho de una tarjeta incluyendo márgenes
-            function getCardWidth() {
-                const card = testimonials[0];
-                if (!card) return 0;
-                
-                const style = window.getComputedStyle(card);
-                const width = card.offsetWidth;
-                const marginLeft = parseFloat(style.marginLeft) || 0;
-                const marginRight = parseFloat(style.marginRight) || 0;
-                
-                return width + marginLeft + marginRight;
-            }
-            
-            // Mover carrusel a posición específica
-            function goToSlide(index) {
-                if (isAnimating) return;
-                isAnimating = true;
-                
-                const visibleCount = getVisibleCount();
-                const maxIndex = Math.max(0, totalTestimonials - visibleCount);
-                
-                // Asegurar que el índice esté dentro de los límites
-                currentIndex = Math.max(0, Math.min(index, maxIndex));
-                
-                // Calcular el desplazamiento
-                const cardWidth = getCardWidth();
-                const translateX = -currentIndex * cardWidth;
-                
-                track.style.transition = 'transform 0.5s ease';
-                track.style.transform = `translateX(${translateX}px)`;
-                updateDots();
-                resetAutoSlide();
-                
-                // Permitir nueva animación después de 500ms
-                setTimeout(() => {
-                    isAnimating = false;
-                }, 500);
-            }
-            
-            // Siguiente slide
-            function nextSlide() {
-                const visibleCount = getVisibleCount();
-                const maxIndex = Math.max(0, totalTestimonials - visibleCount);
-                
-                if (currentIndex < maxIndex) {
-                    goToSlide(currentIndex + 1);
-                } else {
-                    goToSlide(0); // Volver al inicio
-                }
-            }
-            
-            // Slide anterior
-            function prevSlide() {
-                const visibleCount = getVisibleCount();
-                
-                if (currentIndex > 0) {
-                    goToSlide(currentIndex - 1);
-                } else {
-                    goToSlide(Math.max(0, totalTestimonials - visibleCount)); // Ir al final
-                }
-            }
-            
-            // Auto slide automático
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
-            }
-            
-            function resetAutoSlide() {
-                clearInterval(autoSlideInterval);
-                startAutoSlide();
-            }
-            
-            // Event listeners
-            prevBtn.addEventListener('click', () => {
-                prevSlide();
-                resetAutoSlide();
-            });
-            
-            nextBtn.addEventListener('click', () => {
-                nextSlide();
-                resetAutoSlide();
-            });
-            
-            // Inicializar carrusel
-            createDots();
-            startAutoSlide();
-            
-            // Redimensionar ventana - recalcular
-            window.addEventListener('resize', () => {
-                createDots();
-                // Pequeño delay para asegurar que los elementos tengan su tamaño calculado
-                setTimeout(() => {
-                    goToSlide(currentIndex);
-                }, 100);
-            });
-            
-            // Asegurar que el carrusel se vea bien en móvil al cargar
-            setTimeout(() => {
-                goToSlide(0);
-            }, 300);
-            
-            // Desactivar auto slide al tocar el carrusel
-            track.addEventListener('touchstart', () => {
-                clearInterval(autoSlideInterval);
-            });
-            
-            track.addEventListener('touchend', () => {
-                setTimeout(startAutoSlide, 3000);
-            });
         });
+        
+        // Ajustar altura del hero en dispositivos móviles
+        function adjustHeroHeight() {
+            const hero = document.querySelector('.hero');
+            const viewportHeight = window.innerHeight;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            if (window.innerWidth <= 768) {
+                hero.style.minHeight = `${viewportHeight - headerHeight}px`;
+            } else {
+                hero.style.minHeight = '100vh';
+            }
+        }
+        
+        // Reiniciar animación al hacer hover
+        function resetHighlightAnimation() {
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                // Remover la animación
+                highlightElement.style.animation = 'none';
+                
+                // Forzar un reflow para reiniciar la animación
+                void highlightElement.offsetWidth;
+                
+                // Reactivar la animación
+                setTimeout(() => {
+                    highlightElement.style.animation = '';
+                }, 10);
+            }
+        }
+        
+        // Añadir efecto de pulsación continua
+        function setupContinuousHighlight() {
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                // Reiniciar la animación cada 6 segundos
+                setInterval(() => {
+                    resetHighlightAnimation();
+                }, 6000);
+                
+                // También reiniciar al hacer hover
+                highlightElement.addEventListener('mouseenter', resetHighlightAnimation);
+            }
+        }
+        
+        // ============================================
+        // POP-UP FUNCTIONALITY - VERSIÓN OPTIMIZADA
+        // ============================================
+        const popupOverlay = document.getElementById('popupOverlay');
+        const openPopupBtn = document.getElementById('openPopupBtn');
+        const closePopupBtn = document.getElementById('closePopupBtn');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const urgencyTimer = document.getElementById('urgencyTimer');
+        
+        // URL de Stripe - DIRECTA Y SEGURA
+        const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03';
+        
+        // 1. ABRIR POP-UP
+        openPopupBtn.addEventListener('click', function() {
+            popupOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Efecto sutil de apertura
+            openPopupBtn.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                openPopupBtn.style.transform = '';
+            }, 200);
+        });
+        
+        // 2. CERRAR POP-UP
+        closePopupBtn.addEventListener('click', closePopup);
+        
+        function closePopup() {
+            popupOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Cerrar al hacer clic fuera del contenido
+        popupOverlay.addEventListener('click', function(e) {
+            if (e.target === popupOverlay) {
+                closePopup();
+            }
+        });
+        
+        // 3. CHECKOUT - REDIRECCIÓN SEGURA Y RÁPIDA
+        checkoutBtn.addEventListener('click', function() {
+            // Feedback visual inmediato (reducir ansiedad)
+            const originalText = checkoutBtn.innerHTML;
+            checkoutBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirigiendo...';
+            checkoutBtn.style.backgroundColor = '#0D9668';
+            checkoutBtn.disabled = true;
+            
+            // Cerrar pop-up inmediatamente (mínima fricción)
+            closePopup();
+            
+            // Redirigir a Stripe EN NUEVA PESTAÑA con seguridad
+            setTimeout(() => {
+                window.open(
+                    STRIPE_CHECKOUT_URL,
+                    '_blank',
+                    'noopener,noreferrer' // CRÍTICO para seguridad
+                );
+                
+                // Restaurar botón después de 1.5s
+                setTimeout(() => {
+                    checkoutBtn.innerHTML = originalText;
+                    checkoutBtn.style.backgroundColor = '';
+                    checkoutBtn.disabled = false;
+                }, 1500);
+                
+            }, 300); // Retraso mínimo para percepción de procesamiento
+        });
+        
+        // 4. CONTADOR DE URGENCIA
+        function updateUrgencyTimer() {
+            const now = new Date();
+            const deadline = new Date('2024-01-13T23:59:00');
+            
+            // Si ya pasó la fecha, usar una futura para demo
+            if (now > deadline) {
+                deadline.setDate(deadline.getDate() + 30);
+            }
+            
+            const diff = deadline - now;
+            
+            if (diff > 0) {
+                const hours = Math.floor(diff / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                
+                // Mostrar horas si quedan menos de 24
+                if (hours < 24) {
+                    urgencyTimer.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra en ${hours}h ${minutes}m · Inicia 14 de enero`;
+                } else {
+                    urgencyTimer.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra el 13 de enero (23:59) · Inicia 14 de enero`;
+                }
+            }
+        }
+        
+        // Actualizar cada minuto
+        setInterval(updateUrgencyTimer, 60000);
+        updateUrgencyTimer(); // Ejecutar inmediatamente
+        
+        // 5. POP-UP AUTOMÁTICO (solo en desktop)
+        setTimeout(() => {
+            if (!popupOverlay.classList.contains('active') && window.innerWidth > 768) {
+                popupOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        }, 30000); // 30 segundos
+        
+        // 6. Tecla ESC para cerrar
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
+                closePopup();
+            }
+        });
+        
+        // ============================================
+        // INICIALIZACIÓN
+        // ============================================
+        window.addEventListener('load', function() {
+            adjustHeroHeight();
+            setupContinuousHighlight();
+            
+            // Iniciar animación de highlight
+            setTimeout(() => {
+                const highlightElement = document.querySelector('.highlight-text');
+                if (highlightElement) {
+                    highlightElement.style.animationPlayState = 'running';
+                }
+            }, 100);
+        });
+        
+        window.addEventListener('resize', adjustHeroHeight);
     </script>
 </body>
 </html>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No es motivación: es psicología aplicada a la acción</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --color-black: #0B0B0B;
+            --color-dark: #1A1A1A;
+            --color-gray: #2D2D2D;
+            --color-light-gray: #444444;
+            --color-white: #F5F5F5;
+            --color-red: #C1121F;
+            --color-red-dark: #A0101A;
+            --color-green: #10B981;
+            --color-green-dark: #0D9668;
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 2rem;
+            --spacing-lg: 4rem;
+            --spacing-xl: 6rem;
+            --border-radius: 4px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            line-height: 1.6;
+            color: var(--color-white);
+            background-color: var(--color-black);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.1rem;
+            color: #CCCCCC;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+        }
+
+        section {
+            padding: var(--spacing-xl) 0;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--spacing-lg);
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: var(--color-red);
+            margin: var(--spacing-md) auto;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: var(--spacing-sm) 0;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--color-gray);
+            transition: var(--transition);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            height: 50px;
+        }
+
+        .logo-img {
+            height: 100%;
+            width: auto;
+            max-width: 180px;
+            object-fit: contain;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: var(--spacing-xl);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #AAAAAA;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .video-container {
+            width: 100%;
+            max-width: 800px;
+            margin: var(--spacing-lg) auto;
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background-color: var(--color-dark);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-red);
+            color: var(--color-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+            padding: 1.2rem 3rem;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background-color: var(--color-red-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(193, 18, 31, 0.2);
+        }
+
+        .logo-below-button {
+            display: block;
+            margin: var(--spacing-lg) auto 0;
+            max-width: 180px;
+            height: auto;
+        }
+
+        /* Highlighter animation style */
+        .highlight-text {
+            position: relative;
+            display: inline-block;
+            color: var(--color-white);
+            z-index: 1;
+        }
+
+        .highlight-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--color-red);
+            z-index: -1;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: highlightAnimation 2s ease-in-out forwards;
+            animation-delay: 0.5s;
+            opacity: 0.7;
+            border-radius: 2px;
+        }
+
+        .highlight-text span {
+            position: relative;
+            z-index: 2;
+            color: var(--color-white);
+            transition: color 0.3s ease;
+        }
+
+        @keyframes highlightAnimation {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+            
+            h1 {
+                font-size: 3rem;
+            }
+            
+            h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            
+            .hero {
+                padding-top: calc(var(--spacing-xl) + 70px);
+            }
+            
+            section {
+                padding: var(--spacing-lg) 0;
+            }
+            
+            .logo-container {
+                height: 45px;
+            }
+            
+            .logo-img {
+                max-width: 160px;
+            }
+            
+            .highlight-text::before {
+                border-radius: 2px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            h3 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+            
+            .logo-container {
+                height: 40px;
+            }
+            
+            .logo-img {
+                max-width: 140px;
+            }
+            
+            .logo-below-button {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+                line-height: 1.4;
+            }
+            
+            .cta-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .container {
+                padding: 0 var(--spacing-sm);
+            }
+            
+            .logo-container {
+                height: 35px;
+            }
+            
+            .logo-below-button {
+                max-width: 130px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+            
+            h2 {
+                font-size: 1.4rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .logo-container {
+                height: 30px;
+            }
+            
+            .logo-below-button {
+                max-width: 110px;
+            }
+        }
+
+        @media (max-width: 350px) {
+            .hero {
+                min-height: 90vh;
+            }
+            
+            .cta-button {
+                padding: 0.8rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo-container">
+                <!-- Header sin logo -->
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>No es motivación: <span class="highlight-text"><span>es psicología aplicada a la acción</span></span></h1>
+                
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <!-- Reemplaza esta URL con tu video de YouTube -->
+                        <iframe src="https://www.youtube.com/embed/g7ZrgRc1nRE?rel=0&modestbranding=1&autoplay=0" 
+                                title="Video del Reto" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                
+                <!-- Botón con nuevo texto -->
+                <a href="https://mentordigital.site/21dias/" class="cta-button">Entrar al Reto</a>
+                
+                <!-- Logo debajo del botón -->
+                <img src="logo.webp" alt="Logo" class="logo-below-button">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+            } else {
+                header.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+        
+        // Ajustar altura del hero en dispositivos móviles
+        function adjustHeroHeight() {
+            const hero = document.querySelector('.hero');
+            const viewportHeight = window.innerHeight;
+            const headerHeight = document.querySelector('header').offsetHeight;
+            
+            if (window.innerWidth <= 768) {
+                hero.style.minHeight = `${viewportHeight - headerHeight}px`;
+            } else {
+                hero.style.minHeight = '100vh';
+            }
+        }
+        
+        // Reiniciar animación al hacer hover
+        function resetHighlightAnimation() {
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                // Remover la animación
+                highlightElement.style.animation = 'none';
+                
+                // Forzar un reflow para reiniciar la animación
+                void highlightElement.offsetWidth;
+                
+                // Reactivar la animación
+                setTimeout(() => {
+                    highlightElement.style.animation = '';
+                }, 10);
+            }
+        }
+        
+        // Añadir efecto de pulsación continua
+        function setupContinuousHighlight() {
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                // Reiniciar la animación cada 6 segundos
+                setInterval(() => {
+                    resetHighlightAnimation();
+                }, 6000);
+                
+                // También reiniciar al hacer hover
+                highlightElement.addEventListener('mouseenter', resetHighlightAnimation);
+            }
+        }
+        
+        // Ejecutar al cargar y al redimensionar
+        window.addEventListener('load', function() {
+            adjustHeroHeight();
+            setupContinuousHighlight();
+            
+            // Iniciar la animación después de un breve retraso
+            setTimeout(() => {
+                const highlightElement = document.querySelector('.highlight-text');
+                if (highlightElement) {
+                    highlightElement.style.animationPlayState = 'running';
+                }
+            }, 100);
+        });
+        window.addEventListener('resize', adjustHeroHeight);
+    </script>
+</body>
+</html>

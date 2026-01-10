@@ -841,209 +841,206 @@
     </div>
 
     <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Header background on scroll
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if(window.scrollY > 50) {
-                header.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
-                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
-            } else {
-                header.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
-                header.style.boxShadow = 'none';
-            }
-        });
-        
-        // Ajustar altura del hero en dispositivos móviles
-        function adjustHeroHeight() {
-            const hero = document.querySelector('.hero');
-            const viewportHeight = window.innerHeight;
-            const headerHeight = document.querySelector('header').offsetHeight;
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            if (window.innerWidth <= 768) {
-                hero.style.minHeight = `${viewportHeight - headerHeight}px`;
+            const targetId = this.getAttribute('href');
+            if(targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if(targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Header background on scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if(window.scrollY > 50) {
+            header.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
+            header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            header.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+    });
+    
+    // Ajustar altura del hero en dispositivos móviles
+    function adjustHeroHeight() {
+        const hero = document.querySelector('.hero');
+        const viewportHeight = window.innerHeight;
+        const headerHeight = document.querySelector('header').offsetHeight;
+        
+        if (window.innerWidth <= 768) {
+            hero.style.minHeight = `${viewportHeight - headerHeight}px`;
+        } else {
+            hero.style.minHeight = '100vh';
+        }
+    }
+    
+    // Reiniciar animación al hacer hover
+    function resetHighlightAnimation() {
+        const highlightElement = document.querySelector('.highlight-text');
+        if (highlightElement) {
+            // Remover la animación
+            highlightElement.style.animation = 'none';
+            
+            // Forzar un reflow para reiniciar la animación
+            void highlightElement.offsetWidth;
+            
+            // Reactivar la animación
+            setTimeout(() => {
+                highlightElement.style.animation = '';
+            }, 10);
+        }
+    }
+    
+    // Añadir efecto de pulsación continua
+    function setupContinuousHighlight() {
+        const highlightElement = document.querySelector('.highlight-text');
+        if (highlightElement) {
+            // Reiniciar la animación cada 6 segundos
+            setInterval(() => {
+                resetHighlightAnimation();
+            }, 6000);
+            
+            // También reiniciar al hacer hover
+            highlightElement.addEventListener('mouseenter', resetHighlightAnimation);
+        }
+    }
+    
+    // ============================================
+    // POP-UP FUNCTIONALITY - VERSIÓN CORREGIDA
+    // ============================================
+    const popupOverlay = document.getElementById('popupOverlay');
+    const openPopupBtn = document.getElementById('openPopupBtn');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const urgencyTimer = document.getElementById('urgencyTimer');
+    
+    // URL de Stripe
+    const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03';
+    
+    // 1. ABRIR POP-UP
+    openPopupBtn.addEventListener('click', function() {
+        popupOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        
+        // Efecto sutil
+        openPopupBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            openPopupBtn.style.transform = '';
+        }, 200);
+    });
+    
+    // 2. CERRAR POP-UP
+    closePopupBtn.addEventListener('click', closePopup);
+    
+    function closePopup() {
+        popupOverlay.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    }
+    
+    // Cerrar al hacer clic fuera
+    popupOverlay.addEventListener('click', function(e) {
+        if (e.target === popupOverlay) {
+            closePopup();
+        }
+    });
+    
+    // 3. CHECKOUT - SOLUCIÓN SIMPLE Y FUNCIONAL
+    checkoutBtn.addEventListener('click', function() {
+        // Guardar estado original
+        const originalHTML = checkoutBtn.innerHTML;
+        
+        // Feedback inmediato
+        checkoutBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        checkoutBtn.disabled = true;
+        
+        // Cerrar pop-up
+        closePopup();
+        
+        // Redirigir después de breve pausa
+        setTimeout(() => {
+            // Intentar abrir en nueva pestaña
+            const stripeWindow = window.open(STRIPE_CHECKOUT_URL, '_blank');
+            
+            // Si falla, redirigir en misma pestaña
+            if (!stripeWindow) {
+                window.location.href = STRIPE_CHECKOUT_URL;
+            }
+            
+            // Restaurar botón
+            setTimeout(() => {
+                checkoutBtn.innerHTML = originalHTML;
+                checkoutBtn.disabled = false;
+            }, 1500);
+            
+        }, 300);
+    });
+    
+    // 4. CONTADOR DE URGENCIA
+    function updateUrgencyTimer() {
+        const now = new Date();
+        const deadline = new Date();
+        deadline.setDate(deadline.getDate() + 2);
+        deadline.setHours(23, 59, 0, 0);
+        
+        const diff = deadline - now;
+        
+        if (diff > 0) {
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            
+            if (hours < 24) {
+                urgencyTimer.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra en ${hours}h ${minutes}m`;
             } else {
-                hero.style.minHeight = '100vh';
+                const days = Math.floor(hours / 24);
+                urgencyTimer.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra en ${days} días`;
             }
         }
-        
-        // Reiniciar animación al hacer hover
-        function resetHighlightAnimation() {
-            const highlightElement = document.querySelector('.highlight-text');
-            if (highlightElement) {
-                // Remover la animación
-                highlightElement.style.animation = 'none';
-                
-                // Forzar un reflow para reiniciar la animación
-                void highlightElement.offsetWidth;
-                
-                // Reactivar la animación
-                setTimeout(() => {
-                    highlightElement.style.animation = '';
-                }, 10);
-            }
-        }
-        
-        // Añadir efecto de pulsación continua
-        function setupContinuousHighlight() {
-            const highlightElement = document.querySelector('.highlight-text');
-            if (highlightElement) {
-                // Reiniciar la animación cada 6 segundos
-                setInterval(() => {
-                    resetHighlightAnimation();
-                }, 6000);
-                
-                // También reiniciar al hacer hover
-                highlightElement.addEventListener('mouseenter', resetHighlightAnimation);
-            }
-        }
-        
-        // ============================================
-        // POP-UP FUNCTIONALITY - VERSIÓN OPTIMIZADA
-        // ============================================
-        const popupOverlay = document.getElementById('popupOverlay');
-        const openPopupBtn = document.getElementById('openPopupBtn');
-        const closePopupBtn = document.getElementById('closePopupBtn');
-        const checkoutBtn = document.getElementById('checkoutBtn');
-        const urgencyTimer = document.getElementById('urgencyTimer');
-        
-        // URL de Stripe - DIRECTA Y SEGURA
-        const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03';
-        
-        // 1. ABRIR POP-UP
-        openPopupBtn.addEventListener('click', function() {
+    }
+    
+    setInterval(updateUrgencyTimer, 60000);
+    updateUrgencyTimer();
+    
+    // 5. POP-UP AUTOMÁTICO
+    setTimeout(() => {
+        if (!popupOverlay.classList.contains('active') && window.innerWidth > 768) {
             popupOverlay.classList.add('active');
             document.body.style.overflow = 'hidden';
-            
-            // Efecto sutil de apertura
-            openPopupBtn.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-                openPopupBtn.style.transform = '';
-            }, 200);
-        });
-        
-        // 2. CERRAR POP-UP
-        closePopupBtn.addEventListener('click', closePopup);
-        
-        function closePopup() {
-            popupOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
         }
-        
-        // Cerrar al hacer clic fuera del contenido
-        popupOverlay.addEventListener('click', function(e) {
-            if (e.target === popupOverlay) {
-                closePopup();
-            }
-        });
-        
-        // 3. CHECKOUT - REDIRECCIÓN SEGURA Y RÁPIDA
-        checkoutBtn.addEventListener('click', function() {
-            // Feedback visual inmediato (reducir ansiedad)
-            const originalText = checkoutBtn.innerHTML;
-            checkoutBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Redirigiendo...';
-            checkoutBtn.style.backgroundColor = '#0D9668';
-            checkoutBtn.disabled = true;
-            
-            // Cerrar pop-up inmediatamente (mínima fricción)
+    }, 15000);
+    
+    // 6. Tecla ESC para cerrar
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
             closePopup();
-            
-            // Redirigir a Stripe EN NUEVA PESTAÑA con seguridad
-            setTimeout(() => {
-                window.open(
-                    STRIPE_CHECKOUT_URL,
-                    '_blank',
-                    'noopener,noreferrer' // CRÍTICO para seguridad
-                );
-                
-                // Restaurar botón después de 1.5s
-                setTimeout(() => {
-                    checkoutBtn.innerHTML = originalText;
-                    checkoutBtn.style.backgroundColor = '';
-                    checkoutBtn.disabled = false;
-                }, 1500);
-                
-            }, 300); // Retraso mínimo para percepción de procesamiento
-        });
-        
-        // 4. CONTADOR DE URGENCIA
-        function updateUrgencyTimer() {
-            const now = new Date();
-            const deadline = new Date('2024-01-13T23:59:00');
-            
-            // Si ya pasó la fecha, usar una futura para demo
-            if (now > deadline) {
-                deadline.setDate(deadline.getDate() + 30);
-            }
-            
-            const diff = deadline - now;
-            
-            if (diff > 0) {
-                const hours = Math.floor(diff / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                
-                // Mostrar horas si quedan menos de 24
-                if (hours < 24) {
-                    urgencyTimer.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra en ${hours}h ${minutes}m · Inicia 14 de enero`;
-                } else {
-                    urgencyTimer.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra el 13 de enero (23:59) · Inicia 14 de enero`;
-                }
-            }
         }
+    });
+    
+    // ============================================
+    // INICIALIZACIÓN
+    // ============================================
+    window.addEventListener('load', function() {
+        adjustHeroHeight();
+        setupContinuousHighlight();
         
-        // Actualizar cada minuto
-        setInterval(updateUrgencyTimer, 60000);
-        updateUrgencyTimer(); // Ejecutar inmediatamente
-        
-        // 5. POP-UP AUTOMÁTICO (solo en desktop)
         setTimeout(() => {
-            if (!popupOverlay.classList.contains('active') && window.innerWidth > 768) {
-                popupOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
+            const highlightElement = document.querySelector('.highlight-text');
+            if (highlightElement) {
+                highlightElement.style.animationPlayState = 'running';
             }
-        }, 30000); // 30 segundos
-        
-        // 6. Tecla ESC para cerrar
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && popupOverlay.classList.contains('active')) {
-                closePopup();
-            }
-        });
-        
-        // ============================================
-        // INICIALIZACIÓN
-        // ============================================
-        window.addEventListener('load', function() {
-            adjustHeroHeight();
-            setupContinuousHighlight();
-            
-            // Iniciar animación de highlight
-            setTimeout(() => {
-                const highlightElement = document.querySelector('.highlight-text');
-                if (highlightElement) {
-                    highlightElement.style.animationPlayState = 'running';
-                }
-            }, 100);
-        });
-        
-        window.addEventListener('resize', adjustHeroHeight);
-    </script>
+        }, 100);
+    });
+    
+    window.addEventListener('resize', adjustHeroHeight);
+</script>
 </body>
 </html>

@@ -256,7 +256,7 @@
             }
         }
 
-        /* POP-UP STYLES - CORREGIDO PARA MÓVILES - SIN SCROLL INTERNO */
+        /* POP-UP STYLES - CORREGIDO PARA MÓVILES */
         .popup-overlay {
             position: fixed;
             top: 0;
@@ -272,6 +272,7 @@
             opacity: 0;
             transition: opacity 0.3s ease;
             padding: var(--spacing-sm);
+            overflow-y: auto;
         }
 
         .popup-overlay.active {
@@ -290,13 +291,15 @@
             border-radius: 12px;
             max-width: 500px;
             width: 100%;
-            overflow: visible;
+            max-height: 95vh;
+            overflow-y: auto;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
             border: 1px solid var(--color-gray);
             transform: translateY(30px);
             transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             margin: auto;
-            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .popup-overlay.active .popup-container {
@@ -308,6 +311,7 @@
             padding: var(--spacing-md);
             text-align: center;
             position: relative;
+            flex-shrink: 0;
         }
 
         .popup-close {
@@ -351,8 +355,10 @@
 
         .popup-content {
             padding: var(--spacing-md);
-            max-height: calc(90vh - 150px);
-            overflow-y: visible;
+            flex-grow: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         .popup-features {
@@ -403,6 +409,7 @@
             border: 1px solid rgba(16, 185, 129, 0.3);
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .price-container::before {
@@ -452,19 +459,7 @@
             gap: 8px;
             font-weight: 600;
             animation: pulse 2s infinite;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            border: none;
-            width: 100%;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        .urgency-banner:hover {
-            background: linear-gradient(90deg, #A0101A, #8A0E17);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(193, 18, 31, 0.3);
+            flex-shrink: 0;
         }
 
         @keyframes pulse {
@@ -496,6 +491,7 @@
             text-decoration: none;
             display: block;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .popup-cta:hover {
@@ -526,6 +522,7 @@
             justify-content: center;
             gap: 8px;
             margin-top: var(--spacing-sm);
+            flex-shrink: 0;
         }
 
         .payment-note i {
@@ -539,6 +536,7 @@
             margin-top: var(--spacing-md);
             padding-top: var(--spacing-md);
             border-top: 1px solid rgba(255, 255, 255, 0.05);
+            flex-shrink: 0;
         }
 
         .avatars {
@@ -617,14 +615,6 @@
             .highlight-text::before {
                 border-radius: 2px;
             }
-            
-            .popup-container {
-                max-height: 85vh;
-            }
-            
-            .popup-content {
-                max-height: calc(85vh - 150px);
-            }
         }
 
         @media (max-width: 768px) {
@@ -662,7 +652,7 @@
             
             .popup-container {
                 max-width: 95%;
-                max-height: 80vh;
+                max-height: 90vh;
                 margin: var(--spacing-sm);
             }
             
@@ -685,17 +675,11 @@
             
             .popup-content {
                 padding: var(--spacing-sm);
-                max-height: calc(80vh - 130px);
             }
             
             .popup-cta {
                 padding: 1rem;
                 font-size: 1.1rem;
-            }
-            
-            .urgency-banner {
-                padding: 0.8rem;
-                font-size: 0.95rem;
             }
         }
 
@@ -763,34 +747,6 @@
                 width: 25px;
                 height: 25px;
             }
-            
-            .popup-container {
-                max-height: 75vh;
-            }
-            
-            .popup-content {
-                max-height: calc(75vh - 120px);
-                padding: 0.8rem;
-            }
-            
-            .popup-features {
-                margin: 0.8rem 0;
-            }
-            
-            .feature-item {
-                margin-bottom: 0.6rem;
-                padding-bottom: 0.6rem;
-            }
-            
-            .price-container {
-                margin: 1rem 0;
-                padding: 0.8rem;
-            }
-            
-            .social-proof {
-                margin-top: 0.8rem;
-                padding-top: 0.8rem;
-            }
         }
 
         @media (max-width: 400px) {
@@ -815,7 +771,7 @@
             }
             
             .popup-container {
-                max-height: 70vh;
+                max-height: 85vh;
                 border-radius: 10px;
             }
             
@@ -849,10 +805,6 @@
             .avatars {
                 margin-right: 0;
             }
-            
-            .popup-content {
-                max-height: calc(70vh - 110px);
-            }
         }
 
         @media (max-width: 350px) {
@@ -866,7 +818,7 @@
             }
             
             .popup-content {
-                padding: 0.6rem;
+                padding: 0.75rem;
             }
             
             .popup-header {
@@ -877,11 +829,6 @@
                 padding: 0.9rem;
                 font-size: 1rem;
             }
-            
-            .urgency-banner {
-                padding: 0.6rem;
-                font-size: 0.85rem;
-            }
         }
 
         @media (max-height: 700px) and (max-width: 768px) {
@@ -891,7 +838,6 @@
             
             .popup-content {
                 padding-top: 0;
-                max-height: calc(85vh - 130px);
             }
             
             .popup-features {
@@ -906,18 +852,6 @@
             .price-container {
                 margin: var(--spacing-sm) 0;
                 padding: var(--spacing-sm);
-            }
-        }
-
-        @media (max-height: 600px) {
-            .popup-container {
-                max-height: 90vh;
-                overflow-y: auto;
-            }
-            
-            .popup-content {
-                max-height: none;
-                overflow-y: visible;
             }
         }
     </style>
@@ -997,11 +931,10 @@
                     </div>
                 </div>
                 
-                <!-- Banner de urgencia que también redirige al pago -->
-                <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="urgency-banner" id="urgencyBanner" target="_blank">
+                <div class="urgency-banner">
                     <i class="fas fa-clock urgency-icon"></i>
                     <span>Cierra el 13 de enero (23:59) · Inicia 14 de enero</span>
-                </a>
+                </div>
                 
                 <!-- Botón con el link de pago agregado -->
                 <a href="https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03" class="popup-cta" id="checkoutBtn" target="_blank">
@@ -1020,8 +953,7 @@
                         <div class="avatar" style="background-color: #8B5CF6;">L</div>
                     </div>
                     <div class="social-text">
-                        <!-- Texto actualizado según sugerencia -->
-                        <strong>+247 personas</strong> ya transformaron su enfoque
+                        <strong>+247 personas</strong> ya accedieron esta semana
                     </div>
                 </div>
             </div>
@@ -1108,7 +1040,6 @@
         const openPopupBtn = document.getElementById('openPopupBtn');
         const closePopupBtn = document.getElementById('closePopupBtn');
         const checkoutBtn = document.getElementById('checkoutBtn');
-        const urgencyBanner = document.getElementById('urgencyBanner');
         
         // URL de checkout - CORREGIDA con el link proporcionado
         const checkoutUrl = 'https://buy.stripe.com/8x28wO0yOeK8cWd76K0VO03';
@@ -1159,9 +1090,9 @@
                 const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
                 
                 // Actualizar banner de urgencia si existe
-                const urgencyBannerText = document.querySelector('.urgency-banner span');
-                if (urgencyBannerText) {
-                    urgencyBannerText.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra en ${hours}h ${minutes}m · Inicia 14 de enero`;
+                const urgencyBanner = document.querySelector('.urgency-banner span');
+                if (urgencyBanner) {
+                    urgencyBanner.innerHTML = `<i class="fas fa-clock urgency-icon"></i> Cierra en ${hours}h ${minutes}m · Inicia 14 de enero`;
                 }
             }
         }
@@ -1185,31 +1116,10 @@
         // Mejorar la experiencia en móviles: evitar zoom en inputs
         document.addEventListener('touchstart', function() {}, {passive: true});
         
-        // Ajustar el pop-up dinámicamente según la altura de la pantalla
-        function adjustPopupForScreen() {
-            const popupContainer = document.querySelector('.popup-container');
-            const popupContent = document.querySelector('.popup-content');
-            const screenHeight = window.innerHeight;
-            
-            if (screenHeight < 600) {
-                // Para pantallas muy pequeñas, hacer el pop-up más compacto
-                popupContainer.style.maxHeight = '90vh';
-                popupContent.style.maxHeight = 'calc(90vh - 140px)';
-                popupContent.style.padding = '0.6rem';
-            } else if (screenHeight < 700) {
-                popupContainer.style.maxHeight = '85vh';
-                popupContent.style.maxHeight = 'calc(85vh - 140px)';
-            } else {
-                popupContainer.style.maxHeight = '80vh';
-                popupContent.style.maxHeight = 'calc(80vh - 140px)';
-            }
-        }
-        
         // Ejecutar al cargar y al redimensionar
         window.addEventListener('load', function() {
             adjustHeroHeight();
             setupContinuousHighlight();
-            adjustPopupForScreen();
             
             // Iniciar la animación después de un breve retraso
             setTimeout(() => {
@@ -1220,17 +1130,14 @@
             }, 100);
         });
         
-        window.addEventListener('resize', function() {
-            adjustHeroHeight();
-            adjustPopupForScreen();
-        });
+        window.addEventListener('resize', adjustHeroHeight);
         
         // Ajustar el pop-up cuando el teclado aparece en móviles
         window.addEventListener('resize', function() {
             if (window.innerWidth <= 768 && popupOverlay.classList.contains('active')) {
                 // Asegurarse de que el pop-up esté centrado
                 popupOverlay.style.alignItems = 'flex-start';
-                popupOverlay.style.paddingTop = '10px';
+                popupOverlay.style.paddingTop = '20px';
             }
         });
     </script>
